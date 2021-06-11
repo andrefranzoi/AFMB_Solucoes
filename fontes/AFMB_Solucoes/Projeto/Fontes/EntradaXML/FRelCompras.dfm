@@ -39,6 +39,10 @@ object FrmRelCompras: TFrmRelCompras
       TabOrder = 0
       object Tab_Compras: TTabSheet
         Caption = 'Compras'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox2: TGroupBox
           Left = 0
           Top = 0
@@ -334,7 +338,8 @@ object FrmRelCompras: TFrmRelCompras
       ExplicitWidth = 565
     end
     inherited LblBarraTitulo: TLabel
-      Width = 559
+      Width = 171
+      Height = 23
       Caption = 'Relat'#243'rio de Compras'
       ExplicitWidth = 171
     end

@@ -523,7 +523,7 @@ object FrmRelPagar_Pagar: TFrmRelPagar_Pagar
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        92.604166666666660000
+        92.604166666666680000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

@@ -1,16 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FRelReceb_Vencidas;
@@ -19,11 +39,11 @@ interface
 
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-   ExtCtrls, quickrpt, Qrctrls, Db,   QRPrntr, QRExport,
-   StdCtrls, QRPDFFilt,  Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+   ExtCtrls, quickrpt, Qrctrls, Db, QRPrntr, QRExport,
+   StdCtrls, QRPDFFilt, Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+   FireDAC.Comp.Client;
 
 type
    TFrmRelReceb_Vencidas = class(TForm)
@@ -58,8 +78,8 @@ type
       QRLabel13: TQRLabel;
       QRDBText10: TQRDBText;
       QRDBText2: TQRDBText;
-    LblAgrupar: TQRLabel;
-    lblCampoGrupo: TQRDBText;
+      LblAgrupar: TQRLabel;
+      lblCampoGrupo: TQRDBText;
       QRLabel11: TQRLabel;
       QRDBText1: TQRDBText;
       LblRestricao: TQRLabel;
@@ -71,7 +91,7 @@ type
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure QuickRepBeforePrint(Sender: TCustomQuickRep;
         var PrintReport: Boolean);
-    procedure ADO_CtaReceberBeforeOpen(DataSet: TDataSet);
+      procedure ADO_CtaReceberBeforeOpen(DataSet: TDataSet);
    private
       { Private declarations }
    public
@@ -110,20 +130,21 @@ begin
    vSelect := vSelect + ' EMPRESA=:EMPRESA  ';
 
    if strRestricaoCredito <> '' then
-     vSelect := vSelect + ' AND RESTRICAO=' +QuotedStr(strRestricaoCredito);
+      vSelect := vSelect + ' AND RESTRICAO=' + QuotedStr(strRestricaoCredito);
 
-   if FrmRelCtaReceber.rAgrupar.ItemIndex=0 then
+   if FrmRelCtaReceber.rAgrupar.ItemIndex = 0 then
       vSelect := vSelect + '  AND (VENCIMENTO>=:data1 AND VENCIMENTO<=:data2) ';
 
-   if FrmRelCtaReceber.rAgrupar.ItemIndex=1 then
+   if FrmRelCtaReceber.rAgrupar.ItemIndex = 1 then
       vSelect := vSelect + '  AND (DATA>=:data1 AND DATA<=:data2) ';
 
-   if FrmRelCtaReceber.rAgrupar.ItemIndex=2 then
+   if FrmRelCtaReceber.rAgrupar.ItemIndex = 2 then
       vSelect := vSelect + '  AND (DATA_PAGTO>=:data1 AND DATA_PAGTO<=:data2) ';
 
    If FrmRelCtaReceber.chkClientes.Checked = False Then
    Begin
-      vSelect := vSelect + '  AND CLIENTE=''' + Trim(FrmRelCtaReceber.EditCliente.Text) + ''' ';
+      vSelect := vSelect + '  AND CLIENTE=''' +
+        Trim(FrmRelCtaReceber.EditCliente.Text) + ''' ';
    End;
 
    if not FrmRelCtaReceber.chkRepres.Checked then

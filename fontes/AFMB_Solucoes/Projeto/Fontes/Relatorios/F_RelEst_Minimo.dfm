@@ -260,7 +260,7 @@ object Frm_RelEst_Minimo: TFrm_RelEst_Minimo
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        56.223958333333330000
+        56.223958333333340000
         1901.692708333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -392,7 +392,7 @@ object Frm_RelEst_Minimo: TFrm_RelEst_Minimo
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        36.380208333333330000
+        36.380208333333340000
         1901.692708333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -543,7 +543,7 @@ object Frm_RelEst_Minimo: TFrm_RelEst_Minimo
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        56.223958333333330000
+        56.223958333333340000
         1901.692708333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -673,7 +673,7 @@ object Frm_RelEst_Minimo: TFrm_RelEst_Minimo
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        72.760416666666660000
+        72.760416666666680000
         1901.692708333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

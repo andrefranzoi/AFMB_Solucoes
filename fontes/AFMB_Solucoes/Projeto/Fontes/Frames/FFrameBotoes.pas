@@ -1,36 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FFrameBotoes;
@@ -45,41 +45,41 @@ uses
 type
 
    TFrmFrameBotoes = class(TFrame)
-    DataSource: TDataSource;
-    PanelBotoesBottom: TPanel;
-    SpbAdicionar: TSpeedButton;
-    SpbEditar: TSpeedButton;
-    SpbCancelar: TSpeedButton;
-    SpbSalvar: TSpeedButton;
-    SpbExcluir: TSpeedButton;
-    SpbImprimir: TSpeedButton;
-    SpbSair: TSpeedButton;
-    SpbExtra: TSpeedButton;
-    SpbProcurar: TSpeedButton;
-    procedure SpbUltimoClick(Sender: TObject);
-    procedure SpbProximoClick(Sender: TObject);
-    procedure SpbAnteriorClick(Sender: TObject);
-    procedure SpbPrimeiroClick(Sender: TObject);
-    procedure FrameResize(Sender: TObject);
-    procedure SpbSairClick(Sender: TObject);
-    procedure SpbExcluirClick(Sender: TObject);
-    procedure SpbCancelarClick(Sender: TObject);
-    procedure SpbSalvarClick(Sender: TObject);
-    procedure SpbEditarClick(Sender: TObject);
-    procedure SpbAdicionarClick(Sender: TObject);
-    procedure DataSourceDataChange(Sender: TObject; Field: TField);
-    procedure FrameCanResize(Sender: TObject; var NewWidth, NewHeight: Integer;
-      var Resize: Boolean);
+      DataSource: TDataSource;
+      PanelBotoesBottom: TPanel;
+      SpbAdicionar: TSpeedButton;
+      SpbEditar: TSpeedButton;
+      SpbCancelar: TSpeedButton;
+      SpbSalvar: TSpeedButton;
+      SpbExcluir: TSpeedButton;
+      SpbImprimir: TSpeedButton;
+      SpbSair: TSpeedButton;
+      SpbExtra: TSpeedButton;
+      SpbProcurar: TSpeedButton;
+      procedure SpbUltimoClick(Sender: TObject);
+      procedure SpbProximoClick(Sender: TObject);
+      procedure SpbAnteriorClick(Sender: TObject);
+      procedure SpbPrimeiroClick(Sender: TObject);
+      procedure FrameResize(Sender: TObject);
+      procedure SpbSairClick(Sender: TObject);
+      procedure SpbExcluirClick(Sender: TObject);
+      procedure SpbCancelarClick(Sender: TObject);
+      procedure SpbSalvarClick(Sender: TObject);
+      procedure SpbEditarClick(Sender: TObject);
+      procedure SpbAdicionarClick(Sender: TObject);
+      procedure DataSourceDataChange(Sender: TObject; Field: TField);
+      procedure FrameCanResize(Sender: TObject;
+        var NewWidth, NewHeight: Integer; var Resize: Boolean);
 
    private
-    function ChecarCampo(stCampo: String): Boolean;
+      function ChecarCampo(stCampo: String): Boolean;
       { Private declarations }
 
    public
       { Public declarations }
 
       // DataSource    : TDataSource;
-      //FDataSource: TDataSource;
+      // FDataSource: TDataSource;
       procedure AtivaEdicao;
       procedure DesativaEdicao;
       procedure ChecarCampos;
@@ -87,13 +87,13 @@ type
    protected
 
    published
-     //property DataSource: TDataSource read FDataSource write FDataSource;
-     // property DataSource: TDataSource read FDataSource write SetDataSource;
-     // property DataSource: TDataSource read FDataSource;
+      // property DataSource: TDataSource read FDataSource write FDataSource;
+      // property DataSource: TDataSource read FDataSource write SetDataSource;
+      // property DataSource: TDataSource read FDataSource;
    end;
 
 var
-   i: integer;
+   i: Integer;
 
 implementation
 
@@ -117,7 +117,7 @@ begin
 
    if DataSource.DataSet.IsEmpty then
    begin
-      Aviso('Não há dados para alterar.' + sLineBreak+
+      Aviso('Não há dados para alterar.' + sLineBreak +
         'Localize o registro desejado ou inclua clicando no primeiro botão');
       Abort;
    end;
@@ -155,14 +155,15 @@ end;
 
 procedure TFrmFrameBotoes.SpbSalvarClick(Sender: TObject);
 begin
-    if not DataSource.DataSet.Active then
+   if not DataSource.DataSet.Active then
       DataSource.DataSet.Active := True;
 
    if (DataSource.DataSet.State in [dsInsert, dsEdit]) then
    begin
       if ChecarCampo('EMPRESA') then
       Begin
-         DataSource.DataSet.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
+         DataSource.DataSet.FieldByName('EMPRESA').AsInteger :=
+           FSistema.Empresa;
       End;
       DataSource.DataSet.Post;
    End;
@@ -177,8 +178,8 @@ begin
    if DataSource.DataSet.IsEmpty then
       exit;
    if DataSource.DataSet.Active then
-     if (DataSource.DataSet.State in [dsInsert, dsEdit]) then
-        DataSource.DataSet.Cancel;
+      if (DataSource.DataSet.State in [dsInsert, dsEdit]) then
+         DataSource.DataSet.Cancel;
 
 end;
 
@@ -243,9 +244,8 @@ end;
 
 procedure TFrmFrameBotoes.DataSourceDataChange(Sender: TObject; Field: TField);
 begin
-  AtivaEdicao;
+   AtivaEdicao;
 end;
-
 
 procedure TFrmFrameBotoes.DesativaEdicao;
 begin
@@ -258,12 +258,12 @@ begin
 
    SpbSalvar.Enabled := False;
    SpbCancelar.Enabled := False;
-   if DataSource.DataSet<>Nil then
-     DataSource.DataSet.Cancel;
+   if DataSource.DataSet <> Nil then
+      DataSource.DataSet.Cancel;
 end;
 
-procedure TFrmFrameBotoes.FrameCanResize(Sender: TObject; var NewWidth,
-  NewHeight: Integer; var Resize: Boolean);
+procedure TFrmFrameBotoes.FrameCanResize(Sender: TObject;
+  var NewWidth, NewHeight: Integer; var Resize: Boolean);
 begin
    DesativaEdicao;
 end;
@@ -293,21 +293,21 @@ begin
 
 end;
 
-function TFrmFrameBotoes.ChecarCampo(stCampo:String) : Boolean;
+function TFrmFrameBotoes.ChecarCampo(stCampo: String): Boolean;
 begin
 
-  Result := False;
+   Result := False;
 
-  // checar se o campo existe
-  for i := 0 to DataSource.DataSet.FieldCount - 1 do
-  Begin
-    if (UpperCase( DataSource.DataSet.Fields[i].FieldName )=stCampo)  and
-        (DataSource.DataSet.Fields[i].Tag<>99)                        then
-    begin
-      Result := True;
-      Break;
-    end;
-  End;
+   // checar se o campo existe
+   for i := 0 to DataSource.DataSet.FieldCount - 1 do
+   Begin
+      if (UpperCase(DataSource.DataSet.Fields[i].FieldName) = stCampo) and
+        (DataSource.DataSet.Fields[i].Tag <> 99) then
+      begin
+         Result := True;
+         Break;
+      end;
+   End;
 
 end;
 

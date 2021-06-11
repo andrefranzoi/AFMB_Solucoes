@@ -29,6 +29,10 @@ object FrmPlanoContas: TFrmPlanoContas
     object Tab_registros: TTabSheet
       Caption = 'Registros'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DBGrid_Principal: TDBGrid
         Left = 0
         Top = 0
@@ -73,6 +77,10 @@ object FrmPlanoContas: TFrmPlanoContas
     object Tab_Editar: TTabSheet
       Caption = 'Editar'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 0
         Top = 20

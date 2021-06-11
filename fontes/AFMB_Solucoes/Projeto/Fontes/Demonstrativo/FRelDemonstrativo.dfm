@@ -356,7 +356,8 @@ object FrmRelDemonstrativo: TFrmRelDemonstrativo
       ExplicitWidth = 639
     end
     inherited LblBarraTitulo: TLabel
-      Width = 633
+      Width = 278
+      Height = 23
       Caption = '(DRE) Demonstrativo de resultados'
       ExplicitWidth = 278
     end

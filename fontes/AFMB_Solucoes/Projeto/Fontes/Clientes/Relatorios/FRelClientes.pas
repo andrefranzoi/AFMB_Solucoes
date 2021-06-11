@@ -1,16 +1,36 @@
 ﻿{
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FRelClientes;
@@ -18,14 +38,15 @@ unit FRelClientes;
 interface
 
 uses
-   Windows, Messages, SysUtils, StrUtils, Classes, Graphics, Controls, Forms, Dialogs,
+   Windows, Messages, SysUtils, StrUtils, Classes, Graphics, Controls, Forms,
+   Dialogs,
    Buttons, ExtCtrls, StdCtrls, Mask, ComCtrls, FrmRelatorios, ISFEdit,
    ISFEditbtn, ISFdbEditbtn, uEstSearchDialogZeos, IDBEdit;
 
 type
    TFrmRelClientes = class(TForm)
       Panel1: TPanel;
-    pgControle: TPageControl;
+      pgControle: TPageControl;
       Tab_clientes: TTabSheet;
       Tab_fornecedores: TTabSheet;
       RadioGForn: TRadioGroup;
@@ -45,34 +66,34 @@ type
       MskDataFim: TMaskEdit;
       RadioG: TRadioGroup;
       Panel3: TPanel;
-    bxRepresentante: TGroupBox;
+      bxRepresentante: TGroupBox;
       chkRepres: TCheckBox;
       BoxCidades: TGroupBox;
       Label2: TLabel;
-    EditCidade: TEdit;
+      EditCidade: TEdit;
       chkCidades: TCheckBox;
       BoxEstados: TGroupBox;
       Label1: TLabel;
       chkEstados: TCheckBox;
-    EditEstado: TComboBox;
+      EditEstado: TComboBox;
       BoxClientes: TGroupBox;
       chkCliente: TCheckBox;
       EditNomeVendedor: TEdit;
-    EditVendedor: TIDBEditDialog;
-    FrameRelatorios1: TFrameRelatorios;
-    RadioGroupOrdenar: TRadioGroup;
-    EditClienteNome: TEdit;
-    EditCliente: TIDBEditDialog;
-    GroupBox1: TGroupBox;
-    Label6: TLabel;
-    Label7: TLabel;
-    MaskEdit1: TMaskEdit;
-    MaskEdit2: TMaskEdit;
-    chkFornecedor: TCheckBox;
-    EditFornecedor: TIDBEditDialog;
-    EditNomeCliente: TEdit;
-    BtnSair: TBitBtn;
-    btnImprimir: TBitBtn;
+      EditVendedor: TIDBEditDialog;
+      FrameRelatorios1: TFrameRelatorios;
+      RadioGroupOrdenar: TRadioGroup;
+      EditClienteNome: TEdit;
+      EditCliente: TIDBEditDialog;
+      GroupBox1: TGroupBox;
+      Label6: TLabel;
+      Label7: TLabel;
+      MaskEdit1: TMaskEdit;
+      MaskEdit2: TMaskEdit;
+      chkFornecedor: TCheckBox;
+      EditFornecedor: TIDBEditDialog;
+      EditNomeCliente: TEdit;
+      BtnSair: TBitBtn;
+      btnImprimir: TBitBtn;
       procedure FormCreate(Sender: TObject);
       procedure MskDataIniExit(Sender: TObject);
       procedure MskDataFimExit(Sender: TObject);
@@ -89,15 +110,15 @@ type
       procedure chkCidadesFornClick(Sender: TObject);
       procedure chkEstadosFornClick(Sender: TObject);
       procedure RadioGFornClick(Sender: TObject);
-    procedure chkFornecedorClick(Sender: TObject);
-    procedure Tab_clientesShow(Sender: TObject);
-    procedure Tab_fornecedoresShow(Sender: TObject);
+      procedure chkFornecedorClick(Sender: TObject);
+      procedure Tab_clientesShow(Sender: TObject);
+      procedure Tab_fornecedoresShow(Sender: TObject);
    private
       { Private declarations }
-      fTipoRelatorio : String;
+      fTipoRelatorio: String;
    public
       { Public declarations }
-      property TipoRelatorio  : string read fTipoRelatorio write fTipoRelatorio;
+      property TipoRelatorio: string read fTipoRelatorio write fTipoRelatorio;
    end;
 
 var
@@ -106,8 +127,8 @@ var
 implementation
 
 uses FPrincipal, App.SQL, Biblioteca, Global, FRelCliFones, FRelCliAnalitico,
-  FRelCliCidades, FRelEstados, FRelRepresentantes, FRelCliBloqueados,
-  FRelFornFones, FRelFornCidades, FRelFornEstados;
+   FRelCliCidades, FRelEstados, FRelRepresentantes, FRelCliBloqueados,
+   FRelFornFones, FRelFornCidades, FRelFornEstados;
 
 {$R *.DFM}
 
@@ -135,50 +156,64 @@ end;
 procedure TFrmRelClientes.btnImprimirClick(Sender: TObject);
 begin
 
-   if fTipoRelatorio='CLIENTE'  then
+   if fTipoRelatorio = 'CLIENTE' then
    begin
-     if RadioGroupOrdenar.ItemIndex = 0 then
-        strOrdemDados :='VENDEDOR_NOME, NOME';
+      if RadioGroupOrdenar.ItemIndex = 0 then
+         strOrdemDados := 'VENDEDOR_NOME, NOME';
 
-     if RadioGroupOrdenar.ItemIndex = 1 then
-        strOrdemDados :='NOME';
+      if RadioGroupOrdenar.ItemIndex = 1 then
+         strOrdemDados := 'NOME';
 
-     if RadioGroupOrdenar.ItemIndex = 2 then
-        strOrdemDados :='CIDADENOME, NOME';
+      if RadioGroupOrdenar.ItemIndex = 2 then
+         strOrdemDados := 'CIDADENOME, NOME';
 
-     if RadioGroupOrdenar.ItemIndex = 3 then
-        strOrdemDados :=   'UF, NOME';
+      if RadioGroupOrdenar.ItemIndex = 3 then
+         strOrdemDados := 'UF, NOME';
 
-     dtDataIni    := StrToDateDef(MskDataIni.Text, Date());
-     dtDataFim    := StrToDateDef(MskDataFim.Text, Date());
-     strCliente   := ifthen((Trim(EditCliente.text) = '0'), '', Trim(EditCliente.text));
-     strVendedor  := ifthen((Trim(EditVendedor.text) = '0'), '', Trim(EditVendedor.text));
-     strCidade    := ifthen((Trim(EditCidade.text) = '0'), '', Trim(EditCidade.text));
-     strEstado    := Copy(Trim(EditEstado.text),1 ,2);
+      dtDataIni := StrToDateDef(MskDataIni.Text, Date());
+      dtDataFim := StrToDateDef(MskDataFim.Text, Date());
+      strCliente := ifthen((Trim(EditCliente.Text) = '0'), '',
+        Trim(EditCliente.Text));
+      strVendedor := ifthen((Trim(EditVendedor.Text) = '0'), '',
+        Trim(EditVendedor.Text));
+      strCidade := ifthen((Trim(EditCidade.Text) = '0'), '',
+        Trim(EditCidade.Text));
+      strEstado := Copy(Trim(EditEstado.Text), 1, 2);
 
-     case RadioG.ItemIndex of
-       0 : FrmRelCliFones := TFrmRelCliFones.create(self);
-       1 : FrmRelCliAnalit := TFrmRelCliAnalit.create(self);
-       2 : FrmRelCliCidades := TFrmRelCliCidades.create(self);
-       3 : FrmRelEstados := TFrmRelEstados.create(self);
-       4 : FrmRelRepresentantes := TFrmRelRepresentantes.create(self);
-       5 : FrmRelCliBloqueados := TFrmRelCliBloqueados.create(self);
-     end;
+      case RadioG.ItemIndex of
+         0:
+            FrmRelCliFones := TFrmRelCliFones.create(self);
+         1:
+            FrmRelCliAnalit := TFrmRelCliAnalit.create(self);
+         2:
+            FrmRelCliCidades := TFrmRelCliCidades.create(self);
+         3:
+            FrmRelEstados := TFrmRelEstados.create(self);
+         4:
+            FrmRelRepresentantes := TFrmRelRepresentantes.create(self);
+         5:
+            FrmRelCliBloqueados := TFrmRelCliBloqueados.create(self);
+      end;
    end;
 
    // Fornecedor
-   if fTipoRelatorio='FORNECEDOR'  then
+   if fTipoRelatorio = 'FORNECEDOR' then
    begin
-     dtDataIni     := StrToDateDef(MaskEdit1.Text, Date());
-     dtDataFim     := StrToDateDef(MaskEdit2.Text, Date());
-     strFornecedor := ifthen((Trim(EditFornecedor.text) = '0'), '', Trim(EditFornecedor.text));
-     strCidade     := ifthen((Trim(DCodCidadeForn.text) = '0'), '', Trim(DCodCidadeForn.text));
-     strEstado     := Copy(Trim(dCodEstadoForn.text),1 ,2);
+      dtDataIni := StrToDateDef(MaskEdit1.Text, Date());
+      dtDataFim := StrToDateDef(MaskEdit2.Text, Date());
+      strFornecedor := ifthen((Trim(EditFornecedor.Text) = '0'), '',
+        Trim(EditFornecedor.Text));
+      strCidade := ifthen((Trim(DCodCidadeForn.Text) = '0'), '',
+        Trim(DCodCidadeForn.Text));
+      strEstado := Copy(Trim(dCodEstadoForn.Text), 1, 2);
 
       case RadioGForn.ItemIndex of
-        0 : FrmRelFornFones := TFrmRelFornFones.create(self);
-        1 : FrmRelFornCidades := TFrmRelFornCidades.create(self);
-        2 : FrmRelFornEstados := TFrmRelFornEstados.create(self);
+         0:
+            FrmRelFornFones := TFrmRelFornFones.create(self);
+         1:
+            FrmRelFornCidades := TFrmRelFornCidades.create(self);
+         2:
+            FrmRelFornEstados := TFrmRelFornEstados.create(self);
       end;
    end;
 end;
@@ -261,28 +296,28 @@ end;
 
 procedure TFrmRelClientes.RadioGClick(Sender: TObject);
 begin
-  BoxCidades.Visible := RadioG.ItemIndex = 2;
-  BoxEstados.Visible := RadioG.ItemIndex = 3;
-  bxRepresentante.Visible := RadioG.ItemIndex = 4;
+   BoxCidades.Visible := RadioG.ItemIndex = 2;
+   BoxEstados.Visible := RadioG.ItemIndex = 3;
+   bxRepresentante.Visible := RadioG.ItemIndex = 4;
 
-  if BoxCidades.Visible = False then
-  begin
-    EditCidade.Text := '0';
-    chkCidades.Checked := True;
-  end;
+   if BoxCidades.Visible = False then
+   begin
+      EditCidade.Text := '0';
+      chkCidades.Checked := true;
+   end;
 
-  if BoxEstados.Visible = False then
-  begin
-    EditEstado.Text := '';
-    EditEstado.ItemIndex := -1;
-    chkEstados.Checked := True;
-  end;
+   if BoxEstados.Visible = False then
+   begin
+      EditEstado.Text := '';
+      EditEstado.ItemIndex := -1;
+      chkEstados.Checked := true;
+   end;
 
-  if bxRepresentante.Visible = False then
-  begin
-    EditVendedor.Text := '0';
-    chkRepres.Checked := True;
-  end;
+   if bxRepresentante.Visible = False then
+   begin
+      EditVendedor.Text := '0';
+      chkRepres.Checked := true;
+   end;
 
 end;
 
@@ -335,48 +370,48 @@ end;
 procedure TFrmRelClientes.chkFornecedorClick(Sender: TObject);
 begin
 
-   If chkFornecedor.Checked  then
+   If chkFornecedor.Checked then
    begin
-     EditFornecedor.Enabled := False ;
-     EditFornecedor.Text := '';
+      EditFornecedor.Enabled := False;
+      EditFornecedor.Text := '';
    end
    else
    begin
-     EditFornecedor.Enabled := True;
+      EditFornecedor.Enabled := true;
    end;
 end;
 
 procedure TFrmRelClientes.RadioGFornClick(Sender: TObject);
 begin
-  BoxCidadesForn.Visible := RadioGForn.ItemIndex = 1;
-  BoxEstadosForn.Visible := RadioGForn.ItemIndex = 2;
+   BoxCidadesForn.Visible := RadioGForn.ItemIndex = 1;
+   BoxEstadosForn.Visible := RadioGForn.ItemIndex = 2;
 
-  if BoxCidadesForn.Visible = False then
-  begin
-    DCodCidadeForn.Text := '0';
-    chkCidadesForn.Checked := True;
-  end;
+   if BoxCidadesForn.Visible = False then
+   begin
+      DCodCidadeForn.Text := '0';
+      chkCidadesForn.Checked := true;
+   end;
 
-  if BoxEstadosForn.Visible = False then
-  begin
-    dCodEstadoForn.Text := '';
-    dCodEstadoForn.ItemIndex := -1;
-    chkEstadosForn.Checked := True;
-  end;
+   if BoxEstadosForn.Visible = False then
+   begin
+      dCodEstadoForn.Text := '';
+      dCodEstadoForn.ItemIndex := -1;
+      chkEstadosForn.Checked := true;
+   end;
 
-  chkCidadesFornClick(Sender);
-  chkEstadosFornClick(Sender);
+   chkCidadesFornClick(Sender);
+   chkEstadosFornClick(Sender);
 
 end;
 
 procedure TFrmRelClientes.Tab_clientesShow(Sender: TObject);
 begin
-  RadioGClick(Sender);
+   RadioGClick(Sender);
 end;
 
 procedure TFrmRelClientes.Tab_fornecedoresShow(Sender: TObject);
 begin
-  RadioGFornClick(Sender);
+   RadioGFornClick(Sender);
 end;
 
 end.

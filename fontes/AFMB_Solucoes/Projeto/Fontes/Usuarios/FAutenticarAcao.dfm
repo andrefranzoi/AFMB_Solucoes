@@ -130,32 +130,26 @@ object FrmAutenticarAcao: TFrmAutenticarAcao
     ParentColor = False
     TabOrder = 4
     ExplicitWidth = 374
-    ExplicitHeight = 50
     inherited Image3: TImage
       Width = 387
-      Height = 50
       ExplicitWidth = 387
       ExplicitHeight = 50
     end
     inherited pnTitulo: TPanel
       Width = 381
-      Height = 44
       ExplicitWidth = 368
       ExplicitHeight = 27
       inherited LblBarraTitulo: TLabel
         Width = 230
-        Height = 34
         Caption = 'Assinatura eletr'#244'nica'
         ExplicitWidth = 215
         ExplicitHeight = 34
       end
       inherited Image1: TImage
-        Height = 34
         ExplicitHeight = 34
       end
       inherited Image2: TImage
         Left = 319
-        Height = 34
         ExplicitLeft = 319
         ExplicitHeight = 34
       end

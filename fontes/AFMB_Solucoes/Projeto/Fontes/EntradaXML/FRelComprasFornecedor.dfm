@@ -105,7 +105,7 @@ object FrmRelComprasFornecedor: TFrmRelComprasFornecedor
       object QRLabel1: TQRLabel
         Left = 9
         Top = 10
-        Width = 1033
+        Width = 1032
         Height = 20
         Size.Values = (
           52.916666666666670000

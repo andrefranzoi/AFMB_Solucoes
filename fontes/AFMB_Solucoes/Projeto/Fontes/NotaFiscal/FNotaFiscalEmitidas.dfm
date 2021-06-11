@@ -282,7 +282,6 @@ object FrmNotaFiscalEmitidas: TFrmNotaFiscalEmitidas
     MostraSetup = True
     UsaSeparadorPathPDF = True
     Sistema = 'IndPCP - PDV | NFC-e 4.0'
-    Site = ''
     MargemInferior = 0.800000000000000000
     MargemSuperior = 0.800000000000000000
     MargemEsquerda = 0.600000000000000000

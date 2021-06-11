@@ -61,8 +61,6 @@ object FrmUsuariosOnLine: TFrmUsuariosOnLine
     MultiSelect = True
     Sorted = True
     TabOrder = 1
-    ExplicitTop = 36
-    ExplicitHeight = 377
   end
   inline FrmFrameBarra1: TFrmFrameBarra
     Left = 0

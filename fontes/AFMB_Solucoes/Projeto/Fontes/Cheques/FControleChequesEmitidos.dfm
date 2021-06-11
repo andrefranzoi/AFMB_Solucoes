@@ -317,6 +317,10 @@ object FrmChequesEmitidos: TFrmChequesEmitidos
     object Tab_Principal: TTabSheet
       Caption = 'Principal'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DBGrid1: TDBGrid
         Left = 0
         Top = 0

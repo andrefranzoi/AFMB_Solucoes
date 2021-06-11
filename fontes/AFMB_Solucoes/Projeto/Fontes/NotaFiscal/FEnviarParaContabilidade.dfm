@@ -5,6 +5,7 @@ inherited FrmEnviarParaContabilidade: TFrmEnviarParaContabilidade
   TextHeight = 13
   inherited pnlTitulo: TPanel
     inherited lblEnviarEmail: TLabel
+      Width = 172
       Caption = 'Enviar XML por  e-mail'
       ExplicitWidth = 172
     end
@@ -115,6 +116,9 @@ inherited FrmEnviarParaContabilidade: TFrmEnviarParaContabilidade
     end
   end
   inherited pnlCentro: TPanel
+    inherited lblAnexo: TLabel
+      Width = 364
+    end
     inherited pnlPara: TPanel
       inherited lbledtPara: TLabeledEdit
         Top = 24

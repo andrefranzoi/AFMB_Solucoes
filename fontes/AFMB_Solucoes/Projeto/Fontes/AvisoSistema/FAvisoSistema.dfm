@@ -92,8 +92,8 @@ object FrmAvisoSistema: TFrmAvisoSistema
     object LblBarraTitulo: TLabel
       Left = 1
       Top = 1
-      Width = 564
-      Height = 38
+      Width = 159
+      Height = 23
       Align = alClient
       Alignment = taCenter
       Caption = 'Usu'#225'rio(a), aten'#231#227'o:'
@@ -107,8 +107,6 @@ object FrmAvisoSistema: TFrmAvisoSistema
       ParentFont = False
       Transparent = True
       Layout = tlCenter
-      ExplicitWidth = 159
-      ExplicitHeight = 23
     end
   end
 end

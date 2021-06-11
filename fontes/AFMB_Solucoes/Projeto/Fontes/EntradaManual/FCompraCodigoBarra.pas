@@ -1,38 +1,37 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
-
 
 unit FCompraCodigoBarra;
 
@@ -40,8 +39,8 @@ interface
 
 uses
    Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-   Dialogs, StdCtrls, ExtCtrls,  db, Buttons, jpeg, ISFEdit, ISFEditbtn,
-  ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos;
+   Dialogs, StdCtrls, ExtCtrls, db, Buttons, jpeg, ISFEdit, ISFEditbtn,
+   ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos;
 
 type
    TFrmCompraCodigoBarra = class(TForm)
@@ -51,7 +50,7 @@ type
       PainelMsg: TPanel;
       EditQtde: TLabeledEdit;
       Panel1: TPanel;
-    dbProcurarFichaTecnica: TIDBEditDialog;
+      dbProcurarFichaTecnica: TIDBEditDialog;
       procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure FormCreate(Sender: TObject);
@@ -76,7 +75,7 @@ var
 implementation
 
 uses Biblioteca, Global, FComprasImprimir, FProdutos, FCompraEntrada,
-  App.Funcoes;
+   App.Funcoes;
 
 {$R *.dfm}
 
@@ -132,7 +131,8 @@ begin
    IF Key = VK_F8 Then
    begin
       if dbProcurarFichaTecnica.Execute then
-         Edit_produto.text := dbProcurarFichaTecnica.ResultFieldAsString('REFERENCIA');
+         Edit_produto.text := dbProcurarFichaTecnica.ResultFieldAsString
+           ('REFERENCIA');
    end;
 
 end;
@@ -156,7 +156,7 @@ begin
 
    Edit_produto.text := '';
    Achar[99] := '+'; // irá adicionar o item na lista
-   ViaLeitor := False;
+   ViaLeitor := false;
 
    lbl_atalhos.Caption :=
      '<F1>-Ajuda     -     <F5>-Automático     -     <F6>-Manual     -     <ESC>-Sair'
@@ -181,7 +181,8 @@ begin
          exit;
 
       FrmCompraEntrada.DB_Estoque.close;
-      FrmCompraEntrada.DB_Estoque.ParamByName('REFERENCIA').AsString :=  Edit_produto.text;
+      FrmCompraEntrada.DB_Estoque.ParamByName('REFERENCIA').AsString :=
+        Edit_produto.text;
       FrmCompraEntrada.DB_Estoque.open;
 
       if FrmCompraEntrada.DB_Estoque.recordcount < 1 then
@@ -194,20 +195,26 @@ begin
       FrmCompraEntrada.DB_Estoque.First;
 
       // checar se exite
-      if FrmCompraEntrada.db_ComprasItens.Locate('PRODUTO', wTexto[99], [])
-        = True then
+      if FrmCompraEntrada.db_ComprasItens.Locate('PRODUTO', wTexto[99], []) = True
+      then
       begin
          FrmCompraEntrada.db_ComprasItens.Edit;
       end
       else
       begin
          FrmCompraEntrada.db_ComprasItens.Append;
-         FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=    Edit_produto.text;
-         FrmCompraEntrada.db_ComprasItens.FieldByName('DESCRICAO').AsString :=  FrmCompraEntrada.DB_Estoque.FieldByName('DESCRICAO').AsString;
-         FrmCompraEntrada.db_ComprasItens.FieldByName('UND').AsString :=        FrmCompraEntrada.DB_Estoque.FieldByName('UNIDADE').AsString;
-         FrmCompraEntrada.db_ComprasItens.FieldByName('ICMS').AsFloat :=        FrmCompraEntrada.DB_Estoque.FieldByName('ICMS').AsFloat;
-         FrmCompraEntrada.db_ComprasItens.FieldByName('IPI').AsFloat :=         FrmCompraEntrada.DB_Estoque.FieldByName('IPI').AsFloat;
-         FrmCompraEntrada.db_ComprasItens.FieldByName('VL_UNITARIO').AsFloat := FrmCompraEntrada.DB_Estoque.FieldByName('PRC_CUSTO').AsFloat;
+         FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
+           Edit_produto.text;
+         FrmCompraEntrada.db_ComprasItens.FieldByName('DESCRICAO').AsString :=
+           FrmCompraEntrada.DB_Estoque.FieldByName('DESCRICAO').AsString;
+         FrmCompraEntrada.db_ComprasItens.FieldByName('UND').AsString :=
+           FrmCompraEntrada.DB_Estoque.FieldByName('UNIDADE').AsString;
+         FrmCompraEntrada.db_ComprasItens.FieldByName('ICMS').AsFloat :=
+           FrmCompraEntrada.DB_Estoque.FieldByName('ICMS').AsFloat;
+         FrmCompraEntrada.db_ComprasItens.FieldByName('IPI').AsFloat :=
+           FrmCompraEntrada.DB_Estoque.FieldByName('IPI').AsFloat;
+         FrmCompraEntrada.db_ComprasItens.FieldByName('VL_UNITARIO').AsFloat :=
+           FrmCompraEntrada.DB_Estoque.FieldByName('PRC_CUSTO').AsFloat;
       end;
 
       // se for informado via leitor
@@ -219,16 +226,18 @@ begin
          begin
             FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
               wTexto[99];
-            FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat :=
-              FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat + 1;
+            FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat
+              := FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
+              .AsFloat + 1;
          End;
 
          If Achar[99] = '-' then
          begin
             FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
               wTexto[99];
-            FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat :=
-              FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat - 1;
+            FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat
+              := FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
+              .AsFloat - 1;
 
             if FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
               .AsFloat < 0 then
@@ -263,49 +272,50 @@ begin
 
    if Key = #13 then
    begin
-     try
-        // testar se é valor valido
-        if TestNumero(EditQtde.text) = false then
-        begin
-           Informar('O campo quantidade não é um valor válido');
-           EditQtde.setfocus;
-        end;
+      try
+         // testar se é valor valido
+         if TestNumero(EditQtde.text) = false then
+         begin
+            Informar('O campo quantidade não é um valor válido');
+            EditQtde.setfocus;
+         end;
 
-        // irá adicionar o item na lista
-        If Achar[99] = '+' then
-        begin
-           FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
-             wTexto[99];
-           FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat :=
-             FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat +
-             StrToFloat(EditQtde.text);
-        End;
+         // irá adicionar o item na lista
+         If Achar[99] = '+' then
+         begin
+            FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
+              wTexto[99];
+            FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat
+              := FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
+              .AsFloat + StrToFloat(EditQtde.text);
+         End;
 
-        If Achar[99] = '-' then
-        begin
-           FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
-             wTexto[99];
-           FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat :=
-             FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat -
-             StrToFloat(EditQtde.text);
+         If Achar[99] = '-' then
+         begin
+            FrmCompraEntrada.db_ComprasItens.FieldByName('PRODUTO').AsString :=
+              wTexto[99];
+            FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat
+              := FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
+              .AsFloat - StrToFloat(EditQtde.text);
 
-           if FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
-             .AsFloat < 0 then
-              FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE').AsFloat := 0;
-        End;
+            if FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
+              .AsFloat < 0 then
+               FrmCompraEntrada.db_ComprasItens.FieldByName('QUANTIDADE')
+                 .AsFloat := 0;
+         End;
 
-        // salvar
-        If (FrmCompraEntrada.db_ComprasItens.State in [dsedit, dsinsert]) then
-        Begin
-           FrmCompraEntrada.db_ComprasItens.post;
-        end;
+         // salvar
+         If (FrmCompraEntrada.db_ComprasItens.State in [dsedit, dsinsert]) then
+         Begin
+            FrmCompraEntrada.db_ComprasItens.post;
+         end;
 
-        Edit_produto.text := '';
-        EditQtde.text := '';
-        FrmCompraEntrada.DB_Estoque.close;
-     finally
-       Edit_produto.SetFocus;
-     end;
+         Edit_produto.text := '';
+         EditQtde.text := '';
+         FrmCompraEntrada.DB_Estoque.close;
+      finally
+         Edit_produto.setfocus;
+      end;
 
    End;
 
@@ -313,7 +323,7 @@ end;
 
 procedure TFrmCompraCodigoBarra.EditQtdeExit(Sender: TObject);
 begin
-  EditQtde.text := IntToStr( StrToIntDef(EditQtde.text,0) );
+   EditQtde.text := IntToStr(StrToIntDef(EditQtde.text, 0));
 end;
 
 end.

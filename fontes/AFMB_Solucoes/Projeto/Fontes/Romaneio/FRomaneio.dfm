@@ -257,7 +257,8 @@ object FrmRomaneio: TFrmRomaneio
       ExplicitWidth = 541
     end
     inherited LblBarraTitulo: TLabel
-      Width = 664
+      Width = 182
+      Height = 23
       Caption = 'Relat'#243'rio de Embarque'
       ExplicitWidth = 182
     end

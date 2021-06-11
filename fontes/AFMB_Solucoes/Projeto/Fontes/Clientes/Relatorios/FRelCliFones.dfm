@@ -279,7 +279,7 @@ object FrmRelCliFones: TFrmRelCliFones
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        81.579861111111100000
+        81.579861111111120000
         1957.916666666667000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

@@ -1,36 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 Unit FPlanoContas;
@@ -39,13 +39,13 @@ interface
 
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-   Buttons, ExtCtrls, StdCtrls, Menus, Mask, DBCtrls, DB,  Grids,
+   Buttons, ExtCtrls, StdCtrls, Menus, Mask, DBCtrls, DB, Grids,
    DBGrids, ComCtrls, FFrameBarra,
-   FFrameBotoes,  ISFEdit, ISFEditbtn, ISFdbEditbtn, IDBEdit,
-  uEstSearchDialogZeos, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+   FFrameBotoes, ISFEdit, ISFEditbtn, ISFdbEditbtn, IDBEdit,
+   uEstSearchDialogZeos, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+   FireDAC.Comp.Client;
 
 type
    TFrmPlanoContas = class(TForm)
@@ -73,15 +73,15 @@ type
       db_PlanoChecar: TFDQuery;
       DB_PlanoClassesVALOR_ACUMULADO: TFloatField;
       FrmFrameBarra1: TFrmFrameBarra;
-    DB_PlanoClassesCODIGO: TStringField;
-    DB_PlanoDetalhesCODIGO: TStringField;
-    DB_PlanoDetalhesCODIGO_PLANO: TStringField;
-    DB_PlanoDetalhesNOME: TStringField;
-    DB_PlanoDetalhesTIPO: TStringField;
-    DB_PlanoDetalhesLIMITE: TFloatField;
-    FrmFrameBotoes1: TFrmFrameBotoes;
-    dbEditPesquisar: TIDBEditDialog;
-    dbEditPesquisarDetalhe: TIDBEditDialog;
+      DB_PlanoClassesCODIGO: TStringField;
+      DB_PlanoDetalhesCODIGO: TStringField;
+      DB_PlanoDetalhesCODIGO_PLANO: TStringField;
+      DB_PlanoDetalhesNOME: TStringField;
+      DB_PlanoDetalhesTIPO: TStringField;
+      DB_PlanoDetalhesLIMITE: TFloatField;
+      FrmFrameBotoes1: TFrmFrameBotoes;
+      dbEditPesquisar: TIDBEditDialog;
+      dbEditPesquisarDetalhe: TIDBEditDialog;
       procedure FormCreate(Sender: TObject);
       procedure Btn_SairClick(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -96,10 +96,10 @@ type
       procedure FrmFrameBotoes1SpbCancelarClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbProcurarClick(Sender: TObject);
       procedure DB_PlanoDetalhesNewRecord(DataSet: TDataSet);
-    procedure FrmFrameBotoes1SpbExcluirClick(Sender: TObject);
-    procedure FrmFrameBotoes1SpbSairClick(Sender: TObject);
-    procedure DBGridDetalhesKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
+      procedure FrmFrameBotoes1SpbExcluirClick(Sender: TObject);
+      procedure FrmFrameBotoes1SpbSairClick(Sender: TObject);
+      procedure DBGridDetalhesKeyDown(Sender: TObject; var Key: Word;
+        Shift: TShiftState);
 
    private
       { Private declarations }
@@ -147,7 +147,7 @@ end;
 
 procedure TFrmPlanoContas.FrmFrameBotoes1SpbExcluirClick(Sender: TObject);
 begin
-  FrmFrameBotoes1.SpbExcluirClick(Sender);
+   FrmFrameBotoes1.SpbExcluirClick(Sender);
 
 end;
 
@@ -155,13 +155,14 @@ procedure TFrmPlanoContas.FrmFrameBotoes1SpbProcurarClick(Sender: TObject);
 begin
    if dbEditPesquisar.Execute then
    begin
-      DB_PlanoClasses.Locate('CODIGO', dbEditPesquisar.ResultFieldAsInteger('CODIGO'), []);
+      DB_PlanoClasses.Locate('CODIGO',
+        dbEditPesquisar.ResultFieldAsInteger('CODIGO'), []);
    end;
 end;
 
 procedure TFrmPlanoContas.FrmFrameBotoes1SpbSairClick(Sender: TObject);
 begin
-  FrmFrameBotoes1.SpbSairClick(Sender);
+   FrmFrameBotoes1.SpbSairClick(Sender);
 
 end;
 
@@ -280,12 +281,13 @@ end;
 procedure TFrmPlanoContas.DBGridDetalhesKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-   if key=vk_f8 then
+   if Key = vk_f8 then
    begin
-     if dbEditPesquisar.Execute then
-     begin
-        DB_PlanoDetalhes.Locate('CODIGO_PLANO', dbEditPesquisar.ResultFieldAsString('CODIGO_PLANO'), []);
-     end;
+      if dbEditPesquisar.Execute then
+      begin
+         DB_PlanoDetalhes.Locate('CODIGO_PLANO',
+           dbEditPesquisar.ResultFieldAsString('CODIGO_PLANO'), []);
+      end;
    end;
 end;
 

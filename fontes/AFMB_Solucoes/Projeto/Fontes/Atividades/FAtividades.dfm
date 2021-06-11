@@ -6,27 +6,20 @@ inherited FrmAtividades: TFrmAtividades
   PixelsPerInch = 96
   TextHeight = 15
   inherited FrmFrameBarra1: TFrmFrameBarra
-    Height = 50
-    ExplicitHeight = 50
     inherited Image3: TImage
-      Height = 50
       ExplicitHeight = 53
     end
     inherited pnTitulo: TPanel
-      Height = 44
       ExplicitHeight = 47
       inherited LblBarraTitulo: TLabel
-        Height = 34
         Caption = 'Ramo de Atividade'
         ExplicitWidth = 193
         ExplicitHeight = 37
       end
       inherited Image1: TImage
-        Height = 34
         ExplicitHeight = 37
       end
       inherited Image2: TImage
-        Height = 34
         ExplicitLeft = 862
         ExplicitHeight = 37
       end
@@ -91,7 +84,6 @@ inherited FrmAtividades: TFrmAtividades
       end>
   end
   inherited pgControl: TPageControl
-    Top = 50
     Height = 319
     ExplicitTop = 53
     ExplicitHeight = 316

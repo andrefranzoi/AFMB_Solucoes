@@ -6,24 +6,21 @@ inherited FrmDepartamentos: TFrmDepartamentos
   PixelsPerInch = 96
   TextHeight = 15
   inherited FrmFrameBarra1: TFrmFrameBarra
-    Height = 50
-    Constraints.MinHeight = 50
-    ExplicitHeight = 50
     inherited Image3: TImage
-      Height = 50
+      ExplicitHeight = 50
     end
     inherited pnTitulo: TPanel
-      Height = 44
+      ExplicitHeight = 44
       inherited LblBarraTitulo: TLabel
-        Height = 34
         Caption = 'Cadastro de Centro de Custos'
         ExplicitWidth = 304
+        ExplicitHeight = 34
       end
       inherited Image1: TImage
-        Height = 34
+        ExplicitHeight = 34
       end
       inherited Image2: TImage
-        Height = 34
+        ExplicitHeight = 34
       end
     end
   end
@@ -63,8 +60,8 @@ inherited FrmDepartamentos: TFrmDepartamentos
       end>
   end
   inherited pgControl: TPageControl
-    Top = 50
     Height = 319
+    ExplicitTop = 50
     ExplicitHeight = 336
     inherited tabPrincipal: TTabSheet
       ExplicitHeight = 306

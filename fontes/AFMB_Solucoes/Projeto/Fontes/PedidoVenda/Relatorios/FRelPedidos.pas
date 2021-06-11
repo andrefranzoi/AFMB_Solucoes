@@ -1,16 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FRelPedidos;
@@ -19,12 +39,12 @@ interface
 
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-   Buttons, ExtCtrls, StdCtrls, Mask,  FrmRelatorios, ISFEdit,
+   Buttons, ExtCtrls, StdCtrls, Mask, FrmRelatorios, ISFEdit,
    ISFEditbtn, ISFdbEditbtn, uEstSearchDialogZeos, IDBEdit, frxClass, frxDBSet,
-  DB,  FireDAC.Comp.Client, Spin, Classe.Global, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
-  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet;
+   DB, FireDAC.Comp.Client, Spin, Classe.Global, FireDAC.Stan.Intf,
+   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+   FireDAC.Comp.DataSet;
 
 type
    TFrmRelPedidos = class(TForm)
@@ -37,29 +57,29 @@ type
       Panel2: TPanel;
       RadioG_Ordem: TRadioGroup;
       RdPedidos: TRadioGroup;
-    FrameRelatorios1: TFrameRelatorios;
-    QryComissaoPedido: TFDQuery;
-    fsd_ComissaoPedidos: TfrxDBDataset;
-    GroupBox1: TGroupBox;
-    EditClienteNome: TEdit;
-    EditCliente: TIDBEditDialog;
-    chkCliente: TCheckBox;
-    fsr_ComissaoPedidos: TfrxReport;
-    EditNomeVendedor: TEdit;
-    EditVendedor: TIDBEditDialog;
-    chkRepres: TCheckBox;
-    Panel3: TPanel;
-    RadioG: TRadioGroup;
-    fsd_Pedidos: TfrxDBDataset;
-    QryPedido: TFDQuery;
-    fsr_Pedidos: TfrxReport;
-    GrpProduto: TGroupBox;
-    PainelProdutos: TPanel;
-    EditProduto: TIDBEditDialog;
-    chk_Referencia: TCheckBox;
-    RdgFiltro: TRadioGroup;
-    Btn_Imprimir: TBitBtn;
-    BtnSair: TBitBtn;
+      FrameRelatorios1: TFrameRelatorios;
+      QryComissaoPedido: TFDQuery;
+      fsd_ComissaoPedidos: TfrxDBDataset;
+      GroupBox1: TGroupBox;
+      EditClienteNome: TEdit;
+      EditCliente: TIDBEditDialog;
+      chkCliente: TCheckBox;
+      fsr_ComissaoPedidos: TfrxReport;
+      EditNomeVendedor: TEdit;
+      EditVendedor: TIDBEditDialog;
+      chkRepres: TCheckBox;
+      Panel3: TPanel;
+      RadioG: TRadioGroup;
+      fsd_Pedidos: TfrxDBDataset;
+      QryPedido: TFDQuery;
+      fsr_Pedidos: TfrxReport;
+      GrpProduto: TGroupBox;
+      PainelProdutos: TPanel;
+      EditProduto: TIDBEditDialog;
+      chk_Referencia: TCheckBox;
+      RdgFiltro: TRadioGroup;
+      Btn_Imprimir: TBitBtn;
+      BtnSair: TBitBtn;
       procedure Btn_SairClick(Sender: TObject);
       procedure FormCreate(Sender: TObject);
       procedure MskDataIniExit(Sender: TObject);
@@ -69,14 +89,14 @@ type
       procedure EditMarcaKeyPress(Sender: TObject; var Key: Char);
       procedure DCodClienteKeyPress(Sender: TObject; var Key: Char);
       procedure RadioGClick(Sender: TObject);
-    procedure chkClienteClick(Sender: TObject);
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure BtnSairClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure chk_ReferenciaClick(Sender: TObject);
+      procedure chkClienteClick(Sender: TObject);
+      procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure BtnSairClick(Sender: TObject);
+      procedure FormClose(Sender: TObject; var Action: TCloseAction);
+      procedure chk_ReferenciaClick(Sender: TObject);
 
    private
-    procedure ScriptPedido;
+      procedure ScriptPedido;
       { Private declarations }
    public
       { Public declarations }
@@ -112,7 +132,7 @@ end;
 
 procedure TFrmRelPedidos.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  Action := Cafree;
+   Action := Cafree;
 end;
 
 procedure TFrmRelPedidos.FormCreate(Sender: TObject);
@@ -143,14 +163,14 @@ end;
 
 procedure TFrmRelPedidos.BtnSairClick(Sender: TObject);
 begin
-   close;
+   Close;
 end;
 
 procedure TFrmRelPedidos.Btn_ImprimirClick(Sender: TObject);
 begin
-   dtDataIni           := StrToDate(MskDataIni.text);
-   dtDataFim           := StrToDate(MskDataFim.text);
-   strVendedor        := Trim(EditVendedor.text);
+   dtDataIni := StrToDate(MskDataIni.Text);
+   dtDataFim := StrToDate(MskDataFim.Text);
+   strVendedor := Trim(EditVendedor.Text);
 
    // por Data de Entrega
    If RadioG_Ordem.ItemIndex = 0 then
@@ -181,153 +201,194 @@ begin
       strOrdemDados := 'VENDEDOR_NOME, DATA ';
    End;
 
-  ScriptPedido;
-  try
-    case RadioG.ItemIndex of
-      0: begin
-           QryPedido.Open;
-           fsr_Pedidos.ShowReport;
-          end;
-      1: begin
-           QryComissaoPedido.Open;
-           fsr_ComissaoPedidos.ShowReport;
-         end;
-    end;
-  finally
-    QryPedido.Close;
-    QryComissaoPedido.Close;
-    MsgEsperar('','',False);
-  end;
+   ScriptPedido;
+   try
+      case RadioG.ItemIndex of
+         0:
+            begin
+               QryPedido.Open;
+               fsr_Pedidos.ShowReport;
+            end;
+         1:
+            begin
+               QryComissaoPedido.Open;
+               fsr_ComissaoPedidos.ShowReport;
+            end;
+      end;
+   finally
+      QryPedido.Close;
+      QryComissaoPedido.Close;
+      MsgEsperar('', '', False);
+   end;
 
 End;
 
 Procedure TFrmRelPedidos.ScriptPedido;
 begin
-//
+   //
 
    case RadioG.ItemIndex of
 
-      0:Begin
-
-         fsr_Pedidos.Variables['rptParametro'] := '';
-
-         QryPedido.close;
-         QryPedido.sql.clear;
-         QryPedido.sql.add('SELECT * FROM VIEW_PEDIDOSVENDAS');
-         QryPedido.sql.add('WHERE');
-         QryPedido.sql.add('EMPRESA='+FSistema.Empresa.ToString);
-
-         case RdgFiltro.ItemIndex of
-           0 : QryPedido.sql.add('  AND DATA>=:DATA1 AND DATA<=:DATA2');
-           1 : QryPedido.sql.add('  AND DATA_ENTREGA>=:DATA1 AND DATA_ENTREGA<=:DATA2');
-           2 : QryPedido.sql.add('  AND DATA_FATURAMENTO>=:DATA1 AND DATA_FATURAMENTO<=:DATA2');
-         end;
-
-         if not chkCliente.Checked then
+      0:
          Begin
-            QryPedido.sql.add('AND CLIENTE=:CLIENTE');
-            QryPedido.ParamByName('CLIENTE').AsInteger :=        StrToIntDef(Trim(EditCliente.Text),0);
-         End;
 
-         if not chkRepres.Checked then
+            fsr_Pedidos.Variables['rptParametro'] := '';
+
+            QryPedido.Close;
+            QryPedido.SQL.clear;
+            QryPedido.SQL.add('SELECT * FROM VIEW_PEDIDOSVENDAS');
+            QryPedido.SQL.add('WHERE');
+            QryPedido.SQL.add('EMPRESA=' + FSistema.Empresa.ToString);
+
+            case RdgFiltro.ItemIndex of
+               0:
+                  QryPedido.SQL.add('  AND DATA>=:DATA1 AND DATA<=:DATA2');
+               1:
+                  QryPedido.SQL.add
+                    ('  AND DATA_ENTREGA>=:DATA1 AND DATA_ENTREGA<=:DATA2');
+               2:
+                  QryPedido.SQL.add
+                    ('  AND DATA_FATURAMENTO>=:DATA1 AND DATA_FATURAMENTO<=:DATA2');
+            end;
+
+            if not chkCliente.Checked then
+            Begin
+               QryPedido.SQL.add('AND CLIENTE=:CLIENTE');
+               QryPedido.ParamByName('CLIENTE').AsInteger :=
+                 StrToIntDef(Trim(EditCliente.Text), 0);
+            End;
+
+            if not chkRepres.Checked then
+            Begin
+               QryPedido.SQL.add('AND VENDEDOR=:VENDEDOR');
+               QryPedido.ParamByName('VENDEDOR').AsInteger :=
+                 StrToIntDef(strVendedor, 0);
+            End;
+
+            if RdPedidos.ItemIndex = 0 then
+               fsr_Pedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Todos os Pedidos)');
+
+            if RdPedidos.ItemIndex = 1 then
+            Begin
+               fsr_Pedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Não Aprovados)');
+               QryPedido.SQL.add('AND  APROVADO IN (''N'')');
+            End;
+
+            if RdPedidos.ItemIndex = 2 then
+            Begin
+               fsr_Pedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Aprovados)');
+               QryPedido.SQL.add('AND  APROVADO IN (''S'')');
+            End;
+
+            if RdPedidos.ItemIndex = 3 then
+            Begin
+               fsr_Pedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Faturados)');
+               QryPedido.SQL.add('AND  STATUS IN (''S'')');
+               QryPedido.SQL.add('AND  APROVADO IN (''S'')');
+            End;
+
+            if RdPedidos.ItemIndex = 4 then
+            Begin
+               fsr_Pedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Não Faturados)');
+               QryPedido.SQL.add('AND  STATUS IN (''N'')');
+            End;
+
+            QryPedido.SQL.add(' ORDER BY ' + strOrdemDados);
+
+            QryPedido.ParamByName('DATA1').AsDateTime := dtDataIni;
+            QryPedido.ParamByName('DATA2').AsDateTime := dtDataFim;
+
+         End;
+      1:
          Begin
-            QryPedido.sql.add('AND VENDEDOR=:VENDEDOR');
-            QryPedido.ParamByName('VENDEDOR').AsInteger :=       StrToIntDef(strVendedor,0);
+            fsr_ComissaoPedidos.Variables['rptParametro'] := '';
+
+            QryComissaoPedido.Close;
+            QryComissaoPedido.SQL.clear;
+            QryComissaoPedido.SQL.add('SELECT * FROM VIEW_PEDIDOSCOMISSAO');
+            QryComissaoPedido.SQL.add('WHERE');
+            QryComissaoPedido.SQL.add('EMPRESA=' + FSistema.Empresa.ToString);
+            QryComissaoPedido.SQL.add
+              ('AND DATAFATURAMENTO>=:DATA1 AND DATAFATURAMENTO<=:DATA2    ');
+            if not chkCliente.Checked then
+            Begin
+               QryComissaoPedido.SQL.add('AND CLIENTE=:CLIENTE');
+               QryComissaoPedido.ParamByName('CLIENTE').AsInteger :=
+                 StrToIntDef(Trim(EditCliente.Text), 0);
+            End;
+
+            if not chkRepres.Checked then
+            Begin
+               QryComissaoPedido.SQL.add('AND VENDEDOR=:VENDEDOR');
+               QryComissaoPedido.ParamByName('VENDEDOR').AsInteger :=
+                 StrToIntDef(strVendedor, 0);
+            End;
+
+            if RdPedidos.ItemIndex = 0 then
+               fsr_ComissaoPedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Todos os Pedidos)');
+
+            if RdPedidos.ItemIndex = 1 then
+            Begin
+               fsr_ComissaoPedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Não Aprovados)');
+               QryComissaoPedido.SQL.add('AND  APROVADO  IN (''N'')');
+            End;
+
+            if RdPedidos.ItemIndex = 2 then
+            Begin
+               fsr_ComissaoPedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Aprovados)');
+               QryComissaoPedido.SQL.add('AND  APROVADO IN (''S'')');
+            End;
+
+            if RdPedidos.ItemIndex = 3 then
+            Begin
+               fsr_ComissaoPedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Faturados)');
+               QryComissaoPedido.SQL.add('AND  STATUS IN (''S'')');
+            End;
+
+            if RdPedidos.ItemIndex = 4 then
+            Begin
+               fsr_ComissaoPedidos.Variables['rptParametro'] :=
+                 QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' +
+                 MskDataIni.Text + '  -  ' + MskDataFim.Text +
+                 ' - (Não Faturados)');
+               QryComissaoPedido.SQL.add('AND  STATUS IN (''N'')');
+            End;
+
+            QryComissaoPedido.SQL.add('ORDER BY VENDEDORNOME, CLIENTE_NOME');
+            QryComissaoPedido.ParamByName('DATA1').AsDateTime := dtDataIni;
+            QryComissaoPedido.ParamByName('DATA2').AsDateTime := dtDataFim;
+
          End;
-
-         if RdPedidos.ItemIndex = 0 then
-            fsr_Pedidos.Variables['rptParametro'] := QuotedStr (RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Todos os Pedidos)');
-
-         if RdPedidos.ItemIndex = 1 then
-         Begin
-            fsr_Pedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Não Aprovados)');
-            QryPedido.sql.add('AND  APROVADO IN (''N'')');
-         End;
-
-         if RdPedidos.ItemIndex = 2 then
-         Begin
-            fsr_Pedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Aprovados)');
-            QryPedido.sql.add('AND  APROVADO IN (''S'')');
-         End;
-
-         if RdPedidos.ItemIndex = 3 then
-         Begin
-            fsr_Pedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Faturados)');
-            QryPedido.sql.add('AND  STATUS IN (''S'')');
-            QryPedido.sql.add('AND  APROVADO IN (''S'')');
-         End;
-
-
-         if RdPedidos.ItemIndex = 4 then
-         Begin
-            fsr_Pedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Não Faturados)');
-            QryPedido.sql.add('AND  STATUS IN (''N'')');
-         End;
-
-        QryPedido.sql.add(' ORDER BY '+strOrdemDados);
-
-         QryPedido.ParamByName('DATA1').AsDateTime := dtDataIni;
-         QryPedido.ParamByName('DATA2').AsDateTime := dtDataFim;
-
-       End;
-      1:Begin
-         fsr_ComissaoPedidos.Variables['rptParametro'] := '';
-
-         QryComissaoPedido.close;
-         QryComissaoPedido.sql.clear;
-         QryComissaoPedido.sql.add('SELECT * FROM VIEW_PEDIDOSCOMISSAO');
-         QryComissaoPedido.sql.add('WHERE');
-         QryComissaoPedido.sql.add('EMPRESA='+FSistema.Empresa.ToString);
-         QryComissaoPedido.sql.add('AND DATAFATURAMENTO>=:DATA1 AND DATAFATURAMENTO<=:DATA2    ');
-         if not chkCliente.Checked then
-         Begin
-            QryComissaoPedido.sql.add('AND CLIENTE=:CLIENTE');
-            QryComissaoPedido.ParamByName('CLIENTE').AsInteger :=        StrToIntDef(Trim(EditCliente.Text),0);
-         End;
-
-         if not chkRepres.Checked then
-         Begin
-            QryComissaoPedido.sql.add('AND VENDEDOR=:VENDEDOR');
-            QryComissaoPedido.ParamByName('VENDEDOR').AsInteger :=       StrToIntDef(strVendedor,0);
-         End;
-
-         if RdPedidos.ItemIndex = 0 then
-            fsr_ComissaoPedidos.Variables['rptParametro'] := QuotedStr (RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Todos os Pedidos)');
-
-         if RdPedidos.ItemIndex = 1 then
-         Begin
-            fsr_ComissaoPedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Não Aprovados)');
-            QryComissaoPedido.sql.add('AND  APROVADO  IN (''N'')');
-         End;
-
-         if RdPedidos.ItemIndex = 2 then
-         Begin
-            fsr_ComissaoPedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Aprovados)');
-            QryComissaoPedido.sql.add('AND  APROVADO IN (''S'')');
-         End;
-
-         if RdPedidos.ItemIndex = 3 then
-         Begin
-            fsr_ComissaoPedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Faturados)');
-            QryComissaoPedido.sql.add('AND  STATUS IN (''S'')');
-         End;
-
-         if RdPedidos.ItemIndex = 4 then
-         Begin
-            fsr_ComissaoPedidos.Variables['rptParametro'] := QuotedStr(RdgFiltro.Items.Strings[RdgFiltro.ItemIndex] + ': ' + MskDataIni.Text + '  -  ' + MskDataFim.Text + ' - (Não Faturados)');
-            QryComissaoPedido.sql.add('AND  STATUS IN (''N'')');
-         End;
-
-         QryComissaoPedido.sql.add('ORDER BY VENDEDORNOME, CLIENTE_NOME');
-         QryComissaoPedido.ParamByName('DATA1').AsDateTime := dtDataIni;
-         QryComissaoPedido.ParamByName('DATA2').AsDateTime := dtDataFim;
-
-      End;
    end;
 
-
 end;
-
 
 procedure TFrmRelPedidos.chkRepresClick(Sender: TObject);
 begin
@@ -354,7 +415,7 @@ begin
    end
    else
    begin
-     PainelProdutos.Enabled := True;
+      PainelProdutos.Enabled := true;
    end;
 end;
 
@@ -387,9 +448,9 @@ begin
    TRadioGroup(RdPedidos.Controls[3]).Enabled := true;
 
    If RadioG.ItemIndex = 7 then
-      RdPedidos.ItemIndex :=3
+      RdPedidos.ItemIndex := 3
    else
-      RdPedidos.ItemIndex :=0;
+      RdPedidos.ItemIndex := 0;
 
    If (RadioG.ItemIndex = 1) then
    Begin

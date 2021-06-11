@@ -243,6 +243,10 @@ object FrmFornecedores: TFrmFornecedores
     TabOrder = 3
     object TabDados: TTabSheet
       Caption = 'Dados Gerais'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0

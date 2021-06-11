@@ -30,6 +30,10 @@ object FrmCFOP: TFrmCFOP
     TabOrder = 0
     object Tab_Principal: TTabSheet
       Caption = 'Registros'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object cxGrid: TcxGrid
         Left = 0
         Top = 0
@@ -73,6 +77,10 @@ object FrmCFOP: TFrmCFOP
     object Tab_Editar: TTabSheet
       Caption = 'Editar'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 1
         Top = 8

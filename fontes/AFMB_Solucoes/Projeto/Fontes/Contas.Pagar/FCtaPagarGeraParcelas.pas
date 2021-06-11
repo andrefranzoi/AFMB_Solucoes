@@ -1,38 +1,37 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
-
 
 unit FCtaPagarGeraParcelas;
 
@@ -40,12 +39,12 @@ interface
 
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-   Db, Grids, DBGrids, Buttons, StdCtrls, Mask, DBCtrls, ExtCtrls,  
-   variants, 
-    ISFEdit, ISFEditbtn, ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos,
-    FFrameBarra, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+   Db, Grids, DBGrids, Buttons, StdCtrls, Mask, DBCtrls, ExtCtrls,
+   variants,
+   ISFEdit, ISFEditbtn, ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos,
+   FFrameBarra, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
    TFrmCtaPagarGeraParcelas = class(TForm)
@@ -79,50 +78,50 @@ type
       EditDepto: TIDBEditDialog;
       EditFornecedor: TIDBEditDialog;
       EditNomeCliente: TEdit;
-    db_CtaPagarCODIGO: TIntegerField;
-    db_CtaPagarFORNECEDOR: TIntegerField;
-    db_CtaPagarFORNECEDOR_NOME: TStringField;
-    db_CtaPagarNOTAFISCAL: TIntegerField;
-    db_CtaPagarSERIENF: TStringField;
-    db_CtaPagarDATA: TSQLTimeStampField;
-    db_CtaPagarVENCIMENTO: TSQLTimeStampField;
-    db_CtaPagarDATA_PAGTO: TSQLTimeStampField;
-    db_CtaPagarDOCUMENTO: TStringField;
-    db_CtaPagarREMESSA: TIntegerField;
-    db_CtaPagarPARCELA: TIntegerField;
-    db_CtaPagarCFOP: TIntegerField;
-    db_CtaPagarESPECIE: TStringField;
-    db_CtaPagarTIPO: TStringField;
-    db_CtaPagarVALOR: TFloatField;
-    db_CtaPagarVALOR_PAGO: TFloatField;
-    db_CtaPagarVALOR_SALDO: TFloatField;
-    db_CtaPagarCONTA_CREDITO: TIntegerField;
-    db_CtaPagarCHQ_BANCO: TStringField;
-    db_CtaPagarCHQ_AGENCIA: TStringField;
-    db_CtaPagarCHQ_CONTA_CORRENTE: TStringField;
-    db_CtaPagarCHQ_CODCIDADE: TStringField;
-    db_CtaPagarCHQ_NOMECIDADE_UF: TStringField;
-    db_CtaPagarCHQ_EMITENTE: TStringField;
-    db_CtaPagarCHQ_DESTINO: TStringField;
-    db_CtaPagarFORMA_PAGTO: TIntegerField;
-    db_CtaPagarDEPARTAMENTO: TIntegerField;
-    db_CtaPagarDESCONTO: TFloatField;
-    db_CtaPagarPLANO_CONTAS: TStringField;
-    db_CtaPagarCONTACAIXA: TIntegerField;
-    db_CtaPagarHISTORICO: TStringField;
-    db_CtaPagarOBSERVACAO: TStringField;
-    db_CtaPagarGERARRECIBO: TStringField;
-    db_CtaPagarNOSSONUMERO: TStringField;
-    db_CtaPagarDESPESAS_BOLETO: TFloatField;
-    db_CtaPagarDESPESAS_JUROS: TFloatField;
-    db_CtaPagarDESPESAS_MULTA: TFloatField;
-    db_CtaPagarDESPESAS_CARTORIO: TFloatField;
-    db_CtaPagarDESPESAS_TOTAL: TFloatField;
-    db_CtaPagarATRASADA: TStringField;
-    db_CtaPagarQUITADO: TStringField;
-    db_CtaPagarMOTIVO_BAIXA: TIntegerField;
-    db_CtaPagarCOMPLEMENTAR: TStringField;
-    FrmFrameBarra1: TFrmFrameBarra;
+      db_CtaPagarCODIGO: TIntegerField;
+      db_CtaPagarFORNECEDOR: TIntegerField;
+      db_CtaPagarFORNECEDOR_NOME: TStringField;
+      db_CtaPagarNOTAFISCAL: TIntegerField;
+      db_CtaPagarSERIENF: TStringField;
+      db_CtaPagarDATA: TSQLTimeStampField;
+      db_CtaPagarVENCIMENTO: TSQLTimeStampField;
+      db_CtaPagarDATA_PAGTO: TSQLTimeStampField;
+      db_CtaPagarDOCUMENTO: TStringField;
+      db_CtaPagarREMESSA: TIntegerField;
+      db_CtaPagarPARCELA: TIntegerField;
+      db_CtaPagarCFOP: TIntegerField;
+      db_CtaPagarESPECIE: TStringField;
+      db_CtaPagarTIPO: TStringField;
+      db_CtaPagarVALOR: TFloatField;
+      db_CtaPagarVALOR_PAGO: TFloatField;
+      db_CtaPagarVALOR_SALDO: TFloatField;
+      db_CtaPagarCONTA_CREDITO: TIntegerField;
+      db_CtaPagarCHQ_BANCO: TStringField;
+      db_CtaPagarCHQ_AGENCIA: TStringField;
+      db_CtaPagarCHQ_CONTA_CORRENTE: TStringField;
+      db_CtaPagarCHQ_CODCIDADE: TStringField;
+      db_CtaPagarCHQ_NOMECIDADE_UF: TStringField;
+      db_CtaPagarCHQ_EMITENTE: TStringField;
+      db_CtaPagarCHQ_DESTINO: TStringField;
+      db_CtaPagarFORMA_PAGTO: TIntegerField;
+      db_CtaPagarDEPARTAMENTO: TIntegerField;
+      db_CtaPagarDESCONTO: TFloatField;
+      db_CtaPagarPLANO_CONTAS: TStringField;
+      db_CtaPagarCONTACAIXA: TIntegerField;
+      db_CtaPagarHISTORICO: TStringField;
+      db_CtaPagarOBSERVACAO: TStringField;
+      db_CtaPagarGERARRECIBO: TStringField;
+      db_CtaPagarNOSSONUMERO: TStringField;
+      db_CtaPagarDESPESAS_BOLETO: TFloatField;
+      db_CtaPagarDESPESAS_JUROS: TFloatField;
+      db_CtaPagarDESPESAS_MULTA: TFloatField;
+      db_CtaPagarDESPESAS_CARTORIO: TFloatField;
+      db_CtaPagarDESPESAS_TOTAL: TFloatField;
+      db_CtaPagarATRASADA: TStringField;
+      db_CtaPagarQUITADO: TStringField;
+      db_CtaPagarMOTIVO_BAIXA: TIntegerField;
+      db_CtaPagarCOMPLEMENTAR: TStringField;
+      FrmFrameBarra1: TFrmFrameBarra;
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure bbtn_excluiClick(Sender: TObject);
       procedure BtnGerarClick(Sender: TObject);
@@ -143,7 +142,7 @@ type
       procedure EditDiaFixoExit(Sender: TObject);
       procedure EditDiaFixoEnter(Sender: TObject);
       procedure EditValorTotalEnter(Sender: TObject);
-    procedure FormShow(Sender: TObject);
+      procedure FormShow(Sender: TObject);
 
    private
       { Private declarations }
@@ -160,7 +159,7 @@ var
 
 implementation
 
-uses FPrincipal, App.SQL, Biblioteca, Global,  FCtaPagar;
+uses FPrincipal, App.SQL, Biblioteca, Global, FCtaPagar;
 
 {$R *.DFM}
 
@@ -267,7 +266,7 @@ begin
    end;
 
    db_CtaPagar.close;
-   //db_CtaPagar.ParamByName('NOTAFISCAL').AsInteger := StrToInt(EditDocumento.text);
+   // db_CtaPagar.ParamByName('NOTAFISCAL').AsInteger := StrToInt(EditDocumento.text);
    db_CtaPagar.Open;
 
    // -------------------------------------------------------------------------
@@ -318,9 +317,8 @@ begin
    parc_sc := (int(vlr_parc) * qt_parc); { todas as parcelas sem os centavos }
    vlr_parc := int(vlr_parc); { parcela sem os centavos }
 
-
-   vlr_cent    := tt_nota - (vlr_parc*qt_parc);
-   vlr_cent    := ArrendondarDecimais(vlr_cent);
+   vlr_cent := tt_nota - (vlr_parc * qt_parc);
+   vlr_cent := ArrendondarDecimais(vlr_cent);
 
    // (db_FormaPagto).Locate('FPAGTO',forma,[]);
    parc_atu := 0;
@@ -361,15 +359,17 @@ begin
       db_CtaPagar.Fieldbyname('DATA').AsDateTime := StrToDate(MskDataIni.text);
       db_CtaPagar.Fieldbyname('VENCIMENTO').AsDateTime := dtVencimento;
 
-      if xx<qt_parc Then
+      if xx < qt_parc Then
          db_CtaPagar.Fieldbyname('VALOR').asFloat := vlr_parc
       else
-         db_CtaPagar.FieldByName('VALOR').asFloat   :=             vlr_parc + vlr_cent;
+         db_CtaPagar.Fieldbyname('VALOR').asFloat := vlr_parc + vlr_cent;
 
-
-      db_CtaPagar.Fieldbyname('NOTAFISCAL').asString :=          Alltrim(EditDocumento.text);
-      db_CtaPagar.Fieldbyname('DOCUMENTO').asString :=         Alltrim(EditDocumento.text) + '/' + wTexto[0]; // nº parcela
-      db_CtaPagar.Fieldbyname('FORNECEDOR').asString :=         Alltrim(EditFornecedor.text);
+      db_CtaPagar.Fieldbyname('NOTAFISCAL').asString :=
+        Alltrim(EditDocumento.text);
+      db_CtaPagar.Fieldbyname('DOCUMENTO').asString :=
+        Alltrim(EditDocumento.text) + '/' + wTexto[0]; // nº parcela
+      db_CtaPagar.Fieldbyname('FORNECEDOR').asString :=
+        Alltrim(EditFornecedor.text);
       db_CtaPagar.Fieldbyname('DEPARTAMENTO').asString := Trim(EditDepto.text);
       db_CtaPagar.Fieldbyname('HISTORICO').asString := Trim(EditHistorico.text);
       db_CtaPagar.Fieldbyname('QUITADO').asString := 'N'; // N=NÃO QUITADO
@@ -431,10 +431,9 @@ end;
 procedure TFrmCtaPagarGeraParcelas.FormShow(Sender: TObject);
 begin
 
-   EditFornecedor.Text := '0' ;
-   EditDepto.Text      := '0' ;
-   EditFornecedor.Text := FrmCtaPagar.EditFornecedor.Text ;
-
+   EditFornecedor.text := '0';
+   EditDepto.text := '0';
+   EditFornecedor.text := FrmCtaPagar.EditFornecedor.text;
 
 end;
 
@@ -448,7 +447,7 @@ end;
 procedure TFrmCtaPagarGeraParcelas.db_CtaPagarBeforeOpen(DataSet: TDataSet);
 begin
 
-   //db_CtaPagar.ParamByName('NOTAFISCAL').AsInteger :=  StrToInt(EditDocumento.text);
+   // db_CtaPagar.ParamByName('NOTAFISCAL').AsInteger :=  StrToInt(EditDocumento.text);
 
 end;
 
@@ -470,13 +469,13 @@ end;
 procedure TFrmCtaPagarGeraParcelas.EditDocumentoExit(Sender: TObject);
 begin
    db_CtaPagarBuscar.close;
-   //db_CtaPagarBuscar.ParamByName('NOTAFISCAL').AsInteger :=   StrToInt(EditDocumento.text);
+   // db_CtaPagarBuscar.ParamByName('NOTAFISCAL').AsInteger :=   StrToInt(EditDocumento.text);
    db_CtaPagarBuscar.Open;
 
    if db_CtaPagarBuscar.RecordCount > 0 then
    begin
       db_CtaPagar.close;
-      //db_CtaPagar.ParamByName('NOTAFISCAL').AsInteger :=        StrToInt(EditDocumento.text);
+      // db_CtaPagar.ParamByName('NOTAFISCAL').AsInteger :=        StrToInt(EditDocumento.text);
       db_CtaPagar.Open;
 
       Informar('Já existe Documento/N.F.  com esta identificação');

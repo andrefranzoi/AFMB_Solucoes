@@ -570,7 +570,7 @@ object FrmRelReceb_Historico: TFrmRelReceb_Historico
       ForceNewPage = False
       LinkBand = TotalOperacao
       Size.Values = (
-        84.185606060606050000
+        84.185606060606070000
         2770.909090909091000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

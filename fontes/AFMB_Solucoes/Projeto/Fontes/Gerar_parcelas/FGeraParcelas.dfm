@@ -257,8 +257,8 @@ object FrmGeraParcelas: TFrmGeraParcelas
       AlignWithMargins = True
       Left = 16
       Top = 4
-      Width = 955
-      Height = 42
+      Width = 161
+      Height = 33
       Margins.Left = 15
       Margins.Right = 15
       Align = alClient
@@ -271,8 +271,6 @@ object FrmGeraParcelas: TFrmGeraParcelas
       Font.Style = [fsBold]
       ParentFont = False
       Layout = tlCenter
-      ExplicitWidth = 161
-      ExplicitHeight = 33
     end
   end
   object pnTitulo: TPanel

@@ -332,35 +332,29 @@ object FrmAtivarSistema: TFrmAtivarSistema
       ExplicitLeft = 1
       ExplicitTop = 1
       ExplicitWidth = 887
-      ExplicitHeight = 50
       inherited Image3: TImage
         Width = 887
-        Height = 50
         ExplicitWidth = 413
         ExplicitHeight = 50
       end
       inherited pnTitulo: TPanel
         Width = 881
-        Height = 44
         Constraints.MinHeight = 27
         ExplicitWidth = 881
         ExplicitHeight = 44
         inherited LblBarraTitulo: TLabel
           Width = 730
-          Height = 34
           Caption = 'Ativa'#231#227'o  de Sistema'
           ExplicitWidth = 276
           ExplicitHeight = 25
         end
         inherited Image1: TImage
-          Height = 34
           Visible = False
           ExplicitLeft = 357
           ExplicitHeight = 31
         end
         inherited Image2: TImage
           Left = 819
-          Height = 34
           ExplicitLeft = 434
           ExplicitHeight = 31
         end

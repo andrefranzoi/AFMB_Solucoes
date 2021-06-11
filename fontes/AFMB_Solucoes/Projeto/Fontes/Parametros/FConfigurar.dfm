@@ -103,6 +103,10 @@ object FrmConfigurar: TFrmConfigurar
       TabOrder = 0
       object Tab_DadosEmpresa: TTabSheet
         Caption = 'Dados da Empresa'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox1: TGroupBox
           Left = 0
           Top = 0
@@ -813,6 +817,10 @@ object FrmConfigurar: TFrmConfigurar
       object Tab_Operacionais: TTabSheet
         Caption = 'Certificado e email'
         ImageIndex = 8
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox10: TGroupBox
           AlignWithMargins = True
           Left = 3
@@ -1275,6 +1283,10 @@ object FrmConfigurar: TFrmConfigurar
       object TabNFe: TTabSheet
         Caption = 'NF-e'
         ImageIndex = 6
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox14: TGroupBox
           Left = 0
           Top = 340
@@ -1816,6 +1828,10 @@ object FrmConfigurar: TFrmConfigurar
         Font.Style = []
         ImageIndex = 4
         ParentFont = False
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object GroupBox16: TGroupBox
           Left = 0
           Top = 0

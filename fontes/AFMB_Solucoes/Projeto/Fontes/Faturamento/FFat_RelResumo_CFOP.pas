@@ -1,16 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FFat_RelResumo_CFOP;
@@ -21,9 +41,9 @@ uses
    Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
    Dialogs, ExtCtrls, QuickRpt, DB, SqlExpr, QRCtrls, QRExport,
    QRPDFFilt, Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+   FireDAC.Comp.Client;
 
 type
    TFrmFat_RelResumo_CFOP = class(TForm)
@@ -63,8 +83,8 @@ type
       QRShape2: TQRShape;
       LblVendedor: TQRLabel;
       LblCliente: TQRLabel;
-    QRDBText8: TQRDBText;
-    QRDBText1: TQRDBText;
+      QRDBText8: TQRDBText;
+      QRDBText1: TQRDBText;
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure FormCreate(Sender: TObject);
    private
@@ -80,7 +100,7 @@ var
 implementation
 
 uses FPrincipal, Biblioteca, Global,
-    FRelFaturamento;
+   FRelFaturamento;
 
 {$R *.dfm}
 
@@ -89,13 +109,20 @@ begin
    dtDataIni := StrToDate(FrmRelFaturamento.MskDataIni.Text);
    dtDataFim := StrToDate(FrmRelFaturamento.MskDataFim.Text);
 
-   LblPeriodo.Caption := 'PERÍODO: ' + DateToStr(dtDataIni) + ' - ' +   DateToStr(dtDataFim);
+   LblPeriodo.Caption := 'PERÍODO: ' + DateToStr(dtDataIni) + ' - ' +
+     DateToStr(dtDataFim);
 
    case FrmRelFaturamento.RadioNF.ItemIndex of
-      0: LblTitulo.Caption := LblTitulo.Caption + #13 + #10 + '(TODAS AS NOTAS FISCAIS)   ';
-      1: LblTitulo.Caption := LblTitulo.Caption + #13 + #10 + '(NF SAÍDAS)   ';
-      2: LblTitulo.Caption := LblTitulo.Caption + #13 + #10 + '(NF ENTRADAS) ';
-      3: LblTitulo.Caption := LblTitulo.Caption + #13 + #10 + '(NF CANCELADAS) ';
+      0:
+         LblTitulo.Caption := LblTitulo.Caption + #13 + #10 +
+           '(TODAS AS NOTAS FISCAIS)   ';
+      1:
+         LblTitulo.Caption := LblTitulo.Caption + #13 + #10 + '(NF SAÍDAS)   ';
+      2:
+         LblTitulo.Caption := LblTitulo.Caption + #13 + #10 + '(NF ENTRADAS) ';
+      3:
+         LblTitulo.Caption := LblTitulo.Caption + #13 + #10 +
+           '(NF CANCELADAS) ';
 
    end;
 
@@ -111,7 +138,7 @@ begin
    sqlMaster := sqlMaster + '  SUM(NF_VALOR_ICMS)  AS VALOR_ICMS   ';
    sqlMaster := sqlMaster + '  FROM VIEW_NOTAFISCAL   ';
    sqlMaster := sqlMaster + '  WHERE   ';
-   sqlMaster := sqlMaster + '  EMPRESA='+FSistema.Empresa.ToString;
+   sqlMaster := sqlMaster + '  EMPRESA=' + FSistema.Empresa.ToString;
    sqlMaster := sqlMaster + '  AND  EMISSAO>=:DATA1 AND EMISSAO<=:DATA2 ';
    sqlMaster := sqlMaster + Tipo_NF;
 
@@ -136,22 +163,26 @@ begin
 
    if not FrmRelFaturamento.chkCliente.Checked then
    Begin
-      DB_Vendas.ParamByName('CLIENTE').AsInteger := StrToInt(FrmRelFaturamento.EditCliente.Text);
-      LblCliente.Caption := 'CLIENTE: ' +  FrmRelFaturamento.EditClienteNome.Text;
+      DB_Vendas.ParamByName('CLIENTE').AsInteger :=
+        StrToInt(FrmRelFaturamento.EditCliente.Text);
+      LblCliente.Caption := 'CLIENTE: ' +
+        FrmRelFaturamento.EditClienteNome.Text;
    End;
 
    if not FrmRelFaturamento.chkRepres.Checked then
    Begin
-      DB_Vendas.ParamByName('VENDEDOR').AsInteger := StrToInt(FrmRelFaturamento.EditVendedor.Text);
-      LblVendedor.Caption := 'VENDEDOR: ' + FrmRelFaturamento.EditNomeVendedor.Text;
+      DB_Vendas.ParamByName('VENDEDOR').AsInteger :=
+        StrToInt(FrmRelFaturamento.EditVendedor.Text);
+      LblVendedor.Caption := 'VENDEDOR: ' +
+        FrmRelFaturamento.EditNomeVendedor.Text;
    End;
 
    try
-     DB_Vendas.Open;
-     QuickRep1.Preview;
+      DB_Vendas.Open;
+      QuickRep1.Preview;
    finally
-     DB_Vendas.Close;
-     Close;
+      DB_Vendas.Close;
+      Close;
    end;
 end;
 

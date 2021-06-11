@@ -681,7 +681,7 @@ object FrmRelPagar_Historico: TFrmRelPagar_Historico
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        92.604166666666660000
+        92.604166666666680000
         2770.187500000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -964,7 +964,7 @@ object FrmRelPagar_Historico: TFrmRelPagar_Historico
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        232.833333333333300000
+        232.833333333333400000
         2770.187500000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

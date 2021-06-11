@@ -30,8 +30,8 @@ object FrmEmailTemplate: TFrmEmailTemplate
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 290
-      Height = 40
+      Width = 101
+      Height = 21
       Align = alClient
       Alignment = taCenter
       Caption = 'Enviar e-mail'
@@ -42,8 +42,6 @@ object FrmEmailTemplate: TFrmEmailTemplate
       Font.Style = [fsBold]
       ParentFont = False
       Layout = tlCenter
-      ExplicitWidth = 101
-      ExplicitHeight = 21
     end
     object img1: TImage
       Left = 296
@@ -320,7 +318,7 @@ object FrmEmailTemplate: TFrmEmailTemplate
       AlignWithMargins = True
       Left = 5
       Top = 115
-      Width = 364
+      Width = 50
       Height = 16
       Margins.Left = 5
       Margins.Top = 5
@@ -334,7 +332,6 @@ object FrmEmailTemplate: TFrmEmailTemplate
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 50
     end
     object pnlPara: TPanel
       Left = 0

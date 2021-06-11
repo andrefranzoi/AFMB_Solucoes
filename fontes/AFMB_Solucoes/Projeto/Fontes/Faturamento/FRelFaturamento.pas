@@ -1,16 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FRelFaturamento;
@@ -23,8 +43,8 @@ uses
    SqlExpr, Grids, DBGrids, FrmRelatorios, ISFEdit, ISFEditbtn, ISFdbEditbtn,
    uEstSearchDialogZeos, IDBEdit, frxClass, frxDBSet,
    Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
    TFrmRelFaturamento = class(TForm)
@@ -32,35 +52,35 @@ type
       PainelBotoes: TPanel;
       RadioG_Ordem: TRadioGroup;
       RadioNF: TRadioGroup;
-    FrameRelatorios1: TFrameRelatorios;
-    db_ComissaoPedidos: TFDQuery;
-    fsd_ComissaoPedidos: TfrxDBDataset;
-    fsr_ComissaoPedidos: TfrxReport;
-    Panel2: TPanel;
-    RadioG: TRadioGroup;
-    Panel3: TPanel;
-    GroupBox2: TGroupBox;
-    Label3: TLabel;
-    Label4: TLabel;
-    MskDataIni: TMaskEdit;
-    MskDataFim: TMaskEdit;
-    GroupBox1: TGroupBox;
-    EditClienteNome: TEdit;
-    EditCliente: TIDBEditDialog;
-    chkCliente: TCheckBox;
-    chkRepres: TCheckBox;
-    EditVendedor: TIDBEditDialog;
-    EditNomeVendedor: TEdit;
-    GroupBox3: TGroupBox;
-    QryFrenteCaixa: TFDQuery;
-    frxDBFrenteCaixa: TfrxDBDataset;
-    frxFrenteCaixa: TfrxReport;
-    GrpProduto: TGroupBox;
-    PainelProdutos: TPanel;
-    EditProduto: TIDBEditDialog;
-    chk_Referencia: TCheckBox;
-    BtnSair: TBitBtn;
-    Btn_Imprimir: TBitBtn;
+      FrameRelatorios1: TFrameRelatorios;
+      db_ComissaoPedidos: TFDQuery;
+      fsd_ComissaoPedidos: TfrxDBDataset;
+      fsr_ComissaoPedidos: TfrxReport;
+      Panel2: TPanel;
+      RadioG: TRadioGroup;
+      Panel3: TPanel;
+      GroupBox2: TGroupBox;
+      Label3: TLabel;
+      Label4: TLabel;
+      MskDataIni: TMaskEdit;
+      MskDataFim: TMaskEdit;
+      GroupBox1: TGroupBox;
+      EditClienteNome: TEdit;
+      EditCliente: TIDBEditDialog;
+      chkCliente: TCheckBox;
+      chkRepres: TCheckBox;
+      EditVendedor: TIDBEditDialog;
+      EditNomeVendedor: TEdit;
+      GroupBox3: TGroupBox;
+      QryFrenteCaixa: TFDQuery;
+      frxDBFrenteCaixa: TfrxDBDataset;
+      frxFrenteCaixa: TfrxReport;
+      GrpProduto: TGroupBox;
+      PainelProdutos: TPanel;
+      EditProduto: TIDBEditDialog;
+      chk_Referencia: TCheckBox;
+      BtnSair: TBitBtn;
+      Btn_Imprimir: TBitBtn;
       procedure Btn_SairClick(Sender: TObject);
       procedure FormCreate(Sender: TObject);
       procedure MskDataIniExit(Sender: TObject);
@@ -71,14 +91,14 @@ type
       procedure chkRepresClick(Sender: TObject);
       procedure chkClienteClick(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure db_ComissaoPedidosBeforeOpen(DataSet: TDataSet);
-    procedure FormShow(Sender: TObject);
-    procedure db_ComissaoPedidosAfterOpen(DataSet: TDataSet);
-    procedure chk_ReferenciaClick(Sender: TObject);
-    procedure RadioGClick(Sender: TObject);
+      procedure db_ComissaoPedidosBeforeOpen(DataSet: TDataSet);
+      procedure FormShow(Sender: TObject);
+      procedure db_ComissaoPedidosAfterOpen(DataSet: TDataSet);
+      procedure chk_ReferenciaClick(Sender: TObject);
+      procedure RadioGClick(Sender: TObject);
 
    private
-    procedure ScriptPedido;
+      procedure ScriptPedido;
       { Private declarations }
 
    public
@@ -91,7 +111,7 @@ var
 
 implementation
 
-uses Biblioteca, FPrincipal, Global, 
+uses Biblioteca, FPrincipal, Global,
    FFat_RelRepres,
    FFat_RelCurvaABC_Clientes, FFat_RelCurvaABCVendedores,
    FFat_RelCurvaABCFormaPagto, FFat_RelResumo_CFOP,
@@ -108,17 +128,17 @@ end;
 
 procedure TFrmRelFaturamento.FormShow(Sender: TObject);
 begin
-//  TRadioGroup(RadioG.Controls[2]).Enabled:= False;
-//  TRadioGroup(RadioG.Controls[3]).Enabled:= False;
-//  TRadioGroup(RadioG.Controls[6]).Enabled:= False;
+   // TRadioGroup(RadioG.Controls[2]).Enabled:= False;
+   // TRadioGroup(RadioG.Controls[3]).Enabled:= False;
+   // TRadioGroup(RadioG.Controls[6]).Enabled:= False;
 end;
 
 procedure TFrmRelFaturamento.FormCreate(Sender: TObject);
 begin
-  PainelProdutos.Enabled := False;
-  GrpProduto.Visible := False;
-  MskDataIni.Text := dateToStr(Date);
-  MskDataFim.Text := dateToStr(Date);
+   PainelProdutos.Enabled := False;
+   GrpProduto.Visible := False;
+   MskDataIni.Text := dateToStr(Date);
+   MskDataFim.Text := dateToStr(Date);
 end;
 
 procedure TFrmRelFaturamento.MskDataIniExit(Sender: TObject);
@@ -128,10 +148,11 @@ end;
 
 procedure TFrmRelFaturamento.RadioGClick(Sender: TObject);
 begin
-  GrpProduto.Visible := False;
-  case RadioG.ItemIndex of
-    5: GrpProduto.Visible := True;
-  end;
+   GrpProduto.Visible := False;
+   case RadioG.ItemIndex of
+      5:
+         GrpProduto.Visible := True;
+   end;
 
 end;
 
@@ -143,60 +164,89 @@ end;
 procedure TFrmRelFaturamento.Btn_ImprimirClick(Sender: TObject);
 begin
    case RadioNF.ItemIndex of
-        0: Tipo_NF := '   AND  OPERACAO  LIKE ' + QuotedStr('%');
-        1: Tipo_NF := '   AND  OPERACAO=' + QuotedStr('S');
-      2,3: Tipo_NF := '   AND  OPERACAO=' + QuotedStr('E');
-        4: Tipo_NF := '   AND  OPERACAO=' + QuotedStr('C');
-        5: Tipo_NF := '   AND  TIPONF IN (' + QuotedStr('NFCE')+ ', '+QuotedStr('SAT')+')';
+      0:
+         Tipo_NF := '   AND  OPERACAO  LIKE ' + QuotedStr('%');
+      1:
+         Tipo_NF := '   AND  OPERACAO=' + QuotedStr('S');
+      2, 3:
+         Tipo_NF := '   AND  OPERACAO=' + QuotedStr('E');
+      4:
+         Tipo_NF := '   AND  OPERACAO=' + QuotedStr('C');
+      5:
+         Tipo_NF := '   AND  TIPONF IN (' + QuotedStr('NFCE') + ', ' +
+           QuotedStr('SAT') + ')';
    end;
 
    case RadioG_Ordem.ItemIndex of
-      0: strOrdemDados := ' EMISSAO, NOTAFISCAL ';
-      1: strOrdemDados := ' NOTAFISCAL ';
-      2: strOrdemDados := ' CLIENTE_NOME ';
-      3: strOrdemDados := ' VENDEDOR_NOME ';
+      0:
+         strOrdemDados := ' EMISSAO, NOTAFISCAL ';
+      1:
+         strOrdemDados := ' NOTAFISCAL ';
+      2:
+         strOrdemDados := ' CLIENTE_NOME ';
+      3:
+         strOrdemDados := ' VENDEDOR_NOME ';
    end;
 
    // -------------------------------------------------------------------------
    // Mostra relatorio selecionado
    // -------------------------------------------------------------------------
    case RadioG.ItemIndex of
-       0: FrmFat_RelNotaFiscal := TFrmFat_RelNotaFiscal.create(self);
-       1: FrmFat_RelRepres := TFrmFat_RelRepres.create(self);
-       2: FrmFat_RelComissao := TFrmFat_RelComissao.create(self);
-       3: FrmFat_RelComissaoAnalitico :=  TFrmFat_RelComissaoAnalitico.create(self);
-       4: FrmFat_RelNFAnalitico := TFrmFat_RelNFAnalitico.create(self);
-       5: FrmFat_RelNFAnaliticoProdutos := TFrmFat_RelNFAnaliticoProdutos.create(self);
-       6: FrmFat_RelCurvaABC_Clientes   := TFrmFat_RelCurvaABC_Clientes.create(self);
-       7: FrmFat_RelCurvaABCVendedores  := TFrmFat_RelCurvaABCVendedores.create(self);
-       8: FrmFat_RelCurvaABCFormaPagto  := TFrmFat_RelCurvaABCFormaPagto.create(self);
-       9: FrmFat_RelResumo_CFOP := TFrmFat_RelResumo_CFOP.create(self);
-      10: begin
+      0:
+         FrmFat_RelNotaFiscal := TFrmFat_RelNotaFiscal.create(self);
+      1:
+         FrmFat_RelRepres := TFrmFat_RelRepres.create(self);
+      2:
+         FrmFat_RelComissao := TFrmFat_RelComissao.create(self);
+      3:
+         FrmFat_RelComissaoAnalitico :=
+           TFrmFat_RelComissaoAnalitico.create(self);
+      4:
+         FrmFat_RelNFAnalitico := TFrmFat_RelNFAnalitico.create(self);
+      5:
+         FrmFat_RelNFAnaliticoProdutos :=
+           TFrmFat_RelNFAnaliticoProdutos.create(self);
+      6:
+         FrmFat_RelCurvaABC_Clientes :=
+           TFrmFat_RelCurvaABC_Clientes.create(self);
+      7:
+         FrmFat_RelCurvaABCVendedores :=
+           TFrmFat_RelCurvaABCVendedores.create(self);
+      8:
+         FrmFat_RelCurvaABCFormaPagto :=
+           TFrmFat_RelCurvaABCFormaPagto.create(self);
+      9:
+         FrmFat_RelResumo_CFOP := TFrmFat_RelResumo_CFOP.create(self);
+      10:
+         begin
             ScriptPedido;
             fsr_ComissaoPedidos.ShowReport;
-          end;
-      11: begin
+         end;
+      11:
+         begin
             try
-              QryFrenteCaixa.Close;
-              QryFrenteCaixa.ParamByName('DTINI').AsDate := StrToDateDef(MskDataIni.Text, Date);
-              QryFrenteCaixa.ParamByName('DTFIM').AsDate := StrToDateDef(MskDataFim.Text, Date);
-              QryFrenteCaixa.Open;
-              frxFrenteCaixa.ShowReport;
+               QryFrenteCaixa.Close;
+               QryFrenteCaixa.ParamByName('DTINI').AsDate :=
+                 StrToDateDef(MskDataIni.Text, Date);
+               QryFrenteCaixa.ParamByName('DTFIM').AsDate :=
+                 StrToDateDef(MskDataFim.Text, Date);
+               QryFrenteCaixa.Open;
+               frxFrenteCaixa.ShowReport;
             finally
-              QryFrenteCaixa.Close;
+               QryFrenteCaixa.Close;
             end;
-          end;
+         end;
    End;
 
 End;
 
 Procedure TFrmRelFaturamento.ScriptPedido;
 begin
-//
+   //
    dtDataIni := StrToDate(MskDataIni.Text);
    dtDataFim := StrToDate(MskDataFim.Text);
 
-   db_ComissaoPedidos.close;
+   db_ComissaoPedidos.Close;
    db_ComissaoPedidos.sql.clear;
    db_ComissaoPedidos.sql.add('SELECT * FROM VIEW_PEDIDOSCOMISSAO');
    db_ComissaoPedidos.sql.add('WHERE');
@@ -204,26 +254,27 @@ begin
    db_ComissaoPedidos.sql.add('AND');
    db_ComissaoPedidos.sql.add('DATA between :DATA1 AND :DATA2');
 
-
    if not chkCliente.Checked then
    Begin
       db_ComissaoPedidos.sql.add('AND');
       db_ComissaoPedidos.sql.add('CLIENTE=:CLIENTE');
-      db_ComissaoPedidos.ParamByName('CLIENTE').AsInteger :=        StrToInt(FrmRelFaturamento.EditCliente.Text);
+      db_ComissaoPedidos.ParamByName('CLIENTE').AsInteger :=
+        StrToInt(FrmRelFaturamento.EditCliente.Text);
    End;
 
    if not chkRepres.Checked then
    Begin
       db_ComissaoPedidos.sql.add('AND');
       db_ComissaoPedidos.sql.add('VENDEDOR=:VENDEDOR');
-      db_ComissaoPedidos.ParamByName('VENDEDOR').AsInteger :=        StrToInt(FrmRelFaturamento.EditCliente.Text);
+      db_ComissaoPedidos.ParamByName('VENDEDOR').AsInteger :=
+        StrToInt(FrmRelFaturamento.EditCliente.Text);
    End;
 
    db_ComissaoPedidos.sql.add('ORDER BY VENDEDORNOME, CLIENTE_NOME');
    db_ComissaoPedidos.ParamByName('DATA1').AsDateTime := dtDataIni;
    db_ComissaoPedidos.ParamByName('DATA2').AsDateTime := dtDataFim;
 
-   db_ComissaoPedidos.open;
+   db_ComissaoPedidos.Open;
 
 end;
 
@@ -236,7 +287,6 @@ begin
 
 end;
 
-
 procedure TFrmRelFaturamento.BtnSairClick(Sender: TObject);
 begin
    Close;
@@ -245,14 +295,14 @@ end;
 procedure TFrmRelFaturamento.chkRepresClick(Sender: TObject);
 begin
 
-   if chkRepres.Checked = true then
+   if chkRepres.Checked = True then
    Begin
       EditVendedor.Enabled := False;
 
    End
    Else
    Begin
-      EditVendedor.Enabled := true;
+      EditVendedor.Enabled := True;
       EditVendedor.SetFocus;
    End;
 
@@ -267,13 +317,13 @@ begin
    end
    else
    begin
-     PainelProdutos.Enabled := True;
+      PainelProdutos.Enabled := True;
    end;
 end;
 
 procedure TFrmRelFaturamento.db_ComissaoPedidosAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_ComissaoPedidos);
+   FormataCampo(db_ComissaoPedidos);
 end;
 
 procedure TFrmRelFaturamento.db_ComissaoPedidosBeforeOpen(DataSet: TDataSet);
@@ -284,13 +334,13 @@ end;
 
 procedure TFrmRelFaturamento.chkClienteClick(Sender: TObject);
 begin
-   if chkCliente.Checked = true then
+   if chkCliente.Checked = True then
    Begin
       EditCliente.Enabled := False;
    End
    Else
    Begin
-      EditCliente.Enabled := true;
+      EditCliente.Enabled := True;
       EditCliente.SetFocus;
    End;
 
@@ -299,7 +349,7 @@ end;
 procedure TFrmRelFaturamento.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  Action := Cafree;
+   Action := Cafree;
 end;
 
 end.

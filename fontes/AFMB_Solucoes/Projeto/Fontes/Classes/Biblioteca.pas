@@ -1,36 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit Biblioteca;
@@ -42,7 +42,7 @@ uses
    WinTypes, WinProcs, Tabs, ExtCtrls, DBCtrls,
    Grids, Menus, Dialogs, StdCtrls, Messages, Graphics, WinSock,
    Printers, shellapi, MMSystem, Sysutils, DBGrids,
-   frxClass, frxExportMail,  Character, Math, Forms, DB,
+   frxClass, frxExportMail, Character, Math, Forms, DB,
    cxGrid, cxGridDBTableView,
    System.Generics.Collections,
    Classe.Global,
@@ -52,7 +52,7 @@ uses
 
 type
 
-//   TArraySring = TArray<String>;
+   // TArraySring = TArray<String>;
    PNetResourceArray = ^TNetResourceArray;
 
    TNetResourceArray = array [0 .. 100] of TNetResource;
@@ -173,8 +173,8 @@ function Box(Aviso: String; Cabeca: String): Boolean;
 function ValidaCPF(sCPF: string): string;
 
 { --> Filtra todos os numeros de uma string }
-//function OnlyNumber(Texto:String):String;
-function SoLetras(Texto:WideString):WideString;
+// function OnlyNumber(Texto:String):String;
+function SoLetras(texto: WideString): WideString;
 
 function FormataDDD(Telefone: String): String;
 Function FormataFone(Telefone: String): String;
@@ -205,9 +205,10 @@ function Acima(X: Currency): Integer;
 function fncDataValidar(Dado: string): String;
 
 { Calcula juros simples }
-Function Calc_Juros(Valor, Juros: Currency; Atraso: Currency; Dias: Integer): Currency;
-Function Calc_JurosComposto(Valor, Juros: Currency; Atraso: Currency;  Dias: Integer): Currency;
-
+Function Calc_Juros(Valor, Juros: Currency; Atraso: Currency; Dias: Integer)
+  : Currency;
+Function Calc_JurosComposto(Valor, Juros: Currency; Atraso: Currency;
+  Dias: Integer): Currency;
 
 Function Dia(vData: TDate): Integer;
 Function Mes(vData: TDate): Integer;
@@ -246,19 +247,23 @@ function GeraArquivo: string;
 Procedure AvisoSistema(texto: WideString);
 Procedure AvisoSistemaErro(texto: WideString);
 
-Function ConfirmarAcao(aTitulo: String; aMensagem: String = 'Atenção'; aErro: Boolean=False): Boolean;
+Function ConfirmarAcao(aTitulo: String; aMensagem: String = 'Atenção';
+  aErro: Boolean = False): Boolean;
 
 Function Protegido(Tabela: TFDQuery): Boolean;
 
 Function Centrar(FTextBuf: string; Cols: Integer): String;
 
-Procedure Crosstab(aQuery: TFDQuery; aGrid: tStringGrid; ctColumn: Integer); overload;
-Procedure CrossTab(dbDados:TFDQuery; stScriptSQL, stCampoLinhas, stTituloLinha, stCampoColunas , stCampoSomar, stWhere, sCampoOrderBy:String; stOperador:String='Sum'); overload;
+Procedure Crosstab(aQuery: TFDQuery; aGrid: tStringGrid;
+  ctColumn: Integer); overload;
+Procedure Crosstab(dbDados: TFDQuery; stScriptSQL, stCampoLinhas, stTituloLinha,
+  stCampoColunas, stCampoSomar, stWhere, sCampoOrderBy: String;
+  stOperador: String = 'Sum'); overload;
 
 Function ListarMenu(Menu: TMainMenu; Tag_Numero: Integer): TStrings;
 
 function SubstituirCampoTexto(Text, oldstring, newstring: string): string;
-function SubstituiStr (S,Localizar,Substituir : string) : string;
+function SubstituiStr(S, Localizar, Substituir: string): string;
 
 function PrimeiroNome(Nome: String): String;
 Function CampoCodigo(Valor: String; Tamanho: Integer): String;
@@ -279,13 +284,12 @@ procedure ValidarCamposT(DataSource: TDataSource);
 function CharIsAlpha(const C: char): Boolean;
 function CharIsNum(const C: char): Boolean;
 function CharIsAlphaNum(const C: char): Boolean;
-//function OnlyNumber(const Value: string): String;
+// function OnlyNumber(const Value: string): String;
 function OnlyAlpha(const Value: string): String;
 function OnlyAlphaNum(const Value: string): String;
 
 function AsciiToHex(const AString: string): string;
 Function HexToAscii(const HexStr: String): String;
-
 
 procedure GetComputers(Workgroup: String; Retorno: TStrings);
 
@@ -303,54 +307,55 @@ function DiaSemana(Data: TDateTime): String;
 
 function nDiaSemana(Dia: Integer): String;
 
-
 { Com a Função é possível permitir a entrada de somente letras, números ou letras e números. }
-function ValidarCampo(var Key: Char; TipoFiltro: Byte = 0): Boolean;
+function ValidarCampo(var Key: char; TipoFiltro: byte = 0): Boolean;
 
-function ValorParcela(aValorCapital : Currency; aJuroMensal : Currency; nParcelas : Integer) : Currency;
+function ValorParcela(aValorCapital: Currency; aJuroMensal: Currency;
+  nParcelas: Integer): Currency;
 
 function Fix(X: Extended): Extended;
 function RoundN(X: Extended): Extended;
 function RoundX(X: Extended): Extended;
 
-function CriaSubDir(const NomeSubDir: string): boolean;
+function CriaSubDir(const NomeSubDir: string): Boolean;
 
- /// <summary>
- /// Redimensina as colunas, com base na largura da Grid
- /// </summary>
+/// <summary>
+/// Redimensina as colunas, com base na largura da Grid
+/// </summary>
 
 function fncPrimeiraLetra(p_texto: string): string;
 
-Procedure MsgEsperar(sTitulo:String='Processo em andamento...';sMessage: string='';lbAbrir:boolean=True);
+Procedure MsgEsperar(sTitulo: String = 'Processo em andamento...';
+  sMessage: string = ''; lbAbrir: Boolean = True);
 
 function Base64Encode(const S: AnsiString): AnsiString;
 
 function Base64Decode(const S: AnsiString): AnsiString;
 
-function fncTipoPessoa ( strID : String) : String;
+function fncTipoPessoa(strID: String): String;
 
-procedure BloquearColorirColuna(aDBAdvGrid: TcxGridDBTableView;aColunas  : array of string);
+procedure BloquearColorirColuna(aDBAdvGrid: TcxGridDBTableView;
+  aColunas: array of string);
 
-function MessageDialog2(const Msg: string; DlgType: TMsgDlgType;Buttons: TMsgDlgButtons; Captions: array of string): Integer;
+function MessageDialog2(const Msg: string; DlgType: TMsgDlgType;
+  Buttons: TMsgDlgButtons; Captions: array of string): Integer;
 
-function TiraPontos(aValue : String):String;
-
+function TiraPontos(AValue: String): String;
 
 { ********************************************************************** }
 { ****************  iniciar codificações ******************************* }
 { ********************************************************************** }
 
 const
-  Base64Charset = AnsiString('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/');
+   Base64Charset = AnsiString
+     ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/');
 
 implementation
 
-
 { Módulos externos - Inclua nesta lista os nomes das Unit's necessárias }
 uses Global, FPrincipal, FAvisoSistema, FQuestionar, FAvisoSistemaErro,
-    FErrorForm, fBaseComponentes,
-    App.Constantes;
-
+   FErrorForm, fBaseComponentes,
+   App.Constantes;
 
 function iif(Condicao: Boolean; retornaTrue, retornaFalse: Variant): Variant;
 begin
@@ -374,12 +379,12 @@ function TestNumero(oNumero: String): Boolean;
 var
    n: Integer;
 begin
-   Result := true;
+   Result := True;
    try
       n := StrToInt(oNumero);
    except
       on EConvertError do
-         Result := false;
+         Result := False;
    end;
 end;
 
@@ -387,25 +392,25 @@ function TestFloat(oNumero: String): Boolean;
 var
    n: Currency;
 begin
-   Result := true;
+   Result := True;
    n := 0;
    try
       n := StrToFloat(oNumero);
    except
       on EConvertError do
-         Result := false;
+         Result := False;
    end;
 end;
 
 { Valida data no formato ddmmaa ou no formato ddmmaaaa }
 function Testar_Data(Dado: string): Boolean;
 begin
-   Result := true;
+   Result := True;
    Try
       TDatas := StrTodate(Dado);
-      Result := true;
+      Result := True;
    Except
-      Result := false;
+      Result := False;
    End;
 end;
 
@@ -416,12 +421,12 @@ const
 var
    Posicao: Integer;
 begin
-   Result := true;
+   Result := True;
    if Dado <> '' then
    begin
       Posicao := Pos(UpperCase(Dado), Estados);
       if (Posicao = 0) or ((Posicao mod 2) = 0) then
-         Result := false
+         Result := False
    end;
 end; { TESTA_UF }
 
@@ -429,9 +434,9 @@ end; { TESTA_UF }
 function RSS00003(Dado: string): Boolean;
 begin
    if (Dado = '') or (Dado = '0') then
-      Result := false
+      Result := False
    else
-      Result := true;
+      Result := True;
 end; { RSS00003 }
 
 { Valida dígito verificador de CNPJ }
@@ -446,14 +451,14 @@ begin
    Dado := DeletaCaract(Dado, '/');
    Dado := DeletaCaract(Dado, '-');
 
-   Result := true;
+   Result := True;
    if Length(Dado) = 14 then
    begin
       for I := 1 to 12 do
          if Dado[I] in ['0' .. '9'] then
             D1[I] := StrToInt(Dado[I])
          else
-            Result := false;
+            Result := False;
       if Result then
       begin
          DF1 := 0;
@@ -488,11 +493,11 @@ begin
             SegundoDigito := 11 - Resto2;
          if (PrimeiroDigito <> StrToInt(Dado[13])) or
            (SegundoDigito <> StrToInt(Dado[14])) then
-            Result := false;
+            Result := False;
       end;
    end
    else if Length(Dado) <> 0 then
-      Result := false;
+      Result := False;
 end; { TESTA_CGC }
 
 { Valida dígito verificador de CPF }
@@ -507,14 +512,14 @@ begin
    Dado := DeletaCaract(Dado, '/');
    Dado := DeletaCaract(Dado, '-');
 
-   Result := true;
+   Result := True;
    if Length(Dado) = 11 then
    begin
       for I := 1 to 9 do
          if Dado[I] in ['0' .. '9'] then
             D1[I] := StrToInt(Dado[I])
          else
-            Result := false;
+            Result := False;
       if Result then
       begin
          DF1 := 0;
@@ -547,11 +552,11 @@ begin
             SegundoDigito := 11 - Resto2;
          if (PrimeiroDigito <> StrToInt(Dado[10])) or
            (SegundoDigito <> StrToInt(Dado[11])) then
-            Result := false;
+            Result := False;
       end;
    end
    else if Length(Dado) <> 0 then
-      Result := false;
+      Result := False;
 end; { TESTA_CPF }
 
 function Alltrim(Text: string): string;
@@ -591,7 +596,7 @@ end;
 { mensagem utilizado "Application.MessageBox" sobre erros }
 function Erro(Mensagem: String): String;
 begin
-  Application.MessageBox(PChar(Mensagem), '[Problema]', mb_ok + MB_ICONERROR);
+   Application.MessageBox(PChar(Mensagem), '[Problema]', mb_ok + MB_ICONERROR);
 end;
 
 { mensagem utilizado "Application.MessageBox" }
@@ -630,9 +635,9 @@ begin
 
    If (Application.MessageBox(PChar(Msg), 'Atenção', mb_YesNo + mb_iconQuestion)
      = IDYES) then
-      Result := true
+      Result := True
    else
-      Result := false;
+      Result := False;
 end;
 
 function Mensagem(Mensagem: String): String;
@@ -706,9 +711,9 @@ begin
 
    If (Application.MessageBox(PChar(Msg), PChar(Aviso),
      MB_OKCANCEL + MB_DEFBUTTON1 + mb_iconQuestion) = IDOK) then
-      Result := true
+      Result := True
    else
-      Result := false;
+      Result := False;
 
 end;
 
@@ -827,19 +832,19 @@ var
    iDia, iMes, iAno: Word;
 begin
    { Pré-Definição do Retorno }
-   Result := false;
+   Result := False;
 
    if xValue = Null then
    begin
-      Result := true;
+      Result := True;
       Exit;
    end;
 
    if VarType(xValue) = VarEmpty then
-      Result := true;
+      Result := True;
 
    if VarType(xValue) = varNull then
-      Result := true;
+      Result := True;
 
    if VarType(xValue) = varSmallInt then
       Result := (xValue = 0);
@@ -863,7 +868,7 @@ begin
       begin
          DecodeDate(xValue, iAno, iMes, iDia);
          if ((iDia = 30) and (iMes = 12) and (iAno = 1899)) then
-            Result := true;
+            Result := True;
       end;
 
       if not Result then
@@ -898,11 +903,11 @@ Function TestaPlaca(Value: Integer): Boolean;
 begin
    if WaveOutGetNumDevs > 0 then
    begin
-      Result := true
+      Result := True
    end
    else
    begin
-      Result := false;
+      Result := False;
    end;
 end;
 
@@ -912,7 +917,7 @@ var
    DriveNumero: byte;
    EMode: Word;
 begin
-   Result := false;
+   Result := False;
    DriveNumero := ord(drive);
    if DriveNumero >= ord('a') then
    begin
@@ -922,11 +927,11 @@ begin
    try
       if DiskSize(DriveNumero - $40) = -1 then
       begin
-         Result := false;
+         Result := False;
       end
       else
       begin
-         Result := true;
+         Result := True;
       end;
    Except
       SetErrorMode(EMode);
@@ -958,11 +963,11 @@ begin
    Letra := drive + ':\';
    if GetDriveType(PChar(Letra)) < 2 then
    begin
-      Result := false;
+      Result := False;
    end
    else
    begin
-      Result := true;
+      Result := True;
    end;
 end;
 
@@ -1151,11 +1156,11 @@ begin
             FileSetDate(fDst, FileGetDate(fSrc));
             FileClose(fDst);
             FileSetAttr(dest, FileGetAttr(source));
-            Result := true;
+            Result := True;
          end
          else
          begin
-            Result := false;
+            Result := False;
          end;
          FileClose(fSrc);
       end;
@@ -1185,8 +1190,8 @@ function FileTypeName(const aFile: String): String;
 var
    aInfo: TSHFileInfo;
 begin
-   if SHGetFileInfo(PChar(aFile), 0, aInfo, SizeOf(aInfo), SHGFI_TYPENAME)
-     <> 0 then
+   if SHGetFileInfo(PChar(aFile), 0, aInfo, SizeOf(aInfo), SHGFI_TYPENAME) <> 0
+   then
       Result := StrPas(aInfo.szTypeName)
    else
    begin
@@ -1214,11 +1219,11 @@ begin
          EndDoc;
       end;
       Imagem.Free;
-      Result := true;
+      Result := True;
    end
    else
    begin
-      Result := false;
+      Result := False;
    end;
 end;
 
@@ -1262,11 +1267,11 @@ begin
       AssignFile(TxtArq, Destino);
       Rewrite(TxtArq);
       Closefile(TxtArq);
-      Result := true;
+      Result := True;
    Except
       begin
          Erro('Não foi possivel criar arquivo');
-         Result := false;
+         Result := False;
       end;
    end;
 
@@ -1409,10 +1414,10 @@ function Box(Aviso: String; Cabeca: String): Boolean;
 begin
    If (Application.MessageBox(PChar(Aviso), PChar(Cabeca), 36)) = 6 Then
    Begin;
-      Result := true;
+      Result := True;
       Exit;
    End;
-   Result := false;
+   Result := False;
 end;
 
 function ValidaCPF(sCPF: string): string;
@@ -1447,65 +1452,78 @@ begin
 End;
 
 
-//function OnlyNumber(Texto:String):String;
-//var
-//   vContString: integer;
-//   vString: string;
-//begin
-//   vString:='';
-//   for vContString:= 1 To Length(Texto) Do
-//   begin
-//     if (Texto[vContString] in ['0'..'9']) then
-//       begin
-//         vString:= vString + Copy(Texto, vContString, 1);
-//       end;
-//   end;
-//   if vString<>'' then
-//     result:=vString
-//   else
-//     result:='0';
-//end;
+// function OnlyNumber(Texto:String):String;
+// var
+// vContString: integer;
+// vString: string;
+// begin
+// vString:='';
+// for vContString:= 1 To Length(Texto) Do
+// begin
+// if (Texto[vContString] in ['0'..'9']) then
+// begin
+// vString:= vString + Copy(Texto, vContString, 1);
+// end;
+// end;
+// if vString<>'' then
+// result:=vString
+// else
+// result:='0';
+// end;
 
-function TiraPontos(aValue : String):String;
+function TiraPontos(AValue: String): String;
 var
-   mDocumento : string;
+   mDocumento: string;
 begin
-   Result     := '';
-   mDocumento := Trim(aValue);
-   mDocumento := StringReplace(mDocumento,' ','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'/','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'\','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'-','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'.','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,';','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,',','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'*','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'+','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'>','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'<','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,')','',[rfIgnoreCase,rfReplaceAll]);
-   mDocumento := StringReplace(mDocumento,'(','',[rfIgnoreCase,rfReplaceAll]);
-   Result     := mDocumento;
+   Result := '';
+   mDocumento := Trim(AValue);
+   mDocumento := StringReplace(mDocumento, ' ', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '/', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '\', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '-', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '.', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, ';', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, ',', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '*', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '+', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '>', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '<', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, ')', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   mDocumento := StringReplace(mDocumento, '(', '',
+     [rfIgnoreCase, rfReplaceAll]);
+   Result := mDocumento;
 end;
 
-function SoLetras(Texto:WideString):WideString;
+function SoLetras(texto: WideString): WideString;
 var
-   vContString: integer;
+   vContString: Integer;
    vString: string;
 begin
-   vString:='';
-   for vContString:= 1 To Length(Texto) Do
+   vString := '';
+   for vContString := 1 To Length(texto) Do
    begin
-     if ( Texto[vContString]  in [#32,'A'..'Z','a'..'z']) then
-       begin
-         vString:= vString + Copy(Texto, vContString, 1);
-       end;
+      if (texto[vContString] in [#32, 'A' .. 'Z', 'a' .. 'z']) then
+      begin
+         vString := vString + Copy(texto, vContString, 1);
+      end;
    end;
 
-   if vString<>'' then
-     result:=vString
+   if vString <> '' then
+      Result := vString
    else
-     result:='';
+      Result := '';
 end;
 
 function FormataDDD(Telefone: String): String;
@@ -1585,9 +1603,9 @@ Function Deletar: Boolean;
 begin
    if Application.MessageBox('Deseja apagar este registro?', 'Atenção',
      36) = 6 Then
-      Result := true
+      Result := True
    Else
-      Result := false;
+      Result := False;
 End;
 
 Function Formata_CEP(CEP: String): String;
@@ -1622,13 +1640,13 @@ Begin
         Copy(texto, 6, 3) + '/' + Copy(texto, 9, 4) + '-' + Copy(texto, 13, 2);
    end;
    {
-   // 15 digitos significa CNPJ
-   If Length(texto) = 14 then
-   begin
+     // 15 digitos significa CNPJ
+     If Length(texto) = 14 then
+     begin
 
-      Result := Copy(texto, 1, 2) + '.' + Copy(texto, 3, 3) + '.' +
-        Copy(texto, 6, 3) + '/' + Copy(texto, 9, 4) + '-' + Copy(texto, 13, 2);
-   end;
+     Result := Copy(texto, 1, 2) + '.' + Copy(texto, 3, 3) + '.' +
+     Copy(texto, 6, 3) + '/' + Copy(texto, 9, 4) + '-' + Copy(texto, 13, 2);
+     end;
    }
 
    // 14 digitos significa CNPJ
@@ -1696,24 +1714,24 @@ end;
 { desconto percentual }
 Function Desconto(Valor, nDesconto: Currency): Currency;
 Begin
-   Result :=0;
+   Result := 0;
    Result := ((Valor * nDesconto) / 100);
 end;
 
 Function ValorComDesconto(Valor, nDesconto: Currency): Currency;
 Begin
-   Result :=0;
-   if nDesconto<=0 then
-      exit;
+   Result := 0;
+   if nDesconto <= 0 then
+      Exit;
    Result := Valor - ((Valor * nDesconto) / 100);
 end;
 
 { desconto percentual }
 Function ValorComAcrescimo(Valor, nAcrescimo: Currency): Currency;
 Begin
-   Result :=0;
-   if nAcrescimo<=0 then
-      exit;
+   Result := 0;
+   if nAcrescimo <= 0 then
+      Exit;
    Result := Valor + ((Valor * nAcrescimo) / 100);
 end;
 
@@ -1721,20 +1739,20 @@ Function ConverteRealDolar(vReal, vDolar: Currency): Currency;
 Begin
    Result := 0;
    // se for igual a zero, retornar para nao dar erro de divisão por Zero.
-   if vDolar=0 then
-      exit;
+   if vDolar = 0 then
+      Exit;
 
-   Result := (vReal / vDolar );
+   Result := (vReal / vDolar);
 end;
 
 Function ConverteRealEuro(vReal, vEuro: Currency): Currency;
 Begin
    Result := 0;
    // se for igual a zero, retornar para nao dar erro de divisão por Zero.
-   if vEuro=0 then
-      exit;
+   if vEuro = 0 then
+      Exit;
 
-   Result := (vReal / vEuro );
+   Result := (vReal / vEuro);
 
 end;
 
@@ -1752,11 +1770,12 @@ end;
 // pega a data de um campo EditMask/Edit, confere e retornar no formato padrão
 function fncDataValidar(Dado: string): String;
 Begin
-   Result := DateToStr( StrToDateDef(Dado,date ));
+   Result := DateToStr(StrToDateDef(Dado, Date));
 end;
 
 { Calcula juros simples }
-Function Calc_Juros(Valor, Juros: Currency; Atraso: Currency; Dias: Integer): Currency;
+Function Calc_Juros(Valor, Juros: Currency; Atraso: Currency; Dias: Integer)
+  : Currency;
 var
    Calc: Currency;
 Begin
@@ -1768,7 +1787,8 @@ Begin
 end;
 
 { Calcula juros composto }
-Function Calc_JurosComposto(Valor, Juros: Currency; Atraso: Currency; Dias: Integer): Currency;
+Function Calc_JurosComposto(Valor, Juros: Currency; Atraso: Currency;
+  Dias: Integer): Currency;
 var
    Calc: Currency;
 
@@ -1780,7 +1800,6 @@ Begin
    Result := Calc;
 
 end;
-
 
 // informa o Dia de uma data
 Function Dia(vData: TDate): Integer;
@@ -1849,7 +1868,7 @@ End;
 
 function ArrendondarDecimais(aValor: Currency): Currency;
 begin
-  Result  := RoundABNT(aValor,2);
+   Result := RoundABNT(aValor, 2);
 end;
 
 procedure ImprimeLinha(Nlin, Ncol: Integer; Var LinhaAtual: Integer;
@@ -1927,36 +1946,36 @@ var
    log: Textfile;
 begin
 
-{
-   LogTxt := Trim(LogTxt);
+   {
+     LogTxt := Trim(LogTxt);
 
-   NomeArquivo := Trim(NomeArquivo);
+     NomeArquivo := Trim(NomeArquivo);
 
-   xTimer := UpperCase(xTimer);
+     xTimer := UpperCase(xTimer);
 
-   If Empty(NomeArquivo) then
-   begin
-      NomeArquivo := 'c:\SisCom.Log';
+     If Empty(NomeArquivo) then
+     begin
+     NomeArquivo := 'c:\SisCom.Log';
 
-   End;
+     End;
 
-   // registrar Data e Hora do log
-   If xTimer = 'S' then
-   begin
-      LogTxt := #13 + #10 + '(' + DateToStr(Date) + ' - ' + TimeToStr(time) +
-        ')  ' + #13 + #10 + LogTxt;
-   end;
+     // registrar Data e Hora do log
+     If xTimer = 'S' then
+     begin
+     LogTxt := #13 + #10 + '(' + DateToStr(Date) + ' - ' + TimeToStr(time) +
+     ')  ' + #13 + #10 + LogTxt;
+     end;
 
-   try
-      AssignFile(log, NomeArquivo);
-      if not fileexists(NomeArquivo) then
-         Rewrite(log, NomeArquivo);
-      Append(log);
-      WriteLn(log, LogTxt);
-   finally
-      Closefile(log);
-   end;
-}
+     try
+     AssignFile(log, NomeArquivo);
+     if not fileexists(NomeArquivo) then
+     Rewrite(log, NomeArquivo);
+     Append(log);
+     WriteLn(log, LogTxt);
+     finally
+     Closefile(log);
+     end;
+   }
 end;
 
 // ----------------------------------------------------
@@ -2020,49 +2039,52 @@ end;
 Procedure AvisoSistema(texto: WideString);
 begin
    try
-     FrmAvisoSistema := TFrmAvisoSistema.Create(Nil);
-     //FrmAvisoSistema.LblBarraTitulo.Caption :=Concat('Atenção, ',FUsuario.Nome, '...');
-     FrmAvisoSistema.LblBarraTitulo.Caption :='Mensagem';
-     FrmAvisoSistema.MemoAviso.Lines.Add('');
-     FrmAvisoSistema.MemoAviso.Lines.Add(texto);
-     FrmAvisoSistema.ShowModal;
+      FrmAvisoSistema := TFrmAvisoSistema.Create(Nil);
+      // FrmAvisoSistema.LblBarraTitulo.Caption :=Concat('Atenção, ',FUsuario.Nome, '...');
+      FrmAvisoSistema.LblBarraTitulo.Caption := 'Mensagem';
+      FrmAvisoSistema.MemoAviso.Lines.Add('');
+      FrmAvisoSistema.MemoAviso.Lines.Add(texto);
+      FrmAvisoSistema.ShowModal;
    finally
-     FrmAvisoSistema.Free;
+      FrmAvisoSistema.Free;
    end;
 End;
 
 Procedure AvisoSistemaErro(texto: WideString);
 begin
-  try
-    FrmAvisoSistemaErro := TFrmAvisoSistemaErro.Create(Nil);
-    FrmAvisoSistemaErro.LblBarraTitulo.Caption :=Concat('Atenção, ',FUsuario.Nome);
-    FrmAvisoSistemaErro.MemoAviso.Lines.Add('');
-    FrmAvisoSistemaErro.MemoAviso.Lines.Add(texto);
-    FrmAvisoSistemaErro.ShowModal;
-  finally
-    FrmQuestionar.Free;
-  end;
+   try
+      FrmAvisoSistemaErro := TFrmAvisoSistemaErro.Create(Nil);
+      FrmAvisoSistemaErro.LblBarraTitulo.Caption :=
+        Concat('Atenção, ', FUsuario.Nome);
+      FrmAvisoSistemaErro.MemoAviso.Lines.Add('');
+      FrmAvisoSistemaErro.MemoAviso.Lines.Add(texto);
+      FrmAvisoSistemaErro.ShowModal;
+   finally
+      FrmQuestionar.Free;
+   end;
 
 End;
-//                      const aTitulo, aMensagem: string; : String; aErro: Boolean
-Function ConfirmarAcao(aTitulo: String; aMensagem: String = 'Atenção'; aErro: Boolean=False): Boolean;
+
+// const aTitulo, aMensagem: string; : String; aErro: Boolean
+Function ConfirmarAcao(aTitulo: String; aMensagem: String = 'Atenção';
+  aErro: Boolean = False): Boolean;
 begin
-  Result := False;
-  try
-    FrmQuestionar := TFrmQuestionar.Create(Nil);
-    FrmQuestionar.Caption := aTitulo;
-    FrmQuestionar.lblMensagem.Caption := aMensagem;
-    FrmQuestionar.FFocoOk             := True;
-    if aErro then
-    begin
-      FrmQuestionar.shpTitulo.Brush.Color := clRed;
-      FrmQuestionar.lblMensagem.Font.Name := 'Courier New';
-      FrmQuestionar.lblMensagem.Font.Size := 10;
-    end;
-    Result := FrmQuestionar.ShowModal = mrOk;
-  finally
-    FrmQuestionar.Free;
-  end;
+   Result := False;
+   try
+      FrmQuestionar := TFrmQuestionar.Create(Nil);
+      FrmQuestionar.Caption := aTitulo;
+      FrmQuestionar.lblMensagem.Caption := aMensagem;
+      FrmQuestionar.FFocoOk := True;
+      if aErro then
+      begin
+         FrmQuestionar.shpTitulo.Brush.Color := clRed;
+         FrmQuestionar.lblMensagem.Font.Name := 'Courier New';
+         FrmQuestionar.lblMensagem.Font.size := 10;
+      end;
+      Result := FrmQuestionar.ShowModal = mrOk;
+   finally
+      FrmQuestionar.Free;
+   end;
 end;
 
 // se houver registros na tebela DETALHES (master/detail), então a tabela
@@ -2070,19 +2092,19 @@ end;
 // se Estiver
 Function Protegido(Tabela: TFDQuery): Boolean;
 begin
-  Result := false;
-  if Tabela.RecordCount > 0 then
-  Begin
-    Tabela.First; // posicionar no primeiro registro
-    Result := true; // Proteger a Tabela Mestre. Existe dados.
-  end;
+   Result := False;
+   if Tabela.RecordCount > 0 then
+   Begin
+      Tabela.First; // posicionar no primeiro registro
+      Result := True; // Proteger a Tabela Mestre. Existe dados.
+   end;
 end;
 
 // Centralizar TEXTO de acordo com a quantidade de colunas
 // Muito utilizado em relatorios para impressoras MATRICIAIS
 Function Centrar(FTextBuf: string; Cols: Integer): String;
 begin
-  Result := StringOfChar(#32, (Cols - Length(FTextBuf)) div 2) + FTextBuf;
+   Result := StringOfChar(#32, (Cols - Length(FTextBuf)) div 2) + FTextBuf;
 end;
 
 { This Procedure places a crosstab of the Query result "DB" into a
@@ -2177,11 +2199,11 @@ begin
    aGrid.FixedRows := 1;
 end;
 
-
-
-Procedure CrossTab(dbDados:TFDQuery; stScriptSQL, stCampoLinhas, stTituloLinha, stCampoColunas , stCampoSomar, stWhere, sCampoOrderBy:String; stOperador:String='Sum');
+Procedure Crosstab(dbDados: TFDQuery; stScriptSQL, stCampoLinhas, stTituloLinha,
+  stCampoColunas, stCampoSomar, stWhere, sCampoOrderBy: String;
+  stOperador: String = 'Sum');
 Var
-sStrScript, sValue, sScriptInicial : String;
+   sStrScript, sValue, sScriptInicial: String;
 Begin
 
    With dbDados do
@@ -2189,14 +2211,17 @@ Begin
       DisableControls;
       Screen.Cursor := crSQLWait;
 
-      if sCampoOrderBy>'' then
-         sScriptInicial :='SELECT DISTINCT '+stCampoColunas + Concat(',',sCampoOrderBy)+ ' FROM ('+stScriptSQL+') AS COLUMNS '
+      if sCampoOrderBy > '' then
+         sScriptInicial := 'SELECT DISTINCT ' + stCampoColunas +
+           Concat(',', sCampoOrderBy) + ' FROM (' + stScriptSQL +
+           ') AS COLUMNS '
       else
-         sScriptInicial :='SELECT DISTINCT '+stCampoColunas+' FROM ('+stScriptSQL+') AS COLUMNS ';
+         sScriptInicial := 'SELECT DISTINCT ' + stCampoColunas + ' FROM (' +
+           stScriptSQL + ') AS COLUMNS ';
 
-      if sCampoOrderBy>'' then
+      if sCampoOrderBy > '' then
       begin
-         sScriptInicial := sScriptInicial + ' ORDER BY '+sCampoOrderBy;
+         sScriptInicial := sScriptInicial + ' ORDER BY ' + sCampoOrderBy;
       end;
 
       Try
@@ -2205,38 +2230,44 @@ Begin
          SQL.Add(sScriptInicial);
          Open;
 
-         If stTituloLinha = '' Then stTituloLinha := stCampoLinhas;
-         sStrScript := 'SELECT '+stCampoLinhas+' as '+#39+stTituloLinha+#39+',';
+         If stTituloLinha = '' Then
+            stTituloLinha := stCampoLinhas;
+         sStrScript := 'SELECT ' + stCampoLinhas + ' as ' + #39 + stTituloLinha
+           + #39 + ',';
 
-         While not dbDados.Eof do
+         While not dbDados.eof do
          Begin
             sValue := dbDados.FieldByName(stCampoColunas).AsString;
-            If sValue='' Then
+            If sValue = '' Then
                sValue := 'Não Informado';
 
-            sValue := StringReplace(sValue,'.','_',[rfReplaceAll]);
-            sStrScript := sStrScript + stOperador+'( CASE '+stCampoColunas+' WHEN '+#39+sValue+#39+' THEN '+stCampoSomar+' END) as '+#39+sValue+#39+',';
+            sValue := StringReplace(sValue, '.', '_', [rfReplaceAll]);
+            sStrScript := sStrScript + stOperador + '( CASE ' + stCampoColunas +
+              ' WHEN ' + #39 + sValue + #39 + ' THEN ' + stCampoSomar +
+              ' END) as ' + #39 + sValue + #39 + ',';
             dbDados.Next;
 
          End;
 
-         sStrScript := sStrScript + ' '+stOperador+'('+stCampoSomar+') as TOTAL';
-         sStrScript := sStrScript + ' FROM ('+stScriptSQL+' AS B  ) AS A ';
-         //Str := Str + ' FROM ('+stScriptSQL+' AS B  '+sOrderBy+' ) AS A ';
+         sStrScript := sStrScript + ' ' + stOperador + '(' + stCampoSomar +
+           ') as TOTAL';
+         sStrScript := sStrScript + ' FROM (' + stScriptSQL + ' AS B  ) AS A ';
+         // Str := Str + ' FROM ('+stScriptSQL+' AS B  '+sOrderBy+' ) AS A ';
          sStrScript := sStrScript + ' ';
-         if stWhere>'' then
+         if stWhere > '' then
          begin
             sStrScript := sStrScript + stWhere;
          end;
          sStrScript := sStrScript + ' ';
-         sStrScript := sStrScript + ' GROUP BY '+stCampoLinhas+' ORDER BY '+stCampoLinhas+'';
-         //dbDados.Close;
-         //dbDados.SQL.Text := Str;
+         sStrScript := sStrScript + ' GROUP BY ' + stCampoLinhas + ' ORDER BY '
+           + stCampoLinhas + '';
+         // dbDados.Close;
+         // dbDados.SQL.Text := Str;
 
-         dbDados.close;
-         dbDados.sql.clear;
-         dbDados.sql.add(sStrScript);
-         dbDados.open;
+         dbDados.Close;
+         dbDados.SQL.Clear;
+         dbDados.SQL.Add(sStrScript);
+         dbDados.Open;
       Finally
          Screen.Cursor := crDefault;
          EnableControls;
@@ -2303,24 +2334,23 @@ begin
 
 end;
 
-function SubstituiStr (S,Localizar,Substituir : string) : string;
+function SubstituiStr(S, Localizar, Substituir: string): string;
 var
    Retorno: String;
    Posicao: Integer;
 begin
    Retorno := S;
-   //Obtendo a posição inicial da substring Localizar na string Localizar.
-   Posicao := Pos (Localizar, Retorno);
+   // Obtendo a posição inicial da substring Localizar na string Localizar.
+   Posicao := Pos(Localizar, Retorno);
    if Posicao <> 0 then // Verificando se a substring Localizar existe.
    begin
       // Excluindo a Localizar.
-      Delete(Retorno, Posicao, Length (Localizar));
+      Delete(Retorno, Posicao, Length(Localizar));
       // Inserindo a string do parâmetro Substituir
-      Insert(Substituir, Retorno , Posicao);
+      Insert(Substituir, Retorno, Posicao);
    end;
-Result := Retorno;
+   Result := Retorno;
 end;
-
 
 function PrimeiroNome(Nome: String): String;
 var
@@ -2431,7 +2461,7 @@ Begin
    Imagem.Brush.Color := ClBlack;
    Imagem.Pen.Color := ClBlack;
    X := 0;
-   I := true;
+   I := True;
    for y := 1 to 1000 do
    begin
       If Codigo[y] <> #0 Then
@@ -2455,7 +2485,6 @@ Begin
       End;
    end;
 end;
-
 
 function EncontrarTexto(TextoBase, Value: WideString): Integer;
 var
@@ -2650,17 +2679,17 @@ end;
 { -----------------------------------------------------------------------------
   Retorna uma String apenas com os char Numericos contidos em <Value>
   ---------------------------------------------------------------------------- }
-//function OnlyNumber(const Value: string): String;
-//Var
-//   I: Integer;
-//begin
-//   Result := '';
-//   For I := 1 to Length(Value) do
-//   begin
-//      if CharIsNum(Value[I]) then
-//         Result := Result + Value[I];
-//   end;
-//end;
+// function OnlyNumber(const Value: string): String;
+// Var
+// I: Integer;
+// begin
+// Result := '';
+// For I := 1 to Length(Value) do
+// begin
+// if CharIsNum(Value[I]) then
+// Result := Result + Value[I];
+// end;
+// end;
 
 { -----------------------------------------------------------------------------
   Retorna uma String apenas com os char Alpha contidos em <Value>
@@ -2728,7 +2757,6 @@ begin
       Result := Result + CHR(B);
    end;
 end;
-
 
 procedure GetComputers(Workgroup: String; Retorno: TStrings);
 
@@ -2809,7 +2837,7 @@ var
    BufSize: DWord;
    res: DWord;
 begin
-   Result := false;
+   Result := False;
    List := nil;
    Entries := 0;
    if WNetOpenEnum(RESOURCE_GLOBALNET, ResourceType, 0, NetResource, EnumHandle)
@@ -2999,49 +3027,53 @@ begin
    end;
 end;
 
-
 { Com a Função é possível permitir a entrada de somente letras, números ou letras e números. }
-function ValidarCampo(var Key: Char; TipoFiltro: Byte = 0): Boolean;
+function ValidarCampo(var Key: char; TipoFiltro: byte = 0): Boolean;
 begin
-{
+   {
 
-// Exemplos de uso
-no evento OnKeyPress
+     // Exemplos de uso
+     no evento OnKeyPress
 
-- ValidateField(Key);
+     - ValidateField(Key);
 
--  // Alterando o tipo de filtro.
--  ValidateField(Key, 2);
+     -  // Alterando o tipo de filtro.
+     -  ValidateField(Key, 2);
 
-}
+   }
 
-  case TipoFiltro of
-    0 : if not (IsCharAlphaNumeric(Key)) then Key := #0;   // Aceita letras e números
-    1 : if not (IsCharAlpha(Key))        then Key := #0;   // Aceita letras
-    2 : if not (IsDigit(Key))            then Key := #0;   // Aceita Números
-    else
+   case TipoFiltro of
+      0:
+         if not(IsCharAlphaNumeric(Key)) then
+            Key := #0; // Aceita letras e números
+      1:
+         if not(IsCharAlpha(Key)) then
+            Key := #0; // Aceita letras
+      2:
+         if not(IsDigit(Key)) then
+            Key := #0; // Aceita Números
+   else
       raise Exception.Create('Tipo de filtro inválido.');
-  end;
-
+   end;
 
 end;
 
-function ValorParcela(aValorCapital : Currency; aJuroMensal : Currency; nParcelas : Integer) : Currency;
+function ValorParcela(aValorCapital: Currency; aJuroMensal: Currency;
+  nParcelas: Integer): Currency;
 begin
-{
-aValorCapital representa o valor do bem (capital)
-aJuroMensal a taxa de juros mensal (%)
-nParcelas é o número de parcelas, em meses.
-retorno := valor da parcela.
-}
-   Result := aValorCapital*((aJuroMensal/100)/(1-( Power(1/(1+(aJuroMensal/100)),nParcelas) )));
+   {
+     aValorCapital representa o valor do bem (capital)
+     aJuroMensal a taxa de juros mensal (%)
+     nParcelas é o número de parcelas, em meses.
+     retorno := valor da parcela.
+   }
+   Result := aValorCapital *
+     ((aJuroMensal / 100) / (1 - (Power(1 / (1 + (aJuroMensal / 100)),
+     nParcelas))));
 end;
-
-
 
 /// CHECAGENS
 ///
-
 
 function Fix(X: Extended): Extended;
 
@@ -3054,12 +3086,12 @@ function Fix(X: Extended): Extended;
   Fix(3,7) = 3          Fix(-3,1) = -4 }
 
 begin
-  if (X >= 0) or (Frac(X) = 0) then
+   if (X >= 0) or (Frac(X) = 0) then
 
-    Result := Int(X)
+      Result := Int(X)
 
-  else
-    Result := Int(X) - 1;
+   else
+      Result := Int(X) - 1;
 
 end;
 
@@ -3074,16 +3106,16 @@ function RoundN(X: Extended): Extended;
   RoundN(3,1) = 3     RoundN(-3,1) = -3 }
 
 begin
-  (*
-  if Abs(Frac(X)) >= 0.5 then
+   (*
+     if Abs(Frac(X)) >= 0.5 then
 
-    Result := RoundUp(X)
+     Result := RoundUp(X)
 
-  else
-    Result := RoundDn(X);
+     else
+     Result := RoundDn(X);
 
-  *)
-    Result := Int(X) + Int(Frac(X) * 2);
+   *)
+   Result := Int(X) + Int(Frac(X) * 2);
 
 end;
 
@@ -3101,241 +3133,252 @@ function RoundX(X: Extended): Extended;
   RoundX(3,5) = 4     RoundX(-3,5) = -3 }
 
 begin
-  (*
-  if Abs(Frac(X)) >= 0,5 then
+   (*
+     if Abs(Frac(X)) >= 0,5 then
 
-    Result := RoundUpX(X)
+     Result := RoundUpX(X)
 
-  else
-    Result := RoundDnX(X);
+     else
+     Result := RoundDnX(X);
 
-  *)
-    Result := Fix(X + 0.5);
+   *)
+   Result := Fix(X + 0.5);
 
 end;
 
+function CriaSubDir(const NomeSubDir: string): Boolean;
+{ Exemplo de uso:
 
-function CriaSubDir(const NomeSubDir: string): boolean;
-{Exemplo de uso:
+  - Chame a função no evento OnCreate do form:
 
-- Chame a função no evento OnCreate do form:
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
+  procedure TForm1.FormCreate(Sender: TObject);
+  begin
   if not CriaSubDir('MeuSubDir') then
-    ShowMessage('Não foi possível criar o sub-diretório MeuSubDir.');
-end;
+  ShowMessage('Não foi possível criar o sub-diretório MeuSubDir.');
+  end;
 }
 
 var
-  Caminho: string;
+   Caminho: string;
 begin
 
-  Caminho := ExtractFilePath(ParamStr(0)) + NomeSubDir;
-  if DirectoryExists(Caminho) then
-    Result := true
-  else
-    Result := CreateDir(Caminho);
+   Caminho := ExtractFilePAth(ParamStr(0)) + NomeSubDir;
+   if DirectoryExists(Caminho) then
+      Result := True
+   else
+      Result := CreateDir(Caminho);
 end;
-
 
 function fncPrimeiraLetra(p_texto: string): string;
 begin
- If p_texto <> '' Then
- result := UpperCase(Copy(p_texto,1,1))+LowerCase(Copy(p_texto,2,Length(p_texto)));
+   If p_texto <> '' Then
+      Result := UpperCase(Copy(p_texto, 1, 1)) +
+        LowerCase(Copy(p_texto, 2, Length(p_texto)));
 end;
 
-Procedure MsgEsperar(sTitulo:String='Processo em andamento...';sMessage: string='';lbAbrir:boolean=True);
+Procedure MsgEsperar(sTitulo: String = 'Processo em andamento...';
+  sMessage: string = ''; lbAbrir: Boolean = True);
 begin
-  try
-    if lbAbrir then
-    begin
-      if (FrmStatusNFe = nil) then
-         FrmStatusNFe := TFrmStatusNFe.Create(NIL);
-      FrmStatusNFe.LblBarraTitulo.Caption := sTitulo;
-      FrmStatusNFe.lblStatus.Caption := sMessage;
-      FrmStatusNFe.Show;
-      FrmStatusNFe.BringToFront;
-    end
-    else
-    begin
-      if FrmStatusNFe<>nil then
-        FrmStatusNFe.close;
-    end;
-  finally
-    Application.ProcessMessages;
-  end;
+   try
+      if lbAbrir then
+      begin
+         if (FrmStatusNFe = nil) then
+            FrmStatusNFe := TFrmStatusNFe.Create(NIL);
+         FrmStatusNFe.LblBarraTitulo.Caption := sTitulo;
+         FrmStatusNFe.lblStatus.Caption := sMessage;
+         FrmStatusNFe.Show;
+         FrmStatusNFe.BringToFront;
+      end
+      else
+      begin
+         if FrmStatusNFe <> nil then
+            FrmStatusNFe.Close;
+      end;
+   finally
+      Application.ProcessMessages;
+   end;
 end;
 
 // criptografia
 function Base64Encode(const S: AnsiString): AnsiString;
 var
-  R, C : Byte;
-  F, L, M, N, U : Integer;
-  P : PAnsiChar;
+   r, C: byte;
+   f, L, m, n, U: Integer;
+   P: PAnsiChar;
 begin
-  L := Length(S);
-  if L > 0 then
-  begin
-    M := L mod 3;
-    N := (L div 3) * 4 + M;
-    if M > 0 then Inc(N);
-    U := N mod 4;
-    if U > 0 then
-    begin
-      U := 4 - U;
-      Inc(N, U);
-    end;
-    SetLength(Result, N);
-    P := Pointer(Result);
-    R := 0;
-    for F := 0 to L - 1 do
-    begin
-      C := Byte(S [F + 1]);
-      case F mod 3 of
-        0 : begin
-              P^ := Base64Charset[C shr 2 + 1];
-              Inc(P);
-              R := (C and 3) shl 4;
-            end;
-        1 : begin
-              P^ := Base64Charset[C shr 4 + R + 1];
-              Inc(P);
-              R := (C and $0F) shl 2;
-            end;
-        2 : begin
-              P^ := Base64Charset[C shr 6 + R + 1];
-              Inc(P);
-              P^ := Base64Charset[C and $3F + 1];
-              Inc(P);
-            end;
+   L := Length(S);
+   if L > 0 then
+   begin
+      m := L mod 3;
+      n := (L div 3) * 4 + m;
+      if m > 0 then
+         Inc(n);
+      U := n mod 4;
+      if U > 0 then
+      begin
+         U := 4 - U;
+         Inc(n, U);
       end;
-    end;
-    if M > 0 then
-    begin
-      P^ := Base64Charset[R + 1];
-      Inc(P);
-    end;
-    for F := 1 to U do
-    begin
-      P^ := '=';
-      Inc(P);
-    end;
-  end else
-    Result := '';
+      SetLength(Result, n);
+      P := Pointer(Result);
+      r := 0;
+      for f := 0 to L - 1 do
+      begin
+         C := byte(S[f + 1]);
+         case f mod 3 of
+            0:
+               begin
+                  P^ := Base64Charset[C shr 2 + 1];
+                  Inc(P);
+                  r := (C and 3) shl 4;
+               end;
+            1:
+               begin
+                  P^ := Base64Charset[C shr 4 + r + 1];
+                  Inc(P);
+                  r := (C and $0F) shl 2;
+               end;
+            2:
+               begin
+                  P^ := Base64Charset[C shr 6 + r + 1];
+                  Inc(P);
+                  P^ := Base64Charset[C and $3F + 1];
+                  Inc(P);
+               end;
+         end;
+      end;
+      if m > 0 then
+      begin
+         P^ := Base64Charset[r + 1];
+         Inc(P);
+      end;
+      for f := 1 to U do
+      begin
+         P^ := '=';
+         Inc(P);
+      end;
+   end
+   else
+      Result := '';
 end;
 
 // criptografia
 function Base64Decode(const S: AnsiString): AnsiString;
 var
-  F, L, M, P: Integer;
-  B, OutPos: Byte;
-  OutB: Array[1..3] of Byte;
-  Lookup: Array[AnsiChar] of Byte;
-  R: PAnsiChar;
+   f, L, m, P: Integer;
+   B, OutPos: byte;
+   OutB: Array [1 .. 3] of byte;
+   Lookup: Array [AnsiChar] of byte;
+   r: PAnsiChar;
 begin
-  L := Length(S);
-  P := 0;
-  while (L - P > 0) and (S[L - P] = '=') do Inc(P);
-  M := L - P;
-  if M <> 0 then
-  begin
-    SetLength(Result, (M * 3) div 4);
-    FillChar(Lookup, Sizeof(Lookup), #0);
-    for F := 0 to 63 do
-      Lookup[Base64Charset[F + 1]] := F;
-    R := Pointer(Result);
-    OutPos := 0;
-    for F := 1 to L - P do
-    begin
-      B := Lookup[S[F]];
-      case OutPos of
-          0 : OutB[1] := B shl 2;
-          1 : begin
-                OutB[1] := OutB[1] or (B shr 4);
-                R^ := AnsiChar(OutB[1]);
-                Inc(R);
-                OutB[2] := (B shl 4) and $FF;
-              end;
-          2 : begin
-                OutB[2] := OutB[2] or (B shr 2);
-                R^ := AnsiChar(OutB[2]);
-                Inc(R);
-                OutB[3] := (B shl 6) and $FF;
-              end;
-          3 : begin
-                OutB[3] := OutB[3] or B;
-                R^ := AnsiChar(OutB[3]);
-                Inc(R);
-              end;
-        end;
-      OutPos := (OutPos + 1) mod 4;
-    end;
-    if (OutPos > 0) and (P = 0) then
-      if OutB[OutPos] <> 0 then
-        Result := Result + AnsiChar(OutB[OutPos]);
-  end else
-    Result := '';
+   L := Length(S);
+   P := 0;
+   while (L - P > 0) and (S[L - P] = '=') do
+      Inc(P);
+   m := L - P;
+   if m <> 0 then
+   begin
+      SetLength(Result, (m * 3) div 4);
+      FillChar(Lookup, SizeOf(Lookup), #0);
+      for f := 0 to 63 do
+         Lookup[Base64Charset[f + 1]] := f;
+      r := Pointer(Result);
+      OutPos := 0;
+      for f := 1 to L - P do
+      begin
+         B := Lookup[S[f]];
+         case OutPos of
+            0:
+               OutB[1] := B shl 2;
+            1:
+               begin
+                  OutB[1] := OutB[1] or (B shr 4);
+                  r^ := AnsiChar(OutB[1]);
+                  Inc(r);
+                  OutB[2] := (B shl 4) and $FF;
+               end;
+            2:
+               begin
+                  OutB[2] := OutB[2] or (B shr 2);
+                  r^ := AnsiChar(OutB[2]);
+                  Inc(r);
+                  OutB[3] := (B shl 6) and $FF;
+               end;
+            3:
+               begin
+                  OutB[3] := OutB[3] or B;
+                  r^ := AnsiChar(OutB[3]);
+                  Inc(r);
+               end;
+         end;
+         OutPos := (OutPos + 1) mod 4;
+      end;
+      if (OutPos > 0) and (P = 0) then
+         if OutB[OutPos] <> 0 then
+            Result := Result + AnsiChar(OutB[OutPos]);
+   end
+   else
+      Result := '';
 end;
 
-
-function fncTipoPessoa ( strID : String) : String;
+function fncTipoPessoa(strID: String): String;
 begin
-   if strID='F' then
-      result := 'FÍSICA';
+   if strID = 'F' then
+      Result := 'FÍSICA';
 
-   if strID='J' then
-      result := 'JURÍDICA';
+   if strID = 'J' then
+      Result := 'JURÍDICA';
 
-   if strID='' then
-      result := 'INDEFINIDO';
+   if strID = '' then
+      Result := 'INDEFINIDO';
 
 end;
 
-procedure BloquearColorirColuna(aDBAdvGrid: TcxGridDBTableView;aColunas  : array of string);
+procedure BloquearColorirColuna(aDBAdvGrid: TcxGridDBTableView;
+  aColunas: array of string);
 var
- mContador, mIArrays : Integer;
+   mContador, mIArrays: Integer;
 
 begin
-  //for mContador := 0 to (aDBAdvGrid.DataController. -1) do
-//  begin
-//    for mIArrays := Low(aColunas) to High(aColunas) do
-//    begin
-//      if UpperCase(aDBAdvGrid.Columns[mContador].FieldName) = UpperCase(aColunas[mIArrays]) then
-//      begin
-//        aDBAdvGrid.Columns[mIArrays].ReadOnly :=True;
-//        aDBAdvGrid.Columns[mIArrays].Color    :=_COR_READONLY;
-//      end;
-//    end;
-//  end;
+   // for mContador := 0 to (aDBAdvGrid.DataController. -1) do
+   // begin
+   // for mIArrays := Low(aColunas) to High(aColunas) do
+   // begin
+   // if UpperCase(aDBAdvGrid.Columns[mContador].FieldName) = UpperCase(aColunas[mIArrays]) then
+   // begin
+   // aDBAdvGrid.Columns[mIArrays].ReadOnly :=True;
+   // aDBAdvGrid.Columns[mIArrays].Color    :=_COR_READONLY;
+   // end;
+   // end;
+   // end;
 end;
 
-
-function MessageDialog2(const Msg: string; DlgType: TMsgDlgType;Buttons: TMsgDlgButtons; Captions: array of string): Integer;
+function MessageDialog2(const Msg: string; DlgType: TMsgDlgType;
+  Buttons: TMsgDlgButtons; Captions: array of string): Integer;
 var
-  aMsgDlg: TForm;
-  i: Integer;
-  dlgButton: TButton;
-  CaptionIndex: Integer;
+   aMsgDlg: TForm;
+   I: Integer;
+   dlgButton: TButton;
+   CaptionIndex: Integer;
 begin
-  { Create the Dialog }
-  aMsgDlg := CreateMessageDialog(Msg, DlgType, Buttons);
-  captionIndex := 0;
-  { Loop through Objects in Dialog }
-  for i := 0 to aMsgDlg.ComponentCount - 1 do
-  begin
-   { If the object is of type TButton, then }
-    if (aMsgDlg.Components[i] is TButton) then
-    begin
-      dlgButton := TButton(aMsgDlg.Components[i]);
-      if CaptionIndex > High(Captions) then Break;
-      { Give a new caption from our Captions array}
-      dlgButton.Caption := Captions[CaptionIndex];
-      Inc(CaptionIndex);
-    end;
-  end;
-  Result := aMsgDlg.ShowModal;
+   { Create the Dialog }
+   aMsgDlg := CreateMessageDialog(Msg, DlgType, Buttons);
+   CaptionIndex := 0;
+   { Loop through Objects in Dialog }
+   for I := 0 to aMsgDlg.ComponentCount - 1 do
+   begin
+      { If the object is of type TButton, then }
+      if (aMsgDlg.Components[I] is TButton) then
+      begin
+         dlgButton := TButton(aMsgDlg.Components[I]);
+         if CaptionIndex > High(Captions) then
+            break;
+         { Give a new caption from our Captions array }
+         dlgButton.Caption := Captions[CaptionIndex];
+         Inc(CaptionIndex);
+      end;
+   end;
+   Result := aMsgDlg.ShowModal;
 end;
 
 End.
-

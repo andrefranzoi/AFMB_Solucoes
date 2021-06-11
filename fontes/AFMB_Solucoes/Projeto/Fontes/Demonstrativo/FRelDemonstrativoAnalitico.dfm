@@ -95,7 +95,7 @@ object FrmRelDemonstrativoAnalitico: TFrmRelDemonstrativoAnalitico
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        68.791666666666660000
+        68.791666666666680000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -248,7 +248,7 @@ object FrmRelDemonstrativoAnalitico: TFrmRelDemonstrativoAnalitico
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        68.791666666666660000
+        68.791666666666680000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

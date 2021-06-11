@@ -9841,7 +9841,6 @@ object FrmPrincipal: TFrmPrincipal
       Index = 0
     end
     object rbVenda: TdxRibbonTab
-      Active = True
       Caption = 'Venda'
       Groups = <
         item
@@ -9853,6 +9852,7 @@ object FrmPrincipal: TFrmPrincipal
       Index = 1
     end
     object rbFinanceiro: TdxRibbonTab
+      Active = True
       Caption = 'Financeiro'
       Groups = <
         item

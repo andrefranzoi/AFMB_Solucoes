@@ -1,16 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FControleChequesRecebidos;
@@ -20,12 +40,12 @@ interface
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, ImgList, DB,
    DBCtrls, Grids, DBGrids, StdCtrls, ExtCtrls, Mask,
-   Buttons, ComCtrls, Shellapi,  FMTBcd, SqlExpr,
+   Buttons, ComCtrls, Shellapi, FMTBcd, SqlExpr,
    ISFEdit, ISFEditbtn,
-   ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos,  FireDAC.Comp.Client,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet;
+   ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos, FireDAC.Comp.Client,
+   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet;
 
 type
    TFrmChequesRecebidos = class(TForm)
@@ -69,7 +89,7 @@ type
       EditCliente: TIDBEditDialog;
       EditNomeCliente: TEdit;
       DBGrid1: TDBGrid;
-    dbDlgProcurar: TIDBEditDialog;
+      dbDlgProcurar: TIDBEditDialog;
       procedure BtnSairClick(Sender: TObject);
       procedure BtnNovaNFClick(Sender: TObject);
       procedure BtnSalvarClick(Sender: TObject);
@@ -82,8 +102,8 @@ type
       procedure BtnProcurarClick(Sender: TObject);
       procedure db_CtaReceberBeforePost(DataSet: TDataSet);
       procedure db_CtaReceberNewRecord(DataSet: TDataSet);
-    procedure FormDestroy(Sender: TObject);
-    procedure db_CtaReceberAfterOpen(DataSet: TDataSet);
+      procedure FormDestroy(Sender: TObject);
+      procedure db_CtaReceberAfterOpen(DataSet: TDataSet);
 
    private
       { Private declarations }
@@ -96,15 +116,16 @@ var
 
 implementation
 
-uses FPrincipal, App.SQL, Biblioteca, Global, FRelCheques, App.Funcoes, Classe.Global;
+uses FPrincipal, App.SQL, Biblioteca, Global, FRelCheques, App.Funcoes,
+   Classe.Global;
 
 {$R *.dfm}
 
 procedure TFrmChequesRecebidos.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  db_CtaReceber.close;
-  Action := Cafree;
+   db_CtaReceber.close;
+   Action := Cafree;
 end;
 
 procedure TFrmChequesRecebidos.FormCreate(Sender: TObject);
@@ -118,7 +139,7 @@ end;
 
 procedure TFrmChequesRecebidos.FormDestroy(Sender: TObject);
 begin
-  FrmChequesRecebidos := Nil;
+   FrmChequesRecebidos := Nil;
 end;
 
 procedure TFrmChequesRecebidos.BtnSairClick(Sender: TObject);
@@ -186,13 +207,14 @@ procedure TFrmChequesRecebidos.BtnProcurarClick(Sender: TObject);
 begin
    if dbDlgProcurar.Execute then
    begin
-      db_CtaReceber.Locate('CODIGO', dbDlgProcurar.ResultFieldAsInteger('CODIGO'), []);
+      db_CtaReceber.Locate('CODIGO',
+        dbDlgProcurar.ResultFieldAsInteger('CODIGO'), []);
    end;
 end;
 
 procedure TFrmChequesRecebidos.db_CtaReceberAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_CtaReceber);
+   FormataCampo(db_CtaReceber);
 end;
 
 procedure TFrmChequesRecebidos.db_CtaReceberBeforePost(DataSet: TDataSet);

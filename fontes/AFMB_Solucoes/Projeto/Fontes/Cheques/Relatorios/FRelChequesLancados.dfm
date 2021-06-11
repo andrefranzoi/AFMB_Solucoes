@@ -716,7 +716,7 @@ object FrmRelChequesLancados: TFrmRelChequesLancados
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        92.604166666666660000
+        92.604166666666680000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -966,7 +966,7 @@ object FrmRelChequesLancados: TFrmRelChequesLancados
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        42.333333333333330000
+        42.333333333333340000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

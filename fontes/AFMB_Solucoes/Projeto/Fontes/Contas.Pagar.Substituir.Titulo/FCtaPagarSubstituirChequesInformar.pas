@@ -1,36 +1,36 @@
 ﻿{
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FCtaPagarSubstituirChequesInformar;
@@ -38,106 +38,107 @@ unit FCtaPagarSubstituirChequesInformar;
 interface
 
 uses
-  Windows, Messages, System.SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, Grids, DBGrids, StdCtrls, DB,  FireDAC.Comp.Client,
-  Vcl.Imaging.jpeg, Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet;
+   Windows, Messages, System.SysUtils, Variants, Classes, Graphics, Controls,
+   Forms,
+   Dialogs, ExtCtrls, Grids, DBGrids, StdCtrls, DB, FireDAC.Comp.Client,
+   Vcl.Imaging.jpeg, Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet;
 
 type
-  TFrmCtaPagarSubstituirChequesInformar = class(TForm)
-    GroupBox1: TGroupBox;
-    DBGrid1: TDBGrid;
-    Panel1: TPanel;
-    db_CtaPagarCheque: TFDQuery;
-    db_CtaPagarChequeSomar: TFDQuery;
-    ds_CtaPagarCheque: TDataSource;
-    Button1: TButton;
-    Button2: TButton;
-    GroupBox7: TGroupBox;
-    Image1: TImage;
-    lblTotais: TLabel;
-    db_CtaPagarChequeEMPRESA: TIntegerField;
-    db_CtaPagarChequeCODIGO: TIntegerField;
-    db_CtaPagarChequeFORNECEDOR: TIntegerField;
-    db_CtaPagarChequeFORNECEDOR_NOME: TStringField;
-    db_CtaPagarChequeNOTAFISCAL: TIntegerField;
-    db_CtaPagarChequeSERIENF: TStringField;
-    db_CtaPagarChequeDATA: TSQLTimeStampField;
-    db_CtaPagarChequeVENCIMENTO: TSQLTimeStampField;
-    db_CtaPagarChequeDATA_PAGTO: TSQLTimeStampField;
-    db_CtaPagarChequeDOCUMENTO: TStringField;
-    db_CtaPagarChequeREMESSA: TIntegerField;
-    db_CtaPagarChequePARCELA: TIntegerField;
-    db_CtaPagarChequeCFOP: TIntegerField;
-    db_CtaPagarChequeESPECIE: TStringField;
-    db_CtaPagarChequeTIPO: TStringField;
-    db_CtaPagarChequeVALOR: TFloatField;
-    db_CtaPagarChequeVALOR_PAGO: TFloatField;
-    db_CtaPagarChequeVALOR_SALDO: TFloatField;
-    db_CtaPagarChequeCONTA_CREDITO: TIntegerField;
-    db_CtaPagarChequeCHQ_BANCO: TStringField;
-    db_CtaPagarChequeCHQ_AGENCIA: TStringField;
-    db_CtaPagarChequeCHQ_CONTA_CORRENTE: TStringField;
-    db_CtaPagarChequeCHQ_CODCIDADE: TStringField;
-    db_CtaPagarChequeCHQ_NOMECIDADE_UF: TStringField;
-    db_CtaPagarChequeCHQ_EMITENTE: TStringField;
-    db_CtaPagarChequeCHQ_DESTINO: TStringField;
-    db_CtaPagarChequeFORMA_PAGTO: TIntegerField;
-    db_CtaPagarChequeDEPARTAMENTO: TIntegerField;
-    db_CtaPagarChequeDESCONTO: TFloatField;
-    db_CtaPagarChequeDESCONTOVALOR: TFloatField;
-    db_CtaPagarChequePLANO_CONTAS: TStringField;
-    db_CtaPagarChequeCONTACAIXA: TIntegerField;
-    db_CtaPagarChequeHISTORICO: TStringField;
-    db_CtaPagarChequeOBSERVACAO: TStringField;
-    db_CtaPagarChequeGERARRECIBO: TStringField;
-    db_CtaPagarChequeNOSSONUMERO: TStringField;
-    db_CtaPagarChequeDESPESAS_BOLETO: TFloatField;
-    db_CtaPagarChequeDESPESAS_JUROS: TFloatField;
-    db_CtaPagarChequeDESPESAS_JUROSVALOR: TFloatField;
-    db_CtaPagarChequeDESPESAS_MULTA: TFloatField;
-    db_CtaPagarChequeDESPESAS_CARTORIO: TFloatField;
-    db_CtaPagarChequeDESPESAS_TOTAL: TFloatField;
-    db_CtaPagarChequeATRASADA: TStringField;
-    db_CtaPagarChequeQUITADO: TStringField;
-    db_CtaPagarChequeMOTIVO_BAIXA: TIntegerField;
-    db_CtaPagarChequeUSER_NOME: TStringField;
-    db_CtaPagarChequeUSER_DATA: TSQLTimeStampField;
-    db_CtaPagarChequeUSER_HORA: TTimeField;
-    db_CtaPagarChequeCOMPLEMENTAR: TStringField;
-    db_CtaPagarChequeCHECADO: TStringField;
-    db_CtaPagarChequePROTESTOSTATUS: TStringField;
-    db_CtaPagarChequeSELECIONADO: TStringField;
-    db_CtaPagarChequePAGAMENTOTITULO: TStringField;
-    db_CtaPagarChequeCHQ_NUMEROCHEQUE: TStringField;
+   TFrmCtaPagarSubstituirChequesInformar = class(TForm)
+      GroupBox1: TGroupBox;
+      DBGrid1: TDBGrid;
+      Panel1: TPanel;
+      db_CtaPagarCheque: TFDQuery;
+      db_CtaPagarChequeSomar: TFDQuery;
+      ds_CtaPagarCheque: TDataSource;
+      Button1: TButton;
+      Button2: TButton;
+      GroupBox7: TGroupBox;
+      Image1: TImage;
+      lblTotais: TLabel;
+      db_CtaPagarChequeEMPRESA: TIntegerField;
+      db_CtaPagarChequeCODIGO: TIntegerField;
+      db_CtaPagarChequeFORNECEDOR: TIntegerField;
+      db_CtaPagarChequeFORNECEDOR_NOME: TStringField;
+      db_CtaPagarChequeNOTAFISCAL: TIntegerField;
+      db_CtaPagarChequeSERIENF: TStringField;
+      db_CtaPagarChequeDATA: TSQLTimeStampField;
+      db_CtaPagarChequeVENCIMENTO: TSQLTimeStampField;
+      db_CtaPagarChequeDATA_PAGTO: TSQLTimeStampField;
+      db_CtaPagarChequeDOCUMENTO: TStringField;
+      db_CtaPagarChequeREMESSA: TIntegerField;
+      db_CtaPagarChequePARCELA: TIntegerField;
+      db_CtaPagarChequeCFOP: TIntegerField;
+      db_CtaPagarChequeESPECIE: TStringField;
+      db_CtaPagarChequeTIPO: TStringField;
+      db_CtaPagarChequeVALOR: TFloatField;
+      db_CtaPagarChequeVALOR_PAGO: TFloatField;
+      db_CtaPagarChequeVALOR_SALDO: TFloatField;
+      db_CtaPagarChequeCONTA_CREDITO: TIntegerField;
+      db_CtaPagarChequeCHQ_BANCO: TStringField;
+      db_CtaPagarChequeCHQ_AGENCIA: TStringField;
+      db_CtaPagarChequeCHQ_CONTA_CORRENTE: TStringField;
+      db_CtaPagarChequeCHQ_CODCIDADE: TStringField;
+      db_CtaPagarChequeCHQ_NOMECIDADE_UF: TStringField;
+      db_CtaPagarChequeCHQ_EMITENTE: TStringField;
+      db_CtaPagarChequeCHQ_DESTINO: TStringField;
+      db_CtaPagarChequeFORMA_PAGTO: TIntegerField;
+      db_CtaPagarChequeDEPARTAMENTO: TIntegerField;
+      db_CtaPagarChequeDESCONTO: TFloatField;
+      db_CtaPagarChequeDESCONTOVALOR: TFloatField;
+      db_CtaPagarChequePLANO_CONTAS: TStringField;
+      db_CtaPagarChequeCONTACAIXA: TIntegerField;
+      db_CtaPagarChequeHISTORICO: TStringField;
+      db_CtaPagarChequeOBSERVACAO: TStringField;
+      db_CtaPagarChequeGERARRECIBO: TStringField;
+      db_CtaPagarChequeNOSSONUMERO: TStringField;
+      db_CtaPagarChequeDESPESAS_BOLETO: TFloatField;
+      db_CtaPagarChequeDESPESAS_JUROS: TFloatField;
+      db_CtaPagarChequeDESPESAS_JUROSVALOR: TFloatField;
+      db_CtaPagarChequeDESPESAS_MULTA: TFloatField;
+      db_CtaPagarChequeDESPESAS_CARTORIO: TFloatField;
+      db_CtaPagarChequeDESPESAS_TOTAL: TFloatField;
+      db_CtaPagarChequeATRASADA: TStringField;
+      db_CtaPagarChequeQUITADO: TStringField;
+      db_CtaPagarChequeMOTIVO_BAIXA: TIntegerField;
+      db_CtaPagarChequeUSER_NOME: TStringField;
+      db_CtaPagarChequeUSER_DATA: TSQLTimeStampField;
+      db_CtaPagarChequeUSER_HORA: TTimeField;
+      db_CtaPagarChequeCOMPLEMENTAR: TStringField;
+      db_CtaPagarChequeCHECADO: TStringField;
+      db_CtaPagarChequePROTESTOSTATUS: TStringField;
+      db_CtaPagarChequeSELECIONADO: TStringField;
+      db_CtaPagarChequePAGAMENTOTITULO: TStringField;
+      db_CtaPagarChequeCHQ_NUMEROCHEQUE: TStringField;
 
-    procedure FormCreate(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure DBGrid1KeyPress(Sender: TObject; var Key: Char);
-    procedure db_CtaPagarChequeAfterPost(DataSet: TDataSet);
-    procedure db_CtaPagarChequeNewRecord(DataSet: TDataSet);
-    procedure db_CtaPagarChequeBeforePost(DataSet: TDataSet);
-    procedure Button2Click(Sender: TObject);
-    procedure db_CtaPagarChequeAfterOpen(DataSet: TDataSet);
-    procedure db_CtaPagarChequeAfterDelete(DataSet: TDataSet);
-    procedure Button1Click(Sender: TObject);
+      procedure FormCreate(Sender: TObject);
+      procedure FormClose(Sender: TObject; var Action: TCloseAction);
+      procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure DBGrid1KeyPress(Sender: TObject; var Key: Char);
+      procedure db_CtaPagarChequeAfterPost(DataSet: TDataSet);
+      procedure db_CtaPagarChequeNewRecord(DataSet: TDataSet);
+      procedure db_CtaPagarChequeBeforePost(DataSet: TDataSet);
+      procedure Button2Click(Sender: TObject);
+      procedure db_CtaPagarChequeAfterOpen(DataSet: TDataSet);
+      procedure db_CtaPagarChequeAfterDelete(DataSet: TDataSet);
+      procedure Button1Click(Sender: TObject);
 
-  private
+   private
 
-     schqBanco, schqAgencia, schqContaCorrente,
-     schqNumeroCheque, schqEmitente      : string;
-     schqValor : Real;
-    procedure prcSomar;
+      schqBanco, schqAgencia, schqContaCorrente, schqNumeroCheque,
+        schqEmitente: string;
+      schqValor: Real;
+      procedure prcSomar;
 
-    { Private declarations }
-  public
-    { Public declarations }
-  end;
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
 
 var
-  FrmCtaPagarSubstituirChequesInformar: TFrmCtaPagarSubstituirChequesInformar;
+   FrmCtaPagarSubstituirChequesInformar: TFrmCtaPagarSubstituirChequesInformar;
 
 implementation
 
@@ -158,36 +159,38 @@ begin
    close;
 end;
 
-procedure TFrmCtaPagarSubstituirChequesInformar.DBGrid1KeyPress(Sender: TObject; var Key: Char);
+procedure TFrmCtaPagarSubstituirChequesInformar.DBGrid1KeyPress(Sender: TObject;
+  var Key: Char);
 begin
    Key := AnsiUpperCase(Key)[1];
 end;
 
-procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeAfterDelete(
-  DataSet: TDataSet);
+procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeAfterDelete
+  (DataSet: TDataSet);
 begin
    prcSomar;
 end;
 
-procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeAfterOpen(
-  DataSet: TDataSet);
+procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeAfterOpen
+  (DataSet: TDataSet);
 begin
-  prcSomar;
+   prcSomar;
 end;
 
-procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeAfterPost(
-  DataSet: TDataSet);
+procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeAfterPost
+  (DataSet: TDataSet);
 begin
-  schqBanco            :=db_CtaPagarCheque.FieldByName('CHQ_BANCO').AsString      ;
-  schqAgencia          :=db_CtaPagarCheque.FieldByName('CHQ_AGENCIA').AsString     ;
-  schqContaCorrente    :=db_CtaPagarCheque.FieldByName('CHQ_CONTA_CORRENTE').AsString ;
-  schqNumeroCheque     :=db_CtaPagarCheque.FieldByName('DOCUMENTO').AsString        ;
-  schqEmitente         :=db_CtaPagarCheque.FieldByName('CHQ_EMITENTE').AsString     ;
-  schqValor            :=db_CtaPagarCheque.FieldByName('VALOR').AsFloat;
+   schqBanco := db_CtaPagarCheque.FieldByName('CHQ_BANCO').AsString;
+   schqAgencia := db_CtaPagarCheque.FieldByName('CHQ_AGENCIA').AsString;
+   schqContaCorrente := db_CtaPagarCheque.FieldByName
+     ('CHQ_CONTA_CORRENTE').AsString;
+   schqNumeroCheque := db_CtaPagarCheque.FieldByName('DOCUMENTO').AsString;
+   schqEmitente := db_CtaPagarCheque.FieldByName('CHQ_EMITENTE').AsString;
+   schqValor := db_CtaPagarCheque.FieldByName('VALOR').AsFloat;
 
-  db_CtaPagarCheque.Close;
-  db_CtaPagarCheque.Open;
-  prcSomar;
+   db_CtaPagarCheque.close;
+   db_CtaPagarCheque.Open;
+   prcSomar;
 
 end;
 
@@ -195,57 +198,62 @@ procedure TFrmCtaPagarSubstituirChequesInformar.prcSomar;
 begin
 
    db_CtaPagarChequeSomar.close;
-   db_CtaPagarChequeSomar.ParamByName('EMPRESA').AsInteger          := FSistema.Empresa;
-   db_CtaPagarChequeSomar.ParamByName('FORNECEDOR').AsInteger          := StrToIntDef(strFornecedor,0);
-   db_CtaPagarChequeSomar.ParamByName('NOTAFISCAL').AsInteger       := 0;
-   db_CtaPagarChequeSomar.open;
+   db_CtaPagarChequeSomar.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaPagarChequeSomar.ParamByName('FORNECEDOR').AsInteger :=
+     StrToIntDef(strFornecedor, 0);
+   db_CtaPagarChequeSomar.ParamByName('NOTAFISCAL').AsInteger := 0;
+   db_CtaPagarChequeSomar.Open;
 
-   nlValor      :=db_CtaPagarChequeSomar.FieldByName('VALORTOTAL').AsFloat;
-   nlRegistros  :=db_CtaPagarChequeSomar.FieldByName('REGISTROS').AsInteger;
-   nValorGlobalCheques  :=nlValor;
+   nlValor := db_CtaPagarChequeSomar.FieldByName('VALORTOTAL').AsFloat;
+   nlRegistros := db_CtaPagarChequeSomar.FieldByName('REGISTROS').AsInteger;
+   nValorGlobalCheques := nlValor;
 
-   lblTotais.Caption :=Concat('Cheques: ',IntToStr(nlRegistros), ' | Valor Total: ', FormatSettings.CurrencyString, ' ', formatfloat( '###,##0.00',nValorGlobalCheques ));
+   lblTotais.Caption := Concat('Cheques: ', IntToStr(nlRegistros),
+     ' | Valor Total: ', FormatSettings.CurrencyString, ' ',
+     formatfloat('###,##0.00', nValorGlobalCheques));
 
    db_CtaPagarChequeSomar.close;
 
 end;
 
-
-procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeBeforePost(
-  DataSet: TDataSet);
+procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeBeforePost
+  (DataSet: TDataSet);
 begin
-   db_CtaPagarCheque.FieldByName('EMPRESA').AsInteger            := FSistema.Empresa;
-   db_CtaPagarCheque.FieldByName('DATA').AsDateTime              := Date;
-   db_CtaPagarCheque.FieldByName('FORNECEDOR').AsInteger         := StrToIntDef(strFornecedor,0);
-   db_CtaPagarCheque.FieldByName('NOTAFISCAL').AsInteger         := 0;
-   db_CtaPagarCheque.FieldByName('CHQ_NUMEROCHEQUE').AsString    := db_CtaPagarCheque.FieldByName('DOCUMENTO').AsString;
+   db_CtaPagarCheque.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaPagarCheque.FieldByName('DATA').AsDateTime := Date;
+   db_CtaPagarCheque.FieldByName('FORNECEDOR').AsInteger :=
+     StrToIntDef(strFornecedor, 0);
+   db_CtaPagarCheque.FieldByName('NOTAFISCAL').AsInteger := 0;
+   db_CtaPagarCheque.FieldByName('CHQ_NUMEROCHEQUE').AsString :=
+     db_CtaPagarCheque.FieldByName('DOCUMENTO').AsString;
 
 end;
 
-procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeNewRecord(
-  DataSet: TDataSet);
+procedure TFrmCtaPagarSubstituirChequesInformar.db_CtaPagarChequeNewRecord
+  (DataSet: TDataSet);
 begin
-  db_CtaPagarCheque.FieldByName('EMPRESA').AsInteger          := FSistema.Empresa;
-  db_CtaPagarCheque.FieldByName('QUITADO').AsString           := 'N';
-  db_CtaPagarCheque.FieldByName('TIPO').AsString              := 'PAGAR';
-  db_CtaPagarCheque.FieldByName('ESPECIE').AsString           := 'CHEQUE';
-  db_CtaPagarCheque.FieldByName('HISTORICO').AsString         := '(PARA PAGAMENTO DE TITULO)';
-  db_CtaPagarCheque.FieldByName('PAGAMENTOTITULO').AsString   := 'S';
+   db_CtaPagarCheque.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaPagarCheque.FieldByName('QUITADO').AsString := 'N';
+   db_CtaPagarCheque.FieldByName('TIPO').AsString := 'PAGAR';
+   db_CtaPagarCheque.FieldByName('ESPECIE').AsString := 'CHEQUE';
+   db_CtaPagarCheque.FieldByName('HISTORICO').AsString :=
+     '(PARA PAGAMENTO DE TITULO)';
+   db_CtaPagarCheque.FieldByName('PAGAMENTOTITULO').AsString := 'S';
 
-  db_CtaPagarCheque.FieldByName('CHQ_BANCO').AsString           := schqBanco;
-  db_CtaPagarCheque.FieldByName('CHQ_AGENCIA').AsString         := schqAgencia;
-  db_CtaPagarCheque.FieldByName('CHQ_CONTA_CORRENTE').AsString  := schqContaCorrente;
-  db_CtaPagarCheque.FieldByName('DOCUMENTO').AsString           := schqNumeroCheque;
-  db_CtaPagarCheque.FieldByName('CHQ_EMITENTE').AsString        := schqEmitente;
-  db_CtaPagarCheque.FieldByName('VALOR').AsFloat                := schqValor;
+   db_CtaPagarCheque.FieldByName('CHQ_BANCO').AsString := schqBanco;
+   db_CtaPagarCheque.FieldByName('CHQ_AGENCIA').AsString := schqAgencia;
+   db_CtaPagarCheque.FieldByName('CHQ_CONTA_CORRENTE').AsString :=
+     schqContaCorrente;
+   db_CtaPagarCheque.FieldByName('DOCUMENTO').AsString := schqNumeroCheque;
+   db_CtaPagarCheque.FieldByName('CHQ_EMITENTE').AsString := schqEmitente;
+   db_CtaPagarCheque.FieldByName('VALOR').AsFloat := schqValor;
 
-
-  schqBanco            :='';
-  schqAgencia          :='';
-  schqContaCorrente    :='';
-  schqNumeroCheque     :='';
-  schqEmitente         :='';
-  schqValor            :=0;
+   schqBanco := '';
+   schqAgencia := '';
+   schqContaCorrente := '';
+   schqNumeroCheque := '';
+   schqEmitente := '';
+   schqValor := 0;
 
 end;
 
@@ -258,16 +266,17 @@ end;
 procedure TFrmCtaPagarSubstituirChequesInformar.FormCreate(Sender: TObject);
 begin
    db_CtaPagarCheque.close;
-   db_CtaPagarCheque.ParamByName('EMPRESA').AsInteger          := FSistema.Empresa;
-   db_CtaPagarCheque.ParamByName('FORNECEDOR').AsInteger       := StrToIntDef(strFornecedor,0);
-   db_CtaPagarCheque.ParamByName('NOTAFISCAL').AsInteger       := 0;
-   db_CtaPagarCheque.open;
+   db_CtaPagarCheque.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaPagarCheque.ParamByName('FORNECEDOR').AsInteger :=
+     StrToIntDef(strFornecedor, 0);
+   db_CtaPagarCheque.ParamByName('NOTAFISCAL').AsInteger := 0;
+   db_CtaPagarCheque.Open;
 end;
 
-procedure TFrmCtaPagarSubstituirChequesInformar.FormKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFrmCtaPagarSubstituirChequesInformar.FormKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
 begin
-   if key=vk_escape then
+   if Key = vk_escape then
       close;
 end;
 

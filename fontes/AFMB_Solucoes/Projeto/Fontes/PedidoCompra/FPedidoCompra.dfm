@@ -1125,7 +1125,7 @@ object FrmPedidoCompra: TFrmPedidoCompra
     ShowHint = True
     TabOrder = 2
     TabStop = True
-    ExplicitTop = 430
+    ExplicitTop = 440
     inherited PanelBotoesBottom: TPanel
       inherited SpbAdicionar: TSpeedButton
         OnClick = FrmFrameBotoes1SpbAdicionarClick

@@ -1335,7 +1335,7 @@ object FrmComissoesRelatorios: TFrmComissoesRelatorios
         end
         object Memo31: TfrxMemoView
           AllowVectorExport = True
-          Left = 661.417322834645700000
+          Left = 661.417322834645800000
           Width = 52.913385826771650000
           Height = 15.118110240000000000
           AutoWidth = True
@@ -1722,7 +1722,7 @@ object FrmComissoesRelatorios: TFrmComissoesRelatorios
         end
         object Memo30: TfrxMemoView
           AllowVectorExport = True
-          Left = 661.417322834645700000
+          Left = 661.417322834645800000
           Top = 64.252010000000000000
           Width = 52.913385826771650000
           Height = 11.338590000000000000

@@ -400,7 +400,7 @@ object FrmRelPagar_Quitadas: TFrmRelPagar_Quitadas
         Left = 562
         Top = 0
         Width = 85
-        Height = 13
+        Height = 12
         Size.Values = (
           33.072916666666670000
           1488.281250000000000000
@@ -525,7 +525,7 @@ object FrmRelPagar_Quitadas: TFrmRelPagar_Quitadas
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        92.604166666666660000
+        92.604166666666680000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

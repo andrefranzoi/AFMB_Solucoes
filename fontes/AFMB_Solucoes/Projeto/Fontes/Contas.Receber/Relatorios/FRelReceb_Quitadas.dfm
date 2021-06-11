@@ -107,7 +107,7 @@ object FrmRelReceb_Quitadas: TFrmRelReceb_Quitadas
         Height = 18
         Size.Values = (
           43.295454545454550000
-          9.621212121212121000
+          9.621212121212122000
           108.238636363636400000
           141.912878787878800000)
         XLColumn = 0
@@ -539,7 +539,7 @@ object FrmRelReceb_Quitadas: TFrmRelReceb_Quitadas
       ForceNewPage = False
       LinkBand = TotalOperacao
       Size.Values = (
-        62.537878787878790000
+        62.537878787878780000
         2770.909090909091000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -620,7 +620,7 @@ object FrmRelReceb_Quitadas: TFrmRelReceb_Quitadas
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        91.401515151515150000
+        91.401515151515160000
         2770.909090909091000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -632,9 +632,9 @@ object FrmRelReceb_Quitadas: TFrmRelReceb_Quitadas
         Height = 14
         Size.Values = (
           33.674242424242420000
-          9.621212121212121000
+          9.621212121212122000
           52.916666666666670000
-          96.212121212121210000)
+          96.212121212121220000)
         XLColumn = 0
         XLNumFormat = nfGeneral
         ActiveInPreview = False
@@ -663,7 +663,7 @@ object FrmRelReceb_Quitadas: TFrmRelReceb_Quitadas
           33.674242424242420000
           182.803030303030300000
           52.916666666666670000
-          96.212121212121210000)
+          96.212121212121220000)
         XLColumn = 0
         XLNumFormat = nfGeneral
         ActiveInPreview = False
@@ -990,7 +990,7 @@ object FrmRelReceb_Quitadas: TFrmRelReceb_Quitadas
       BandType = rbSummary
       object QRShape1: TQRShape
         Left = 916
-        Top = 39
+        Top = 38
         Width = 216
         Height = 82
         Size.Values = (

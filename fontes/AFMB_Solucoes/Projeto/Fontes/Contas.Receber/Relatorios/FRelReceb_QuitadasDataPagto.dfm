@@ -588,7 +588,7 @@ object FrmRelReceb_QuitadasDataPagto: TFrmRelReceb_QuitadasDataPagto
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        91.401515151515150000
+        91.401515151515160000
         2770.909090909091000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -841,7 +841,7 @@ object FrmRelReceb_QuitadasDataPagto: TFrmRelReceb_QuitadasDataPagto
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        74.564393939393940000
+        74.564393939393950000
         2770.909090909091000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -959,7 +959,7 @@ object FrmRelReceb_QuitadasDataPagto: TFrmRelReceb_QuitadasDataPagto
       BandType = rbSummary
       object QRShape1: TQRShape
         Left = 905
-        Top = 39
+        Top = 38
         Width = 216
         Height = 82
         Size.Values = (

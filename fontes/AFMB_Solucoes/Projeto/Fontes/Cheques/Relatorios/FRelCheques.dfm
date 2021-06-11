@@ -362,7 +362,8 @@ object FrmRelCheques: TFrmRelCheques
       ExplicitWidth = 523
     end
     inherited LblBarraTitulo: TLabel
-      Width = 490
+      Width = 170
+      Height = 23
       Caption = 'Relat'#243'rio de Cheques'
       ExplicitWidth = 170
     end

@@ -151,6 +151,10 @@ object FrmRelClientes: TFrmRelClientes
     object Tab_clientes: TTabSheet
       Caption = 'Clientes'
       OnShow = Tab_clientesShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel2: TPanel
         AlignWithMargins = True
         Left = 3
@@ -652,6 +656,10 @@ object FrmRelClientes: TFrmRelClientes
       Caption = 'Fornecedores'
       ImageIndex = 1
       OnShow = Tab_fornecedoresShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object RadioGForn: TRadioGroup
         AlignWithMargins = True
         Left = 3
@@ -984,7 +992,8 @@ object FrmRelClientes: TFrmRelClientes
       ExplicitWidth = 622
     end
     inherited LblBarraTitulo: TLabel
-      Width = 616
+      Width = 268
+      Height = 23
       Caption = 'Relat'#243'rios Clientes/Fornecedores'
       ExplicitWidth = 268
     end

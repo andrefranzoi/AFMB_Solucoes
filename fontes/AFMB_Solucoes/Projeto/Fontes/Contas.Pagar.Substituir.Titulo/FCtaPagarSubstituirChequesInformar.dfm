@@ -206,8 +206,8 @@ object FrmCtaPagarSubstituirChequesInformar: TFrmCtaPagarSubstituirChequesInform
     object lblTotais: TLabel
       Left = 2
       Top = 15
-      Width = 839
-      Height = 37
+      Width = 60
+      Height = 23
       Align = alClient
       Alignment = taCenter
       Caption = 'R$ 0,00'
@@ -219,8 +219,6 @@ object FrmCtaPagarSubstituirChequesInformar: TFrmCtaPagarSubstituirChequesInform
       ParentFont = False
       Transparent = True
       Layout = tlCenter
-      ExplicitWidth = 60
-      ExplicitHeight = 23
     end
   end
   object db_CtaPagarCheque: TFDQuery

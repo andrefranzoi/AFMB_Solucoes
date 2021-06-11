@@ -3,7 +3,7 @@ object FrmComprasImprimir: TFrmComprasImprimir
   Top = 141
   Caption = 'Compras por Fornecedor'
   ClientHeight = 498
-  ClientWidth = 1452
+  ClientWidth = 1370
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

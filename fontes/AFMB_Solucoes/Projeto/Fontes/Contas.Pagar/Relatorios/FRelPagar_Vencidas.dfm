@@ -256,7 +256,7 @@ object FrmRelPagar_Vencidas: TFrmRelPagar_Vencidas
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        42.333333333333330000
+        42.333333333333340000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -782,7 +782,7 @@ object FrmRelPagar_Vencidas: TFrmRelPagar_Vencidas
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        60.854166666666660000
+        60.854166666666680000
         1899.708333333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

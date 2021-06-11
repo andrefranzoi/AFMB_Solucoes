@@ -34,6 +34,7 @@ object FrmFramePadrao: TFrmFramePadrao
       end
       inherited pnTitulo: TPanel
         Width = 443
+        ExplicitWidth = 443
         inherited LblBarraTitulo: TLabel
           Width = 292
           ExplicitWidth = 292

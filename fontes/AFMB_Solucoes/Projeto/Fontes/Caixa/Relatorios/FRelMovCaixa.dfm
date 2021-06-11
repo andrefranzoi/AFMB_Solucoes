@@ -345,7 +345,8 @@ object FrmRelMovCaixa: TFrmRelMovCaixa
       ExplicitWidth = 515
     end
     inherited LblBarraTitulo: TLabel
-      Width = 499
+      Width = 265
+      Height = 23
       Caption = 'Relat'#243'rio de Movimento de Caixa'
       ExplicitWidth = 265
     end

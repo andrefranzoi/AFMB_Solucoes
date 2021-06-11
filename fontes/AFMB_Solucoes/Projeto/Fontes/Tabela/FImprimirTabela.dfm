@@ -104,7 +104,7 @@ object FrmImprimirTabela: TFrmImprimirTabela
       ParentFont = False
       Size.Values = (
         71.437500000000000000
-        949.854166666666600000)
+        949.854166666666800000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbColumnHeader
@@ -245,7 +245,7 @@ object FrmImprimirTabela: TFrmImprimirTabela
       ForceNewPage = False
       Size.Values = (
         129.645833333333300000
-        949.854166666666600000)
+        949.854166666666800000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbGroupFooter
@@ -778,7 +778,7 @@ object FrmImprimirTabela: TFrmImprimirTabela
       ParentFont = False
       Size.Values = (
         31.750000000000000000
-        949.854166666666600000)
+        949.854166666666800000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       Master = QuickRep1
@@ -900,7 +900,7 @@ object FrmImprimirTabela: TFrmImprimirTabela
       ParentFont = False
       Size.Values = (
         66.145833333333340000
-        949.854166666666600000)
+        949.854166666666800000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       Master = QuickRep1
@@ -928,7 +928,7 @@ object FrmImprimirTabela: TFrmImprimirTabela
       ParentFont = False
       Size.Values = (
         31.750000000000000000
-        949.854166666666600000)
+        949.854166666666800000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       Master = QuickRep1

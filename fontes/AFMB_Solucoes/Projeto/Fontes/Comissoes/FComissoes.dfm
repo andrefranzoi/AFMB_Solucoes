@@ -236,6 +236,7 @@ object FrmComissoes: TFrmComissoes
       end
       inherited Image1: TImage
         Height = 29
+        ExplicitHeight = 29
       end
       inherited Image2: TImage
         Left = 792

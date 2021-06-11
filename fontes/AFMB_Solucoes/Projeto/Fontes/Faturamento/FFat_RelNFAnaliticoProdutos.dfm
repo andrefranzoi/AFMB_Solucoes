@@ -2,7 +2,7 @@ object FrmFat_RelNFAnaliticoProdutos: TFrmFat_RelNFAnaliticoProdutos
   Left = 219
   Top = 122
   ClientHeight = 578
-  ClientWidth = 1473
+  ClientWidth = 1370
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

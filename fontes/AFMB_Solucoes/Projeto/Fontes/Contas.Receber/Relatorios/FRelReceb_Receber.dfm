@@ -587,7 +587,7 @@ object FrmRelReceb_Receber: TFrmRelReceb_Receber
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        91.401515151515150000
+        91.401515151515160000
         1900.189393939394000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
@@ -995,7 +995,7 @@ object FrmRelReceb_Receber: TFrmRelReceb_Receber
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        62.537878787878790000
+        62.537878787878780000
         1900.189393939394000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

@@ -52,8 +52,8 @@ object FrmQuestionar: TFrmQuestionar
       AlignWithMargins = True
       Left = 16
       Top = 4
-      Width = 532
-      Height = 42
+      Width = 70
+      Height = 22
       Margins.Left = 15
       Margins.Right = 15
       Align = alClient
@@ -68,7 +68,6 @@ object FrmQuestionar: TFrmQuestionar
       ParentColor = False
       ParentFont = False
       Layout = tlCenter
-      ExplicitHeight = 50
     end
   end
   object pnBotoes: TPanel
@@ -393,8 +392,8 @@ object FrmQuestionar: TFrmQuestionar
       AlignWithMargins = True
       Left = 12
       Top = 7
-      Width = 530
-      Height = 121
+      Width = 115
+      Height = 19
       Margins.Left = 10
       Margins.Top = 5
       Margins.Right = 10
@@ -409,8 +408,6 @@ object FrmQuestionar: TFrmQuestionar
       ParentFont = False
       Layout = tlCenter
       WordWrap = True
-      ExplicitWidth = 115
-      ExplicitHeight = 19
     end
   end
 end

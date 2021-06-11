@@ -51,6 +51,7 @@ object FrmOpcaoNotaFiscal: TFrmOpcaoNotaFiscal
       end
       inherited Image2: TImage
         Left = 328
+        ExplicitLeft = 328
         ExplicitHeight = 17
       end
     end

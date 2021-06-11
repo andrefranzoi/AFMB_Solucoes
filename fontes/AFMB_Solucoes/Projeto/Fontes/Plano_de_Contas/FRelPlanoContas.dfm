@@ -159,7 +159,8 @@ object FrmRelPlanoContas: TFrmRelPlanoContas
       ExplicitWidth = 485
     end
     inherited LblBarraTitulo: TLabel
-      Width = 479
+      Width = 321
+      Height = 23
       Caption = 'Relat'#243'rio de Plano de Contas Cadastrado'
       ExplicitWidth = 321
     end

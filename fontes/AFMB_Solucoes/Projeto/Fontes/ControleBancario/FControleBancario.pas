@@ -1,36 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FControleBancario;
@@ -38,19 +38,20 @@ unit FControleBancario;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
-  cxLookAndFeelPainters, cxStyles, cxCustomData, cxFilter, cxData,
-  cxDataStorage, cxEdit, cxNavigator,
-  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
-  cxCurrencyEdit, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.DBCtrls, FFrameBarra, FFrameBotoes, ISFEdit, ISFEditbtn, ISFdbEditbtn,
-  IDBEdit, uEstSearchDialogZeos, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxClasses, cxGridCustomView, cxGrid, Vcl.ComCtrls,
-  Classe.Global, dxDateRanges, dxSkinsCore, dxSkinsDefaultPainters;
+   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+   System.Classes, Vcl.Graphics,
+   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+   cxLookAndFeelPainters, cxStyles, cxCustomData, cxFilter, cxData,
+   cxDataStorage, cxEdit, cxNavigator,
+   cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+   cxCurrencyEdit, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+   Vcl.DBCtrls, FFrameBarra, FFrameBotoes, ISFEdit, ISFEditbtn, ISFdbEditbtn,
+   IDBEdit, uEstSearchDialogZeos, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+   cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+   cxClasses, cxGridCustomView, cxGrid, Vcl.ComCtrls,
+   Classe.Global, dxDateRanges, dxSkinsCore, dxSkinsDefaultPainters;
 
 type
    TFrmControleBancario = class(TForm)
@@ -88,18 +89,18 @@ type
       FrmFrameBarra1: TFrmFrameBarra;
       Navegador: TDBNavigator;
       DCodPlano: TIDBEditDialog;
-    ContaProcurar: TIDBEditDialog;
-    EditNomeContaCaixa: TEdit;
-    dbEditPesquisar: TIDBEditDialog;
-    cxGridBancario: TcxGridDBTableView;
-    cxGrid1Level1: TcxGridLevel;
-    cxGrid1: TcxGrid;
-    cxGridBancarioColumn1: TcxGridDBColumn;
-    cxGridBancarioColumn2: TcxGridDBColumn;
-    cxGridBancarioColumn3: TcxGridDBColumn;
-    cxGridBancarioColumn4: TcxGridDBColumn;
-    cxGridBancarioColumn5: TcxGridDBColumn;
-    cxGridBancarioColumn6: TcxGridDBColumn;
+      ContaProcurar: TIDBEditDialog;
+      EditNomeContaCaixa: TEdit;
+      dbEditPesquisar: TIDBEditDialog;
+      cxGridBancario: TcxGridDBTableView;
+      cxGrid1Level1: TcxGridLevel;
+      cxGrid1: TcxGrid;
+      cxGridBancarioColumn1: TcxGridDBColumn;
+      cxGridBancarioColumn2: TcxGridDBColumn;
+      cxGridBancarioColumn3: TcxGridDBColumn;
+      cxGridBancarioColumn4: TcxGridDBColumn;
+      cxGridBancarioColumn5: TcxGridDBColumn;
+      cxGridBancarioColumn6: TcxGridDBColumn;
       procedure db_CtrlBancarioAfterScroll(DataSet: TDataSet);
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -120,11 +121,11 @@ type
       procedure FrmFrameBotoes1SpbExcluirClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbProcurarClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbSairClick(Sender: TObject);
-    procedure cxGridBancarioCellDblClick(Sender: TcxCustomGridTableView;
-      ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
-      AShift: TShiftState; var AHandled: Boolean);
-    procedure FormDestroy(Sender: TObject);
-    procedure db_CtrlBancarioAfterOpen(DataSet: TDataSet);
+      procedure cxGridBancarioCellDblClick(Sender: TcxCustomGridTableView;
+        ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
+        AShift: TShiftState; var AHandled: Boolean);
+      procedure FormDestroy(Sender: TObject);
+      procedure db_CtrlBancarioAfterOpen(DataSet: TDataSet);
 
    private
       { Private declarations }
@@ -143,7 +144,7 @@ var
 implementation
 
 uses FPrincipal, App.SQL, Biblioteca, Global,
-  Classe.Usuarios, App.Funcoes;
+   Classe.Usuarios, App.Funcoes;
 
 {$R *.DFM}
 
@@ -158,7 +159,7 @@ End;
 
 procedure TFrmControleBancario.FormDestroy(Sender: TObject);
 begin
-  FrmControleBancario := Nil;
+   FrmControleBancario := Nil;
 end;
 
 procedure TFrmControleBancario.FrmFrameBotoes1SpbAdicionarClick
@@ -202,7 +203,7 @@ begin
 
    FrmFrameBotoes1.SpbExcluirClick(Sender);
 
-   FUsuario.LogUsuario('controle bancario',AcaoUserName[0]);
+   FUsuario.LogUsuario('controle bancario', AcaoUserName[0]);
 
 end;
 
@@ -212,7 +213,8 @@ begin
    begin
       FrmFrameBotoes1.SpbCancelarClick(Sender);
       db_CtrlBancario.first;
-      db_CtrlBancario.Locate('CODIGO', dbEditPesquisar.ResultFieldAsInteger('CODIGO'), []);
+      db_CtrlBancario.Locate('CODIGO',
+        dbEditPesquisar.ResultFieldAsInteger('CODIGO'), []);
    End;
 end;
 
@@ -232,12 +234,12 @@ procedure TFrmControleBancario.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
    db_CtrlBancario.close;
-   action := Cafree;
+   Action := Cafree;
 
 end;
 
-procedure TFrmControleBancario.cxGridBancarioCellDblClick(
-  Sender: TcxCustomGridTableView; ACellViewInfo: TcxGridTableDataCellViewInfo;
+procedure TFrmControleBancario.cxGridBancarioCellDblClick
+  (Sender: TcxCustomGridTableView; ACellViewInfo: TcxGridTableDataCellViewInfo;
   AButton: TMouseButton; AShift: TShiftState; var AHandled: Boolean);
 begin
    PageControl1.ActivePage := Tab_Edicao;
@@ -259,7 +261,8 @@ end;
 procedure TFrmControleBancario.ValidarCampos;
 begin
 
-   If  BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'CREDITO' then
+   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'CREDITO'
+   then
    begin
 
       LblCredito.Enabled := True;
@@ -273,7 +276,8 @@ begin
 
    end;
 
-   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'DEBITO' then
+   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'DEBITO'
+   then
    begin
 
       LblDebito.Enabled := True;
@@ -310,14 +314,16 @@ procedure TFrmControleBancario.db_CtrlBancarioPLN_CONTAChange(Sender: TField);
 begin
    ValidarCampos;
 
-   db_CtrlBancario.FieldByName('DC').AsString := BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString);;
+   db_CtrlBancario.FieldByName('DC').AsString :=
+     BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString);;
 
 end;
 
 procedure TFrmControleBancario.EditPlanoExit(Sender: TObject);
 begin
 
-   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'CREDITO' then
+   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'CREDITO'
+   then
    begin
 
       LblCredito.Enabled := True;
@@ -331,7 +337,8 @@ begin
 
    end;
 
-   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'DEBITO' then
+   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'DEBITO'
+   then
    begin
 
       LblDebito.Enabled := True;
@@ -349,13 +356,14 @@ end;
 
 procedure TFrmControleBancario.db_CtrlBancarioAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_CtrlBancario);
+   FormataCampo(db_CtrlBancario);
 end;
 
 procedure TFrmControleBancario.db_CtrlBancarioAfterScroll(DataSet: TDataSet);
 begin
 
-   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString)= 'CREDITO' then
+   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'CREDITO'
+   then
    begin
 
       LblCredito.Enabled := True;
@@ -366,7 +374,8 @@ begin
 
    end;
 
-   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'DEBITO' then
+   If BuscaPlanoContasTipo(db_CtrlBancario.FieldByName('PLN_CONTA').AsString) = 'DEBITO'
+   then
    begin
 
       LblDebito.Enabled := True;

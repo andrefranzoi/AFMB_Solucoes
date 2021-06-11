@@ -70,28 +70,28 @@ object FrmCEPStatus: TFrmCEPStatus
       ExplicitLeft = 5
       ExplicitTop = 5
       ExplicitWidth = 430
-      ExplicitHeight = 50
       inherited Image3: TImage
         Width = 430
-        Height = 50
+        ExplicitWidth = 430
+        ExplicitHeight = 50
       end
       inherited pnTitulo: TPanel
         Width = 424
-        Height = 44
         ExplicitWidth = 424
         ExplicitHeight = 27
         inherited LblBarraTitulo: TLabel
           Width = 273
-          Height = 34
           Caption = 'CEP | IBGE'
+          ExplicitWidth = 273
           ExplicitHeight = 21
         end
         inherited Image1: TImage
-          Height = 34
+          ExplicitHeight = 34
         end
         inherited Image2: TImage
           Left = 362
-          Height = 34
+          ExplicitLeft = 362
+          ExplicitHeight = 34
         end
       end
     end

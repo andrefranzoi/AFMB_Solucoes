@@ -97,7 +97,7 @@ object FrmRelPlanos: TFrmRelPlanos
       ForceNewPage = False
       Size.Values = (
         182.268518518518500000
-        1899.120370370370000000)
+        1899.120370370371000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbPageHeader
@@ -237,7 +237,7 @@ object FrmRelPlanos: TFrmRelPlanos
       ForceNewPage = False
       Size.Values = (
         138.171296296296300000
-        1899.120370370370000000)
+        1899.120370370371000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbColumnHeader
@@ -369,7 +369,7 @@ object FrmRelPlanos: TFrmRelPlanos
       ForceNewPage = False
       Size.Values = (
         35.277777777777780000
-        1899.120370370370000000)
+        1899.120370370371000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbDetail
@@ -526,7 +526,7 @@ object FrmRelPlanos: TFrmRelPlanos
       ParentFont = False
       Size.Values = (
         47.037037037037040000
-        1899.120370370370000000)
+        1899.120370370371000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       Expression = 'db_PlanoContas.PLANO'
@@ -577,7 +577,7 @@ object FrmRelPlanos: TFrmRelPlanos
       ForceNewPage = False
       Size.Values = (
         64.675925925925930000
-        1899.120370370370000000)
+        1899.120370370371000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbGroupFooter
@@ -657,8 +657,8 @@ object FrmRelPlanos: TFrmRelPlanos
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        73.495370370370370000
-        1899.120370370370000000)
+        73.495370370370380000
+        1899.120370370371000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
       BandType = rbSummary

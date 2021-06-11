@@ -307,7 +307,7 @@ object FrmFat_RelComissao: TFrmFat_RelComissao
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        92.604166666666660000
+        92.604166666666680000
         1898.385416666667000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

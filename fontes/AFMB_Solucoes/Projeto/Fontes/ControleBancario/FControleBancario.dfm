@@ -41,6 +41,9 @@ object FrmControleBancario: TFrmControleBancario
     ExplicitHeight = 368
     object Tab_Principal: TTabSheet
       Caption = 'Registros'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 340
       object cxGrid1: TcxGrid
         Left = 0
@@ -132,6 +135,9 @@ object FrmControleBancario: TFrmControleBancario
     object Tab_Edicao: TTabSheet
       Caption = 'Edi'#231#227'o'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 340
       object Label3: TLabel
         Left = 31

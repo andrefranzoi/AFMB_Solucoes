@@ -282,6 +282,10 @@ object FrmTransportadoras: TFrmTransportadoras
     TabOrder = 3
     object TabPrincipal: TTabSheet
       Caption = 'Dados Cadastrais'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0
@@ -902,6 +906,10 @@ object FrmTransportadoras: TFrmTransportadoras
     object TabObservacoes: TTabSheet
       Caption = 'Observa'#231#245'es'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox20: TGroupBox
         Left = 0
         Top = 0

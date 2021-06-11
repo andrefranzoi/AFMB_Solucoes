@@ -1,38 +1,37 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
-
 
 unit FCompraEntrada;
 
@@ -41,13 +40,13 @@ interface
 uses
    Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
    StdCtrls, Grids, ExtCtrls, Mask, Buttons, DBGrids, DBCtrls, Db,
-   Menus, SysUtils, ComCtrls,  ImgList, 
+   Menus, SysUtils, ComCtrls, ImgList,
    Variants,
    ISFEdit, ISFEditbtn, ISFdbEditbtn,
-   uEstSearchDialogZeos, IDBEdit, FFrameBotoes_II, FFrameBarra, 
+   uEstSearchDialogZeos, IDBEdit, FFrameBotoes_II, FFrameBarra,
    Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
+   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
 
@@ -105,19 +104,19 @@ type
       eprod: TDBEdit;
       enota: TDBEdit;
       DBEdit1: TDBEdit;
-    EditTransportadora: TIDBEditDialog;
-    EditNomeTrasportadora: TEdit;
-    DBEdit2: TDBEdit;
-    Label1: TLabel;
-    db_CtaPagarFrete: TFDQuery;
-    ds_CtaPagarFrete: TDataSource;
-    dbProcurarPedido: TIDBEditDialog;
-    dbProcurarCompra: TIDBEditDialog;
-    DBEdit5: TDBEdit;
-    QryUpDateID: TFDQuery;
-    Label18: TLabel;
-    DBEdit3: TDBEdit;
-    QrySomaProduto: TFDQuery;
+      EditTransportadora: TIDBEditDialog;
+      EditNomeTrasportadora: TEdit;
+      DBEdit2: TDBEdit;
+      Label1: TLabel;
+      db_CtaPagarFrete: TFDQuery;
+      ds_CtaPagarFrete: TDataSource;
+      dbProcurarPedido: TIDBEditDialog;
+      dbProcurarCompra: TIDBEditDialog;
+      DBEdit5: TDBEdit;
+      QryUpDateID: TFDQuery;
+      Label18: TLabel;
+      DBEdit3: TDBEdit;
+      QrySomaProduto: TFDQuery;
       procedure db_ComprasItensAfterPost(DataSet: TDataSet);
       procedure db_ComprasItensAfterDelete(DataSet: TDataSet);
       procedure FormCreate(Sender: TObject);
@@ -132,7 +131,7 @@ type
       procedure db_ComprasNewRecord(DataSet: TDataSet);
       procedure BoxProdutosEnter(Sender: TObject);
 
-      procedure Importar_PedidoCompra(idPedidoCompra:Integer);
+      procedure Importar_PedidoCompra(idPedidoCompra: Integer);
       procedure CalculaItemCompra;
 
       procedure db_ComprasPedidosAfterOpen(DataSet: TDataSet);
@@ -158,35 +157,35 @@ type
       Procedure ConfiguraBotaoEstornar;
       procedure FrmFrameBotoes_II1SpbAdicionarClick(Sender: TObject);
       procedure db_ComprasAfterPost(DataSet: TDataSet);
-    procedure db_CtaPagarFreteBeforePost(DataSet: TDataSet);
-    procedure db_CtaPagarFreteNewRecord(DataSet: TDataSet);
-    procedure db_ComprasBeforeOpen(DataSet: TDataSet);
-    procedure db_CtaPagarBeforeOpen(DataSet: TDataSet);
-    procedure db_CtaPagarFreteBeforeOpen(DataSet: TDataSet);
-    procedure FrmFrameBotoes_II1PainelBotoesDblClick(Sender: TObject);
-    procedure db_CtaPagarFreteAfterPost(DataSet: TDataSet);
-    procedure db_CtaPagarAfterPost(DataSet: TDataSet);
-    procedure db_ComprasAfterScroll(DataSet: TDataSet);
-    procedure db_ComprasAfterOpen(DataSet: TDataSet);
-    procedure db_ComprasItensBeforeOpen(DataSet: TDataSet);
-    procedure ds_ComprasStateChange(Sender: TObject);
-    procedure ds_ComprasItensStateChange(Sender: TObject);
-    procedure EditFornecedorChange(Sender: TObject);
-    procedure db_ComprasItensAfterOpen(DataSet: TDataSet);
-    procedure db_ComprasItensCalcFields(DataSet: TDataSet);
-    procedure db_CtaPagarAfterOpen(DataSet: TDataSet);
-    procedure FormDestroy(Sender: TObject);
-    procedure db_CtaPagarFreteAfterOpen(DataSet: TDataSet);
-    procedure db_CtaPagarFreteAfterDelete(DataSet: TDataSet);
-    procedure db_CtaPagarAfterDelete(DataSet: TDataSet);
-    procedure db_ComprasItensAfterEdit(DataSet: TDataSet);
+      procedure db_CtaPagarFreteBeforePost(DataSet: TDataSet);
+      procedure db_CtaPagarFreteNewRecord(DataSet: TDataSet);
+      procedure db_ComprasBeforeOpen(DataSet: TDataSet);
+      procedure db_CtaPagarBeforeOpen(DataSet: TDataSet);
+      procedure db_CtaPagarFreteBeforeOpen(DataSet: TDataSet);
+      procedure FrmFrameBotoes_II1PainelBotoesDblClick(Sender: TObject);
+      procedure db_CtaPagarFreteAfterPost(DataSet: TDataSet);
+      procedure db_CtaPagarAfterPost(DataSet: TDataSet);
+      procedure db_ComprasAfterScroll(DataSet: TDataSet);
+      procedure db_ComprasAfterOpen(DataSet: TDataSet);
+      procedure db_ComprasItensBeforeOpen(DataSet: TDataSet);
+      procedure ds_ComprasStateChange(Sender: TObject);
+      procedure ds_ComprasItensStateChange(Sender: TObject);
+      procedure EditFornecedorChange(Sender: TObject);
+      procedure db_ComprasItensAfterOpen(DataSet: TDataSet);
+      procedure db_ComprasItensCalcFields(DataSet: TDataSet);
+      procedure db_CtaPagarAfterOpen(DataSet: TDataSet);
+      procedure FormDestroy(Sender: TObject);
+      procedure db_CtaPagarFreteAfterOpen(DataSet: TDataSet);
+      procedure db_CtaPagarFreteAfterDelete(DataSet: TDataSet);
+      procedure db_CtaPagarAfterDelete(DataSet: TDataSet);
+      procedure db_ComprasItensAfterEdit(DataSet: TDataSet);
 
    private
-    procedure Salvar;
-    procedure SetParamID;
-    procedure ReabrirTabela;
-    procedure AtualizarID;
-    procedure GetDetProduto;
+      procedure Salvar;
+      procedure SetParamID;
+      procedure ReabrirTabela;
+      procedure AtualizarID;
+      procedure GetDetProduto;
       { Private declarations }
    public
       { Public declarations }
@@ -196,44 +195,45 @@ type
 var
    FrmCompraEntrada: TFrmCompraEntrada;
    vlrvar: Integer;
-   bImportando : Boolean;
-   sOpcao : String;
+   bImportando: Boolean;
+   sOpcao: String;
 
 implementation
 
 uses FPrincipal, App.SQL, Biblioteca, Global, Classe.Usuarios, FComprasPagar,
-  FOpcaoNotaFiscalCompra, FComprasImprimir,
-  FCompraCodigoBarra, App.Funcoes;
+   FOpcaoNotaFiscalCompra, FComprasImprimir,
+   FCompraCodigoBarra, App.Funcoes;
 
 {$R *.DFM}
 
 // calcula itens da nota fiscal
 procedure TFrmCompraEntrada.FormCreate(Sender: TObject);
 begin
-  FrmFrameBotoes_II1.DataSource := ds_Compras;
-  ReabrirTabela();
+   FrmFrameBotoes_II1.DataSource := ds_Compras;
+   ReabrirTabela();
 End;
 
 procedure TFrmCompraEntrada.FormDestroy(Sender: TObject);
 begin
-  FrmCompraEntrada := Nil;
+   FrmCompraEntrada := Nil;
 end;
 
 procedure TFrmCompraEntrada.ReabrirTabela();
 begin
-  db_Compras.Close;
-  db_Compras.ParamByName('CODIGO').Clear;
-  db_Compras.open;
+   db_Compras.Close;
+   db_Compras.ParamByName('CODIGO').Clear;
+   db_Compras.open;
 
-  db_ComprasItens.Close;
-  db_ComprasItens.ParamByName('CODIGO').Clear;
-  db_ComprasItens.open;
+   db_ComprasItens.Close;
+   db_ComprasItens.ParamByName('CODIGO').Clear;
+   db_ComprasItens.open;
 
-  db_CtaPagar.Close;
-  db_CtaPagar.open;
+   db_CtaPagar.Close;
+   db_CtaPagar.open;
 end;
 
-procedure TFrmCompraEntrada.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TFrmCompraEntrada.FormClose(Sender: TObject;
+  var Action: TCloseAction);
 begin
    db_Compras.Close;
    db_ComprasItens.Close;
@@ -250,9 +250,10 @@ begin
    end;
 end;
 
-procedure TFrmCompraEntrada.DbGrid_ItensKeyPress(Sender: TObject; var Key: Char);
+procedure TFrmCompraEntrada.DbGrid_ItensKeyPress(Sender: TObject;
+  var Key: Char);
 begin
-  Key := AnsiUpperCase(Key)[1];
+   Key := AnsiUpperCase(Key)[1];
 end;
 
 procedure TFrmCompraEntrada.Sair1Click(Sender: TObject);
@@ -315,19 +316,22 @@ begin
          // atualiza estoque com base nos itens da nota de entrada
 
          try
-           SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NCOMPRA').AsInteger :=            db_Compras.FieldByName('CODIGO').AsInteger;
-           SPATUALIZA_COMPRA_PRODUTOS.ParamByName('ACAO').AsString := 'S';
-           SPATUALIZA_COMPRA_PRODUTOS.ParamByName('SPRODUTO').AsString :=             db_ComprasItens.FieldByName('PRODUTO').AsString;
-           SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NQUANTIDADE').AsFloat :=           db_ComprasItens.FieldByName('QUANTIDADE').AsFloat;
-           SPATUALIZA_COMPRA_PRODUTOS.ExecProc;
+            SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NCOMPRA').AsInteger :=
+              db_Compras.FieldByName('CODIGO').AsInteger;
+            SPATUALIZA_COMPRA_PRODUTOS.ParamByName('ACAO').AsString := 'S';
+            SPATUALIZA_COMPRA_PRODUTOS.ParamByName('SPRODUTO').AsString :=
+              db_ComprasItens.FieldByName('PRODUTO').AsString;
+            SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NQUANTIDADE').AsFloat :=
+              db_ComprasItens.FieldByName('QUANTIDADE').AsFloat;
+            SPATUALIZA_COMPRA_PRODUTOS.ExecProc;
          finally
-           SPATUALIZA_COMPRA_PRODUTOS.Close;
+            SPATUALIZA_COMPRA_PRODUTOS.Close;
          end;
 
          db_ComprasItens.next;
       End;
       db_ComprasItens.First;
-     Informar('Compra foi Estornada');
+      Informar('Compra foi Estornada');
 
    End;
    db_Compras.Close;
@@ -354,22 +358,27 @@ begin
    db_CtaPagarFrete.Close;
    db_CtaPagarFrete.open;
 
-   if (db_Compras.FieldByName('FRETE_VALOR').AsFloat>0) Then
+   if (db_Compras.FieldByName('FRETE_VALOR').AsFloat > 0) Then
    begin
-     if db_CtaPagarFrete.IsEmpty then
-     begin
-        db_CtaPagarFrete.Append;
-        db_CtaPagarFrete.FieldByName('EMPRESA').AsInteger := FSistema.Empresa ;
-        db_CtaPagarFrete.FieldByName('FORNECEDOR').AsInteger := db_Compras.FieldByName('TRANSPORTADORA').AsInteger;
-        db_CtaPagarFrete.FieldByName('NOTAFISCAL').AsString := db_Compras.FieldByName('NOTAFISCAL').AsString;
-        db_CtaPagarFrete.FieldByName('TIPO').AsString := 'PAGAR';
-        db_CtaPagarFrete.FieldByName('ESPECIE').AsString := 'FRETE';
+      if db_CtaPagarFrete.IsEmpty then
+      begin
+         db_CtaPagarFrete.Append;
+         db_CtaPagarFrete.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
+         db_CtaPagarFrete.FieldByName('FORNECEDOR').AsInteger :=
+           db_Compras.FieldByName('TRANSPORTADORA').AsInteger;
+         db_CtaPagarFrete.FieldByName('NOTAFISCAL').AsString :=
+           db_Compras.FieldByName('NOTAFISCAL').AsString;
+         db_CtaPagarFrete.FieldByName('TIPO').AsString := 'PAGAR';
+         db_CtaPagarFrete.FieldByName('ESPECIE').AsString := 'FRETE';
 
-        db_CtaPagarFrete.FieldByName('DOCUMENTO').AsString  := db_Compras.FieldByName('NOTAFISCAL').AsString;
-        db_CtaPagarFrete.FieldByName('VENCIMENTO').AsDateTime  :=db_Compras.FieldByName('DATA').AsDateTime;
-        db_CtaPagarFrete.FieldByName('VALOR').AsFloat :=db_Compras.FieldByName('FRETE_VALOR').AsFloat;
-        db_CtaPagarFrete.post;
-     end;
+         db_CtaPagarFrete.FieldByName('DOCUMENTO').AsString :=
+           db_Compras.FieldByName('NOTAFISCAL').AsString;
+         db_CtaPagarFrete.FieldByName('VENCIMENTO').AsDateTime :=
+           db_Compras.FieldByName('DATA').AsDateTime;
+         db_CtaPagarFrete.FieldByName('VALOR').AsFloat :=
+           db_Compras.FieldByName('FRETE_VALOR').AsFloat;
+         db_CtaPagarFrete.Post;
+      end;
    end;
 
    FrmComprasPagar := TFrmComprasPagar.create(self);
@@ -377,7 +386,8 @@ begin
 
 end;
 
-procedure TFrmCompraEntrada.FrmFrameBotoes_II1PainelBotoesDblClick(Sender: TObject);
+procedure TFrmCompraEntrada.FrmFrameBotoes_II1PainelBotoesDblClick
+  (Sender: TObject);
 begin
    CalculaItemCompra;
    db_Compras.Refresh;
@@ -385,45 +395,51 @@ begin
 
 end;
 
-procedure TFrmCompraEntrada.FrmFrameBotoes_II1SpbAdicionarClick(Sender: TObject);
+procedure TFrmCompraEntrada.FrmFrameBotoes_II1SpbAdicionarClick
+  (Sender: TObject);
 begin
 
    sOpcao := '';
-   FrmOpcaoNotaFiscalCompra := TFrmOpcaoNotaFiscalCompra.Create(self);
+   FrmOpcaoNotaFiscalCompra := TFrmOpcaoNotaFiscalCompra.create(self);
    FrmOpcaoNotaFiscalCompra.ShowModal;
-   if sOpcao='DIGITAR' Then
+   if sOpcao = 'DIGITAR' Then
    begin
       // INSERIR
       FrmFrameBotoes_II1.SpbAdicionarClick(Sender);
       EditDocumento.SetFocus;
    end;
-   if sOpcao='IMPORTAR' Then
+   if sOpcao = 'IMPORTAR' Then
    begin
       try
-        Achar[99] := 'S'; // pode ser qualquer caractere
-        if dbProcurarPedido.Execute=false then
-           exit;
-        Importar_PedidoCompra(dbProcurarPedido.ResultFieldAsInteger('CODIGO'));
-        AtualizarID();
+         Achar[99] := 'S'; // pode ser qualquer caractere
+         if dbProcurarPedido.Execute = false then
+            Exit;
+         Importar_PedidoCompra(dbProcurarPedido.ResultFieldAsInteger('CODIGO'));
+         AtualizarID();
       finally
-        FrmFrameBotoes_II1.SpbCancelarClick(Sender);
+         FrmFrameBotoes_II1.SpbCancelarClick(Sender);
       end;
-      EditDocumento.Setfocus;
+      EditDocumento.SetFocus;
    end;
 
-
 end;
+
 procedure TFrmCompraEntrada.AtualizarID();
 begin
-  //-------------------------------------------------------------------
-  //
-  //-------------------------------------------------------------------
-  QryUpDateID.ParamByName('NOTAFISCAL').AsString  := db_Compras.FieldByName('NOTAFISCAL').AsString;
-  QryUpDateID.ParamByName('MODELO').AsString      := db_Compras.FieldByName('MODELO').AsString;
-  QryUpDateID.ParamByName('SERIE').AsString       := db_Compras.FieldByName('SERIE').AsString;
-  QryUpDateID.ParamByName('FORNECEDOR').AsInteger := db_Compras.FieldByName('FORNECEDOR').AsInteger;
-  QryUpDateID.ParamByName('CODIGO').AsInteger     := db_Compras.FieldByName('CODIGO').AsInteger;
-  QryUpDateID.ExecSQL;
+   // -------------------------------------------------------------------
+   //
+   // -------------------------------------------------------------------
+   QryUpDateID.ParamByName('NOTAFISCAL').AsString :=
+     db_Compras.FieldByName('NOTAFISCAL').AsString;
+   QryUpDateID.ParamByName('MODELO').AsString :=
+     db_Compras.FieldByName('MODELO').AsString;
+   QryUpDateID.ParamByName('SERIE').AsString :=
+     db_Compras.FieldByName('SERIE').AsString;
+   QryUpDateID.ParamByName('FORNECEDOR').AsInteger :=
+     db_Compras.FieldByName('FORNECEDOR').AsInteger;
+   QryUpDateID.ParamByName('CODIGO').AsInteger :=
+     db_Compras.FieldByName('CODIGO').AsInteger;
+   QryUpDateID.ExecSQL;
 end;
 
 procedure TFrmCompraEntrada.FrmFrameBotoes_II1SpbCancelarClick(Sender: TObject);
@@ -437,7 +453,7 @@ end;
 
 procedure TFrmCompraEntrada.FrmFrameBotoes_II1SpbEditarClick(Sender: TObject);
 begin
-  FrmFrameBotoes_II1.SpbEditarClick(Sender);
+   FrmFrameBotoes_II1.SpbEditarClick(Sender);
 end;
 
 procedure TFrmCompraEntrada.FrmFrameBotoes_II1SpbExcluirClick(Sender: TObject);
@@ -459,22 +475,26 @@ begin
 
    end;
 
-   IF Pergunta('Deseja realmente excluir está compra?') = False Then
+   IF Pergunta('Deseja realmente excluir está compra?') = false Then
       Exit;
 
    // atualiza estoque com base nos itens da nota de entrada
-   SPDELETA_COMPRA_PRODUTOS.ParamByName('NEMPRESA').AsInteger   := FSistema.Empresa;
-   SPDELETA_COMPRA_PRODUTOS.ParamByName('NCOMPRA').AsInteger    := db_Compras.FieldByName('CODIGO').AsInteger;
-   SPDELETA_COMPRA_PRODUTOS.ParamByName('FORNECEDOR').AsInteger := db_Compras.FieldByName('FORNECEDOR').AsInteger;
-   SPDELETA_COMPRA_PRODUTOS.ParamByName('NOTAFISCAL').AsInteger := db_Compras.FieldByName('NOTAFISCAL').AsInteger;
+   SPDELETA_COMPRA_PRODUTOS.ParamByName('NEMPRESA').AsInteger :=
+     FSistema.Empresa;
+   SPDELETA_COMPRA_PRODUTOS.ParamByName('NCOMPRA').AsInteger :=
+     db_Compras.FieldByName('CODIGO').AsInteger;
+   SPDELETA_COMPRA_PRODUTOS.ParamByName('FORNECEDOR').AsInteger :=
+     db_Compras.FieldByName('FORNECEDOR').AsInteger;
+   SPDELETA_COMPRA_PRODUTOS.ParamByName('NOTAFISCAL').AsInteger :=
+     db_Compras.FieldByName('NOTAFISCAL').AsInteger;
    SPDELETA_COMPRA_PRODUTOS.ExecProc;
-   //----------------------------------------------------------
+   // ----------------------------------------------------------
    db_CtaPagarFrete.Close;
    db_CtaPagarFrete.open;
-   while not db_CtaPagarFrete.eof do
+   while not db_CtaPagarFrete.Eof do
       db_CtaPagarFrete.delete;
    db_CtaPagarFrete.Close;
-   //----------------------------------------------------------
+   // ----------------------------------------------------------
 
    ReabrirTabela();
 end;
@@ -489,13 +509,14 @@ begin
    if dbProcurarCompra.Execute then
    begin
       db_Compras.Close;
-      db_Compras.ParamByName('CODIGO').AsInteger := dbProcurarCompra.ResultFieldAsInteger('CODIGO');
+      db_Compras.ParamByName('CODIGO').AsInteger :=
+        dbProcurarCompra.ResultFieldAsInteger('CODIGO');
       db_Compras.open;
 
       db_Compras.Refresh;
       db_ComprasItens.Close;
       SetParamID();
-      db_ComprasItens.Open;
+      db_ComprasItens.open;
       ConfiguraBotaoEstornar;
    end;
 end;
@@ -523,7 +544,7 @@ begin
    If db_Compras.FieldByName('ATUALIZADO').AsString = 'S' then
       Exit;
 
-   If Pergunta('Deseja fechar compra e atualizar estoque?') = False Then
+   If Pergunta('Deseja fechar compra e atualizar estoque?') = false Then
       Exit;
 
    db_ComprasItens.First;
@@ -531,19 +552,21 @@ begin
    Begin
       // atualiza estoque com base nos itens da nota de entrada
       try
-        SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NCOMPRA').AsInteger    := db_Compras.FieldByName('CODIGO').AsInteger;
-        SPATUALIZA_COMPRA_PRODUTOS.ParamByName('ACAO').AsString        := 'E';
-        SPATUALIZA_COMPRA_PRODUTOS.ParamByName('SPRODUTO').AsString    := db_ComprasItens.FieldByName('PRODUTO').AsString;
-        SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NQUANTIDADE').AsFloat  := db_ComprasItens.FieldByName('QUANTIDADE').AsFloat;
-        SPATUALIZA_COMPRA_PRODUTOS.ExecProc;
+         SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NCOMPRA').AsInteger :=
+           db_Compras.FieldByName('CODIGO').AsInteger;
+         SPATUALIZA_COMPRA_PRODUTOS.ParamByName('ACAO').AsString := 'E';
+         SPATUALIZA_COMPRA_PRODUTOS.ParamByName('SPRODUTO').AsString :=
+           db_ComprasItens.FieldByName('PRODUTO').AsString;
+         SPATUALIZA_COMPRA_PRODUTOS.ParamByName('NQUANTIDADE').AsFloat :=
+           db_ComprasItens.FieldByName('QUANTIDADE').AsFloat;
+         SPATUALIZA_COMPRA_PRODUTOS.ExecProc;
       finally
-        SPATUALIZA_COMPRA_PRODUTOS.Close;
+         SPATUALIZA_COMPRA_PRODUTOS.Close;
       end;
       db_ComprasItens.next;
    End;
    db_ComprasItens.Refresh;
    db_ComprasItens.First;
-
 
    db_Compras.Close;
    db_Compras.open;
@@ -558,45 +581,54 @@ end;
 
 procedure TFrmCompraEntrada.db_CtaPagarAfterDelete(DataSet: TDataSet);
 begin
-  db_CtaPagar.Refresh;
+   db_CtaPagar.Refresh;
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_CtaPagar);
+   FormataCampo(db_CtaPagar);
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarAfterPost(DataSet: TDataSet);
 begin
-  db_CtaPagar.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
-  db_CtaPagar.ParamByName('NOTAFISCAL').AsString  := db_Compras.FieldByName('NOTAFISCAL').AsString;
-  db_CtaPagar.ParamByName('FORNECEDOR').AsInteger := db_Compras.FieldByName('FORNECEDOR').AsInteger;
-  db_CtaPagar.Refresh;
+   db_CtaPagar.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaPagar.ParamByName('NOTAFISCAL').AsString :=
+     db_Compras.FieldByName('NOTAFISCAL').AsString;
+   db_CtaPagar.ParamByName('FORNECEDOR').AsInteger :=
+     db_Compras.FieldByName('FORNECEDOR').AsInteger;
+   db_CtaPagar.Refresh;
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarBeforeOpen(DataSet: TDataSet);
 begin
-  db_CtaPagar.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
-  db_CtaPagar.ParamByName('NOTAFISCAL').AsString  := db_Compras.FieldByName('NOTAFISCAL').AsString;
-  db_CtaPagar.ParamByName('FORNECEDOR').AsInteger := db_Compras.FieldByName('FORNECEDOR').AsInteger;
+   db_CtaPagar.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaPagar.ParamByName('NOTAFISCAL').AsString :=
+     db_Compras.FieldByName('NOTAFISCAL').AsString;
+   db_CtaPagar.ParamByName('FORNECEDOR').AsInteger :=
+     db_Compras.FieldByName('FORNECEDOR').AsInteger;
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarBeforePost(DataSet: TDataSet);
 begin
-   db_CtaPagar.FieldByName('EMPRESA').AsInteger := FSistema.Empresa ;
+   db_CtaPagar.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
 
-  db_CtaPagar.FieldByName('NOTAFISCAL').AsString := db_Compras.FieldByName('NOTAFISCAL').AsString;
+   db_CtaPagar.FieldByName('NOTAFISCAL').AsString :=
+     db_Compras.FieldByName('NOTAFISCAL').AsString;
 
-  db_CtaPagar.ParamByName('FORNECEDOR').AsInteger := db_Compras.FieldByName('FORNECEDOR').AsInteger;
+   db_CtaPagar.ParamByName('FORNECEDOR').AsInteger :=
+     db_Compras.FieldByName('FORNECEDOR').AsInteger;
 
    db_CtaPagar.FieldByName('TIPO').AsString := 'PAGAR';
    db_CtaPagar.FieldByName('ESPECIE').AsString := 'COMPRA';
 
-   db_CtaPagar.FieldByName('DEPARTAMENTO').AsString := db_Compras.FieldByName('CENTROCUSTO').AsString;
+   db_CtaPagar.FieldByName('DEPARTAMENTO').AsString :=
+     db_Compras.FieldByName('CENTROCUSTO').AsString;
 
-   db_CtaPagar.FieldByName('DATA').AsDateTime := db_Compras.FieldByName('DATA').AsDateTime;
+   db_CtaPagar.FieldByName('DATA').AsDateTime := db_Compras.FieldByName('DATA')
+     .AsDateTime;
 
-   db_CtaPagar.FieldByName('PLANO_CONTAS').AsString := db_Compras.FieldByName('PLANO_CONTAS').AsString;
+   db_CtaPagar.FieldByName('PLANO_CONTAS').AsString :=
+     db_Compras.FieldByName('PLANO_CONTAS').AsString;
 
    db_CtaPagar.FieldByName('HISTORICO').AsString := 'Proveniente da compra: ' +
      db_Compras.FieldByName('CODIGO').AsString + ' e NF de Entrada nº: ' +
@@ -606,18 +638,18 @@ end;
 
 procedure TFrmCompraEntrada.db_CtaPagarFreteAfterDelete(DataSet: TDataSet);
 begin
-  db_CtaPagarFrete.Refresh;
+   db_CtaPagarFrete.Refresh;
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarFreteAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_CtaPagarFrete);
+   FormataCampo(db_CtaPagarFrete);
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarFreteAfterPost(DataSet: TDataSet);
 begin
-  db_CtaPagarFrete.Close;
-  db_CtaPagarFrete.Open;
+   db_CtaPagarFrete.Close;
+   db_CtaPagarFrete.open;
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarFreteBeforeOpen(DataSet: TDataSet);
@@ -650,9 +682,9 @@ begin
    db_CtaPagarFrete.FieldByName('PLANO_CONTAS').AsString :=
      db_Compras.FieldByName('PLANO_CONTAS').AsString;
 
-   db_CtaPagarFrete.FieldByName('HISTORICO').AsString := 'Proveniente da compra: ' +
-     db_Compras.FieldByName('CODIGO').AsString + ' e NF de Entrada nº: ' +
-     db_Compras.FieldByName('NOTAFISCAL').AsString;
+   db_CtaPagarFrete.FieldByName('HISTORICO').AsString :=
+     'Proveniente da compra: ' + db_Compras.FieldByName('CODIGO').AsString +
+     ' e NF de Entrada nº: ' + db_Compras.FieldByName('NOTAFISCAL').AsString;
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarFreteNewRecord(DataSet: TDataSet);
@@ -662,7 +694,7 @@ end;
 
 procedure TFrmCompraEntrada.db_ComprasItensBeforeOpen(DataSet: TDataSet);
 begin
-  SetParamID();
+   SetParamID();
 end;
 
 procedure TFrmCompraEntrada.db_ComprasItensBeforePost(DataSet: TDataSet);
@@ -701,16 +733,18 @@ End;
 
 procedure TFrmCompraEntrada.db_ComprasItensCalcFields(DataSet: TDataSet);
 begin
-  if (db_ComprasItens.state in [dsedit, dsinsert]) then
-  begin
-    db_ComprasItens.FieldByName('VL_TOTAL').AsFloat :=  ( db_ComprasItens.FieldByName('QUANTIDADE').AsFloat * db_ComprasItens.FieldByName('VL_UNITARIO').AsFloat  );
-    CalculaItemCompra;
-  end;
+   if (db_ComprasItens.state in [dsedit, dsinsert]) then
+   begin
+      db_ComprasItens.FieldByName('VL_TOTAL').AsFloat :=
+        (db_ComprasItens.FieldByName('QUANTIDADE').AsFloat *
+        db_ComprasItens.FieldByName('VL_UNITARIO').AsFloat);
+      CalculaItemCompra;
+   end;
 end;
 
 procedure TFrmCompraEntrada.db_ComprasNewRecord(DataSet: TDataSet);
 begin
-   db_Compras.FieldByName('EMPRESA').AsInteger   := FSistema.Empresa ;
+   db_Compras.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
    db_Compras.FieldByName('DATA').AsDateTime := Date;
    db_Compras.FieldByName('DATAENTRADA').AsDateTime := Date;
    db_Compras.FieldByName('ATUALIZADO').AsString := 'N';
@@ -719,10 +753,10 @@ End;
 
 procedure TFrmCompraEntrada.BoxProdutosEnter(Sender: TObject);
 begin
-  Salvar();
+   Salvar();
 end;
 
-procedure TFrmCompraEntrada.Importar_PedidoCompra(idPedidoCompra:Integer);
+procedure TFrmCompraEntrada.Importar_PedidoCompra(idPedidoCompra: Integer);
 begin
 
    // TblCtaReceber.ParamByName('xcliente').Value :=CodigoCliente;
@@ -750,24 +784,30 @@ begin
      db_Compras.Edit;
    }
 
-   bImportando :=True;
+   bImportando := True;
 
    db_Compras.Append;
-   db_Compras.FieldByName('NOTAFISCAL').AsString         := '0';
-   db_Compras.FieldByName('PEDIDOINTERNO').AsInteger     := db_ComprasPedidos.FieldByName('CODIGO').AsInteger;
-   db_Compras.FieldByName('FORNECEDORPEDIDO').AsString   := db_ComprasPedidos.FieldByName('FORNECEDORPEDIDO').AsString;
-   db_Compras.FieldByName('FORNECEDOR').AsInteger        := db_ComprasPedidos.FieldByName('FORNECEDOR').AsInteger;
-   db_Compras.FieldByName('FRETE_VALOR').AsFloat         := db_ComprasPedidos.FieldByName('FRETE_VALOR').AsFloat;
-   db_Compras.FieldByName('TRANSPORTADORA').AsInteger    := BuscaClienteTransportadora(db_Compras.FieldByName('FORNECEDOR').AsInteger);
-   db_Compras.FieldByName('CENTROCUSTO').AsInteger       := BuscaClienteCentroCusto(db_Compras.FieldByName('FORNECEDOR').AsInteger);
-   db_Compras.FieldByName('CFOP').AsInteger              := GetCFOPCliente(db_Compras.FieldByName('FORNECEDOR').AsInteger);
+   db_Compras.FieldByName('NOTAFISCAL').AsString := '0';
+   db_Compras.FieldByName('PEDIDOINTERNO').AsInteger :=
+     db_ComprasPedidos.FieldByName('CODIGO').AsInteger;
+   db_Compras.FieldByName('FORNECEDORPEDIDO').AsString :=
+     db_ComprasPedidos.FieldByName('FORNECEDORPEDIDO').AsString;
+   db_Compras.FieldByName('FORNECEDOR').AsInteger :=
+     db_ComprasPedidos.FieldByName('FORNECEDOR').AsInteger;
+   db_Compras.FieldByName('FRETE_VALOR').AsFloat :=
+     db_ComprasPedidos.FieldByName('FRETE_VALOR').AsFloat;
+   db_Compras.FieldByName('TRANSPORTADORA').AsInteger :=
+     BuscaClienteTransportadora(db_Compras.FieldByName('FORNECEDOR').AsInteger);
+   db_Compras.FieldByName('CENTROCUSTO').AsInteger :=
+     BuscaClienteCentroCusto(db_Compras.FieldByName('FORNECEDOR').AsInteger);
+   db_Compras.FieldByName('CFOP').AsInteger :=
+     GetCFOPCliente(db_Compras.FieldByName('FORNECEDOR').AsInteger);
    // Gravar tabela MASTER
-   if (db_compras.state in [dsedit, dsinsert]) then
-      db_compras.Post;
+   if (db_Compras.state in [dsedit, dsinsert]) then
+      db_Compras.Post;
    Salvar();
 
-
-   bImportando :=False;
+   bImportando := false;
 
    // efetiva a importação
    db_ComprasPedidosItens.First;
@@ -778,8 +818,8 @@ begin
       db_ComprasItens.FieldByName('PRODUTO').AsString :=
         db_ComprasPedidosItens.FieldByName('PRODUTO').AsString;
 
-       db_ComprasItens.FieldByName('DESCRICAO').AsString :=
-       db_ComprasPedidosItens.FieldByName('DESCRICAO').AsString;
+      db_ComprasItens.FieldByName('DESCRICAO').AsString :=
+        db_ComprasPedidosItens.FieldByName('DESCRICAO').AsString;
 
       db_ComprasItens.FieldByName('QUANTIDADE').AsFloat :=
         db_ComprasPedidosItens.FieldByName('QTDE_PEDIDA').AsFloat;
@@ -798,11 +838,10 @@ begin
    db_Compras.Close;
    db_ComprasPedidosItens.Close;
 
-   db_Compras.Open;
-   db_ComprasPedidosItens.Open;
+   db_Compras.open;
+   db_ComprasPedidosItens.open;
 
-   EditDocumento.Setfocus;
-
+   EditDocumento.SetFocus;
 
 End;
 
@@ -818,56 +857,62 @@ end;
 
 procedure TFrmCompraEntrada.Salvar();
 begin
-  if (db_compras.state in [dsedit, dsinsert]) = false then
-    db_compras.Edit;
-  QrySomaProduto.Close();
-  try
-    QrySomaProduto.ParamByName('CODIGO').AsInteger   := db_Compras.FieldByName('CODIGO').AsInteger;
-    QrySomaProduto.Open();
-    db_Compras.FieldByName('VALOR_PRODUTOS').AsFloat := QrySomaProduto.FieldByName('VLRTOTPROD').AsFloat;
-  finally
-    QrySomaProduto.Close();
-  end;
-  db_compras.post;
+   if (db_Compras.state in [dsedit, dsinsert]) = false then
+      db_Compras.edit;
+   QrySomaProduto.Close();
+   try
+      QrySomaProduto.ParamByName('CODIGO').AsInteger :=
+        db_Compras.FieldByName('CODIGO').AsInteger;
+      QrySomaProduto.open();
+      db_Compras.FieldByName('VALOR_PRODUTOS').AsFloat :=
+        QrySomaProduto.FieldByName('VLRTOTPROD').AsFloat;
+   finally
+      QrySomaProduto.Close();
+   end;
+   db_Compras.Post;
 end;
 
 procedure TFrmCompraEntrada.SetParamID;
 begin
-  if db_ComprasItens.Active = False then
-    exit;
-  db_ComprasItens.ParamByName('CODIGO').AsInteger   := db_Compras.FieldByName('CODIGO').AsInteger;
-  db_ComprasItens.Refresh;
+   if db_ComprasItens.Active = false then
+      Exit;
+   db_ComprasItens.ParamByName('CODIGO').AsInteger :=
+     db_Compras.FieldByName('CODIGO').AsInteger;
+   db_ComprasItens.Refresh;
 end;
 
 procedure TFrmCompraEntrada.DBGrid_ProdutosEnter(Sender: TObject);
 begin
-  Salvar();
+   Salvar();
 end;
 
 procedure TFrmCompraEntrada.db_CtaPagarNewRecord(DataSet: TDataSet);
 begin
-   db_CtaPagar.FieldByName('EMPRESA').AsInteger   := FSistema.Empresa ;
+   db_CtaPagar.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
    db_CtaPagar.FieldByName('QUITADO').AsString := 'N';
 end;
 
 procedure TFrmCompraEntrada.CalculaItemCompra;
 begin
-   SP_CalculaItens.ParamByName('CODIGO').AsInteger :=db_Compras.FieldByName('CODIGO').AsInteger;
+   SP_CalculaItens.ParamByName('CODIGO').AsInteger :=
+     db_Compras.FieldByName('CODIGO').AsInteger;
    SP_CalculaItens.ExecProc;
-   SP_CalculaItens.close;
+   SP_CalculaItens.Close;
    SetParamID();
 End;
 
 procedure TFrmCompraEntrada.ConfiguraBotaoEstornar;
 begin
-   FrmFrameBotoes_II1.SpbExtra1.enabled := ( db_Compras.FieldByName('ATUALIZADO').AsString = 'S');
+   FrmFrameBotoes_II1.SpbExtra1.enabled :=
+     (db_Compras.FieldByName('ATUALIZADO').AsString = 'S');
 end;
 
 procedure TFrmCompraEntrada.db_ComprasAfterOpen(DataSet: TDataSet);
 begin
-  SetParamID();
-  FormataCampo(db_Compras);
-  TFloatField(db_Compras.FieldByName('QTDE_PRODUTOS')).DisplayFormat := '###,##0';
+   SetParamID();
+   FormataCampo(db_Compras);
+   TFloatField(db_Compras.FieldByName('QTDE_PRODUTOS')).DisplayFormat :=
+     '###,##0';
 end;
 
 procedure TFrmCompraEntrada.db_ComprasAfterPost(DataSet: TDataSet);
@@ -878,9 +923,10 @@ begin
    end
    else
    begin
-      FrmFrameBotoes_II1.SpbExtra1.enabled := False;
+      FrmFrameBotoes_II1.SpbExtra1.enabled := false;
    end;
-   db_Compras.ParamByName('CODIGO').AsInteger   := db_Compras.FieldByName('CODIGO').AsInteger;
+   db_Compras.ParamByName('CODIGO').AsInteger :=
+     db_Compras.FieldByName('CODIGO').AsInteger;
    db_Compras.Refresh;
    SetParamID();
    AtualizarID();
@@ -889,18 +935,18 @@ end;
 
 procedure TFrmCompraEntrada.db_ComprasAfterScroll(DataSet: TDataSet);
 begin
-  SetParamID();
-  ConfiguraBotaoEstornar;
+   SetParamID();
+   ConfiguraBotaoEstornar;
 end;
 
 procedure TFrmCompraEntrada.db_ComprasBeforeOpen(DataSet: TDataSet);
 begin
-   db_Compras.ParamByName('EMPRESA').AsInteger   := FSistema.Empresa ;
+   db_Compras.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
 end;
 
 procedure TFrmCompraEntrada.db_ComprasBeforePost(DataSet: TDataSet);
 begin
-   db_Compras.FieldByName('EMPRESA').AsInteger   := FSistema.Empresa ;
+   db_Compras.FieldByName('EMPRESA').AsInteger := FSistema.Empresa;
 
    // Obrigar o usuário a informar o numero do Documento
    If Empty(db_Compras.FieldByName('NOTAFISCAL').AsString) = True Then
@@ -919,11 +965,13 @@ begin
    End;
 
    try
-     QrySomaProduto.ParamByName('CODIGO').AsInteger   := db_Compras.FieldByName('CODIGO').AsInteger;
-     QrySomaProduto.Open();
-     db_Compras.FieldByName('VALOR_PRODUTOS').AsFloat := QrySomaProduto.FieldByName('VLRTOTPROD').AsFloat;
+      QrySomaProduto.ParamByName('CODIGO').AsInteger :=
+        db_Compras.FieldByName('CODIGO').AsInteger;
+      QrySomaProduto.open();
+      db_Compras.FieldByName('VALOR_PRODUTOS').AsFloat :=
+        QrySomaProduto.FieldByName('VLRTOTPROD').AsFloat;
    finally
-     QrySomaProduto.Close();
+      QrySomaProduto.Close();
    end;
 
 end;
@@ -937,26 +985,30 @@ end;
 
 procedure TFrmCompraEntrada.ds_ComprasItensStateChange(Sender: TObject);
 begin
-  If (db_ComprasItens.state in [dsedit, dsinsert]) then
-     FrmFrameBotoes_II1.AtivaEdicao;
+   If (db_ComprasItens.state in [dsedit, dsinsert]) then
+      FrmFrameBotoes_II1.AtivaEdicao;
 end;
 
 procedure TFrmCompraEntrada.ds_ComprasStateChange(Sender: TObject);
 begin
-  If (db_Compras.state in [dsedit, dsinsert]) then
-     FrmFrameBotoes_II1.AtivaEdicao;
+   If (db_Compras.state in [dsedit, dsinsert]) then
+      FrmFrameBotoes_II1.AtivaEdicao;
 end;
 
 procedure TFrmCompraEntrada.EditFornecedorChange(Sender: TObject);
 begin
    if not bImportando Then
    begin
-       If (db_ComprasItens.state in [dsedit, dsinsert]) = false then
-         exit;
+      If (db_ComprasItens.state in [dsedit, dsinsert]) = false then
+         Exit;
 
-      db_Compras.FieldByName('TRANSPORTADORA').AsInteger := BuscaClienteTransportadora(db_Compras.FieldByName('FORNECEDOR').AsInteger);
-      db_Compras.FieldByName('CENTROCUSTO').AsInteger    := BuscaClienteCentroCusto(db_Compras.FieldByName('FORNECEDOR').AsInteger);
-      db_Compras.FieldByName('CFOP').AsInteger           := GetCFOPCliente(db_Compras.FieldByName('FORNECEDOR').AsInteger);
+      db_Compras.FieldByName('TRANSPORTADORA').AsInteger :=
+        BuscaClienteTransportadora(db_Compras.FieldByName('FORNECEDOR')
+        .AsInteger);
+      db_Compras.FieldByName('CENTROCUSTO').AsInteger :=
+        BuscaClienteCentroCusto(db_Compras.FieldByName('FORNECEDOR').AsInteger);
+      db_Compras.FieldByName('CFOP').AsInteger :=
+        GetCFOPCliente(db_Compras.FieldByName('FORNECEDOR').AsInteger);
    end;
 end;
 
@@ -970,7 +1022,7 @@ end;
 
 procedure TFrmCompraEntrada.SpeedButton1Click(Sender: TObject);
 begin
-   if Pergunta('Excluir item selecionado?') = False then
+   if Pergunta('Excluir item selecionado?') = false then
       Exit;
    db_ComprasItens.delete;
 end;
@@ -983,14 +1035,15 @@ end;
 procedure TFrmCompraEntrada.GetDetProduto();
 begin
    if (db_ComprasItens.state in [dsedit, dsinsert]) = false then
-     exit;
+      Exit;
 
    if Trim(db_ComprasItens.FieldByName('DESCRICAO').AsString) = '' then
    begin
-     db_ComprasItens.FieldByName('DESCRICAO').AsString := GetProdutoCampo(db_ComprasItens.FieldByName('PRODUTO').AsString,'DESCRICAO');
+      db_ComprasItens.FieldByName('DESCRICAO').AsString :=
+        GetProdutoCampo(db_ComprasItens.FieldByName('PRODUTO').AsString,
+        'DESCRICAO');
    end;
 end;
-
 
 procedure TFrmCompraEntrada.db_ComprasItensAfterEdit(DataSet: TDataSet);
 begin
@@ -999,8 +1052,9 @@ end;
 
 procedure TFrmCompraEntrada.db_ComprasItensAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_ComprasItens);
-  TFloatField(db_ComprasItens.FieldByName('QUANTIDADE')).DisplayFormat := '###,##0';
+   FormataCampo(db_ComprasItens);
+   TFloatField(db_ComprasItens.FieldByName('QUANTIDADE')).DisplayFormat :=
+     '###,##0';
 end;
 
 procedure TFrmCompraEntrada.db_ComprasItensAfterPost(DataSet: TDataSet);
@@ -1010,8 +1064,8 @@ begin
    db_Compras.Refresh;
 end;
 
-procedure TFrmCompraEntrada.DBGrid_ProdutosKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFrmCompraEntrada.DBGrid_ProdutosKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
 begin
    If Key = VK_F9 then
    Begin

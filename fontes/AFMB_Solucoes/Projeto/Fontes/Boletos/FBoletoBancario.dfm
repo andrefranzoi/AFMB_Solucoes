@@ -716,7 +716,7 @@ object FrmBoletoBancario: TFrmBoletoBancario
     ModoThread = False
     IncorporarBackgroundPdf = False
     IncorporarFontesPdf = False
-    Left = 392
-    Top = 303
+    Left = 272
+    Top = 223
   end
 end

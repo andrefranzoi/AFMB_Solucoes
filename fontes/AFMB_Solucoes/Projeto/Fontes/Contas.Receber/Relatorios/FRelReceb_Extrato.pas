@@ -1,16 +1,36 @@
 ﻿{
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xxxx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xxxx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xxxx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xxxx                                                                                   xxxx***********************************************************************************xxxx                                                                                   xxxx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xxxx estão lá no GitHub.                                                               xxxx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xxxx                                                                                   xxxx***********************************************************************************xxxx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xxxx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xxxx                                                                                   xxxx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FRelReceb_Extrato;
@@ -19,11 +39,11 @@ interface
 
 uses
    Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-   ExtCtrls, Db,   Qrctrls, QuickRpt, QRPrntr, QRExport,
-   StdCtrls, QRPDFFilt,  Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+   ExtCtrls, Db, Qrctrls, QuickRpt, QRPrntr, QRExport,
+   StdCtrls, QRPDFFilt, Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+   FireDAC.Comp.Client;
 
 type
    TFrmRelReceb_Extrato = class(TForm)
@@ -36,27 +56,27 @@ type
       QRDBText3: TQRDBText;
       QRDBText4: TQRDBText;
       QuebraBanco: TQRGroup;
-    LblAgrupar: TQRLabel;
+      LblAgrupar: TQRLabel;
       Cabecalho: TQRBand;
       QRLabel9: TQRLabel;
       QRLabel1: TQRLabel;
       TotalOperacao: TQRBand;
       SummaryBand1: TQRBand;
-      ADO_CtaReceber:  TFDQuery;
-    lblCampoGrupo: TQRDBText;
+      ADO_CtaReceber: TFDQuery;
+      lblCampoGrupo: TQRDBText;
       QRLabel4: TQRLabel;
       QRLabel5: TQRLabel;
       QRLabel6: TQRLabel;
       QRDBText6: TQRDBText;
       QRLabel10: TQRLabel;
       QRLabel12: TQRLabel;
-    lblValor: TQRDBText;
+      lblValor: TQRDBText;
       QRExpr4: TQRExpr;
       QRExpr6: TQRExpr;
       QRLabel13: TQRLabel;
       lbl_situacao: TQRLabel;
       QuickRep: TQuickRep;
-    lblValorPago: TQRDBText;
+      lblValorPago: TQRDBText;
       QRLabel11: TQRLabel;
       QRExpr1: TQRExpr;
       QRExpr2: TQRExpr;
@@ -68,29 +88,29 @@ type
       qSaldo: TQRLabel;
       Lblvendedor: TQRLabel;
       QRSysData3: TQRSysData;
-    QRLabel7: TQRLabel;
-    QRDBText2: TQRDBText;
-    QRLabel3: TQRLabel;
-    QRDBText1: TQRDBText;
-    QRLabel8: TQRLabel;
-    QRDBText7: TQRDBText;
-    QRLabel15: TQRLabel;
-    QRDBText8: TQRDBText;
-    QRLabel17: TQRLabel;
-    QRDBText11: TQRDBText;
-    QRLabel18: TQRLabel;
-    QRDBText12: TQRDBText;
-    QRExpr3: TQRExpr;
-    QRExpr5: TQRExpr;
-    QRExpr7: TQRExpr;
-    QRExpr8: TQRExpr;
-    QRLabel19: TQRLabel;
-    QRDBText13: TQRDBText;
-    QRExpr9: TQRExpr;
-    QRLabel20: TQRLabel;
-    QRDBText9: TQRDBText;
-    QRLabel21: TQRLabel;
-    QRDBText10: TQRDBText;
+      QRLabel7: TQRLabel;
+      QRDBText2: TQRDBText;
+      QRLabel3: TQRLabel;
+      QRDBText1: TQRDBText;
+      QRLabel8: TQRLabel;
+      QRDBText7: TQRDBText;
+      QRLabel15: TQRLabel;
+      QRDBText8: TQRDBText;
+      QRLabel17: TQRLabel;
+      QRDBText11: TQRDBText;
+      QRLabel18: TQRLabel;
+      QRDBText12: TQRDBText;
+      QRExpr3: TQRExpr;
+      QRExpr5: TQRExpr;
+      QRExpr7: TQRExpr;
+      QRExpr8: TQRExpr;
+      QRLabel19: TQRLabel;
+      QRDBText13: TQRDBText;
+      QRExpr9: TQRExpr;
+      QRLabel20: TQRLabel;
+      QRDBText9: TQRDBText;
+      QRLabel21: TQRLabel;
+      QRDBText10: TQRDBText;
       procedure FormCreate(Sender: TObject);
       procedure DatalhesBeforePrint(Sender: TQRCustomBand;
         var PrintBand: Boolean);
@@ -99,12 +119,12 @@ type
         var PrintBand: Boolean);
       procedure QuickRepBeforePrint(Sender: TCustomQuickRep;
         var PrintReport: Boolean);
-    procedure ADO_CtaReceberBeforeOpen(DataSet: TDataSet);
+      procedure ADO_CtaReceberBeforeOpen(DataSet: TDataSet);
    private
       { Private declarations }
-     Flutuante  : Double;
-     Flutuante1 : Double;
-     Flutuante2 : Double;
+      Flutuante: Double;
+      Flutuante1: Double;
+      Flutuante2: Double;
 
    public
       { Public declarations }
@@ -127,20 +147,21 @@ begin
    vSelect := vSelect + ' EMPRESA=:EMPRESA  ';
 
    if strRestricaoCredito <> '' then
-     vSelect := vSelect + ' AND RESTRICAO=' +QuotedStr(strRestricaoCredito);
+      vSelect := vSelect + ' AND RESTRICAO=' + QuotedStr(strRestricaoCredito);
 
-   if FrmRelCtaReceber.rAgrupar.ItemIndex=0 then
+   if FrmRelCtaReceber.rAgrupar.ItemIndex = 0 then
       vSelect := vSelect + '  AND (VENCIMENTO>=:data1 AND VENCIMENTO<=:data2) ';
 
-   if FrmRelCtaReceber.rAgrupar.ItemIndex=1 then
+   if FrmRelCtaReceber.rAgrupar.ItemIndex = 1 then
       vSelect := vSelect + '  AND (DATA>=:data1 AND DATA<=:data2) ';
 
-   if FrmRelCtaReceber.rAgrupar.ItemIndex=2 then
+   if FrmRelCtaReceber.rAgrupar.ItemIndex = 2 then
       vSelect := vSelect + '  AND (DATA_PAGTO>=:data1 AND DATA_PAGTO<=:data2) ';
 
    If FrmRelCtaReceber.chkClientes.Checked = False Then
    Begin
-      vSelect := vSelect + '  AND CLIENTE=''' + Trim(FrmRelCtaReceber.EditCliente.Text) + ''' ';
+      vSelect := vSelect + '  AND CLIENTE=''' +
+        Trim(FrmRelCtaReceber.EditCliente.Text) + ''' ';
    End;
 
    if not FrmRelCtaReceber.chkRepres.Checked then
@@ -191,8 +212,8 @@ end;
 procedure TFrmRelReceb_Extrato.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  ADO_CtaReceber.close;
-  Action := CaFree;
+   ADO_CtaReceber.close;
+   Action := CaFree;
 end;
 
 procedure TFrmRelReceb_Extrato.ADO_CtaReceberBeforeOpen(DataSet: TDataSet);
@@ -207,12 +228,12 @@ begin
 
    if ADO_CtaReceber.FieldByName('QUITADO').AsString <> 'S' then
    Begin
-      lbl_situacao.caption := 'RECEBER';
+      lbl_situacao.Caption := 'RECEBER';
       lbl_situacao.Font.Color := clRed;
    End
    else
    Begin
-      lbl_situacao.caption := 'PAGO';
+      lbl_situacao.Caption := 'PAGO';
       lbl_situacao.Font.Color := clBlack;
    End;
 
@@ -223,17 +244,17 @@ begin
      end;
    }
 
-   if (ADO_CtaReceber.FieldByName('VALOR').AsFloat=0)       and
-      (ADO_CtaReceber.FieldByName('VALOR_PAGO').AsFloat=0) then
+   if (ADO_CtaReceber.FieldByName('VALOR').AsFloat = 0) and
+     (ADO_CtaReceber.FieldByName('VALOR_PAGO').AsFloat = 0) then
    begin
-      lblValor.Enabled     :=false;
-      lblValorPago.Enabled :=false;
-      lbl_situacao.caption := '';
+      lblValor.Enabled := False;
+      lblValorPago.Enabled := False;
+      lbl_situacao.Caption := '';
    end
    else
    begin
-      lblValor.Enabled     :=true;
-      lblValorPago.Enabled :=true;
+      lblValor.Enabled := true;
+      lblValorPago.Enabled := true;
    end;
 
    Flutuante1 := Flutuante1 + ADO_CtaReceber.FieldByName('VALOR').AsFloat;
@@ -248,11 +269,11 @@ begin
    // Saldo
    Flutuante := (Flutuante1 - Flutuante2);
    if Flutuante < 0 then
-     Flutuante :=0;
+      Flutuante := 0;
 
-   qReceber.caption := FormatFloat('###,##0.00', Flutuante1);
-   qVlrPago.caption := FormatFloat('###,##0.00', Flutuante2);
-   qSaldo.caption   := FormatFloat('###,##0.00', Flutuante);
+   qReceber.Caption := FormatFloat('###,##0.00', Flutuante1);
+   qVlrPago.Caption := FormatFloat('###,##0.00', Flutuante2);
+   qSaldo.Caption := FormatFloat('###,##0.00', Flutuante);
 
 End;
 

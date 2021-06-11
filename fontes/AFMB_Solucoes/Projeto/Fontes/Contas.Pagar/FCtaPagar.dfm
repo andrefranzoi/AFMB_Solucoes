@@ -358,7 +358,7 @@ object FrmCtaPagar: TFrmCtaPagar
     ShowHint = True
     TabOrder = 13
     TabStop = True
-    ExplicitTop = 501
+    ExplicitTop = 412
     ExplicitWidth = 969
     inherited PanelBotoesBottom: TPanel
       Width = 959

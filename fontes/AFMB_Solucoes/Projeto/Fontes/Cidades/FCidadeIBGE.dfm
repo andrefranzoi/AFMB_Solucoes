@@ -34,32 +34,27 @@ object FrmCidadeIBGE: TFrmCidadeIBGE
     ParentColor = False
     TabOrder = 0
     ExplicitWidth = 860
-    ExplicitHeight = 50
     inherited Image3: TImage
       Width = 860
-      Height = 50
       ExplicitWidth = 847
+      ExplicitHeight = 50
     end
     inherited pnTitulo: TPanel
       Width = 854
-      Height = 44
       Constraints.MinHeight = 27
       ExplicitWidth = 854
       ExplicitHeight = 27
       inherited LblBarraTitulo: TLabel
         Width = 703
-        Height = 34
         Caption = 'Cidade IBGE'
         ExplicitWidth = 58
         ExplicitHeight = 25
       end
       inherited Image1: TImage
-        Height = 34
         ExplicitHeight = 31
       end
       inherited Image2: TImage
         Left = 792
-        Height = 34
         ExplicitLeft = 791
         ExplicitHeight = 31
       end
@@ -135,6 +130,9 @@ object FrmCidadeIBGE: TFrmCidadeIBGE
     object tabPrincipal: TTabSheet
       Caption = 'Principal'
       OnShow = tabPrincipalShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 304
       object GroupBox1: TGroupBox
         Left = 0
@@ -209,6 +207,9 @@ object FrmCidadeIBGE: TFrmCidadeIBGE
       Caption = 'Detalhes'
       ImageIndex = 1
       OnShow = tabDetalheShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 304
       object lblCodigo: TLabel
         Left = 13

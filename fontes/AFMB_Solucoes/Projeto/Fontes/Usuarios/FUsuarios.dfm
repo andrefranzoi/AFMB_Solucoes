@@ -35,6 +35,9 @@ object FrmUsuarios: TFrmUsuarios
     ExplicitHeight = 561
     object tabRegistro: TTabSheet
       Caption = 'Registros'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 530
       object cxGrid1: TcxGrid
         Left = 0
@@ -80,6 +83,9 @@ object FrmUsuarios: TFrmUsuarios
     object tabDetalhe: TTabSheet
       Caption = 'Editar'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 530
       object gbDados: TGroupBox
         Left = 0

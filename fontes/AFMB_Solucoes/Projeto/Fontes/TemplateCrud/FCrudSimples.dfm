@@ -206,6 +206,9 @@ object FrmCrudSimples: TFrmCrudSimples
     ExplicitHeight = 345
     object tabPrincipal: TTabSheet
       Caption = 'Principal'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 315
       object GroupBox1: TGroupBox
         Left = 0
@@ -272,6 +275,9 @@ object FrmCrudSimples: TFrmCrudSimples
       Caption = 'Detalhes'
       ImageIndex = 1
       OnShow = tabDetalheShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 315
       object lblCodigo: TLabel
         Left = 13

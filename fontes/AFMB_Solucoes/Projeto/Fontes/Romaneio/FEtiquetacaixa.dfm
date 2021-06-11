@@ -219,7 +219,7 @@ object FrmEtiquetacaixa: TFrmEtiquetacaixa
     Left = 176
     Top = 6
     Width = 65
-    Height = 21
+    Height = 22
     HelpKeyWord = ''
     Color = clWindow
     Enabled = True

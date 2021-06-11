@@ -1,36 +1,36 @@
 {
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx                                                                                   xx
-xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-xx estão lá no GitHub.                                                               xx
-xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-xx                                                                                   xx
-xx***********************************************************************************xx
-xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-xx                                                                                   xx
-xx***********************************************************************************xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
+  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
+  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
+  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
+  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
+  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx                                                                                   xx
+  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
+  xx estão lá no GitHub.                                                               xx
+  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
+  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
+  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
+  xx                                                                                   xx
+  xx***********************************************************************************xx
 }
 
 unit FCtaReceberBaixas;
@@ -40,12 +40,12 @@ interface
 uses
    Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
    Dialogs, DB, StdCtrls,
-   Buttons, ExtCtrls, Mask, DBCtrls,  Menus,  ISFEdit,
+   Buttons, ExtCtrls, Mask, DBCtrls, Menus, ISFEdit,
    ISFEditbtn, ISFdbEditbtn, IDBEdit, uEstSearchDialogZeos, FFrameBarra,
-    Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
-  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet,
-  ACBrUtil;
+   Classe.Global, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet,
+   ACBrUtil;
 
 type
    TFrmCtaReceberBaixas = class(TForm)
@@ -57,7 +57,7 @@ type
       BtnCancelar: TBitBtn;
       BtnEstornar: TBitBtn;
       BtnLocalizar: TBitBtn;
-    SPFin_CTAReceber_Baixar: TFDStoredProc;
+      SPFin_CTAReceber_Baixar: TFDStoredProc;
       GroupBox3: TGroupBox;
       Label1: TLabel;
       Label2: TLabel;
@@ -93,11 +93,11 @@ type
       GBoxCreditar: TGroupBox;
       EditConta_Credito: TIDBEditDialog;
       EditContaCorrente: TEdit;
-    EditNomeContaCaixa: TEdit;
-    EditConta_Caixa: TIDBEditDialog;
-    EditPlano: TIDBEditDialog;
-    EditNomePlanoContas: TEdit;
-    dbDlgProcurar: TIDBEditDialog;
+      EditNomeContaCaixa: TEdit;
+      EditConta_Caixa: TIDBEditDialog;
+      EditPlano: TIDBEditDialog;
+      EditNomePlanoContas: TEdit;
+      dbDlgProcurar: TIDBEditDialog;
       procedure BtnSairClick(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure FormCreate(Sender: TObject);
@@ -111,19 +111,19 @@ type
 
       Procedure Proteger;
       procedure db_CtaReceberAfterOpen(DataSet: TDataSet);
-    procedure db_CtaReceberDESPESAS_MULTAChange(Sender: TField);
-    procedure db_CtaReceberDESPESAS_CARTORIOChange(Sender: TField);
-    procedure db_CtaReceberDESPESAS_BOLETOChange(Sender: TField);
-    procedure db_CtaReceberDESCONTOChange(Sender: TField);
-    procedure db_CtaReceberDESPESAS_JUROSChange(Sender: TField);
-    procedure db_CtaReceberBeforeOpen(DataSet: TDataSet);
-    procedure FormDestroy(Sender: TObject);
+      procedure db_CtaReceberDESPESAS_MULTAChange(Sender: TField);
+      procedure db_CtaReceberDESPESAS_CARTORIOChange(Sender: TField);
+      procedure db_CtaReceberDESPESAS_BOLETOChange(Sender: TField);
+      procedure db_CtaReceberDESCONTOChange(Sender: TField);
+      procedure db_CtaReceberDESPESAS_JUROSChange(Sender: TField);
+      procedure db_CtaReceberBeforeOpen(DataSet: TDataSet);
+      procedure FormDestroy(Sender: TObject);
 
    private
 
-       nValorDesconto, nValorjuros : Real;
+      nValorDesconto, nValorjuros: Real;
 
-    procedure CalcularValoresTotais;
+      procedure CalcularValoresTotais;
       { Private declarations }
    public
       { Public declarations }
@@ -152,7 +152,7 @@ end;
 
 procedure TFrmCtaReceberBaixas.FormDestroy(Sender: TObject);
 begin
-  FrmCtaReceberBaixas := Nil;
+   FrmCtaReceberBaixas := Nil;
 end;
 
 procedure TFrmCtaReceberBaixas.FormClose(Sender: TObject;
@@ -182,7 +182,7 @@ end;
 
 procedure TFrmCtaReceberBaixas.db_CtaReceberBeforeOpen(DataSet: TDataSet);
 begin
-   db_ctaReceber.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
+   db_CtaReceber.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
 
 end;
 
@@ -191,28 +191,28 @@ begin
    CalcularValoresTotais;
 end;
 
-procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_BOLETOChange(
-  Sender: TField);
+procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_BOLETOChange
+  (Sender: TField);
 begin
    CalcularValoresTotais;
 
 end;
 
-procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_CARTORIOChange(
-  Sender: TField);
+procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_CARTORIOChange
+  (Sender: TField);
 begin
    CalcularValoresTotais;
 end;
 
-procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_JUROSChange(
-  Sender: TField);
+procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_JUROSChange
+  (Sender: TField);
 begin
    CalcularValoresTotais;
 
 end;
 
-procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_MULTAChange(
-  Sender: TField);
+procedure TFrmCtaReceberBaixas.db_CtaReceberDESPESAS_MULTAChange
+  (Sender: TField);
 begin
    CalcularValoresTotais;
 end;
@@ -286,19 +286,24 @@ begin
    If (db_CtaReceber.state in [dsEdit, dsInsert]) then
       db_CtaReceber.Post;
 
-   SPFin_CTAReceber_Baixar.ParamByName('NEMPRESA').AsInteger := FSistema.Empresa;
-   SPFin_CTAReceber_Baixar.ParamByName('NCODIGO').AsInteger := db_CtaReceber.FieldByName('CODIGO').AsInteger;
-   SPFin_CTAReceber_Baixar.ParamByName('NCLIENTE').AsInteger := db_CtaReceber.FieldByName('CLIENTE').AsInteger;
-   SPFin_CTAReceber_Baixar.ParamByName('ACAO').Value     := 'BAIXAR';
+   SPFin_CTAReceber_Baixar.ParamByName('NEMPRESA').AsInteger :=
+     FSistema.Empresa;
+   SPFin_CTAReceber_Baixar.ParamByName('NCODIGO').AsInteger :=
+     db_CtaReceber.FieldByName('CODIGO').AsInteger;
+   SPFin_CTAReceber_Baixar.ParamByName('NCLIENTE').AsInteger :=
+     db_CtaReceber.FieldByName('CLIENTE').AsInteger;
+   SPFin_CTAReceber_Baixar.ParamByName('ACAO').Value := 'BAIXAR';
    SPFin_CTAReceber_Baixar.ExecProc;
 
    db_CtaReceber.Refresh;
 
-   AcaoUserName[0] := 'Baixou(quitou) Documento: ' + #13 + #10 +      'Documento.......: ' + db_CtaReceber.FieldByName('DOCUMENTO').AsString +
-     #13 + #10 + 'Valor...........: ' + FormatFloat('###,##0.00',     db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat) + #13 + #10 +
+   AcaoUserName[0] := 'Baixou(quitou) Documento: ' + #13 + #10 +
+     'Documento.......: ' + db_CtaReceber.FieldByName('DOCUMENTO').AsString +
+     #13 + #10 + 'Valor...........: ' + FormatFloat('###,##0.00',
+     db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat) + #13 + #10 +
      'Nome Cliente....: ' + EditNomeCliente.text;
 
-   FUsuario.LogUsuario('contas a receber',AcaoUserName[0]);
+   FUsuario.LogUsuario('contas a receber', AcaoUserName[0]);
 
    // ------------------------------------------------------------------
    // ---------                                                      --
@@ -306,7 +311,7 @@ begin
 
    nValorReal := RoundABNT(db_CtaReceber.FieldByName('VALOR').AsFloat, 2);
    nValorPago := RoundABNT(db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat, 2);
-   nNovoValor := RoundABNT((nValorReal - nValorPago),2);
+   nNovoValor := RoundABNT((nValorReal - nValorPago), 2);
    nNovoCodigo := 0;
    nGerarRestante := false;
 
@@ -327,14 +332,12 @@ begin
         nNovoValor) + #13 + #10) = True then
       Begin
 
-         pContasReceberBaixaParcial(
-           db_CtaReceber.FieldByName('CLIENTE').AsInteger,
-           db_CtaReceber.FieldByName('VENDEDOR').AsInteger,
+         pContasReceberBaixaParcial(db_CtaReceber.FieldByName('CLIENTE')
+           .AsInteger, db_CtaReceber.FieldByName('VENDEDOR').AsInteger,
            db_CtaReceber.FieldByName('DATA').AsDateTime,
            db_CtaReceber.FieldByName('DATA_PAGTO').AsDateTime + 30,
            db_CtaReceber.FieldByName('NOTAFISCAL').AsString,
-           db_CtaReceber.FieldByName('DOCUMENTO').AsString,
-           nNovoValor,
+           db_CtaReceber.FieldByName('DOCUMENTO').AsString, nNovoValor,
            db_CtaReceber.FieldByName('PLANO_CONTAS').AsString,
            db_CtaReceber.FieldByName('FORMA_PAGTO').AsInteger, '');
 
@@ -342,14 +345,15 @@ begin
          // ---------                                                      --
          // ------------------------------------------------------------------
          AcaoUserName[0] := 'Gerou saldo complementear: ' + #13 + #10 +
-                            'Documento..........: ' + db_CtaReceber.FieldByName('DOCUMENTO').AsString + #13 + #10 +
-                            'Nome Cliente.......: ' + EditNomeCliente.text +  #13 + #10 +
-                            'Valor Real.........: ' + FormatFloat('###,##0.00', nValorReal) + #13 + #10 +
-                            'Valor Pago.........: ' + FormatFloat('###,##0.00', nValorPago) + #13 + #10 +
-                            'Saldo Complementar.: ' + FormatFloat('###,##0.00',
+           'Documento..........: ' + db_CtaReceber.FieldByName('DOCUMENTO')
+           .AsString + #13 + #10 + 'Nome Cliente.......: ' +
+           EditNomeCliente.text + #13 + #10 + 'Valor Real.........: ' +
+           FormatFloat('###,##0.00', nValorReal) + #13 + #10 +
+           'Valor Pago.........: ' + FormatFloat('###,##0.00', nValorPago) + #13
+           + #10 + 'Saldo Complementar.: ' + FormatFloat('###,##0.00',
            nNovoValor);
 
-         FUsuario.LogUsuario('contas a receber',AcaoUserName[0]);
+         FUsuario.LogUsuario('contas a receber', AcaoUserName[0]);
 
       End;
 
@@ -409,25 +413,20 @@ begin
    // ------------------------------------------------------------------
    // ---------  estornar documento complementar (antes ) de estornar --
    // ------------------------------------------------------------------
-   pContasReceberBaixaParcial(
-   db_CtaReceber.FieldByName('CLIENTE').AsInteger,
+   pContasReceberBaixaParcial(db_CtaReceber.FieldByName('CLIENTE').AsInteger,
      db_CtaReceber.FieldByName('VENDEDOR').AsInteger,
-     db_CtaReceber.FieldByName('DATA').AsDateTime,
-     0,
-     '',
-     db_CtaReceber.FieldByName('DOCUMENTO').AsString,
-     0,
-     '',
-     0,
-     'D');
+     db_CtaReceber.FieldByName('DATA').AsDateTime, 0, '',
+     db_CtaReceber.FieldByName('DOCUMENTO').AsString, 0, '', 0, 'D');
 
 
    // ------------------------------------------------------------------
    // --------------- EXECUTAR PROCEDURE QUE ESTORNA TITULO ------------
    // ------------------------------------------------------------------
 
-   SPFin_CTAReceber_Baixar.ParamByName('NCODIGO').AsInteger :=      db_CtaReceber.FieldByName('CODIGO').AsInteger;
-   SPFin_CTAReceber_Baixar.ParamByName('NCLIENTE').AsInteger :=      db_CtaReceber.FieldByName('CLIENTE').AsInteger;
+   SPFin_CTAReceber_Baixar.ParamByName('NCODIGO').AsInteger :=
+     db_CtaReceber.FieldByName('CODIGO').AsInteger;
+   SPFin_CTAReceber_Baixar.ParamByName('NCLIENTE').AsInteger :=
+     db_CtaReceber.FieldByName('CLIENTE').AsInteger;
    SPFin_CTAReceber_Baixar.ParamByName('ACAO').AsString := 'ESTORNAR';
    SPFin_CTAReceber_Baixar.ExecProc;
 
@@ -439,7 +438,7 @@ begin
      db_CtaReceber.FieldByName('VALOR').AsFloat) + #13 + #10 +
      'Nome Cliente....: ' + EditNomeCliente.text;
 
-   FUsuario.LogUsuario('contas a receber',AcaoUserName[0]);
+   FUsuario.LogUsuario('contas a receber', AcaoUserName[0]);
 
    if db_CtaReceber.FieldByName('QUITADO').AsString = 'N' then
    Begin
@@ -464,11 +463,12 @@ begin
    if dbDlgProcurar.Execute then
    begin
       db_CtaReceber.close;
-      db_CtaReceber.ParamByName('CODIGO').AsInteger := dbDlgProcurar.ResultFieldAsInteger('CODIGO');
+      db_CtaReceber.ParamByName('CODIGO').AsInteger :=
+        dbDlgProcurar.ResultFieldAsInteger('CODIGO');
       db_CtaReceber.Open;
 
       db_CtaReceber.edit;
-      db_CtaReceber.FieldByName('DATA_PAGTO').AsDateTime :=Date;
+      db_CtaReceber.FieldByName('DATA_PAGTO').AsDateTime := Date;
 
       If (db_CtaReceber.state in [dsEdit, dsInsert]) then
          db_CtaReceber.Post;
@@ -476,14 +476,13 @@ begin
       EditDataPagto.SetFocus;
    end;
 
-
 end;
 
 procedure TFrmCtaReceberBaixas.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-   if key=VK_ESCAPE then
-         close;
+   if Key = VK_ESCAPE then
+      close;
 end;
 
 Procedure TFrmCtaReceberBaixas.Proteger;
@@ -506,37 +505,34 @@ end;
 
 procedure TFrmCtaReceberBaixas.db_CtaReceberAfterOpen(DataSet: TDataSet);
 begin
-  FormataCampo(db_CtaReceber);
-  Proteger;
+   FormataCampo(db_CtaReceber);
+   Proteger;
 end;
 
 Procedure TFrmCtaReceberBaixas.CalcularValoresTotais;
 begin
 
-   nValorDesconto  :=0;
-   nValorjuros     :=0;
+   nValorDesconto := 0;
+   nValorjuros := 0;
 
-   nValorDesconto := GetValorPercentual(db_CtaReceber.FieldByName('VALOR').AsFloat, db_CtaReceber.FieldByName('DESCONTO').AsFloat);
-   nValorjuros    := GetValorPercentual(db_CtaReceber.FieldByName('VALOR').AsFloat, db_CtaReceber.FieldByName('DESPESAS_JUROS').AsFloat);
+   nValorDesconto := GetValorPercentual(db_CtaReceber.FieldByName('VALOR')
+     .AsFloat, db_CtaReceber.FieldByName('DESCONTO').AsFloat);
+   nValorjuros := GetValorPercentual(db_CtaReceber.FieldByName('VALOR').AsFloat,
+     db_CtaReceber.FieldByName('DESPESAS_JUROS').AsFloat);
 
-   db_CtaReceber.FieldByName('DESPESAS_JUROSVALOR').AsFloat    := nValorjuros;
-   db_CtaReceber.FieldByName('DESCONTOVALOR').AsFloat          := nValorDesconto;
+   db_CtaReceber.FieldByName('DESPESAS_JUROSVALOR').AsFloat := nValorjuros;
+   db_CtaReceber.FieldByName('DESCONTOVALOR').AsFloat := nValorDesconto;
 
+   db_CtaReceber.FieldByName('DESPESAS_TOTAL').AsFloat := 0;
+   db_CtaReceber.FieldByName('DESPESAS_TOTAL').AsFloat := nValorjuros +
+     db_CtaReceber.FieldByName('DESPESAS_BOLETO').AsFloat +
+     db_CtaReceber.FieldByName('DESPESAS_CARTORIO').AsFloat +
+     db_CtaReceber.FieldByName('DESPESAS_MULTA').AsFloat;
 
-   db_CtaReceber.FieldByName('DESPESAS_TOTAL').AsFloat    := 0;
-   db_CtaReceber.FieldByName('DESPESAS_TOTAL').AsFloat    :=
-      nValorjuros +
-      db_CtaReceber.FieldByName('DESPESAS_BOLETO').AsFloat +
-      db_CtaReceber.FieldByName('DESPESAS_CARTORIO').AsFloat +
-      db_CtaReceber.FieldByName('DESPESAS_MULTA').AsFloat;
-
-   db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat    := 0;
-   db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat    :=
-      db_CtaReceber.FieldByName('VALOR').AsFloat -
-      nValorDesconto +
-      db_CtaReceber.FieldByName('DESPESAS_TOTAL').AsFloat;;
-
-
+   db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat := 0;
+   db_CtaReceber.FieldByName('VALOR_PAGO').AsFloat :=
+     db_CtaReceber.FieldByName('VALOR').AsFloat - nValorDesconto +
+     db_CtaReceber.FieldByName('DESPESAS_TOTAL').AsFloat;;
 
 end;
 

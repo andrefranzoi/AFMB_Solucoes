@@ -346,7 +346,8 @@ object FrmRelCtaPagar: TFrmRelCtaPagar
         ExplicitWidth = 379
       end
       inherited LblBarraTitulo: TLabel
-        Width = 582
+        Width = 217
+        Height = 23
         Caption = 'Relat'#243'rio de Contas a Pagar'
         ExplicitWidth = 217
       end

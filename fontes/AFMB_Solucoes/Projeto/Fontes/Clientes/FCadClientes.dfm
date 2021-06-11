@@ -317,6 +317,10 @@ object FrmClientes: TFrmClientes
     object Tab_PFisica: TTabSheet
       Caption = 'Pessoa F'#237'sica'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Pg_CadastroF: TPageControl
         Left = 0
         Top = 0
@@ -342,6 +346,10 @@ object FrmClientes: TFrmClientes
           Font.Name = 'Calibri'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Label10: TLabel
             Left = 242
             Top = 50
@@ -1184,6 +1192,10 @@ object FrmClientes: TFrmClientes
           Font.Style = []
           ImageIndex = 1
           ParentFont = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Label57: TLabel
             Left = 2
             Top = 120
@@ -1374,6 +1386,10 @@ object FrmClientes: TFrmClientes
     object Tab_PJuridica: TTabSheet
       Caption = 'Pessoa Jur'#237'dica'
       ImageIndex = -1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Pg_CadastroJ: TPageControl
         Left = 0
         Top = 0
@@ -1399,6 +1415,10 @@ object FrmClientes: TFrmClientes
           Font.Name = 'Calibri'
           Font.Style = []
           ParentFont = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Label68: TLabel
             Left = 5
             Top = 243
@@ -2756,6 +2776,10 @@ object FrmClientes: TFrmClientes
         object TabSheet5: TTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 6
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object GroupBox20: TGroupBox
             Left = 0
             Top = 0
@@ -2789,6 +2813,10 @@ object FrmClientes: TFrmClientes
       ImageIndex = 3
       OnExit = Tab_HistoricoExit
       OnShow = Tab_HistoricoShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel2: TPanel
         Left = 0
         Top = 0

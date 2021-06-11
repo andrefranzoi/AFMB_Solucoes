@@ -309,7 +309,7 @@ object FrmRelEntregas_Geral: TFrmRelEntregas_Geral
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        60.854166666666660000
+        60.854166666666680000
         1902.354166666667000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

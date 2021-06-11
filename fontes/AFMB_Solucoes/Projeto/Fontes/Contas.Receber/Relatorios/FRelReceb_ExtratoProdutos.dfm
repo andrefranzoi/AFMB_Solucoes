@@ -1583,7 +1583,7 @@ object FrmRelReceb_ExtratoProdutos: TFrmRelReceb_ExtratoProdutos
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        89.958333333333320000
+        89.958333333333340000
         2770.187500000000000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False

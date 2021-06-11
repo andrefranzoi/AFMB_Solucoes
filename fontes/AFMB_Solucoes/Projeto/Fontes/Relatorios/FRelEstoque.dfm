@@ -619,7 +619,8 @@ object FrmRelEstoque: TFrmRelEstoque
       ExplicitWidth = 627
     end
     inherited LblBarraTitulo: TLabel
-      Width = 621
+      Width = 166
+      Height = 23
       Caption = 'Relat'#243'rio de Estoque'
       ExplicitWidth = 166
     end

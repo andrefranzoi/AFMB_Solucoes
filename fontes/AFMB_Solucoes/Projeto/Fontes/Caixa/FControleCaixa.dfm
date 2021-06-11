@@ -39,6 +39,10 @@ object FrmControleCaixa: TFrmControleCaixa
     TabOrder = 0
     object Tab_Principal: TTabSheet
       Caption = 'Registros'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DbGrid_NotaFiscal: TDBGrid
         Left = 0
         Top = 0
@@ -140,6 +144,10 @@ object FrmControleCaixa: TFrmControleCaixa
     object Tab_Edicao: TTabSheet
       Caption = 'Edi'#231#227'o'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label3: TLabel
         Left = 31
         Top = 45

@@ -83,8 +83,8 @@ object FrmStatusNFe: TFrmStatusNFe
       AlignWithMargins = True
       Left = 16
       Top = 4
-      Width = 790
-      Height = 40
+      Width = 45
+      Height = 19
       Margins.Left = 15
       Margins.Right = 15
       Align = alClient
@@ -97,8 +97,6 @@ object FrmStatusNFe: TFrmStatusNFe
       Font.Style = []
       ParentFont = False
       Layout = tlCenter
-      ExplicitWidth = 45
-      ExplicitHeight = 19
     end
   end
 end

@@ -35,33 +35,28 @@ object FrmCarneImprimir: TFrmCarneImprimir
     ParentColor = False
     TabOrder = 2
     ExplicitWidth = 1015
-    ExplicitHeight = 50
     inherited Image3: TImage
       Width = 1015
-      Height = 50
       ExplicitWidth = 960
+      ExplicitHeight = 50
     end
     inherited pnTitulo: TPanel
       Width = 1009
-      Height = 44
       Constraints.MinHeight = 27
       ExplicitWidth = 1009
       ExplicitHeight = 27
       inherited LblBarraTitulo: TLabel
         Width = 858
-        Height = 34
         Caption = 'Impress'#227'o de Carn'#234's'
         ExplicitWidth = 212
         ExplicitHeight = 25
       end
       inherited Image1: TImage
-        Height = 34
         ExplicitLeft = 904
         ExplicitHeight = 31
       end
       inherited Image2: TImage
         Left = 947
-        Height = 34
         ExplicitLeft = 956
         ExplicitHeight = 31
       end

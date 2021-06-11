@@ -99,7 +99,7 @@ object FrmRelFornFicha: TFrmRelFornFicha
       ForceNewColumn = False
       ForceNewPage = False
       Size.Values = (
-        658.151041666666600000
+        658.151041666666800000
         1961.223958333333000000)
       PreCaluculateBandHeight = False
       KeepOnOnePage = False
