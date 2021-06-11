@@ -1,0 +1,114 @@
+object FrmAvisoSistema: TFrmAvisoSistema
+  Left = 268
+  Top = 106
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Mensagem'
+  ClientHeight = 304
+  ClientWidth = 566
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MemoAviso: TMemo
+    Left = 0
+    Top = 40
+    Width = 566
+    Height = 231
+    Align = alClient
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    Color = clWhite
+    Ctl3D = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentCtl3D = False
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 271
+    Width = 566
+    Height = 33
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'Tecle ESC para sair'
+    Ctl3D = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentBackground = False
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 0
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'OK'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 566
+    Height = 40
+    Align = alTop
+    Color = clTeal
+    Enabled = False
+    ParentBackground = False
+    TabOrder = 2
+    object Image1: TImage
+      Left = 1
+      Top = 1
+      Width = 564
+      Height = 38
+      Align = alClient
+      Stretch = True
+      ExplicitLeft = 2
+      ExplicitTop = -4
+    end
+    object LblBarraTitulo: TLabel
+      Left = 1
+      Top = 1
+      Width = 564
+      Height = 38
+      Align = alClient
+      Alignment = taCenter
+      Caption = 'Usu'#225'rio(a), aten'#231#227'o:'
+      Color = clBlack
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Name = 'Calibri'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = True
+      Layout = tlCenter
+      ExplicitWidth = 159
+      ExplicitHeight = 23
+    end
+  end
+end
