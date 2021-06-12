@@ -303,7 +303,7 @@ object FrmClientes: TFrmClientes
     Top = 63
     Width = 978
     Height = 480
-    ActivePage = Tab_PJuridica
+    ActivePage = Tab_PFisica
     Align = alClient
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -1107,25 +1107,24 @@ object FrmClientes: TFrmClientes
               ShowHint = True
               TabOrder = 1
             end
-            object EditCodCidade1: TIDBEditDialog
-              Left = 240
+            object IDBEditDialog2: TIDBEditDialog
+              Left = 242
               Top = 61
-              Width = 83
+              Width = 81
               Height = 23
-              Hint = 'Codigo da Cidade de acordo com o IBGE'
               HelpKeyWord = ''
               Color = clWindow
               Enabled = True
-              ShowHint = True
               TabOrder = 7
               Text = ''
               Visible = True
-              LabelCaption = 'C'#243'digo Cidade'
-              LabelTransparent = True
+              EmptyText = 'Tecle F8'
+              FocusColor = clBtnFace
+              LabelCaption = 'IBGE Cidade'
               LabelAlwaysEnabled = True
               LabelFont.Charset = DEFAULT_CHARSET
               LabelFont.Color = clWindowText
-              LabelFont.Height = -12
+              LabelFont.Height = -11
               LabelFont.Name = 'Tahoma'
               LabelFont.Style = []
               Lookup.Separator = ';'
@@ -1137,31 +1136,24 @@ object FrmClientes: TFrmClientes
               ButtonCaption = '...'
               DataField = 'IDCIDADE'
               DataSource = DS_Clientes
-              ButtonKeyClickBtn = 119
-              SQLdbFazBusca = True
-              SQLdbFocusControl = EditRegiao1
-              SQLdbCampoRetorno = 'NOME'
-              SQLdbRetornoVazio = '***'
-              SQLdbCampoParametro = 'CODIGO'
-              SQLdbSQL.Strings = (
-                'SELECT * FROM CAD_REGIOES'
-                'WHERE'
-                'CODIGO=:CODIGO'
-                '')
+              SQLdbFocusControl = EditCidade1
+              SQLdbCampoRetorno = 'CIDADE'
+              SQLdbRetornoVazio = ' *** '
+              SQLdbCampoParametro = 'IBGE'
               SQLdbMaxLenght = 10
               SearchQuery.Strings = (
-                'SELECT * FROM CIDADE'
+                'SELECT * FROM CIDADES'
                 'WHERE'
                 '%WHERE%')
               CountQuery.Strings = (
-                'SELECT COUNT(*) FROM CIDADE'
+                'SELECT count(*) FROM CIDADES'
                 'WHERE'
                 '%WHERE%')
               SearchDialogFieldList = <
                 item
-                  FieldName = 'CODIGO'
-                  WhereSyntax = 'CODIGO'
-                  DisplayLabel = 'C'#243'digo:'
+                  FieldName = 'IBGE'
+                  WhereSyntax = 'IBGE'
+                  DisplayLabel = 'IBGE'
                   DisplayWidth = 10
                   DisplayColumnWidth = 0
                   FieldType = ftInteger
@@ -1171,16 +1163,28 @@ object FrmClientes: TFrmClientes
                   SearchCase = scMixed
                 end
                 item
-                  FieldName = 'NOME'
-                  WhereSyntax = 'NOME'
-                  DisplayLabel = 'Nome:'
-                  DisplayWidth = 90
+                  FieldName = 'CIDADE'
+                  WhereSyntax = 'CIDADE'
+                  DisplayLabel = 'CIDADE'
+                  DisplayWidth = 120
                   DisplayColumnWidth = 0
                   FieldType = ftString
                   Search = True
                   EmptyOperation = eoNull
-                  DefaultComparison = scContains
-                  SearchCase = scUpper
+                  DefaultComparison = scBeginsWith
+                  SearchCase = scMixed
+                end
+                item
+                  FieldName = 'UF'
+                  WhereSyntax = 'UF'
+                  DisplayLabel = 'UF'
+                  DisplayWidth = 2
+                  DisplayColumnWidth = 0
+                  FieldType = ftString
+                  Search = True
+                  EmptyOperation = eoNull
+                  DefaultComparison = scBeginsWith
+                  SearchCase = scMixed
                 end>
               SearchPresetList = <>
               DialogCaption = 'Pesquisa'
@@ -1954,19 +1958,6 @@ object FrmClientes: TFrmClientes
               Font.Style = []
               ParentFont = False
             end
-            object Label27: TLabel
-              Left = 247
-              Top = 59
-              Width = 79
-              Height = 15
-              Caption = 'C'#243'digo Cidade'
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'Calibri'
-              Font.Style = []
-              ParentFont = False
-            end
             object Label28: TLabel
               Left = 337
               Top = 59
@@ -2075,23 +2066,6 @@ object FrmClientes: TFrmClientes
               ParentFont = False
               TabOrder = 4
             end
-            object DBEdit23: TDBEdit
-              Left = 247
-              Top = 74
-              Width = 83
-              Height = 23
-              Hint = 'Codigo IBGE da CIDADE'
-              CharCase = ecUpperCase
-              DataField = 'IDCIDADE'
-              DataSource = DS_Clientes
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'Calibri'
-              Font.Style = []
-              ParentFont = False
-              TabOrder = 5
-            end
             object DBEdit37: TDBEdit
               Left = 336
               Top = 74
@@ -2099,15 +2073,17 @@ object FrmClientes: TFrmClientes
               Height = 23
               Hint = 'Tecle F8 para pesquisar'
               CharCase = ecUpperCase
+              Color = clBtnFace
               DataField = 'NOMECIDADE'
               DataSource = DS_Clientes
+              Enabled = False
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
               Font.Height = -13
               Font.Name = 'Calibri'
               Font.Style = []
               ParentFont = False
-              TabOrder = 6
+              TabOrder = 5
             end
             object DBEdit40: TDBEdit
               Left = 702
@@ -2124,7 +2100,7 @@ object FrmClientes: TFrmClientes
               Font.Style = []
               MaxLength = 2
               ParentFont = False
-              TabOrder = 8
+              TabOrder = 7
             end
             object DBEdit42: TDBEdit
               Left = 95
@@ -2160,7 +2136,99 @@ object FrmClientes: TFrmClientes
               Font.Name = 'Calibri'
               Font.Style = []
               ParentFont = False
-              TabOrder = 7
+              TabOrder = 6
+            end
+            object IDBEditDialog1: TIDBEditDialog
+              Left = 249
+              Top = 74
+              Width = 81
+              Height = 23
+              HelpKeyWord = ''
+              Color = clWindow
+              Enabled = True
+              TabOrder = 8
+              Text = ''
+              Visible = True
+              EmptyText = 'Tecle F8'
+              FocusColor = clBtnFace
+              LabelCaption = 'IBGE Cidade'
+              LabelAlwaysEnabled = True
+              LabelFont.Charset = DEFAULT_CHARSET
+              LabelFont.Color = clWindowText
+              LabelFont.Height = -11
+              LabelFont.Name = 'Tahoma'
+              LabelFont.Style = []
+              Lookup.Separator = ';'
+              Version = '5.0.0.0'
+              ButtonStyle = bsButton
+              ButtonWidth = 16
+              ButtonHint = 'Procurar...'
+              Etched = False
+              ButtonCaption = '...'
+              DataField = 'IDCIDADE'
+              DataSource = DS_Clientes
+              SQLdbFocusControl = DBEdit37
+              SQLdbCampoRetorno = 'CIDADE'
+              SQLdbRetornoVazio = ' *** '
+              SQLdbCampoParametro = 'IBGE'
+              SQLdbMaxLenght = 10
+              SearchQuery.Strings = (
+                'SELECT * FROM CIDADES'
+                'WHERE'
+                '%WHERE%')
+              CountQuery.Strings = (
+                'SELECT count(*) FROM CIDADES'
+                'WHERE'
+                '%WHERE%')
+              SearchDialogFieldList = <
+                item
+                  FieldName = 'IBGE'
+                  WhereSyntax = 'IBGE'
+                  DisplayLabel = 'IBGE'
+                  DisplayWidth = 10
+                  DisplayColumnWidth = 0
+                  FieldType = ftInteger
+                  Search = True
+                  EmptyOperation = eoNull
+                  DefaultComparison = scEqual
+                  SearchCase = scMixed
+                end
+                item
+                  FieldName = 'CIDADE'
+                  WhereSyntax = 'CIDADE'
+                  DisplayLabel = 'CIDADE'
+                  DisplayWidth = 120
+                  DisplayColumnWidth = 0
+                  FieldType = ftString
+                  Search = True
+                  EmptyOperation = eoNull
+                  DefaultComparison = scBeginsWith
+                  SearchCase = scMixed
+                end
+                item
+                  FieldName = 'UF'
+                  WhereSyntax = 'UF'
+                  DisplayLabel = 'UF'
+                  DisplayWidth = 2
+                  DisplayColumnWidth = 0
+                  FieldType = ftString
+                  Search = True
+                  EmptyOperation = eoNull
+                  DefaultComparison = scBeginsWith
+                  SearchCase = scMixed
+                end>
+              SearchPresetList = <>
+              DialogCaption = 'Pesquisa'
+              DialogWidth = 0
+              DialogHeight = 0
+              Store = dsFields
+              CompareFormatDate = 'DDMMYYYY'
+              CompareFormatTime = 'HHMMSS'
+              CompareFormatDateTime = 'DDMMYYYY'
+              TrueExpression = '1=1'
+              DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+              ConnectionDialog = FrmPrincipal.DBConexao
+              Connection = FrmPrincipal.DBConexao
             end
           end
           object EditTransportadora: TIDBEditDialog
@@ -5549,8 +5617,8 @@ object FrmClientes: TFrmClientes
       'select * from CAD_CLIENTES_COBRANCAS'
       'WHERE'
       'IDCLIENTE=:CODIGO')
-    Left = 544
-    Top = 312
+    Left = 592
+    Top = 352
     ParamData = <
       item
         Name = 'CODIGO'

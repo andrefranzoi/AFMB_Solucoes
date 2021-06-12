@@ -36,7 +36,7 @@ object FrmBoletoBancario: TFrmBoletoBancario
       Left = 5
       Top = 5
       Width = 75
-      Height = 37
+      Height = 23
       Align = alLeft
       Caption = 'R$ 0,00'
       Font.Charset = ANSI_CHARSET
@@ -46,7 +46,6 @@ object FrmBoletoBancario: TFrmBoletoBancario
       Font.Style = []
       ParentFont = False
       Layout = tlCenter
-      ExplicitHeight = 23
     end
     object BtnSair: TBitBtn
       Left = 911

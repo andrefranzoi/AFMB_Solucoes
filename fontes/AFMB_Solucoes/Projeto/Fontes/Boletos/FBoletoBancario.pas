@@ -87,7 +87,7 @@ type
       EditCliente: TIDBEditDialog;
       Panel3: TPanel;
       btnPesquisarBoletos: TButton;
-    ACBrBoletoFCFR1: TACBrBoletoFCFR;
+      ACBrBoletoFCFR1: TACBrBoletoFCFR;
 
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -283,7 +283,7 @@ begin
    ACBrBoleto1.DirArqRetorno := _BOLETO_DIRARQRETORNO;
    ACBrBoleto1.NomeArqRemessa := _BOLETO_ARQREMESSA;
    ACBrBoleto1.NomeArqRetorno := _BOLETO_ARQRETORNO;
-   //comentei aqui André
+   // comentei aqui André
    ACBrBoletoFCFR1.DirLogo := _BOLETO_DIRLOGO;
 
    if FileExists(_BOLETO_REPORTFILE) then
