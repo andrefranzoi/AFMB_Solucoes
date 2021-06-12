@@ -317,10 +317,6 @@ object FrmClientes: TFrmClientes
     object Tab_PFisica: TTabSheet
       Caption = 'Pessoa F'#237'sica'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Pg_CadastroF: TPageControl
         Left = 0
         Top = 0
@@ -346,10 +342,6 @@ object FrmClientes: TFrmClientes
           Font.Name = 'Calibri'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Label10: TLabel
             Left = 242
             Top = 50
@@ -966,19 +958,6 @@ object FrmClientes: TFrmClientes
               Font.Style = []
               ParentFont = False
             end
-            object Label9: TLabel
-              Left = 239
-              Top = 46
-              Width = 79
-              Height = 15
-              Caption = 'C'#243'digo Cidade'
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'Calibri'
-              Font.Style = []
-              ParentFont = False
-            end
             object Label20: TLabel
               Left = 329
               Top = 46
@@ -1074,23 +1053,6 @@ object FrmClientes: TFrmClientes
               ParentFont = False
               TabOrder = 4
             end
-            object EditCodCidade1: TDBEdit
-              Left = 239
-              Top = 61
-              Width = 83
-              Height = 23
-              Hint = 'Codigo da Cidade de acordo com o IBGE'
-              CharCase = ecUpperCase
-              DataField = 'IDCIDADE'
-              DataSource = DS_Clientes
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clWindowText
-              Font.Height = -13
-              Font.Name = 'Calibri'
-              Font.Style = []
-              ParentFont = False
-              TabOrder = 5
-            end
             object EditCidade1: TDBEdit
               Left = 329
               Top = 61
@@ -1106,7 +1068,7 @@ object FrmClientes: TFrmClientes
               Font.Name = 'Calibri'
               Font.Style = []
               ParentFont = False
-              TabOrder = 6
+              TabOrder = 5
             end
             object EditUF1: TDBEdit
               Left = 606
@@ -1123,7 +1085,7 @@ object FrmClientes: TFrmClientes
               Font.Style = []
               MaxLength = 2
               ParentFont = False
-              TabOrder = 7
+              TabOrder = 6
             end
             object edtEndereco: TDBEdit
               Left = 87
@@ -1143,6 +1105,94 @@ object FrmClientes: TFrmClientes
               ParentShowHint = False
               ShowHint = True
               TabOrder = 1
+            end
+            object EditCodCidade1: TIDBEditDialog
+              Left = 239
+              Top = 61
+              Width = 83
+              Height = 23
+              Hint = 'Codigo da Cidade de acordo com o IBGE'
+              HelpKeyWord = ''
+              Color = clWindow
+              Enabled = True
+              ShowHint = True
+              TabOrder = 7
+              Text = ''
+              Visible = True
+              LabelCaption = 'C'#243'digo Cidade'
+              LabelTransparent = True
+              LabelAlwaysEnabled = True
+              LabelFont.Charset = DEFAULT_CHARSET
+              LabelFont.Color = clWindowText
+              LabelFont.Height = -12
+              LabelFont.Name = 'Tahoma'
+              LabelFont.Style = []
+              Lookup.Separator = ';'
+              Version = '5.0.0.0'
+              ButtonStyle = bsButton
+              ButtonWidth = 16
+              ButtonHint = 'Procurar...'
+              Etched = False
+              ButtonCaption = '...'
+              DataField = 'IDCIDADE'
+              DataSource = DS_Clientes
+              ButtonKeyClickBtn = 119
+              SQLdbFazBusca = True
+              SQLdbFocusControl = EditRegiao1
+              SQLdbCampoRetorno = 'NOME'
+              SQLdbRetornoVazio = '***'
+              SQLdbCampoParametro = 'CODIGO'
+              SQLdbSQL.Strings = (
+                'SELECT * FROM CAD_REGIOES'
+                'WHERE'
+                'CODIGO=:CODIGO'
+                '')
+              SQLdbMaxLenght = 10
+              SearchQuery.Strings = (
+                'SELECT * FROM CIDADE'
+                'WHERE'
+                '%WHERE%')
+              CountQuery.Strings = (
+                'SELECT COUNT(*) FROM CIDADE'
+                'WHERE'
+                '%WHERE%')
+              SearchDialogFieldList = <
+                item
+                  FieldName = 'CODIGO'
+                  WhereSyntax = 'CODIGO'
+                  DisplayLabel = 'C'#243'digo:'
+                  DisplayWidth = 10
+                  DisplayColumnWidth = 0
+                  FieldType = ftInteger
+                  Search = True
+                  EmptyOperation = eoNull
+                  DefaultComparison = scEqual
+                  SearchCase = scMixed
+                end
+                item
+                  FieldName = 'NOME'
+                  WhereSyntax = 'NOME'
+                  DisplayLabel = 'Nome:'
+                  DisplayWidth = 90
+                  DisplayColumnWidth = 0
+                  FieldType = ftString
+                  Search = True
+                  EmptyOperation = eoNull
+                  DefaultComparison = scContains
+                  SearchCase = scUpper
+                end>
+              SearchPresetList = <>
+              DialogCaption = 'Pesquisa'
+              DialogWidth = 0
+              DialogHeight = 0
+              Store = dsFields
+              CompareFormatDate = 'DDMMYYYY'
+              CompareFormatTime = 'HHMMSS'
+              CompareFormatDateTime = 'DDMMYYYY'
+              TrueExpression = '1=1'
+              DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+              ConnectionDialog = FrmPrincipal.DBConexao
+              Connection = FrmPrincipal.DBConexao
             end
           end
           object DBEdit9: TDBEdit
@@ -1192,10 +1242,6 @@ object FrmClientes: TFrmClientes
           Font.Style = []
           ImageIndex = 1
           ParentFont = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Label57: TLabel
             Left = 2
             Top = 120
@@ -1386,10 +1432,6 @@ object FrmClientes: TFrmClientes
     object Tab_PJuridica: TTabSheet
       Caption = 'Pessoa Jur'#237'dica'
       ImageIndex = -1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Pg_CadastroJ: TPageControl
         Left = 0
         Top = 0
@@ -1415,10 +1457,6 @@ object FrmClientes: TFrmClientes
           Font.Name = 'Calibri'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Label68: TLabel
             Left = 5
             Top = 243
@@ -2776,10 +2814,6 @@ object FrmClientes: TFrmClientes
         object TabSheet5: TTabSheet
           Caption = 'Observa'#231#245'es'
           ImageIndex = 6
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object GroupBox20: TGroupBox
             Left = 0
             Top = 0
@@ -2813,10 +2847,6 @@ object FrmClientes: TFrmClientes
       ImageIndex = 3
       OnExit = Tab_HistoricoExit
       OnShow = Tab_HistoricoShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel2: TPanel
         Left = 0
         Top = 0

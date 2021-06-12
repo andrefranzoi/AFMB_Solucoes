@@ -9932,7 +9932,7 @@ object FrmPrincipal: TFrmPrincipal
   end
   object DBConexao: TFDConnection
     Params.Strings = (
-      'Database=C:\projetos\fontes\Dados\dbvenda.fdb'
+      'Database=C:\Projetos\AFMB_Solucoes\fontes\Dados\dbvenda.fdb'
       'Password=masterkey'
       'User_Name=SYSDBA'
       'Port=0'

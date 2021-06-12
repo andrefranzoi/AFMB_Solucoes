@@ -124,14 +124,12 @@ type
       Label51: TLabel;
       Label56: TLabel;
       Label21: TLabel;
-      Label9: TLabel;
       Label20: TLabel;
       Label19: TLabel;
       EditCEP0: TDBEdit;
       DBEdit30: TDBEdit;
       edtComplemento: TDBEdit;
       EditBairro1: TDBEdit;
-      EditCodCidade1: TDBEdit;
       EditCidade1: TDBEdit;
       EditUF1: TDBEdit;
       edtEndereco: TDBEdit;
@@ -233,6 +231,7 @@ type
       LblSaldoReceber: TLabel;
       LblQuantidade: TLabel;
       ACBrCEP: TACBrCEP;
+    EditCodCidade1: TIDBEditDialog;
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
       procedure Iniciar;
