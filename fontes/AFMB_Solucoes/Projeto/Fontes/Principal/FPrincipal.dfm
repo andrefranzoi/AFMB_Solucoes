@@ -1,7 +1,7 @@
 object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Retaguarda | AFMB Solu'#231#245'es'
+  Caption = 'AFMB Server'
   ClientHeight = 729
   ClientWidth = 1140
   Color = clAppWorkSpace

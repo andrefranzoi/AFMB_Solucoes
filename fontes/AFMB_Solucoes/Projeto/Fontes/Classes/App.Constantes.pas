@@ -72,7 +72,7 @@ Const
    //
    // --------------------------------------------------------------------
    _DRIVE = 'C:';
-   _SISTEMA_NOME = 'DBVenda';
+   _SISTEMA_NOME = 'AFMBServer';
    EXECUTAVEL_NOME = _SISTEMA_NOME;
    _VENDAEXPRESSA = 'FrenteCaixa';
    CONFIG_INI = _SISTEMA_NOME + '.ini';

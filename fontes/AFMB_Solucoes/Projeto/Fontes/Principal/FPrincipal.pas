@@ -445,6 +445,7 @@ type
       Procedure CarregarEmpresa;
       procedure cfg_EmpresaGravar(lnEmpresa: Integer);
       function cfg_EmpresaLer: Integer;
+
    end;
 
 Procedure TerminarAplicacao;
@@ -698,7 +699,6 @@ End;
 procedure TFrmPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-
    if Key = vk_f12 then
    begin
       Key := 0;
