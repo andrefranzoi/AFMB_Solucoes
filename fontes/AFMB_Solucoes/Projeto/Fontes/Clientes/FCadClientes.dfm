@@ -29,6 +29,7 @@ object FrmClientes: TFrmClientes
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 14
@@ -302,7 +303,7 @@ object FrmClientes: TFrmClientes
     Top = 63
     Width = 978
     Height = 480
-    ActivePage = Tab_PFisica
+    ActivePage = Tab_PJuridica
     Align = alClient
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -1107,7 +1108,7 @@ object FrmClientes: TFrmClientes
               TabOrder = 1
             end
             object EditCodCidade1: TIDBEditDialog
-              Left = 239
+              Left = 240
               Top = 61
               Width = 83
               Height = 23
@@ -2019,6 +2020,7 @@ object FrmClientes: TFrmClientes
               Font.Style = []
               ParentFont = False
               TabOrder = 0
+              OnExit = DBEdit10Exit
             end
             object DBEdit12: TDBEdit
               Left = 424
@@ -5587,7 +5589,6 @@ object FrmClientes: TFrmClientes
     ProxyPort = '8080'
     WebService = wsRepublicaVirtual
     PesquisarIBGE = True
-    OnBuscaEfetuada = ACBrCEPBuscaEfetuada
     Left = 400
     Top = 88
   end

@@ -286,7 +286,8 @@ type
       procedure dbClienteCobrancasAfterOpen(DataSet: TDataSet);
       procedure SpeedButton1Click(Sender: TObject);
       procedure EditCEP0Exit(Sender: TObject);
-      procedure ACBrCEPBuscaEfetuada(Sender: TObject);
+    procedure DBEdit10Exit(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
 
    private
       { Private declarations }
@@ -593,6 +594,35 @@ begin
      db_Clientes.FieldByName('CODIGO').AsInteger;
 end;
 
+procedure TFrmClientes.DBEdit10Exit(Sender: TObject);
+begin
+   if DBEdit10.Text <> '' then
+   begin
+      ACBrCEP.BuscarPorCEP(DBEdit10.Text);
+
+      if ACBrCEP.Enderecos.Count <= 0 then
+      begin
+         Informar('Nenhum endereço foi encontrado com o CEP digitado');
+         EditCEP0.SetFocus;
+         Abort;
+      end
+      else
+      begin
+         with ACBrCEP.Enderecos[0] do
+         begin
+            DS_Clientes.DataSet.FieldByName('ENDERECO').AsString := Tipo_Logradouro+' - '+Logradouro;
+            DS_Clientes.DataSet.FieldByName('COMPLEMENTO').AsString := Complemento;
+            DS_Clientes.DataSet.FieldByName('BAIRRO').AsString := Bairro;
+            DS_Clientes.DataSet.FieldByName('IDCIDADE').AsString := IBGE_Municipio;
+            DS_Clientes.DataSet.FieldByName('NOMECIDADE').AsString := Municipio;
+            DS_Clientes.DataSet.FieldByName('UF').AsString := UF;
+         end;
+         edtEndereco.SetFocus;
+         edtEndereco.SelectAll;
+      end;
+   end;
+end;
+
 procedure TFrmClientes.DBGrid12KeyPress(Sender: TObject; var Key: Char);
 begin
    Key := AnsiUpperCase(Key)[1];
@@ -697,6 +727,15 @@ begin
          FrmFrameBotoes1SpbSairClick(Sender);
       end;
    End;
+end;
+
+procedure TFrmClientes.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+   if (Key = #13) then
+   begin
+      Key := #0;
+      Perform(Wm_NextDlgCtl,0,0);
+   end;
 end;
 
 procedure TFrmClientes.FormShow(Sender: TObject);
@@ -900,13 +939,38 @@ begin
       db_Clientes.Close;
       db_Clientes.ParamByName('CODIGO').AsInteger := mID;
       db_Clientes.Open;
+      db_Clientes.Edit;
    end;
    result := mID > 0;
 end;
 
 procedure TFrmClientes.EditCEP0Exit(Sender: TObject);
 begin
-   ACBrCEP.BuscarPorCEP(EditCEP0.Text);
+   if EditCEP0.Text <> '' then
+   begin
+      ACBrCEP.BuscarPorCEP(EditCEP0.Text);
+
+      if ACBrCEP.Enderecos.Count <= 0 then
+      begin
+         Informar('Nenhum endereço foi encontrado com o CEP digitado');
+         EditCEP0.SetFocus;
+         Abort;
+      end
+      else
+      begin
+         with ACBrCEP.Enderecos[0] do
+         begin
+            DS_Clientes.DataSet.FieldByName('ENDERECO').AsString := Tipo_Logradouro+' - '+Logradouro;
+            DS_Clientes.DataSet.FieldByName('COMPLEMENTO').AsString := Complemento;
+            DS_Clientes.DataSet.FieldByName('BAIRRO').AsString := Bairro;
+            DS_Clientes.DataSet.FieldByName('IDCIDADE').AsString := IBGE_Municipio;
+            DS_Clientes.DataSet.FieldByName('NOMECIDADE').AsString := Municipio;
+            DS_Clientes.DataSet.FieldByName('UF').AsString := UF;
+         end;
+         edtEndereco.SetFocus;
+         edtEndereco.SelectAll;
+      end;
+   end;
 end;
 
 procedure TFrmClientes.EditCNPJExit(Sender: TObject);
@@ -925,22 +989,6 @@ end;
 procedure TFrmClientes.EditCPFExit(Sender: TObject);
 begin
    ChecarCliente('F', EditCPF.Text);
-end;
-
-procedure TFrmClientes.ACBrCEPBuscaEfetuada(Sender: TObject);
-var
-   I: Integer;
-begin
-   for I := 0 to ACBrCEP.Enderecos.Count - 1 do
-   begin
-      edtEndereco.Text := ACBrCEP.Enderecos[I].Tipo_Logradouro + ' ' +
-        ACBrCEP.Enderecos[I].Logradouro;
-      edtComplemento.Text := ACBrCEP.Enderecos[I].Complemento;
-      EditBairro1.Text := ACBrCEP.Enderecos[I].Bairro;
-      EditCodCidade1.Text := ACBrCEP.Enderecos[I].IBGE_Municipio;
-      EditCidade1.Text := ACBrCEP.Enderecos[I].Municipio;
-      EditUF1.Text := ACBrCEP.Enderecos[I].UF;
-   end;
 end;
 
 procedure TFrmClientes.BitBtn1Click(Sender: TObject);

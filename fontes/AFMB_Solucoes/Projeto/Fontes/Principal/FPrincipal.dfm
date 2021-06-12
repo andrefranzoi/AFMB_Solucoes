@@ -9940,6 +9940,7 @@ object FrmPrincipal: TFrmPrincipal
     FormatOptions.AssignedValues = [fvFmtDisplayDate, fvFmtDisplayTime]
     FormatOptions.FmtDisplayDate = 'dd/mm/yyyy'
     FormatOptions.FmtDisplayTime = 'hh:mm:ss'
+    Connected = True
     LoginPrompt = False
     Transaction = FDTransacao
     OnError = DBConexaoError
