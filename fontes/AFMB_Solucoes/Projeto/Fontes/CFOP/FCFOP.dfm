@@ -30,10 +30,6 @@ object FrmCFOP: TFrmCFOP
     TabOrder = 0
     object Tab_Principal: TTabSheet
       Caption = 'Registros'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object cxGrid: TcxGrid
         Left = 0
         Top = 0
@@ -41,6 +37,8 @@ object FrmCFOP: TFrmCFOP
         Height = 393
         Align = alClient
         TabOrder = 0
+        ExplicitLeft = -1
+        ExplicitTop = 1
         object cxGridDados: TcxGridDBTableView
           OnDblClick = cxGridDadosDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -77,10 +75,6 @@ object FrmCFOP: TFrmCFOP
     object Tab_Editar: TTabSheet
       Caption = 'Editar'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 1
         Top = 8
@@ -353,6 +347,7 @@ object FrmCFOP: TFrmCFOP
       Width = 850
       ExplicitWidth = 850
       inherited SpbAdicionar: TSpeedButton
+        OnClick = FrmFrameBotoes1SpbAdicionarClick
         ExplicitLeft = -44
       end
       inherited SpbEditar: TSpeedButton
@@ -362,6 +357,7 @@ object FrmCFOP: TFrmCFOP
         ExplicitLeft = 256
       end
       inherited SpbSalvar: TSpeedButton
+        OnClick = FrmFrameBotoes1SpbSalvarClick
         ExplicitLeft = 56
       end
       inherited SpbExcluir: TSpeedButton
@@ -388,7 +384,7 @@ object FrmCFOP: TFrmCFOP
     Left = 479
     Top = 8
     Width = 65
-    Height = 21
+    Height = 22
     HelpKeyWord = ''
     CharCase = ecUpperCase
     Color = clWindow

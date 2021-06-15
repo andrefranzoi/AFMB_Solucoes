@@ -181,7 +181,6 @@ end;
 procedure TFrmCFOP.FrmFrameBotoes1SpbSalvarClick(Sender: TObject);
 begin
    FrmFrameBotoes1.SpbSalvarClick(Sender);
-
 end;
 
 procedure TFrmCFOP.cxGridDadosDblClick(Sender: TObject);

@@ -333,6 +333,12 @@ type
       dxBarLargeButton153: TdxBarLargeButton;
       dxBarLargeButton154: TdxBarLargeButton;
       ImagemLogo: TImage;
+    rbFiscal: TdxRibbonTab;
+    acSerieDoc: TAction;
+    dxBarButton2: TdxBarButton;
+    dxBarDocumentos: TdxBar;
+    dxBarButton3: TdxBarButton;
+    dxBarLargeButton155: TdxBarLargeButton;
 
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -410,6 +416,7 @@ type
       procedure DBConexaoError(ASender, AInitiator: TObject;
         var AException: Exception);
       procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure acSerieDocExecute(Sender: TObject);
 
    Strict Private
       { Strict Private declarations }
@@ -479,7 +486,7 @@ uses
    FProdutosQuantidade, FGrupos, FTabelaNCM, FProdutosPesquisaPreco, FProdutos,
    FRelEstoque, FSubGrupos, FVendaExpressa, FRelPedidos, FColaborador,
    FPedidoVenda, FAcesso, FAtivarSistema, FConta, App.Funcoes, FDepartamentos,
-   FGraficos;
+   FGraficos, FSerieDoc;
 
 procedure TerminarAplicacao;
 begin
@@ -1357,6 +1364,11 @@ procedure TFrmPrincipal.acProdSubgrupoExecute(Sender: TObject);
 begin
    { 14/07/2019: revisado e testado }
    AbrirFormMDI(TFrmSubGrupos, FrmSubGrupos);
+end;
+
+procedure TFrmPrincipal.acSerieDocExecute(Sender: TObject);
+begin
+   AbrirFormMDI(TFrmSerieDoc, frmSerieDoc);
 end;
 
 procedure TFrmPrincipal.acVendaExpressaExecute(Sender: TObject);

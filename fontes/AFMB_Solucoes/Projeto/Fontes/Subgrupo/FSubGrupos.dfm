@@ -11,7 +11,6 @@ inherited FrmSubGrupos: TFrmSubGrupos
       ExplicitHeight = 55
     end
     inherited pnTitulo: TPanel
-      ExplicitHeight = 49
       inherited LblBarraTitulo: TLabel
         Caption = 'Subgrupo de Mercadorias'
         ExplicitWidth = 787
@@ -61,16 +60,16 @@ inherited FrmSubGrupos: TFrmSubGrupos
   end
   inherited pgControl: TPageControl
     Height = 319
-    ExplicitTop = 55
-    ExplicitHeight = 314
+    ActivePage = tabDetalhe
+    ExplicitHeight = 319
     inherited tabPrincipal: TTabSheet
-      ExplicitHeight = 284
+      ExplicitHeight = 289
       inherited GroupBox1: TGroupBox
         Height = 289
-        ExplicitHeight = 284
+        ExplicitHeight = 289
         inherited cxGrid: TcxGrid
           Height = 270
-          ExplicitHeight = 265
+          ExplicitHeight = 270
           inherited cxGridDados: TcxGridDBTableView
             inherited cxGridDadosNome: TcxGridDBColumn
               DataBinding.FieldName = 'DESCRICAO'
@@ -80,7 +79,7 @@ inherited FrmSubGrupos: TFrmSubGrupos
       end
     end
     inherited tabDetalhe: TTabSheet
-      ExplicitHeight = 284
+      ExplicitHeight = 289
       inherited EditNome: TDBEdit
         DataField = 'DESCRICAO'
       end

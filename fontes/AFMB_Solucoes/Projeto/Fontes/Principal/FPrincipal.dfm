@@ -9852,7 +9852,6 @@ object FrmPrincipal: TFrmPrincipal
       Index = 1
     end
     object rbFinanceiro: TdxRibbonTab
-      Active = True
       Caption = 'Financeiro'
       Groups = <
         item
@@ -9887,6 +9886,17 @@ object FrmPrincipal: TFrmPrincipal
         end>
       Index = 3
     end
+    object rbFiscal: TdxRibbonTab
+      Active = True
+      Caption = 'Fiscal'
+      Groups = <
+        item
+        end
+        item
+          ToolbarName = 'dxBarDocumentos'
+        end>
+      Index = 4
+    end
     object rbDashboard: TdxRibbonTab
       Caption = 'Gr'#225'ficos'
       Groups = <
@@ -9894,7 +9904,7 @@ object FrmPrincipal: TFrmPrincipal
           Caption = 'Financeiro'
           ToolbarName = 'dxBarGraficos'
         end>
-      Index = 4
+      Index = 5
     end
     object rbConfigurar: TdxRibbonTab
       Caption = 'Configura'#231#245'es'
@@ -9911,7 +9921,7 @@ object FrmPrincipal: TFrmPrincipal
           Caption = 'Servidor'
           ToolbarName = 'dxBarConfigServidor'
         end>
-      Index = 5
+      Index = 6
     end
   end
   object db_empresa: TFDQuery
@@ -9932,7 +9942,7 @@ object FrmPrincipal: TFrmPrincipal
   end
   object DBConexao: TFDConnection
     Params.Strings = (
-      'Database=C:\Projetos\AFMB_Solucoes\fontes\Dados\dbvenda.fdb'
+      'Database=C:\AFMBServer\DB\AFMBServer.fdb'
       'Password=masterkey'
       'User_Name=SYSDBA'
       'Port=0'
@@ -10356,6 +10366,12 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Contas a Pagar (Status)'
       ImageIndex = 83
       OnExecute = actGraficoCtaPagarTotaisExecute
+    end
+    object acSerieDoc: TAction
+      Category = 'Fiscal.Documentos'
+      Caption = 'acSerieDoc'
+      ImageIndex = 33
+      OnExecute = acSerieDocExecute
     end
   end
   object ilRibbonApp: TcxImageList
@@ -12549,7 +12565,7 @@ object FrmPrincipal: TFrmPrincipal
     object dxBarFinMovCaixa: TdxBar
       Caption = 'Movimento Caixa'
       CaptionButtons = <>
-      DockedLeft = 732
+      DockedLeft = 0
       DockedTop = 0
       FloatLeft = 1549
       FloatTop = 8
@@ -12645,6 +12661,26 @@ object FrmPrincipal: TFrmPrincipal
           ItemName = 'dxBarLargeButton7'
         end>
       OneOnRow = False
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object dxBarDocumentos: TdxBar
+      Caption = 'Documentos'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 1168
+      FloatTop = 2
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton155'
+        end>
+      OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -13514,6 +13550,23 @@ object FrmPrincipal: TFrmPrincipal
     end
     object dxBarLargeButton154: TdxBarLargeButton
       Action = acCadPlanoContas
+      Category = 0
+    end
+    object dxBarButton2: TdxBarButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarButton3: TdxBarButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+    end
+    object dxBarLargeButton155: TdxBarLargeButton
+      Action = acSerieDoc
+      Caption = 'S'#233'ries de Documentos'
       Category = 0
     end
   end

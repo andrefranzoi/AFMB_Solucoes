@@ -46,7 +46,7 @@ object FrmPedidoVenda: TFrmPedidoVenda
       Font.Name = 'Calibri'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
       object Label6: TLabel
         Left = 258
         Top = 26
@@ -131,9 +131,9 @@ object FrmPedidoVenda: TFrmPedidoVenda
     object AdvGroupBox2: TGroupBox
       AlignWithMargins = True
       Left = 5
-      Top = 173
+      Top = 183
       Width = 994
-      Height = 239
+      Height = 229
       Align = alClient
       Caption = 
         '[ITENS] Procurar Produto: F8 | Tecle "Seta pra baixo" ou "Insert' +
@@ -145,7 +145,9 @@ object FrmPedidoVenda: TFrmPedidoVenda
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
+      ExplicitTop = 173
+      ExplicitHeight = 239
       object ProgressBar1: TProgressBar
         Left = 2
         Top = 16
@@ -153,16 +155,19 @@ object FrmPedidoVenda: TFrmPedidoVenda
         Height = 16
         Align = alTop
         TabOrder = 1
+        ExplicitLeft = 111
+        ExplicitTop = 29
       end
       object cxGrid1: TcxGrid
         Left = 2
         Top = 32
         Width = 990
-        Height = 205
+        Height = 195
         Align = alClient
         TabOrder = 0
         OnEnter = cxGrid1Enter
         OnExit = cxGrid1Exit
+        ExplicitHeight = 205
         object cxGridItem: TcxGridDBTableView
           OnKeyDown = cxGridItemKeyDown
           Navigator.Buttons.CustomButtons = <>
@@ -236,793 +241,805 @@ object FrmPedidoVenda: TFrmPedidoVenda
         end
       end
     end
-    object AdvGroupBox4: TGroupBox
-      AlignWithMargins = True
-      Left = 5
-      Top = 18
-      Width = 994
-      Height = 149
+    object PageControl1: TPageControl
+      Left = 2
+      Top = 15
+      Width = 1000
+      Height = 165
+      ActivePage = tabCadastro
       Align = alTop
-      Caption = '[ CLIENTE ]'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      OnExit = AdvGroupBox4Exit
-      object Label1: TLabel
-        Left = 484
-        Top = 17
-        Width = 66
-        Height = 14
-        Caption = 'Data Pedido'
-      end
-      object Label2: TLabel
-        Left = 567
-        Top = 17
-        Width = 72
-        Height = 14
-        Caption = 'Data Entrega'
-      end
-      object Label3: TLabel
-        Left = 659
-        Top = 17
-        Width = 105
-        Height = 14
-        Caption = 'Codigo de Controle'
-      end
-      object Label10: TLabel
-        Left = 384
-        Top = 18
-        Width = 63
-        Height = 14
-        Caption = 'ID (C'#243'digo)'
-      end
-      object EditCliente: TIDBEditDialog
-        Left = 6
-        Top = 32
-        Width = 65
-        Height = 22
-        HelpKeyWord = ''
-        Color = clWindow
-        Enabled = True
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        ShowHint = True
-        TabOrder = 0
-        Text = ''
-        Visible = True
-        OnExit = EditClienteExit
-        EditType = etAlphaNumeric
-        EmptyText = 'Tecle F8'
-        FocusColor = clBtnFace
-        LabelCaption = 'Cliente:'
-        LabelAlwaysEnabled = True
-        LabelFont.Charset = DEFAULT_CHARSET
-        LabelFont.Color = clWindowText
-        LabelFont.Height = -11
-        LabelFont.Name = 'Tahoma'
-        LabelFont.Style = []
-        Lookup.Separator = ';'
-        Version = '5.0.0.0'
-        ButtonStyle = bsButton
-        ButtonWidth = 16
-        ButtonHint = 'C'#243'digo do Cliente'
-        Etched = False
-        ButtonCaption = '...'
-        DataField = 'CLIENTE'
-        DataSource = ds_Pedido
-        ButtonKeyClickBtn = 119
-        SQLdbFazBusca = True
-        SQLdbFocusControl = EditNomeCliente
-        SQLdbCampoRetorno = 'NOME'
-        SQLdbRetornoVazio = '***'
-        SQLdbCampoParametro = 'CODIGO'
-        SQLdbSQL.Strings = (
-          'SELECT CODIGO, NOME FROM CAD_CLIENTES'
-          'WHERE'
-          'CODIGO=:CODIGO'
-          '')
-        SQLdbMaxLenght = 10
-        SearchQuery.Strings = (
-          'SELECT * FROM VIEW_CLIENTES'
-          'WHERE'
-          'COALESCE(ATIVO,'#39'S'#39')<>'#39'N'#39
-          'AND'
-          '%WHERE%')
-        SearchDialogFieldList = <
-          item
-            FieldName = 'CODIGO'
-            WhereSyntax = 'CODIGO'
-            DisplayLabel = 'C'#243'digo'
-            DisplayWidth = 12
-            DisplayColumnWidth = 0
-            FieldType = ftInteger
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scEqual
-            SearchCase = scMixed
-          end
-          item
-            FieldName = 'NOME'
-            WhereSyntax = 'NOME'
-            DisplayLabel = 'Nome/Raz'#227'o Social'
-            DisplayWidth = 60
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end
-          item
-            FieldName = 'VENDEDOR_NOME'
-            WhereSyntax = 'VENDEDOR_NOME'
-            DisplayLabel = 'VENDEDOR:'
-            DisplayWidth = 30
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end>
-        SearchPresetList = <>
-        DialogCaption = 'Pesquisa'
-        DialogWidth = 0
-        DialogHeight = 0
-        Store = dsFields
-        CompareFormatDate = 'DDMMYYYY'
-        CompareFormatTime = 'HHMMSS'
-        CompareFormatDateTime = 'DDMMYYYY'
-        TrueExpression = '1=1'
-        DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
-        ConnectionDialog = FrmPrincipal.DBConexao
-        Connection = FrmPrincipal.DBConexao
-      end
-      object EditNomeCliente: TEdit
-        Left = 73
-        Top = 32
-        Width = 305
-        Height = 22
-        AutoSize = False
-        CharCase = ecUpperCase
-        Enabled = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 1
-        Text = '***'
-      end
-      object EditData: TDBEdit
-        Left = 484
-        Top = 31
-        Width = 68
-        Height = 22
-        DataField = 'DATA'
-        DataSource = ds_Pedido
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 3
-        OnExit = EditDataExit
-      end
-      object EditNomeVendedor: TEdit
-        Left = 73
-        Top = 70
-        Width = 305
-        Height = 22
-        AutoSize = False
-        CharCase = ecUpperCase
-        Enabled = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 7
-        Text = '***'
-      end
-      object EditDataEntrega: TDBEdit
-        Left = 567
-        Top = 31
-        Width = 83
-        Height = 22
-        DataField = 'DATA_ENTREGA'
-        DataSource = ds_Pedido
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 4
-      end
-      object EditPagamento: TIDBEditDialog
-        Left = 384
-        Top = 70
-        Width = 65
-        Height = 22
-        HelpKeyWord = ''
-        Color = clWindow
-        Enabled = True
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        ShowHint = True
-        TabOrder = 8
-        Text = ''
-        Visible = True
-        EditType = etAlphaNumeric
-        EmptyText = 'Tecle F8'
-        FocusColor = clBtnFace
-        LabelCaption = 'Forma de Pagamento'
-        LabelAlwaysEnabled = True
-        LabelFont.Charset = DEFAULT_CHARSET
-        LabelFont.Color = clWindowText
-        LabelFont.Height = -11
-        LabelFont.Name = 'Tahoma'
-        LabelFont.Style = []
-        Lookup.Separator = ';'
-        Version = '5.0.0.0'
-        ButtonStyle = bsButton
-        ButtonWidth = 16
-        ButtonHint = 'Forma de Pagamento'
-        Etched = False
-        ButtonCaption = '...'
-        DataField = 'FORMAPAGTO'
-        DataSource = ds_Pedido
-        ButtonKeyClickBtn = 119
-        SQLdbFazBusca = True
-        SQLdbFocusControl = EditNomeFormaPagto
-        SQLdbCampoRetorno = 'NOME'
-        SQLdbRetornoVazio = '***'
-        SQLdbCampoParametro = 'CODIGO'
-        SQLdbSQL.Strings = (
-          'SELECT CODIGO, NOME FROM CAD_FORMAPAGTO'
-          'WHERE'
-          'CODIGO=:CODIGO')
-        SQLdbMaxLenght = 10
-        SearchQuery.Strings = (
-          'SELECT CODIGO, NOME FROM CAD_FORMAPAGTO'
-          'WHERE'
-          '%WHERE%')
-        CountQuery.Strings = (
-          'SELECT COUNT(NOME) FROM CAD_FORMAPAGTO'
-          'WHERE'
-          '%WHERE%')
-        SearchDialogFieldList = <
-          item
-            FieldName = 'CODIGO'
-            WhereSyntax = 'CODIGO'
-            DisplayLabel = 'C'#243'digo'
-            DisplayWidth = 10
-            DisplayColumnWidth = 0
-            FieldType = ftInteger
-            Search = False
-            EmptyOperation = eoNull
-            DefaultComparison = scEqual
-            SearchCase = scMixed
-          end
-          item
-            FieldName = 'NOME'
-            WhereSyntax = 'NOME'
-            DisplayLabel = 'Nome:'
-            DisplayWidth = 80
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end>
-        SearchPresetList = <>
-        DialogCaption = 'Pesquisa'
-        DialogWidth = 0
-        DialogHeight = 0
-        Store = dsFields
-        CompareFormatDate = 'DDMMYYYY'
-        CompareFormatTime = 'HHMMSS'
-        CompareFormatDateTime = 'DDMMYYYY'
-        TrueExpression = '1=1'
-        DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
-        ConnectionDialog = FrmPrincipal.DBConexao
-        Connection = FrmPrincipal.DBConexao
-      end
-      object EditNomeFormaPagto: TEdit
-        Left = 453
-        Top = 70
-        Width = 314
-        Height = 22
-        AutoSize = False
-        CharCase = ecUpperCase
-        Enabled = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 9
-        Text = '***'
-      end
-      object EditNomeTrasportadora: TEdit
-        Left = 73
-        Top = 110
-        Width = 305
-        Height = 22
-        AutoSize = False
-        CharCase = ecUpperCase
-        Enabled = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 11
-        Text = '***'
-      end
-      object EditTransportadora: TIDBEditDialog
-        Left = 6
-        Top = 110
-        Width = 65
-        Height = 22
-        HelpKeyWord = ''
-        Color = clWindow
-        Enabled = True
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        ShowHint = True
-        TabOrder = 10
-        Text = ''
-        Visible = True
-        EditType = etAlphaNumeric
-        EmptyText = 'Tecle F8'
-        FocusColor = clBtnFace
-        LabelCaption = 'Transportadora:'
-        LabelAlwaysEnabled = True
-        LabelFont.Charset = DEFAULT_CHARSET
-        LabelFont.Color = clWindowText
-        LabelFont.Height = -11
-        LabelFont.Name = 'Tahoma'
-        LabelFont.Style = []
-        Lookup.Separator = ';'
-        Version = '5.0.0.0'
-        ButtonStyle = bsButton
-        ButtonWidth = 16
-        ButtonHint = 'Transportadora:'
-        Etched = False
-        ButtonCaption = '...'
-        DataField = 'TRANSPORTADORA'
-        DataSource = ds_Pedido
-        ButtonKeyClickBtn = 119
-        SQLdbFazBusca = True
-        SQLdbFocusControl = EditNomeTrasportadora
-        SQLdbCampoRetorno = 'NOME'
-        SQLdbRetornoVazio = '***'
-        SQLdbCampoParametro = 'CODIGO'
-        SQLdbSQL.Strings = (
-          'SELECT * FROM CAD_CLIENTES'
-          'WHERE'
-          'CODIGO=:CODIGO')
-        SQLdbMaxLenght = 10
-        SearchQuery.Strings = (
-          'SELECT * FROM CAD_CLIENTES'
-          'WHERE'
-          'TIPO='#39'TRANSPORTADORA'#39
-          'AND'
-          '%WHERE%')
-        CountQuery.Strings = (
-          'SELECT COUNT(*) FROM CAD_CLIENTES'
-          'WHERE'
-          'TIPO='#39'TRANSPORTADORA'#39
-          'AND'
-          '%WHERE%')
-        SearchDialogFieldList = <
-          item
-            FieldName = 'CODIGO'
-            WhereSyntax = 'CODIGO'
-            DisplayLabel = 'C'#243'digo'
-            DisplayWidth = 10
-            DisplayColumnWidth = 0
-            FieldType = ftInteger
-            Search = False
-            EmptyOperation = eoNull
-            DefaultComparison = scEqual
-            SearchCase = scMixed
-          end
-          item
-            FieldName = 'NOME'
-            WhereSyntax = 'NOME'
-            DisplayLabel = 'Nome:'
-            DisplayWidth = 80
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end>
-        SearchPresetList = <>
-        DialogCaption = 'Pesquisa'
-        DialogWidth = 0
-        DialogHeight = 0
-        Store = dsFields
-        CompareFormatDate = 'DDMMYYYY'
-        CompareFormatTime = 'HHMMSS'
-        CompareFormatDateTime = 'DDMMYYYY'
-        TrueExpression = '1=1'
-        DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
-        ConnectionDialog = FrmPrincipal.DBConexao
-        Connection = FrmPrincipal.DBConexao
-      end
-      object GroupBox1: TGroupBox
-        Left = 801
-        Top = 32
-        Width = 176
-        Height = 94
-        Caption = 'Status do Pedido'
-        TabOrder = 14
-        object Panel1: TPanel
-          Left = 2
-          Top = 16
-          Width = 172
-          Height = 76
-          Align = alClient
-          BevelOuter = bvNone
-          Enabled = False
-          ParentBackground = False
+      TabOrder = 2
+      object tabCadastro: TTabSheet
+        Caption = 'Cadastro'
+        ExplicitHeight = 147
+        object AdvGroupBox4: TGroupBox
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 986
+          Height = 131
+          Align = alTop
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
           TabOrder = 0
-          object DBRadioGroup2: TDBRadioGroup
-            Left = 84
-            Top = 0
-            Width = 88
-            Height = 76
-            Align = alRight
-            Caption = 'Aprovado'
-            Color = clBtnFace
-            DataField = 'APROVADO'
-            DataSource = ds_Pedido
-            Items.Strings = (
-              'Sim'
-              'N'#227'o'
-              'Cancelado')
-            ParentBackground = False
-            ParentColor = False
-            TabOrder = 1
-            Values.Strings = (
-              'S'
-              'N'
-              'C')
+          OnExit = AdvGroupBox4Exit
+          object Label1: TLabel
+            Left = 484
+            Top = 5
+            Width = 66
+            Height = 14
+            Caption = 'Data Pedido'
           end
-          object DBRadioGroup1: TDBRadioGroup
-            Left = 0
-            Top = 0
-            Width = 73
-            Height = 76
-            Align = alLeft
-            Caption = 'Faturado'
-            Color = clBtnFace
-            DataField = 'STATUS'
-            DataSource = ds_Pedido
-            Items.Strings = (
-              'Sim'
-              'N'#227'o')
-            ParentBackground = False
-            ParentColor = False
+          object Label2: TLabel
+            Left = 567
+            Top = 5
+            Width = 72
+            Height = 14
+            Caption = 'Data Entrega'
+          end
+          object Label3: TLabel
+            Left = 659
+            Top = 5
+            Width = 105
+            Height = 14
+            Caption = 'Codigo de Controle'
+          end
+          object Label10: TLabel
+            Left = 384
+            Top = 6
+            Width = 63
+            Height = 14
+            Caption = 'ID (C'#243'digo)'
+          end
+          object EditCliente: TIDBEditDialog
+            Left = 6
+            Top = 20
+            Width = 65
+            Height = 22
+            HelpKeyWord = ''
+            Color = clWindow
+            Enabled = True
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            ShowHint = True
             TabOrder = 0
-            Values.Strings = (
-              'S'
-              'N')
+            Text = ''
+            Visible = True
+            OnExit = EditClienteExit
+            EditType = etAlphaNumeric
+            EmptyText = 'Tecle F8'
+            FocusColor = clBtnFace
+            LabelCaption = 'Cliente:'
+            LabelAlwaysEnabled = True
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Separator = ';'
+            Version = '5.0.0.0'
+            ButtonStyle = bsButton
+            ButtonWidth = 16
+            ButtonHint = 'C'#243'digo do Cliente'
+            Etched = False
+            ButtonCaption = '...'
+            DataField = 'CLIENTE'
+            DataSource = ds_Pedido
+            ButtonKeyClickBtn = 119
+            SQLdbFazBusca = True
+            SQLdbFocusControl = EditNomeCliente
+            SQLdbCampoRetorno = 'NOME'
+            SQLdbRetornoVazio = '***'
+            SQLdbCampoParametro = 'CODIGO'
+            SQLdbSQL.Strings = (
+              'SELECT CODIGO, NOME FROM CAD_CLIENTES'
+              'WHERE'
+              'CODIGO=:CODIGO'
+              '')
+            SQLdbMaxLenght = 10
+            SearchQuery.Strings = (
+              'SELECT * FROM VIEW_CLIENTES'
+              'WHERE'
+              'COALESCE(ATIVO,'#39'S'#39')<>'#39'N'#39
+              'AND'
+              '%WHERE%')
+            SearchDialogFieldList = <
+              item
+                FieldName = 'CODIGO'
+                WhereSyntax = 'CODIGO'
+                DisplayLabel = 'C'#243'digo'
+                DisplayWidth = 12
+                DisplayColumnWidth = 0
+                FieldType = ftInteger
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scEqual
+                SearchCase = scMixed
+              end
+              item
+                FieldName = 'NOME'
+                WhereSyntax = 'NOME'
+                DisplayLabel = 'Nome/Raz'#227'o Social'
+                DisplayWidth = 60
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end
+              item
+                FieldName = 'VENDEDOR_NOME'
+                WhereSyntax = 'VENDEDOR_NOME'
+                DisplayLabel = 'VENDEDOR:'
+                DisplayWidth = 30
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end>
+            SearchPresetList = <>
+            DialogCaption = 'Pesquisa'
+            DialogWidth = 0
+            DialogHeight = 0
+            Store = dsFields
+            CompareFormatDate = 'DDMMYYYY'
+            CompareFormatTime = 'HHMMSS'
+            CompareFormatDateTime = 'DDMMYYYY'
+            TrueExpression = '1=1'
+            DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+            ConnectionDialog = FrmPrincipal.DBConexao
+            Connection = FrmPrincipal.DBConexao
+          end
+          object EditNomeCliente: TEdit
+            Left = 73
+            Top = 20
+            Width = 305
+            Height = 22
+            AutoSize = False
+            CharCase = ecUpperCase
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 1
+            Text = '***'
+          end
+          object EditData: TDBEdit
+            Left = 484
+            Top = 19
+            Width = 68
+            Height = 22
+            DataField = 'DATA'
+            DataSource = ds_Pedido
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+            OnExit = EditDataExit
+          end
+          object EditNomeVendedor: TEdit
+            Left = 73
+            Top = 58
+            Width = 305
+            Height = 22
+            AutoSize = False
+            CharCase = ecUpperCase
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 3
+            Text = '***'
+          end
+          object EditDataEntrega: TDBEdit
+            Left = 567
+            Top = 19
+            Width = 83
+            Height = 22
+            DataField = 'DATA_ENTREGA'
+            DataSource = ds_Pedido
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
+          end
+          object EditPagamento: TIDBEditDialog
+            Left = 384
+            Top = 58
+            Width = 65
+            Height = 22
+            HelpKeyWord = ''
+            Color = clWindow
+            Enabled = True
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            ShowHint = True
+            TabOrder = 5
+            Text = ''
+            Visible = True
+            EditType = etAlphaNumeric
+            EmptyText = 'Tecle F8'
+            FocusColor = clBtnFace
+            LabelCaption = 'Forma de Pagamento'
+            LabelAlwaysEnabled = True
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Separator = ';'
+            Version = '5.0.0.0'
+            ButtonStyle = bsButton
+            ButtonWidth = 16
+            ButtonHint = 'Forma de Pagamento'
+            Etched = False
+            ButtonCaption = '...'
+            DataField = 'FORMAPAGTO'
+            DataSource = ds_Pedido
+            ButtonKeyClickBtn = 119
+            SQLdbFazBusca = True
+            SQLdbFocusControl = EditNomeFormaPagto
+            SQLdbCampoRetorno = 'NOME'
+            SQLdbRetornoVazio = '***'
+            SQLdbCampoParametro = 'CODIGO'
+            SQLdbSQL.Strings = (
+              'SELECT CODIGO, NOME FROM CAD_FORMAPAGTO'
+              'WHERE'
+              'CODIGO=:CODIGO')
+            SQLdbMaxLenght = 10
+            SearchQuery.Strings = (
+              'SELECT CODIGO, NOME FROM CAD_FORMAPAGTO'
+              'WHERE'
+              '%WHERE%')
+            CountQuery.Strings = (
+              'SELECT COUNT(NOME) FROM CAD_FORMAPAGTO'
+              'WHERE'
+              '%WHERE%')
+            SearchDialogFieldList = <
+              item
+                FieldName = 'CODIGO'
+                WhereSyntax = 'CODIGO'
+                DisplayLabel = 'C'#243'digo'
+                DisplayWidth = 10
+                DisplayColumnWidth = 0
+                FieldType = ftInteger
+                Search = False
+                EmptyOperation = eoNull
+                DefaultComparison = scEqual
+                SearchCase = scMixed
+              end
+              item
+                FieldName = 'NOME'
+                WhereSyntax = 'NOME'
+                DisplayLabel = 'Nome:'
+                DisplayWidth = 80
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end>
+            SearchPresetList = <>
+            DialogCaption = 'Pesquisa'
+            DialogWidth = 0
+            DialogHeight = 0
+            Store = dsFields
+            CompareFormatDate = 'DDMMYYYY'
+            CompareFormatTime = 'HHMMSS'
+            CompareFormatDateTime = 'DDMMYYYY'
+            TrueExpression = '1=1'
+            DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+            ConnectionDialog = FrmPrincipal.DBConexao
+            Connection = FrmPrincipal.DBConexao
+          end
+          object EditNomeFormaPagto: TEdit
+            Left = 453
+            Top = 58
+            Width = 314
+            Height = 22
+            AutoSize = False
+            CharCase = ecUpperCase
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 6
+            Text = '***'
+          end
+          object EditNomeTrasportadora: TEdit
+            Left = 73
+            Top = 98
+            Width = 305
+            Height = 22
+            AutoSize = False
+            CharCase = ecUpperCase
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 7
+            Text = '***'
+          end
+          object EditTransportadora: TIDBEditDialog
+            Left = 6
+            Top = 98
+            Width = 65
+            Height = 22
+            HelpKeyWord = ''
+            Color = clWindow
+            Enabled = True
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            ShowHint = True
+            TabOrder = 8
+            Text = ''
+            Visible = True
+            EditType = etAlphaNumeric
+            EmptyText = 'Tecle F8'
+            FocusColor = clBtnFace
+            LabelCaption = 'Transportadora:'
+            LabelAlwaysEnabled = True
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Separator = ';'
+            Version = '5.0.0.0'
+            ButtonStyle = bsButton
+            ButtonWidth = 16
+            ButtonHint = 'Transportadora:'
+            Etched = False
+            ButtonCaption = '...'
+            DataField = 'TRANSPORTADORA'
+            DataSource = ds_Pedido
+            ButtonKeyClickBtn = 119
+            SQLdbFazBusca = True
+            SQLdbFocusControl = EditNomeTrasportadora
+            SQLdbCampoRetorno = 'NOME'
+            SQLdbRetornoVazio = '***'
+            SQLdbCampoParametro = 'CODIGO'
+            SQLdbSQL.Strings = (
+              'SELECT * FROM CAD_CLIENTES'
+              'WHERE'
+              'CODIGO=:CODIGO')
+            SQLdbMaxLenght = 10
+            SearchQuery.Strings = (
+              'SELECT * FROM CAD_CLIENTES'
+              'WHERE'
+              'TIPO='#39'TRANSPORTADORA'#39
+              'AND'
+              '%WHERE%')
+            CountQuery.Strings = (
+              'SELECT COUNT(*) FROM CAD_CLIENTES'
+              'WHERE'
+              'TIPO='#39'TRANSPORTADORA'#39
+              'AND'
+              '%WHERE%')
+            SearchDialogFieldList = <
+              item
+                FieldName = 'CODIGO'
+                WhereSyntax = 'CODIGO'
+                DisplayLabel = 'C'#243'digo'
+                DisplayWidth = 10
+                DisplayColumnWidth = 0
+                FieldType = ftInteger
+                Search = False
+                EmptyOperation = eoNull
+                DefaultComparison = scEqual
+                SearchCase = scMixed
+              end
+              item
+                FieldName = 'NOME'
+                WhereSyntax = 'NOME'
+                DisplayLabel = 'Nome:'
+                DisplayWidth = 80
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end>
+            SearchPresetList = <>
+            DialogCaption = 'Pesquisa'
+            DialogWidth = 0
+            DialogHeight = 0
+            Store = dsFields
+            CompareFormatDate = 'DDMMYYYY'
+            CompareFormatTime = 'HHMMSS'
+            CompareFormatDateTime = 'DDMMYYYY'
+            TrueExpression = '1=1'
+            DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+            ConnectionDialog = FrmPrincipal.DBConexao
+            Connection = FrmPrincipal.DBConexao
+          end
+          object GroupBox1: TGroupBox
+            Left = 801
+            Top = 20
+            Width = 176
+            Height = 94
+            Caption = 'Status do Pedido'
+            TabOrder = 9
+            object Panel1: TPanel
+              Left = 2
+              Top = 16
+              Width = 172
+              Height = 76
+              Align = alClient
+              BevelOuter = bvNone
+              Enabled = False
+              ParentBackground = False
+              TabOrder = 0
+              object DBRadioGroup2: TDBRadioGroup
+                Left = 84
+                Top = 0
+                Width = 88
+                Height = 76
+                Align = alRight
+                Caption = 'Aprovado'
+                Color = clBtnFace
+                DataField = 'APROVADO'
+                DataSource = ds_Pedido
+                Items.Strings = (
+                  'Sim'
+                  'N'#227'o'
+                  'Cancelado')
+                ParentBackground = False
+                ParentColor = False
+                TabOrder = 1
+                Values.Strings = (
+                  'S'
+                  'N'
+                  'C')
+              end
+              object DBRadioGroup1: TDBRadioGroup
+                Left = 0
+                Top = 0
+                Width = 73
+                Height = 76
+                Align = alLeft
+                Caption = 'Faturado'
+                Color = clBtnFace
+                DataField = 'STATUS'
+                DataSource = ds_Pedido
+                Items.Strings = (
+                  'Sim'
+                  'N'#227'o')
+                ParentBackground = False
+                ParentColor = False
+                TabOrder = 0
+                Values.Strings = (
+                  'S'
+                  'N')
+              end
+            end
+          end
+          object DBEdit2: TDBEdit
+            Left = 659
+            Top = 19
+            Width = 108
+            Height = 22
+            Hint = 'Opcional - N'#227'o '#233' obrigat'#243'rio'
+            DataField = 'DOCUMENTO'
+            DataSource = ds_Pedido
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 10
+          end
+          object EditTabela: TIDBEditDialog
+            Left = 384
+            Top = 98
+            Width = 65
+            Height = 22
+            HelpKeyWord = ''
+            Color = clWindow
+            Enabled = True
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            ShowHint = True
+            TabOrder = 11
+            Text = ''
+            Visible = True
+            EditType = etAlphaNumeric
+            EmptyText = 'Tecle F8'
+            FocusColor = clBtnFace
+            LabelCaption = 'Tabela de pre'#231'os:'
+            LabelAlwaysEnabled = True
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Separator = ';'
+            Version = '5.0.0.0'
+            ButtonStyle = bsButton
+            ButtonWidth = 16
+            ButtonHint = 'Tabela de pre'#231'os'
+            Etched = False
+            ButtonCaption = '...'
+            DataField = 'TABELA'
+            DataSource = ds_Pedido
+            ButtonKeyClickBtn = 119
+            SQLdbFazBusca = True
+            SQLdbFocusControl = EditTabelaNome
+            SQLdbCampoRetorno = 'NOME'
+            SQLdbRetornoVazio = '***'
+            SQLdbCampoParametro = 'CODIGO'
+            SQLdbSQL.Strings = (
+              'SELECT * FROM TPRECO'
+              'where'
+              'codigo=:codigo')
+            SQLdbMaxLenght = 10
+            SearchQuery.Strings = (
+              'SELECT * FROM TPRECO'
+              'where'
+              '%where%')
+            CountQuery.Strings = (
+              'SELECT count(*) FROM TPRECO'
+              'where'
+              '%where%')
+            SearchDialogFieldList = <
+              item
+                FieldName = 'CODIGO'
+                WhereSyntax = 'CODIGO'
+                DisplayLabel = 'CODIGO'
+                DisplayWidth = 10
+                DisplayColumnWidth = 0
+                FieldType = ftInteger
+                Search = False
+                EmptyOperation = eoNull
+                DefaultComparison = scEqual
+                SearchCase = scMixed
+              end
+              item
+                FieldName = 'NOME'
+                WhereSyntax = 'NOME'
+                DisplayLabel = 'NOME'
+                DisplayWidth = 60
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end
+              item
+                FieldName = 'MOEDA'
+                WhereSyntax = 'MOEDA'
+                DisplayLabel = 'MOEDA'
+                DisplayWidth = 30
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end>
+            SearchPresetList = <>
+            DialogCaption = 'Pesquisa'
+            DialogWidth = 0
+            DialogHeight = 0
+            Store = dsFields
+            CompareFormatDate = 'DDMMYYYY'
+            CompareFormatTime = 'HHMMSS'
+            CompareFormatDateTime = 'DDMMYYYY'
+            TrueExpression = '1=1'
+            DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+            ConnectionDialog = FrmPrincipal.DBConexao
+            Connection = FrmPrincipal.DBConexao
+          end
+          object EditTabelaNome: TEdit
+            Left = 453
+            Top = 98
+            Width = 277
+            Height = 22
+            AutoSize = False
+            CharCase = ecUpperCase
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 12
+            Text = '***'
+          end
+          object EditVendedor: TIDBEditDialog
+            Left = 6
+            Top = 58
+            Width = 65
+            Height = 22
+            HelpKeyWord = ''
+            CharCase = ecUpperCase
+            Color = clWindow
+            Enabled = True
+            ShowHint = True
+            TabOrder = 13
+            Text = ''
+            Visible = True
+            LabelCaption = 'Vendedor'
+            LabelAlwaysEnabled = True
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Separator = ';'
+            Version = '5.0.0.0'
+            ButtonStyle = bsButton
+            ButtonWidth = 16
+            ButtonHint = 'Procurar...'
+            Etched = False
+            ButtonCaption = '...'
+            DataField = 'VENDEDOR'
+            DataSource = ds_Pedido
+            ButtonKeyClickBtn = 119
+            SQLdbFazBusca = True
+            SQLdbFocusControl = EditNomeVendedor
+            SQLdbCampoRetorno = 'NOME'
+            SQLdbRetornoVazio = ' *** '
+            SQLdbCampoParametro = 'CODIGO'
+            SQLdbSQL.Strings = (
+              'SELECT * FROM CAD_CLIENTES'
+              'WHERE'
+              'CODIGO=:CODIGO'
+              'AND'
+              '  TIPO in ('#39'VENDEDOR'#39', '#39'REPRESENTANTE'#39')')
+            SQLdbMaxLenght = 10
+            SearchQuery.Strings = (
+              'SELECT * FROM CAD_CLIENTES'
+              'WHERE'
+              
+                'TIPO IN ('#39'VENDEDOR'#39','#39'REPRESENTANTE'#39','#39'BALCONISTA'#39','#39'FUNCIONARIO'#39','#39 +
+                'PREPOSTO'#39','#39'TELEVENDAS'#39','#39'WEBVENDAS'#39')'
+              'AND'
+              '%WHERE%')
+            CountQuery.Strings = (
+              '')
+            SearchDialogFieldList = <
+              item
+                FieldName = 'CODIGO'
+                WhereSyntax = 'CODIGO'
+                DisplayLabel = 'C'#243'digo:'
+                DisplayWidth = 10
+                DisplayColumnWidth = 0
+                FieldType = ftInteger
+                Search = False
+                EmptyOperation = eoNull
+                DefaultComparison = scEqual
+                SearchCase = scMixed
+              end
+              item
+                FieldName = 'NOME'
+                WhereSyntax = 'NOME'
+                DisplayLabel = 'Nome:'
+                DisplayWidth = 80
+                DisplayColumnWidth = 0
+                FieldType = ftString
+                Search = True
+                EmptyOperation = eoNull
+                DefaultComparison = scContains
+                SearchCase = scUpper
+              end>
+            SearchPresetList = <>
+            DialogCaption = 'Pesquisa'
+            DialogWidth = 0
+            DialogHeight = 0
+            Store = dsFields
+            CompareFormatDate = 'DDMMYYYY'
+            CompareFormatTime = 'HHMMSS'
+            CompareFormatDateTime = 'DDMMYYYY'
+            TrueExpression = '1=1'
+            DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
+            ConnectionDialog = FrmPrincipal.DBConexao
+            Connection = FrmPrincipal.DBConexao
+          end
+          object EditPedido: TDBEdit
+            Left = 384
+            Top = 20
+            Width = 94
+            Height = 22
+            DataField = 'CODIGO'
+            DataSource = ds_Pedido
+            Enabled = False
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Calibri'
+            Font.Style = []
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 14
+          end
+          object BtnRecalcular: TBitBtn
+            Left = 734
+            Top = 96
+            Width = 33
+            Height = 25
+            Hint = '(se necess'#225'rio)... recalcular  com base na Tabela de Pre'#231'os'
+            Glyph.Data = {
+              DE010000424DDE01000000000000760000002800000024000000120000000100
+              0400000000006801000000000000000000001000000000000000000000000000
+              80000080000000808000800000008000800080800000C0C0C000808080000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333444444
+              33333333333F8888883F33330000324334222222443333388F3833333388F333
+              000032244222222222433338F8833FFFFF338F3300003222222AAAAA22243338
+              F333F88888F338F30000322222A33333A2224338F33F8333338F338F00003222
+              223333333A224338F33833333338F38F00003222222333333A444338FFFF8F33
+              3338888300003AAAAAAA33333333333888888833333333330000333333333333
+              333333333333333333FFFFFF000033333333333344444433FFFF333333888888
+              00003A444333333A22222438888F333338F3333800003A2243333333A2222438
+              F38F333333833338000033A224333334422224338338FFFFF8833338000033A2
+              22444442222224338F3388888333FF380000333A2222222222AA243338FF3333
+              33FF88F800003333AA222222AA33A3333388FFFFFF8833830000333333AAAAAA
+              3333333333338888883333330000333333333333333333333333333333333333
+              0000}
+            ModalResult = 4
+            NumGlyphs = 2
+            TabOrder = 15
+            OnClick = BtnRecalcularClick
           end
         end
-      end
-      object DBEdit2: TDBEdit
-        Left = 659
-        Top = 31
-        Width = 108
-        Height = 22
-        Hint = 'Opcional - N'#227'o '#233' obrigat'#243'rio'
-        DataField = 'DOCUMENTO'
-        DataSource = ds_Pedido
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 5
-      end
-      object EditTabela: TIDBEditDialog
-        Left = 384
-        Top = 110
-        Width = 65
-        Height = 22
-        HelpKeyWord = ''
-        Color = clWindow
-        Enabled = True
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        ShowHint = True
-        TabOrder = 12
-        Text = ''
-        Visible = True
-        EditType = etAlphaNumeric
-        EmptyText = 'Tecle F8'
-        FocusColor = clBtnFace
-        LabelCaption = 'Tabela de pre'#231'os:'
-        LabelAlwaysEnabled = True
-        LabelFont.Charset = DEFAULT_CHARSET
-        LabelFont.Color = clWindowText
-        LabelFont.Height = -11
-        LabelFont.Name = 'Tahoma'
-        LabelFont.Style = []
-        Lookup.Separator = ';'
-        Version = '5.0.0.0'
-        ButtonStyle = bsButton
-        ButtonWidth = 16
-        ButtonHint = 'Tabela de pre'#231'os'
-        Etched = False
-        ButtonCaption = '...'
-        DataField = 'TABELA'
-        DataSource = ds_Pedido
-        ButtonKeyClickBtn = 119
-        SQLdbFazBusca = True
-        SQLdbFocusControl = EditTabelaNome
-        SQLdbCampoRetorno = 'NOME'
-        SQLdbRetornoVazio = '***'
-        SQLdbCampoParametro = 'CODIGO'
-        SQLdbSQL.Strings = (
-          'SELECT * FROM TPRECO'
-          'where'
-          'codigo=:codigo')
-        SQLdbMaxLenght = 10
-        SearchQuery.Strings = (
-          'SELECT * FROM TPRECO'
-          'where'
-          '%where%')
-        CountQuery.Strings = (
-          'SELECT count(*) FROM TPRECO'
-          'where'
-          '%where%')
-        SearchDialogFieldList = <
-          item
-            FieldName = 'CODIGO'
-            WhereSyntax = 'CODIGO'
-            DisplayLabel = 'CODIGO'
-            DisplayWidth = 10
-            DisplayColumnWidth = 0
-            FieldType = ftInteger
-            Search = False
-            EmptyOperation = eoNull
-            DefaultComparison = scEqual
-            SearchCase = scMixed
-          end
-          item
-            FieldName = 'NOME'
-            WhereSyntax = 'NOME'
-            DisplayLabel = 'NOME'
-            DisplayWidth = 60
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end
-          item
-            FieldName = 'MOEDA'
-            WhereSyntax = 'MOEDA'
-            DisplayLabel = 'MOEDA'
-            DisplayWidth = 30
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end>
-        SearchPresetList = <>
-        DialogCaption = 'Pesquisa'
-        DialogWidth = 0
-        DialogHeight = 0
-        Store = dsFields
-        CompareFormatDate = 'DDMMYYYY'
-        CompareFormatTime = 'HHMMSS'
-        CompareFormatDateTime = 'DDMMYYYY'
-        TrueExpression = '1=1'
-        DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
-        ConnectionDialog = FrmPrincipal.DBConexao
-        Connection = FrmPrincipal.DBConexao
-      end
-      object EditTabelaNome: TEdit
-        Left = 453
-        Top = 110
-        Width = 277
-        Height = 22
-        AutoSize = False
-        CharCase = ecUpperCase
-        Enabled = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 13
-        Text = '***'
-      end
-      object EditVendedor: TIDBEditDialog
-        Left = 6
-        Top = 70
-        Width = 65
-        Height = 22
-        HelpKeyWord = ''
-        CharCase = ecUpperCase
-        Color = clWindow
-        Enabled = True
-        ShowHint = True
-        TabOrder = 6
-        Text = ''
-        Visible = True
-        LabelCaption = 'Vendedor'
-        LabelAlwaysEnabled = True
-        LabelFont.Charset = DEFAULT_CHARSET
-        LabelFont.Color = clWindowText
-        LabelFont.Height = -11
-        LabelFont.Name = 'Tahoma'
-        LabelFont.Style = []
-        Lookup.Separator = ';'
-        Version = '5.0.0.0'
-        ButtonStyle = bsButton
-        ButtonWidth = 16
-        ButtonHint = 'Procurar...'
-        Etched = False
-        ButtonCaption = '...'
-        DataField = 'VENDEDOR'
-        DataSource = ds_Pedido
-        ButtonKeyClickBtn = 119
-        SQLdbFazBusca = True
-        SQLdbFocusControl = EditNomeVendedor
-        SQLdbCampoRetorno = 'NOME'
-        SQLdbRetornoVazio = ' *** '
-        SQLdbCampoParametro = 'CODIGO'
-        SQLdbSQL.Strings = (
-          'SELECT * FROM CAD_CLIENTES'
-          'WHERE'
-          'CODIGO=:CODIGO'
-          'AND'
-          '  TIPO in ('#39'VENDEDOR'#39', '#39'REPRESENTANTE'#39')')
-        SQLdbMaxLenght = 10
-        SearchQuery.Strings = (
-          'SELECT * FROM CAD_CLIENTES'
-          'WHERE'
-          
-            'TIPO IN ('#39'VENDEDOR'#39','#39'REPRESENTANTE'#39','#39'BALCONISTA'#39','#39'FUNCIONARIO'#39','#39 +
-            'PREPOSTO'#39','#39'TELEVENDAS'#39','#39'WEBVENDAS'#39')'
-          'AND'
-          '%WHERE%')
-        CountQuery.Strings = (
-          '')
-        SearchDialogFieldList = <
-          item
-            FieldName = 'CODIGO'
-            WhereSyntax = 'CODIGO'
-            DisplayLabel = 'C'#243'digo:'
-            DisplayWidth = 10
-            DisplayColumnWidth = 0
-            FieldType = ftInteger
-            Search = False
-            EmptyOperation = eoNull
-            DefaultComparison = scEqual
-            SearchCase = scMixed
-          end
-          item
-            FieldName = 'NOME'
-            WhereSyntax = 'NOME'
-            DisplayLabel = 'Nome:'
-            DisplayWidth = 80
-            DisplayColumnWidth = 0
-            FieldType = ftString
-            Search = True
-            EmptyOperation = eoNull
-            DefaultComparison = scContains
-            SearchCase = scUpper
-          end>
-        SearchPresetList = <>
-        DialogCaption = 'Pesquisa'
-        DialogWidth = 0
-        DialogHeight = 0
-        Store = dsFields
-        CompareFormatDate = 'DDMMYYYY'
-        CompareFormatTime = 'HHMMSS'
-        CompareFormatDateTime = 'DDMMYYYY'
-        TrueExpression = '1=1'
-        DefaultSet = [ddSearchStyle, ddCriteriaCount, ddMaxCriteria, ddMax, ddCaseFormatUpper, ddCaseFormatLower, ddRegistryPath, ddDialogCaption, ddDialogWidth, ddDialogHeight, ddStore, ddCompareFormatDate, ddCompareFormatTime, ddCompareFormatDateTime, ddQuotedDateTime, ddQuoteChar, ddDecimalChar, ddTrueExpression, ddStartOpen, ddIgnoreEmptyValues, ddShowPresets, ddClearValueOnFieldChange, ddShowPresetsCustomization, ddShowHint]
-        ConnectionDialog = FrmPrincipal.DBConexao
-        Connection = FrmPrincipal.DBConexao
-      end
-      object EditPedido: TDBEdit
-        Left = 384
-        Top = 32
-        Width = 94
-        Height = 22
-        DataField = 'CODIGO'
-        DataSource = ds_Pedido
-        Enabled = False
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Calibri'
-        Font.Style = []
-        ParentFont = False
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 2
-      end
-      object BtnRecalcular: TBitBtn
-        Left = 734
-        Top = 108
-        Width = 33
-        Height = 25
-        Hint = '(se necess'#225'rio)... recalcular  com base na Tabela de Pre'#231'os'
-        Glyph.Data = {
-          DE010000424DDE01000000000000760000002800000024000000120000000100
-          0400000000006801000000000000000000001000000000000000000000000000
-          80000080000000808000800000008000800080800000C0C0C000808080000000
-          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333444444
-          33333333333F8888883F33330000324334222222443333388F3833333388F333
-          000032244222222222433338F8833FFFFF338F3300003222222AAAAA22243338
-          F333F88888F338F30000322222A33333A2224338F33F8333338F338F00003222
-          223333333A224338F33833333338F38F00003222222333333A444338FFFF8F33
-          3338888300003AAAAAAA33333333333888888833333333330000333333333333
-          333333333333333333FFFFFF000033333333333344444433FFFF333333888888
-          00003A444333333A22222438888F333338F3333800003A2243333333A2222438
-          F38F333333833338000033A224333334422224338338FFFFF8833338000033A2
-          22444442222224338F3388888333FF380000333A2222222222AA243338FF3333
-          33FF88F800003333AA222222AA33A3333388FFFFFF8833830000333333AAAAAA
-          3333333333338888883333330000333333333333333333333333333333333333
-          0000}
-        ModalResult = 4
-        NumGlyphs = 2
-        TabOrder = 15
-        OnClick = BtnRecalcularClick
       end
     end
   end
@@ -1479,8 +1496,8 @@ object FrmPedidoVenda: TFrmPedidoVenda
       'CODIGO=:CODIGO'
       ''
       '')
-    Left = 104
-    Top = 112
+    Left = 240
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -1506,8 +1523,8 @@ object FrmPedidoVenda: TFrmPedidoVenda
       'SELECT * FROM PEDIDOS_ITENS'
       'WHERE'
       'CODIGO=:CODIGO')
-    Left = 176
-    Top = 112
+    Left = 360
+    Top = 16
     ParamData = <
       item
         Name = 'CODIGO'
@@ -1519,14 +1536,14 @@ object FrmPedidoVenda: TFrmPedidoVenda
   object ds_Pedido: TDataSource
     DataSet = db_Pedido
     OnStateChange = ds_PedidoStateChange
-    Left = 104
-    Top = 64
+    Left = 192
+    Top = 16
   end
   object ds_PedidoItens: TDataSource
     DataSet = db_PedidoItens
     OnStateChange = ds_PedidoItensStateChange
-    Left = 184
-    Top = 64
+    Left = 304
+    Top = 16
   end
   object SP_CalculaPedido: TFDStoredProc
     Connection = FrmPrincipal.DBConexao
