@@ -165,10 +165,18 @@ inherited FrmSerieDoc: TFrmSerieDoc
     end
   end
   inherited dbTabela: TFDQuery
+    BeforeOpen = dbTabelaBeforeOpen
     SQL.Strings = (
-      'SELECT * FROM FIS_SERIEDOC')
+      'SELECT * FROM FIS_SERIEDOC'
+      'WHERE'
+      'EMPRESA=:EMPRESA')
     Left = 464
     Top = 248
+    ParamData = <
+      item
+        Name = 'EMPRESA'
+        ParamType = ptInput
+      end>
     object dbTabelaCODIGO: TIntegerField
       FieldName = 'CODIGO'
       Origin = 'CODIGO'

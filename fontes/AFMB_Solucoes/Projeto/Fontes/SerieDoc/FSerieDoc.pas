@@ -35,6 +35,7 @@ type
     cxGridDadosSERIE: TcxGridDBColumn;
     cxGridDadosPROXIMO_NUMERO: TcxGridDBColumn;
     procedure FormDestroy(Sender: TObject);
+    procedure dbTabelaBeforeOpen(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -46,7 +47,15 @@ var
 
 implementation
 
+uses Classe.Global;
+
 {$R *.dfm}
+
+procedure TFrmSerieDoc.dbTabelaBeforeOpen(DataSet: TDataSet);
+begin
+  inherited;
+   dbTabela.ParamByName('EMPRESA').AsInteger := FSistema.Empresa;
+end;
 
 procedure TFrmSerieDoc.FormDestroy(Sender: TObject);
 begin

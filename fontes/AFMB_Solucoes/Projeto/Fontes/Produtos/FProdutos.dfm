@@ -305,10 +305,6 @@ object FrmProdutos: TFrmProdutos
     TabOrder = 4
     object Tab0: TTabSheet
       Caption = 'Principal'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel2: TPanel
         Left = 0
         Top = 0
@@ -688,10 +684,6 @@ object FrmProdutos: TFrmProdutos
           object TabEstoque: TTabSheet
             Caption = 'Estoque/Pre'#231'o'
             ImageIndex = 1
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object GroupBox1: TGroupBox
               AlignWithMargins = True
               Left = 3
@@ -918,10 +910,6 @@ object FrmProdutos: TFrmProdutos
           object TabTributacao: TTabSheet
             Caption = 'Tributa'#231#227'o'
             ImageIndex = 2
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object gpbImpostos: TGroupBox
               AlignWithMargins = True
               Left = 3
@@ -1473,10 +1461,6 @@ object FrmProdutos: TFrmProdutos
           object TabOutrosDados: TTabSheet
             Caption = 'Outros Dados'
             ImageIndex = 4
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object GroupBox9: TGroupBox
               AlignWithMargins = True
               Left = 3
@@ -2031,10 +2015,6 @@ object FrmProdutos: TFrmProdutos
           object TabSheet2: TTabSheet
             Caption = 'Observa'#231#245'es'
             ImageIndex = 3
-            ExplicitLeft = 0
-            ExplicitTop = 0
-            ExplicitWidth = 0
-            ExplicitHeight = 0
             object GroupBox2: TGroupBox
               Left = 0
               Top = 0

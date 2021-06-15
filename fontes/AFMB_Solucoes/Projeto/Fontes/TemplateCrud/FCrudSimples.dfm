@@ -44,7 +44,7 @@ object FrmCrudSimples: TFrmCrudSimples
       Width = 924
       Constraints.MinHeight = 27
       ExplicitWidth = 924
-      ExplicitHeight = 27
+      ExplicitHeight = 44
       inherited LblBarraTitulo: TLabel
         Width = 773
         Caption = 'Titulo'
@@ -202,14 +202,8 @@ object FrmCrudSimples: TFrmCrudSimples
     ActivePage = tabPrincipal
     Align = alClient
     TabOrder = 3
-    ExplicitTop = 33
-    ExplicitHeight = 345
     object tabPrincipal: TTabSheet
       Caption = 'Principal'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 315
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0
@@ -217,7 +211,6 @@ object FrmCrudSimples: TFrmCrudSimples
         Height = 298
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 315
         object cxGrid: TcxGrid
           Left = 2
           Top = 17
@@ -225,7 +218,6 @@ object FrmCrudSimples: TFrmCrudSimples
           Height = 279
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 296
           object cxGridDados: TcxGridDBTableView
             OnDblClick = cxGridDadosDblClick
             Navigator.Buttons.CustomButtons = <>
@@ -275,10 +267,6 @@ object FrmCrudSimples: TFrmCrudSimples
       Caption = 'Detalhes'
       ImageIndex = 1
       OnShow = tabDetalheShow
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 315
       object lblCodigo: TLabel
         Left = 13
         Top = 8

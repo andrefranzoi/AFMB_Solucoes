@@ -1,38 +1,3 @@
-{
-  xx***********************************************************************************xx
-  xx                                                                                   xx
-  xx  AUTOR/DESENVOLVEDOR...: Adriano Zanini (2020)                                    xx
-  xx  DATA DO CODIGO-FONTE..: DESDE 01/02/2010                                         xx
-  xx  E-MAIL................: indpcp2018@gmail.com                                     xx
-  xx                                                                                   xx
-  xx***********************************************************************************xx
-  xx                                                                                   xx
-  xx  SISTEMA...............: DBVenda Retaguarda / Frente de Caixa                     xx
-  xx  LINGUAGEM/DB..........: Delphi 10.3 Rio (32 bits) | Firebird 2.5 (32 bits)       xx
-  xx                                                                                   xx
-  xx***********************************************************************************xx
-  xx                                                                                   xx
-  xx Alguns sem qualquer ética profissional ou moral, tem comercializado esses fontes  xx
-  xx sem minha autorização. Pelas leis brasileiras de direitos autorais, ISSO É CRIME. xx
-  xx                                                                                   xx
-  xx***********************************************************************************xx
-  xx                                                                                   xx
-  xx Eu Adriano Zanini, sou autor/desenvolvedor. Se alguem te vendeu esses fontes      xx
-  xx sem minha autorização, você comprou um codigo-fonte pirata (não autorizo vender). xx
-  xx                                                                                   xx
-  xx***********************************************************************************xx
-  xx                                                                                   xx
-  xx Sou autor dos sitemas "VestisPCP", "IndPCP" e "DBVenda". Os fontes do "VestisPCP" xx
-  xx estão lá no GitHub.                                                               xx
-  xx Link no GitHub: https://github.com/ZaniniAdriano/VestisPCP                        xx
-  xx                                                                                   xx
-  xx***********************************************************************************xx
-  xx  COMERCIALIZE SOMENTE O SISTEMA COMPILADO (COM O NOME/INTERFACE QUE DESEJAR).     xx
-  xx  MUDE O QUE DESEJAR, CUSTOMIZE COMO QUISER. INCLUSIVE O NOME DO SISTEMA/PROJETO.  xx
-  xx                                                                                   xx
-  xx***********************************************************************************xx
-}
-
 unit FPedidoVenda;
 
 interface
@@ -93,7 +58,7 @@ type
       cxGridItemVLR_TOTAL: TcxGridDBColumn;
     PageControl1: TPageControl;
     tabCadastro: TTabSheet;
-    AdvGroupBox4: TGroupBox;
+    tabComercial: TTabSheet;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -101,22 +66,23 @@ type
     EditCliente: TIDBEditDialog;
     EditNomeCliente: TEdit;
     EditData: TDBEdit;
-    EditNomeVendedor: TEdit;
     EditDataEntrega: TDBEdit;
-    EditPagamento: TIDBEditDialog;
-    EditNomeFormaPagto: TEdit;
-    EditNomeTrasportadora: TEdit;
-    EditTransportadora: TIDBEditDialog;
     GroupBox1: TGroupBox;
     Panel1: TPanel;
     DBRadioGroup2: TDBRadioGroup;
     DBRadioGroup1: TDBRadioGroup;
     DBEdit2: TDBEdit;
+    EditPedido: TDBEdit;
+    EditNomeVendedor: TEdit;
+    EditVendedor: TIDBEditDialog;
+    EditPagamento: TIDBEditDialog;
+    EditNomeFormaPagto: TEdit;
     EditTabela: TIDBEditDialog;
     EditTabelaNome: TEdit;
-    EditVendedor: TIDBEditDialog;
-    EditPedido: TDBEdit;
     BtnRecalcular: TBitBtn;
+    tabEntrega: TTabSheet;
+    EditTransportadora: TIDBEditDialog;
+    EditNomeTrasportadora: TEdit;
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure CalculaPedido;
@@ -126,7 +92,6 @@ type
       procedure db_PedidoItensAfterPost(DataSet: TDataSet);
       procedure db_PedidoNewRecord(DataSet: TDataSet);
       procedure db_PedidoAfterPost(DataSet: TDataSet);
-      procedure AdvGroupBox4Exit(Sender: TObject);
       procedure FrmFrameBotoes1SpbAdicionarClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbEditarClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbSalvarClick(Sender: TObject);
@@ -151,6 +116,7 @@ type
       procedure cxGridItemPRODUTOPropertiesButtonClick(Sender: TObject;
         AButtonIndex: Integer);
       procedure ds_PedidoItensStateChange(Sender: TObject);
+    procedure tabCadastroExit(Sender: TObject);
 
    private
       { Private declarations }
@@ -166,12 +132,13 @@ type
 
 var
    FrmPedidoVenda: TFrmPedidoVenda;
+   vTipo: String;
 
 implementation
 
 uses FPrincipal, App.SQL, Biblioteca, Global, Classe.Usuarios,
    FBaseDados,
-   FTabelaPrecoValor, FastReport, App.Funcoes;
+   FTabelaPrecoValor, FastReport, App.Funcoes, FPedidoVendaTipo;
 
 {$R *.dfm}
 
@@ -270,6 +237,29 @@ begin
       If (db_PedidoItens.state in [dsEdit]) then
          db_PedidoItens.Post;
    end;
+end;
+
+procedure TFrmPedidoVenda.tabCadastroExit(Sender: TObject);
+begin
+   if db_Pedido.FieldByName('CLIENTE').AsInteger < 1 then
+   begin
+      aviso('Campo Cliente é obrigatório');
+      EditCliente.SetFocus;
+      Abort;
+   end;
+
+   if db_Pedido.FieldByName('FORMAPAGTO').AsInteger < 1 then
+   begin
+      aviso('Campo Forma de Pagamento é obrigatório');
+      EditPagamento.SetFocus;
+      Abort;
+   end;
+
+   // SALVAR ITENS DO PEDIDO DE VENDA
+   If (db_PedidoItens.state in [dsEdit, dsInsert]) then
+   Begin
+      db_PedidoItens.Post;
+   End;
 end;
 
 procedure TFrmPedidoVenda.db_PedidoAfterOpen(DataSet: TDataSet);
@@ -525,22 +515,51 @@ begin
 end;
 
 procedure TFrmPedidoVenda.FrmFrameBotoes1SpbAdicionarClick(Sender: TObject);
+var
+  F: TFrmPedidoVendaTipo;
 begin
-   grpPedidos.Enabled := True;
-   db_Pedido.Close;
-   db_PedidoItens.Close;
+  vTipo := '';
+  F := TFrmPedidoVendaTipo.Create(Self);
+  F.ShowModal;
+  if F.ModalResult = MrOk then
+  begin
+    //Se for Pedido de Venda
+    if F.rgTipo.ItemIndex = 0 then
+    begin
+      vTipo := 'PV';
+      grpPedidos.Enabled := True;
+      db_Pedido.Close;
+      db_PedidoItens.Close;
 
-   db_Pedido.ParamByName('CODIGO').Clear;
+      db_Pedido.ParamByName('CODIGO').Clear;
 
-   db_Pedido.Open;
-   db_PedidoItens.Open;
+      db_Pedido.Open;
+      db_PedidoItens.Open;
 
-   ChecarProtecaoPedido;
+      ChecarProtecaoPedido;
 
-   FrmFrameBotoes1.SpbAdicionarClick(Sender);
-   db_Pedido.ParamByName('CODIGO').Clear;
-   EditCliente.SetFocus;
+      FrmFrameBotoes1.SpbAdicionarClick(Sender);
+      db_Pedido.ParamByName('CODIGO').Clear;
+      EditCliente.SetFocus;
+    end;
 
+    //Se for Ordem de Serviço
+    if F.rgTipo.ItemIndex = 1 then
+    begin
+      vTipo := 'OS';
+
+
+    end;
+
+    //Se for Orçamento
+    if F.rgTipo.ItemIndex = 2 then
+    begin
+      vTipo := 'OC';
+
+
+    end;
+  end;
+  FreeAndNil(F);
 end;
 
 procedure TFrmPedidoVenda.FrmFrameBotoes1SpbCancelarClick(Sender: TObject);
@@ -681,30 +700,6 @@ end;
 procedure TFrmPedidoVenda.ImprimirPedidocomvalores1Click(Sender: TObject);
 begin
    FrmFrameBotoes1SpbImprimirClick(Sender);
-end;
-
-procedure TFrmPedidoVenda.AdvGroupBox4Exit(Sender: TObject);
-begin
-   if db_Pedido.FieldByName('CLIENTE').AsInteger < 1 then
-   begin
-      aviso('Campo Cliente é obrigatório');
-      EditCliente.SetFocus;
-      Abort;
-   end;
-
-   if db_Pedido.FieldByName('FORMAPAGTO').AsInteger < 1 then
-   begin
-      aviso('Campo Forma de Pagamento é obrigatório');
-      EditPagamento.SetFocus;
-      Abort;
-   end;
-
-   // SALVAR ITENS DO PEDIDO DE VENDA
-   If (db_PedidoItens.state in [dsEdit, dsInsert]) then
-   Begin
-      db_PedidoItens.Post;
-   End;
-
 end;
 
 end.
