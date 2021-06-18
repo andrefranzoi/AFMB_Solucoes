@@ -130,7 +130,6 @@ type
       DBEdit30: TDBEdit;
       edtComplemento: TDBEdit;
       EditBairro1: TDBEdit;
-      EditCidade1: TDBEdit;
       EditUF1: TDBEdit;
       edtEndereco: TDBEdit;
       DBEdit9: TDBEdit;
@@ -187,7 +186,6 @@ type
       DBEdit12: TDBEdit;
       DBEdit21: TDBEdit;
       DBEdit22: TDBEdit;
-      DBEdit37: TDBEdit;
       DBEdit40: TDBEdit;
       DBEdit42: TDBEdit;
       DBEdit43: TDBEdit;
@@ -229,8 +227,10 @@ type
       LblSaldoReceber: TLabel;
       LblQuantidade: TLabel;
       ACBrCEP: TACBrCEP;
+    edtJurCidade: TEdit;
     IDBEditDialog1: TIDBEditDialog;
     IDBEditDialog2: TIDBEditDialog;
+    edtFisCidade: TEdit;
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
       procedure Iniciar;
@@ -422,8 +422,10 @@ procedure TFrmClientes.db_ClientesBeforePost(DataSet: TDataSet);
 begin
    if not(db_Clientes.State in [dsedit, dsinsert]) then
       exit;
-   db_Clientes.ParamByName('CODIGO').AsInteger :=
-     db_Clientes.FieldByName('CODIGO').AsInteger;
+   db_Clientes.ParamByName('CODIGO').AsInteger := db_Clientes.FieldByName('CODIGO').AsInteger;
+
+   if edtJurCidade.text <> '' then
+      db_Clientes.ParamByName('NOMECIDADE').AsString := edtJurCidade.text;
 end;
 
 procedure TFrmClientes.db_ClientesNewRecord(DataSet: TDataSet);
@@ -609,15 +611,12 @@ begin
       begin
          with ACBrCEP.Enderecos[0] do
          begin
-            DS_Clientes.DataSet.FieldByName('ENDERECO').AsString :=
-              Tipo_Logradouro + ' - ' + Logradouro;
-            DS_Clientes.DataSet.FieldByName('COMPLEMENTO').AsString :=
-              Complemento;
-            DS_Clientes.DataSet.FieldByName('BAIRRO').AsString := Bairro;
-            DS_Clientes.DataSet.FieldByName('IDCIDADE').AsString :=
-              IBGE_Municipio;
-            DS_Clientes.DataSet.FieldByName('NOMECIDADE').AsString := Municipio;
-            DS_Clientes.DataSet.FieldByName('UF').AsString := UF;
+            DS_Clientes.DataSet.FieldByName('ENDERECO').AsString    := Logradouro;
+            DS_Clientes.DataSet.FieldByName('COMPLEMENTO').AsString := Complemento;
+            DS_Clientes.DataSet.FieldByName('BAIRRO').AsString      := Bairro;
+            DS_Clientes.DataSet.FieldByName('IDCIDADE').AsString    := IBGE_Municipio;
+            edtJurCidade.Text                                       := Municipio;
+            DS_Clientes.DataSet.FieldByName('UF').AsString          := UF;
          end;
          edtEndereco.SetFocus;
          edtEndereco.SelectAll;
@@ -888,6 +887,7 @@ begin
    db_Clientes.Close;
    db_Clientes.ParamByName('CODIGO').AsInteger := mID;
    db_Clientes.Open;
+   db_Clientes.Edit;
    RefreshTabelas;
 end;
 
@@ -962,13 +962,10 @@ begin
       begin
          with ACBrCEP.Enderecos[0] do
          begin
-            DS_Clientes.DataSet.FieldByName('ENDERECO').AsString :=
-              Tipo_Logradouro + ' - ' + Logradouro;
-            DS_Clientes.DataSet.FieldByName('COMPLEMENTO').AsString :=
-              Complemento;
+            DS_Clientes.DataSet.FieldByName('ENDERECO').AsString := Logradouro;
+            DS_Clientes.DataSet.FieldByName('COMPLEMENTO').AsString := Complemento;
             DS_Clientes.DataSet.FieldByName('BAIRRO').AsString := Bairro;
-            DS_Clientes.DataSet.FieldByName('IDCIDADE').AsString :=
-              IBGE_Municipio;
+            DS_Clientes.DataSet.FieldByName('IDCIDADE').AsString := IBGE_Municipio;
             DS_Clientes.DataSet.FieldByName('NOMECIDADE').AsString := Municipio;
             DS_Clientes.DataSet.FieldByName('UF').AsString := UF;
          end;

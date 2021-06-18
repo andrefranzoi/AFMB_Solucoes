@@ -90,7 +90,7 @@ object FrmConfigurar: TFrmConfigurar
       Top = 5
       Width = 1048
       Height = 495
-      ActivePage = Tab_DadosEmpresa
+      ActivePage = tbiAplicativos
       Align = alClient
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -103,10 +103,6 @@ object FrmConfigurar: TFrmConfigurar
       TabOrder = 0
       object Tab_DadosEmpresa: TTabSheet
         Caption = 'Dados da Empresa'
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox1: TGroupBox
           Left = 0
           Top = 0
@@ -817,10 +813,6 @@ object FrmConfigurar: TFrmConfigurar
       object Tab_Operacionais: TTabSheet
         Caption = 'Certificado e email'
         ImageIndex = 8
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox10: TGroupBox
           AlignWithMargins = True
           Left = 3
@@ -1283,10 +1275,6 @@ object FrmConfigurar: TFrmConfigurar
       object TabNFe: TTabSheet
         Caption = 'NF-e'
         ImageIndex = 6
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox14: TGroupBox
           Left = 0
           Top = 340
@@ -1828,10 +1816,6 @@ object FrmConfigurar: TFrmConfigurar
         Font.Style = []
         ImageIndex = 4
         ParentFont = False
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object GroupBox16: TGroupBox
           Left = 0
           Top = 0
@@ -2068,6 +2052,83 @@ object FrmConfigurar: TFrmConfigurar
             TabOrder = 3
             Text = '***'
           end
+        end
+      end
+      object tbiAplicativos: TTabSheet
+        Caption = 'Aplicativos'
+        ImageIndex = 4
+        object gbxIfood: TGroupBox
+          Left = 0
+          Top = 34
+          Width = 345
+          Height = 127
+          Caption = 'iFood'
+          TabOrder = 0
+          object Label3: TLabel
+            Left = 15
+            Top = 24
+            Width = 56
+            Height = 14
+            Caption = 'Username'
+          end
+          object Label4: TLabel
+            Left = 15
+            Top = 72
+            Width = 53
+            Height = 14
+            Caption = 'PassWord'
+          end
+          object Label14: TLabel
+            Left = 179
+            Top = 72
+            Width = 75
+            Height = 14
+            Caption = 'Cliente Secret'
+          end
+          object Label16: TLabel
+            Left = 179
+            Top = 24
+            Width = 54
+            Height = 14
+            Caption = 'Cliente ID'
+          end
+          object DBEdit2: TDBEdit
+            Left = 15
+            Top = 44
+            Width = 150
+            Height = 22
+            TabOrder = 0
+          end
+          object DBEdit3: TDBEdit
+            Left = 15
+            Top = 92
+            Width = 150
+            Height = 22
+            TabOrder = 1
+          end
+          object DBEdit6: TDBEdit
+            Left = 179
+            Top = 92
+            Width = 150
+            Height = 22
+            TabOrder = 2
+          end
+          object DBEdit13: TDBEdit
+            Left = 179
+            Top = 44
+            Width = 150
+            Height = 22
+            TabOrder = 3
+          end
+        end
+        object cbxusaIfood: TDBCheckBox
+          Left = 3
+          Top = 11
+          Width = 137
+          Height = 17
+          Caption = 'Usa integra'#231#227'o iFood'
+          TabOrder = 1
+          OnClick = cbxusaIfoodClick
         end
       end
     end

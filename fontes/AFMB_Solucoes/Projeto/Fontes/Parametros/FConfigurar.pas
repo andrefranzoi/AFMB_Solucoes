@@ -205,6 +205,17 @@ type
       EditCodevendedor: TIDBEditDialog;
       EditVendedor1: TEdit;
       DBRadioGroup5: TDBRadioGroup;
+    tbiAplicativos: TTabSheet;
+    gbxIfood: TGroupBox;
+    cbxusaIfood: TDBCheckBox;
+    Label3: TLabel;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit6: TDBEdit;
+    Label14: TLabel;
+    DBEdit13: TDBEdit;
+    Label16: TLabel;
       procedure ButtonGroup1Items0Click(Sender: TObject);
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -228,6 +239,7 @@ type
       procedure Button1Click(Sender: TObject);
       procedure sbNomeDLLClick(Sender: TObject);
       procedure btnAdicionarClick(Sender: TObject);
+    procedure cbxusaIfoodClick(Sender: TObject);
    private
       { Private declarations }
       FTipoDANFE: String;
@@ -331,6 +343,14 @@ end;
 procedure TFrmConfigurar.ButtonGroup1Items0Click(Sender: TObject);
 begin
    PgParametros.ActivePage := Tab_DadosEmpresa;
+end;
+
+procedure TFrmConfigurar.cbxusaIfoodClick(Sender: TObject);
+begin
+   if cbxusaIfood.Checked then
+      gbxIfood.Enabled := True
+   else
+      gbxIfood.Enabled := False;
 end;
 
 procedure TFrmConfigurar.btnAdicionarClick(Sender: TObject);

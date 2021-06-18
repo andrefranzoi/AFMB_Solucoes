@@ -52,12 +52,12 @@ uses
    cxImageList, Vcl.ActnList, FireDAC.Phys.IBBase, FireDAC.Comp.Client, Data.DB,
    frxClass, frxDBSet, FireDAC.Comp.DataSet, System.Actions,
    Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan, dxRibbon, dxStatusBar,
-   dxGDIPlusClasses, dxRibbonForm;
+   dxGDIPlusClasses, dxRibbonForm, FireDAC.Phys.MSSQLDef, FireDAC.Phys.ODBCBase, FireDAC.Phys.MSSQL;
 
 type
    TFrmPrincipal = class(TdxRibbonForm)
       db_empresa: TFDQuery;
-      DBConexao: TFDConnection;
+    DBConexao: TFDConnection;
       FDTransacao: TFDTransaction;
       dxStatusBar1: TdxStatusBar;
       FDPhysFBDriverLink: TFDPhysFBDriverLink;
@@ -339,6 +339,8 @@ type
     dxBarDocumentos: TdxBar;
     dxBarButton3: TdxBarButton;
     dxBarLargeButton155: TdxBarLargeButton;
+    FDPhysMSSQLDriverLink: TFDPhysMSSQLDriverLink;
+    dxBarLargeButton156: TdxBarLargeButton;
 
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -486,7 +488,7 @@ uses
    FProdutosQuantidade, FGrupos, FTabelaNCM, FProdutosPesquisaPreco, FProdutos,
    FRelEstoque, FSubGrupos, FVendaExpressa, FRelPedidos, FColaborador,
    FPedidoVenda, FAcesso, FAtivarSistema, FConta, App.Funcoes, FDepartamentos,
-   FGraficos, FSerieDoc;
+   FGraficos,FSerieDoc;
 
 procedure TerminarAplicacao;
 begin

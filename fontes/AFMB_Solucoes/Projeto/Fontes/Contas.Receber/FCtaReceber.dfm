@@ -92,6 +92,22 @@ object FrmCtaReceber: TFrmCtaReceber
     Height = 13
     Caption = 'Especie de Documento'
   end
+  object Label6: TLabel
+    Left = 8
+    Top = 356
+    Width = 35
+    Height = 13
+    Caption = 'Parcela'
+    FocusControl = DBEdit1
+  end
+  object Label7: TLabel
+    Left = 92
+    Top = 356
+    Width = 82
+    Height = 13
+    Caption = 'Total de Parcelas'
+    FocusControl = DBEdit1
+  end
   inline FrmFrameBarra1: TFrmFrameBarra
     Left = 0
     Top = 0
@@ -527,6 +543,8 @@ object FrmCtaReceber: TFrmCtaReceber
       DataField = 'OBSERVACAO'
       DataSource = BaseDados.ds_ctaReceber
       TabOrder = 0
+      ExplicitTop = 32
+      ExplicitHeight = 67
     end
   end
   object DBComboBox1: TDBComboBox
@@ -553,7 +571,7 @@ object FrmCtaReceber: TFrmCtaReceber
   end
   object DBRadioGroup1: TDBRadioGroup
     Left = 8
-    Top = 321
+    Top = 305
     Width = 141
     Height = 45
     Caption = 'Enviado pra Remessa'
@@ -570,7 +588,7 @@ object FrmCtaReceber: TFrmCtaReceber
   end
   object DBRadioGroup2: TDBRadioGroup
     Left = 302
-    Top = 321
+    Top = 305
     Width = 376
     Height = 45
     Caption = 'Inclus'#227'o no Servi'#231'o de Prote'#231#227'o ao Cr'#233'dito'
@@ -931,7 +949,7 @@ object FrmCtaReceber: TFrmCtaReceber
   end
   object DBRadioGroup3: TDBRadioGroup
     Left = 155
-    Top = 321
+    Top = 305
     Width = 141
     Height = 45
     Caption = 'Descontato em Border'#244
@@ -970,5 +988,25 @@ object FrmCtaReceber: TFrmCtaReceber
     Values.Strings = (
       'S'
       'N')
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 373
+    Width = 70
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'DOCUMENTO'
+    DataSource = BaseDados.ds_ctaReceber
+    TabOrder = 24
+  end
+  object DBEdit5: TDBEdit
+    Left = 92
+    Top = 373
+    Width = 70
+    Height = 21
+    CharCase = ecUpperCase
+    DataField = 'DOCUMENTO'
+    DataSource = BaseDados.ds_ctaReceber
+    TabOrder = 25
   end
 end

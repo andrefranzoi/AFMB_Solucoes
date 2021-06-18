@@ -77,11 +77,11 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
-        <VerInfo_Keys>CompanyName=AFMB Soluções;FileDescription=AFMB Soluções;FileVersion=1.0.0.0;InternalName=AFMB Soluções;LegalCopyright=AFMB Soluções;LegalTrademarks=AFMB Soluções;OriginalFilename=AFMB Soluções;ProductVersion=1.0.0.0;Comments=AFMB Soluções;ProgramID=AFMB Soluções;ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=AFMB Soluções;FileDescription=AFMB Soluções;FileVersion=1.1.0.0;InternalName=AFMB Soluções;LegalCopyright=AFMB Soluções;LegalTrademarks=AFMB Soluções;OriginalFilename=AFMB Soluções;ProductVersion=1.1.0.0;Comments=AFMB Soluções;ProgramID=AFMB Soluções;ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <BT_BuildType>Debug</BT_BuildType>
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
-        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
         <VerInfo_Release>0</VerInfo_Release>
         <VerInfo_Build>0</VerInfo_Build>
         <Icon_MainIcon>DBVenda_Icon.ico</Icon_MainIcon>
@@ -771,6 +771,14 @@
         </DCCReference>
         <DCCReference Include="Fontes\EntradaXML\FOpcaoNotaFiscalCompra.pas">
             <Form>FrmOpcaoNotaFiscalCompra</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Fontes\SerieDoc\FSerieDoc.pas">
+            <Form>FrmSerieDoc</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Fontes\PedidoAplicativos\FPedidosAplicativo.pas">
+            <Form>FrmPedidosAplicativo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

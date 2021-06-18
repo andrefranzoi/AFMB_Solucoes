@@ -26,19 +26,13 @@ object FrmUsuarios: TFrmUsuarios
     Top = 53
     Width = 962
     Height = 547
-    ActivePage = tabRegistro
+    ActivePage = tabDetalhe
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 0
     OnChanging = pgControlChanging
-    ExplicitTop = 39
-    ExplicitHeight = 561
     object tabRegistro: TTabSheet
       Caption = 'Registros'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 530
       object cxGrid1: TcxGrid
         Left = 0
         Top = 0
@@ -46,7 +40,6 @@ object FrmUsuarios: TFrmUsuarios
         Height = 516
         Align = alClient
         TabOrder = 0
-        ExplicitHeight = 530
         object cxGridDB: TcxGridDBTableView
           OnDblClick = cxGridDBDblClick
           Navigator.Buttons.CustomButtons = <>
@@ -83,10 +76,6 @@ object FrmUsuarios: TFrmUsuarios
     object tabDetalhe: TTabSheet
       Caption = 'Editar'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 530
       object gbDados: TGroupBox
         Left = 0
         Top = 0
@@ -156,7 +145,6 @@ object FrmUsuarios: TFrmUsuarios
         Align = alClient
         Caption = '[Permiss'#245'es]'
         TabOrder = 1
-        ExplicitHeight = 449
         object cxGridAcessos: TcxGrid
           AlignWithMargins = True
           Left = 145
@@ -165,7 +153,6 @@ object FrmUsuarios: TFrmUsuarios
           Height = 412
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 426
           object cxGridMenus: TcxGridDBTableView
             Navigator.Buttons.CustomButtons = <>
             DataController.DataSource = dsMenu
@@ -216,7 +203,6 @@ object FrmUsuarios: TFrmUsuarios
           BevelKind = bkTile
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitHeight = 426
           object btnBloquear: TBitBtn
             Left = 0
             Top = 68
@@ -331,7 +317,7 @@ object FrmUsuarios: TFrmUsuarios
       Width = 962
       Constraints.MinHeight = 30
       ExplicitWidth = 962
-      ExplicitHeight = 30
+      ExplicitHeight = 44
       inherited LblBarraTitulo: TLabel
         Width = 811
         Caption = 'Usu'#225'rios'

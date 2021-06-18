@@ -79,6 +79,10 @@ type
       dbDlgProcurar: TIDBEditDialog;
       DBRadioGroup3: TDBRadioGroup;
       DBRadioGroup4: TDBRadioGroup;
+    DBEdit1: TDBEdit;
+    Label6: TLabel;
+    DBEdit5: TDBEdit;
+    Label7: TLabel;
       procedure FrmFrameBotoes1SpbImprimirClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbProcurarClick(Sender: TObject);
       procedure FrmFrameBotoes1SpbExcluirClick(Sender: TObject);
