@@ -341,6 +341,9 @@ type
     dxBarLargeButton155: TdxBarLargeButton;
     FDPhysMSSQLDriverLink: TFDPhysMSSQLDriverLink;
     dxBarLargeButton156: TdxBarLargeButton;
+    ActPedidoAplicativos: TAction;
+    dxBarAplicativo: TdxBar;
+    dxBarLargeButton157: TdxBarLargeButton;
 
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -419,6 +422,7 @@ type
         var AException: Exception);
       procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure acSerieDocExecute(Sender: TObject);
+    procedure ActPedidoAplicativosExecute(Sender: TObject);
 
    Strict Private
       { Strict Private declarations }
@@ -488,7 +492,7 @@ uses
    FProdutosQuantidade, FGrupos, FTabelaNCM, FProdutosPesquisaPreco, FProdutos,
    FRelEstoque, FSubGrupos, FVendaExpressa, FRelPedidos, FColaborador,
    FPedidoVenda, FAcesso, FAtivarSistema, FConta, App.Funcoes, FDepartamentos,
-   FGraficos,FSerieDoc;
+   FGraficos,FSerieDoc, FPedidosAplicativo;
 
 procedure TerminarAplicacao;
 begin
@@ -908,6 +912,11 @@ begin
    FrmDashboardGrafico := TFrmDashboardGrafico.Create(Nil);
    FrmDashboardGrafico.cxLevelCtaReceberTotais.Visible := True;
    FrmDashboardGrafico.Show;
+end;
+
+procedure TFrmPrincipal.ActPedidoAplicativosExecute(Sender: TObject);
+begin
+   AbrirFormMDI(TFrmPedidosAplicativo, FrmPedidosAplicativo);
 end;
 
 procedure TFrmPrincipal.VerificarTelaGrafico;

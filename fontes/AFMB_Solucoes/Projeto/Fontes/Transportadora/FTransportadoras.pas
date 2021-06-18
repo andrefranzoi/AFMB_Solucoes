@@ -54,7 +54,7 @@ uses
    FFrameBotoes, FFrameBarra,
    Winapi.ShellAPI,
    Classe.Global,
-   CoreTableClass, dxDateRanges, dxSkinsCore, dxSkinsDefaultPainters;
+   CoreTableClass, dxDateRanges, dxSkinsCore, dxSkinsDefaultPainters, ACBrBase, ACBrSocket, ACBrCEP;
 
 type
    TFrmTransportadoras = class(TForm)
@@ -101,7 +101,6 @@ type
       Label16: TLabel;
       Label17: TLabel;
       Label26: TLabel;
-      Label27: TLabel;
       Label28: TLabel;
       Label29: TLabel;
       Label31: TLabel;
@@ -109,11 +108,12 @@ type
       DBEdit12: TDBEdit;
       DBEdit21: TDBEdit;
       DBEdit22: TDBEdit;
-      DBEdit23: TDBEdit;
-      DBEdit37: TDBEdit;
       DBEdit40: TDBEdit;
       DBEdit42: TDBEdit;
       DBEdit43: TDBEdit;
+    ACBrCEP: TACBrCEP;
+    IDBEditDialog1: TIDBEditDialog;
+    edtCidade: TEdit;
       procedure FormCreate(Sender: TObject);
       procedure FormClose(Sender: TObject; var Action: TCloseAction);
       procedure Sair1Click(Sender: TObject);
@@ -134,6 +134,9 @@ type
       procedure FormDestroy(Sender: TObject);
       procedure db_TransportadoraAfterOpen(DataSet: TDataSet);
       procedure DS_TransportadoraStateChange(Sender: TObject);
+    procedure DBEdit10Exit(Sender: TObject);
+    procedure db_TransportadoraBeforePost(DataSet: TDataSet);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
 
    private
       { Private declarations }
@@ -161,6 +164,15 @@ end;
 procedure TFrmTransportadoras.FormDestroy(Sender: TObject);
 begin
    FrmTransportadoras := Nil;
+end;
+
+procedure TFrmTransportadoras.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+   if (Key = #13) then
+   begin
+      Key := #0;
+      Perform(Wm_NextDlgCtl, 0, 0);
+   end;
 end;
 
 procedure TFrmTransportadoras.FormClose(Sender: TObject;
@@ -260,6 +272,34 @@ begin
 
 end;
 
+procedure TFrmTransportadoras.DBEdit10Exit(Sender: TObject);
+begin
+   if DBEdit10.Text <> '' then
+   begin
+      ACBrCEP.BuscarPorCEP(DBEdit10.Text);
+
+      if ACBrCEP.Enderecos.Count <= 0 then
+      begin
+         Informar('Nenhum endereço foi encontrado com o CEP digitado');
+         DBEdit10.SetFocus;
+         Abort;
+      end
+      else
+      begin
+         with ACBrCEP.Enderecos[0] do
+         begin
+            DS_Transportadora.DataSet.FieldByName('ENDERECO').AsString    := Logradouro;
+            DS_Transportadora.DataSet.FieldByName('BAIRRO').AsString      := Bairro;
+            DS_Transportadora.DataSet.FieldByName('IDCIDADE').AsString    := IBGE_Municipio;
+            edtCidade.Text := Municipio;
+            DS_Transportadora.DataSet.FieldByName('UF').AsString := UF;
+         end;
+         DBEdit12.SetFocus;
+         DBEdit12.SelectAll;
+      end;
+   end;
+end;
+
 procedure TFrmTransportadoras.db_TransportadoraAfterOpen(DataSet: TDataSet);
 begin
    FormataCampo(db_Transportadora);
@@ -267,13 +307,18 @@ end;
 
 procedure TFrmTransportadoras.db_TransportadoraAfterPost(DataSet: TDataSet);
 begin
-   db_Transportadora.ParamByName('CODIGO').AsInteger :=
-     db_Transportadora.FieldByName('CODIGO').AsInteger;
+   db_Transportadora.ParamByName('CODIGO').AsInteger := db_Transportadora.FieldByName('CODIGO').AsInteger;
+   edtCidade.Clear;
 end;
 
 procedure TFrmTransportadoras.db_TransportadoraATIVOChange(Sender: TField);
 begin
    db_Transportadora.FieldByName('ATIVODATA').AsDateTime := Date;
+end;
+
+procedure TFrmTransportadoras.db_TransportadoraBeforePost(DataSet: TDataSet);
+begin
+   edtCidade.Text := db_Transportadora.FieldByName('NOMECIDADE').AsString;
 end;
 
 procedure TFrmTransportadoras.db_TransportadoraNewRecord(DataSet: TDataSet);
@@ -283,12 +328,9 @@ begin
    db_Transportadora.FieldByName('TIPO').AsString := 'TRANSPORTADORA';
    db_Transportadora.FieldByName('BLOQUEADO').AsString := 'N';
 
-   db_Transportadora.FieldByName('IDCIDADE').AsInteger :=
-     FParametros.Empresa.IDCidade;
-   db_Transportadora.FieldByName('CODIGOUF').AsInteger :=
-     FParametros.Empresa.IDUF;
-   db_Transportadora.FieldByName('NOMECIDADE').AsString :=
-     FParametros.Empresa.Cidade;
+   db_Transportadora.FieldByName('IDCIDADE').AsInteger  := FParametros.Empresa.IDCidade;
+   db_Transportadora.FieldByName('CODIGOUF').AsInteger  := FParametros.Empresa.IDUF;
+   db_Transportadora.FieldByName('NOMECIDADE').AsString := FParametros.Empresa.Cidade;
    db_Transportadora.FieldByName('UF').AsString := FParametros.Empresa.UF;
 
 end;

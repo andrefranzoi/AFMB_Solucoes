@@ -60,6 +60,7 @@ type
       procedure dbTabelaAfterOpen(DataSet: TDataSet);
       procedure dsTabelaStateChange(Sender: TObject);
       procedure cxGridDadosDblClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
    private
       FEditando: Boolean;
       FValidarCampoNome: Boolean;
@@ -92,6 +93,15 @@ begin
    pgControl.ActivePageIndex := 0;
    Self.Caption := FrmFrameBarra1.LblBarraTitulo.Caption;
    dbTabela.open;
+end;
+
+procedure TFrmCrudSimples.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+   if (Key = #13) then
+   begin
+      Key := #0;
+      Perform(Wm_NextDlgCtl, 0, 0);
+   end;
 end;
 
 procedure TFrmCrudSimples.FrmFrameBotoes1SpbAdicionarClick(Sender: TObject);

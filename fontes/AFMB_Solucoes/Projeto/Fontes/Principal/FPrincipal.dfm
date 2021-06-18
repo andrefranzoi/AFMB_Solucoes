@@ -9757,9 +9757,9 @@ object FrmPrincipal: TFrmPrincipal
   end
   object dxStatusBar1: TdxStatusBar
     Left = 0
-    Top = 695
+    Top = 704
     Width = 1140
-    Height = 34
+    Height = 25
     Panels = <
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
@@ -9841,6 +9841,7 @@ object FrmPrincipal: TFrmPrincipal
       Index = 0
     end
     object rbVenda: TdxRibbonTab
+      Active = True
       Caption = 'Venda'
       Groups = <
         item
@@ -9848,11 +9849,14 @@ object FrmPrincipal: TFrmPrincipal
         end
         item
           ToolbarName = 'dxBarVendaMovimento'
+        end
+        item
+          Caption = 'Aplicativos'
+          ToolbarName = 'dxBarAplicativo'
         end>
       Index = 1
     end
     object rbFinanceiro: TdxRibbonTab
-      Active = True
       Caption = 'Financeiro'
       Groups = <
         item
@@ -10371,6 +10375,12 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'acSerieDoc'
       ImageIndex = 33
       OnExecute = acSerieDocExecute
+    end
+    object ActPedidoAplicativos: TAction
+      Category = 'Venda.Pedido.Aplicativo'
+      Caption = 'Aplicativos'
+      ImageIndex = 87
+      OnExecute = ActPedidoAplicativosExecute
     end
   end
   object ilRibbonApp: TcxImageList
@@ -12684,6 +12694,26 @@ object FrmPrincipal: TFrmPrincipal
       Visible = True
       WholeRow = False
     end
+    object dxBarAplicativo: TdxBar
+      Caption = 'Aplicativo'
+      CaptionButtons = <>
+      DockedLeft = 393
+      DockedTop = 0
+      FloatLeft = 1168
+      FloatTop = 2
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton157'
+        end>
+      OneOnRow = False
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
     object cxBarEditItem1: TcxBarEditItem
       Caption = 'Pesquisar aqui'
       Category = 0
@@ -13576,6 +13606,10 @@ object FrmPrincipal: TFrmPrincipal
       SyncImageIndex = False
       ImageIndex = 87
     end
+    object dxBarLargeButton157: TdxBarLargeButton
+      Action = ActPedidoAplicativos
+      Category = 0
+    end
   end
   object ilRibbon: TcxImageList
     SourceDPI = 96
@@ -13587,7 +13621,7 @@ object FrmPrincipal: TFrmPrincipal
     Left = 237
     Top = 281
     Bitmap = {
-      494C010158006800040020002000FFFFFFFF2100FFFFFFFFFFFFFFFF424D3600
+      494C010158006800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0020000010020000000000000C0
       0500000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -25735,7 +25769,8 @@ object FrmPrincipal: TFrmPrincipal
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000}
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000}
     DesignInfo = 18415853
     ImageInfo = <
       item
