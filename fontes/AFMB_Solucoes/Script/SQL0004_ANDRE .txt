@@ -1,0 +1,29 @@
+create procedure sp_add_column(tab_name varchar(31), col_name varchar(31),
+data_type varchar(100), versao varchar(30)) as
+BEGIN
+	if (not exists(
+        select 1 from config_parametros where VERSAO_BD > :versao))
+    then
+	begin
+		if (not exists(
+			select 1 from RDB$RELATION_FIELDS rf
+			where rf.RDB$RELATION_NAME = :tab_name and rf.RDB$FIELD_NAME = :col_name))
+		then
+			execute statement 'ALTER TABLE "'||tab_name||'" ADD "'||:col_name||'" '||:data_type;
+	end
+END
+
+create procedure sp_alter_column(tab_name varchar(31), col_name varchar(31),
+data_type varchar(100), versao varchar(30)) as
+BEGIN
+	if (not exists(
+        select 1 from config_parametros where VERSAO_BD > :versao))
+    then
+	begin
+		if (exists(
+			select 1 from RDB$RELATION_FIELDS rf
+			where rf.RDB$RELATION_NAME = :tab_name and rf.RDB$FIELD_NAME = :col_name))
+		then
+			execute statement 'ALTER TABLE "'||tab_name||'" ALTER "'||:col_name||'" TYPE '||:data_type;
+	end
+END
